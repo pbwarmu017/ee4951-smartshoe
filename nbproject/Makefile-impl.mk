@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=ee4951_smartshoe
+PROJECTNAME=ee4951_smartshoe.X
 
 # Active Configuration
 DEFAULTCONF=default

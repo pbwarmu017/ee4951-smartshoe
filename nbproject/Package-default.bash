@@ -10,9 +10,9 @@ CND_CONF=default
 CND_DISTDIR=dist
 TMPDIR=build/${CND_CONF}/${IMAGE_TYPE}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/ee4951_smartshoe.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-OUTPUT_BASENAME=ee4951_smartshoe.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
-PACKAGE_TOP_DIR=ee4951smartshoe/
+OUTPUT_PATH=dist/${CND_CONF}/${IMAGE_TYPE}/ee4951_smartshoe.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+OUTPUT_BASENAME=ee4951_smartshoe.X.${IMAGE_TYPE}.${OUTPUT_SUFFIX}
+PACKAGE_TOP_DIR=ee4951smartshoe.x/
 
 # Functions
 function checkReturnCode
@@ -57,15 +57,15 @@ mkdir -p ${TMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory ${TMPDIR}/ee4951smartshoe/bin
+makeDirectory ${TMPDIR}/ee4951smartshoe.x/bin
 copyFileToTmpDir "${OUTPUT_PATH}" "${TMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/package/ee4951smartshoe.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/package/ee4951smartshoe.x.tar
 cd ${TMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/ee4951smartshoe.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/package/ee4951smartshoe.x.tar *
 checkReturnCode
 
 # Cleanup
