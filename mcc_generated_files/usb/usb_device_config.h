@@ -1,6 +1,6 @@
 
 
- 
+
 /*******************************************************************************
 Copyright 2016 Microchip Technology Inc. (www.microchip.com)
 
@@ -194,7 +194,7 @@ please contact mla_licensing@microchip.com
 
 #define USB_SUPPORT_DEVICE
 
-#define USB_NUM_STRING_DESCRIPTORS 3  //Set this number to match the total number of string descriptors that are implemented in the usb_descriptors.c file
+#define USB_NUM_STRING_DESCRIPTORS 4  //Set this number to match the total number of string descriptors that are implemented in the usb_descriptors.c file
 
 /*******************************************************************
  * Event disable options                                           
