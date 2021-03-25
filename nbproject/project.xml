@@ -6,9 +6,9 @@
             <name>SmartShoe</name>
             <creation-uuid>6efba30f-8556-4de2-89cd-8e98a578d6ba</creation-uuid>
             <make-project-type>0</make-project-type>
-            <c-extensions/>
+            <c-extensions>c</c-extensions>
             <cpp-extensions/>
-            <header-extensions/>
+            <header-extensions>h</header-extensions>
             <asminc-extensions/>
             <sourceEncoding>ISO-8859-1</sourceEncoding>
             <make-dep-projects/>
