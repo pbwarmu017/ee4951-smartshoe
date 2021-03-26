@@ -76,17 +76,21 @@ void main(void)
 
     control = CONTROLBYTE;              // Load control byte
 
-    // Byte write/read routines
+
+   
+
+    while (1)
+    {
+     // Byte write/read routines
     address = 0x00AA;                   // Load address with 0x00AA
     data[0] = 0x55;                     // Load data with 0x55
     LowDensByteWrite(data[0]);          // Write a single byte
     LowDensByteRead(data);              // Read a single byte
     
-    char test = 1;
     //HighDensByteWrite(data[0]);         // Write a single byte
     //HighDensByteRead(data);             // Read a single byte
-
-    // Page write/read routines
+        
+        // Page write/read routines
     address = 0x00B0;                   // Load address with 0x00B0
     for (i = 0; i < PAGESIZE; i++)      // Loop through full page
     {
@@ -96,10 +100,6 @@ void main(void)
     LowDensSequentialRead(data,PAGESIZE);// Read a full page
     //HighDensPageWrite(data,PAGESIZE);   // Write a full page
     //HighDensSequentialRead(data,PAGESIZE);// Read a full page
-
-    while (1)
-    {
-        // Add your application code
     }
 }
 /**

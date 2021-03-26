@@ -4008,6 +4008,7 @@ void ACK_Poll(void);
 
 unsigned char control;
 unsigned int address;
+int temp;
 
 
 void bit_in(unsigned char *data);
@@ -4080,7 +4081,7 @@ void bit_in(unsigned char *data)
     }
     PORTBbits.RB6 = 0;
 }
-# 128 "eeprom_i2c.c"
+# 129 "eeprom_i2c.c"
 unsigned char byte_out(unsigned char data)
 {
     unsigned char i;
@@ -4096,7 +4097,7 @@ unsigned char byte_out(unsigned char data)
 
     return ack;
 }
-# 151 "eeprom_i2c.c"
+# 152 "eeprom_i2c.c"
 unsigned char byte_in(unsigned char ack)
 {
     unsigned char i;
@@ -4112,7 +4113,7 @@ unsigned char byte_in(unsigned char ack)
 
     return retval;
 }
-# 176 "eeprom_i2c.c"
+# 177 "eeprom_i2c.c"
 void LowDensByteWrite(unsigned char data)
 {
     unsigned char temp_control;
@@ -4127,7 +4128,7 @@ void LowDensByteWrite(unsigned char data)
     bstop();
     ACK_Poll();
 }
-# 200 "eeprom_i2c.c"
+# 201 "eeprom_i2c.c"
 void HighDensByteWrite(unsigned char data)
 {
     bstart();
@@ -4138,7 +4139,7 @@ void HighDensByteWrite(unsigned char data)
     bstop();
     ACK_Poll();
 }
-# 221 "eeprom_i2c.c"
+# 222 "eeprom_i2c.c"
 void LowDensPageWrite(unsigned char *data, unsigned char numbytes)
 {
     unsigned char i;
@@ -4157,7 +4158,7 @@ void LowDensPageWrite(unsigned char *data, unsigned char numbytes)
     bstop();
     ACK_Poll();
 }
-# 250 "eeprom_i2c.c"
+# 251 "eeprom_i2c.c"
 void HighDensPageWrite(unsigned char *data, unsigned char numbytes)
 {
     unsigned char i;
@@ -4173,7 +4174,7 @@ void HighDensPageWrite(unsigned char *data, unsigned char numbytes)
     bstop();
     ACK_Poll();
 }
-# 275 "eeprom_i2c.c"
+# 276 "eeprom_i2c.c"
 void LowDensByteRead(unsigned char *data)
 {
     unsigned char temp_control;
@@ -4189,7 +4190,7 @@ void LowDensByteRead(unsigned char *data)
     *data = byte_in(0x80) + 1;
     bstop();
 }
-# 300 "eeprom_i2c.c"
+# 301 "eeprom_i2c.c"
 void HighDensByteRead(unsigned char *data)
 {
     bstart();
@@ -4201,7 +4202,7 @@ void HighDensByteRead(unsigned char *data)
     *data = byte_in(0x80);
     bstop();
 }
-# 322 "eeprom_i2c.c"
+# 323 "eeprom_i2c.c"
 void LowDensSequentialRead(unsigned char *data, unsigned int numbytes)
 {
     unsigned int i;
@@ -4228,7 +4229,7 @@ void LowDensSequentialRead(unsigned char *data, unsigned int numbytes)
     }
     bstop();
 }
-# 359 "eeprom_i2c.c"
+# 360 "eeprom_i2c.c"
 void HighDensSequentialRead(unsigned char *data, unsigned int numbytes)
 {
     unsigned int i;
@@ -4252,7 +4253,7 @@ void HighDensSequentialRead(unsigned char *data, unsigned int numbytes)
     }
     bstop();
 }
-# 390 "eeprom_i2c.c"
+# 391 "eeprom_i2c.c"
 void ACK_Poll(void)
 {
     unsigned char result;

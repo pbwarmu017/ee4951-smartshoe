@@ -60,13 +60,13 @@ void PIN_MANAGER_Initialize(void)
     LATx registers
     */
     LATA = 0x00;
-    LATB = 0x40;
+    LATB = 0x00;
     LATC = 0x20;
 
     /**
     TRISx registers
     */
-    TRISA = 0x30;
+    TRISA = 0x20;
     TRISB = 0xA0;
     TRISC = 0xDF;
 
@@ -75,7 +75,7 @@ void PIN_MANAGER_Initialize(void)
     */
     ANSELC = 0xCC;
     ANSELB = 0x00;
-    ANSELA = 0x00;
+    ANSELA = 0x10;
 
     /**
     WPUx registers
@@ -96,7 +96,7 @@ void PIN_MANAGER_Initialize(void)
     //interrupt on change for group IOCAF - flag
     IOCAFbits.IOCAF5 = 0;
     //interrupt on change for group IOCAN - negative
-    IOCANbits.IOCAN5 = 0;
+    IOCANbits.IOCAN5 = 1;
     //interrupt on change for group IOCAP - positive
     IOCAPbits.IOCAP5 = 1;
 

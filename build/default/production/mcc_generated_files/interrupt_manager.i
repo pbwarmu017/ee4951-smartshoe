@@ -5301,14 +5301,6 @@ adc_result_t ADC_GetConversionResult(void);
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 319 "mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
-# 335 "mcc_generated_files/adc.h"
-void ADC_ISR(void);
-# 353 "mcc_generated_files/adc.h"
- void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
-# 371 "mcc_generated_files/adc.h"
-extern void (*ADC_InterruptHandler)(void);
-# 389 "mcc_generated_files/adc.h"
-void ADC_DefaultInterruptHandler(void);
 # 59 "mcc_generated_files/mcc.h" 2
 # 74 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -5328,11 +5320,7 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
     }
     else if(INTCONbits.PEIE == 1)
     {
-        if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
-        {
-            ADC_ISR();
-        }
-        else if(PIE2bits.USBIE == 1 && PIR2bits.USBIF == 1)
+        if(PIE2bits.USBIE == 1 && PIR2bits.USBIF == 1)
         {
             USBDeviceTasks();
         }

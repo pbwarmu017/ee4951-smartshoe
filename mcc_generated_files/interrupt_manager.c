@@ -58,11 +58,7 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     }
     else if(INTCONbits.PEIE == 1)
     {
-        if(PIE1bits.ADIE == 1 && PIR1bits.ADIF == 1)
-        {
-            ADC_ISR();
-        } 
-        else if(PIE2bits.USBIE == 1 && PIR2bits.USBIF == 1)
+        if(PIE2bits.USBIE == 1 && PIR2bits.USBIF == 1)
         {
             USB_USBDeviceTasks();
         } 

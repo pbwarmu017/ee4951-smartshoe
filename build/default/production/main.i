@@ -5300,14 +5300,6 @@ adc_result_t ADC_GetConversionResult(void);
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 319 "./mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
-# 335 "./mcc_generated_files/adc.h"
-void ADC_ISR(void);
-# 353 "./mcc_generated_files/adc.h"
- void ADC_SetInterruptHandler(void (* InterruptHandler)(void));
-# 371 "./mcc_generated_files/adc.h"
-extern void (*ADC_InterruptHandler)(void);
-# 389 "./mcc_generated_files/adc.h"
-void ADC_DefaultInterruptHandler(void);
 # 59 "./mcc_generated_files/mcc.h" 2
 # 74 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -5372,12 +5364,16 @@ void main(void)
     control = 0b10100000;
 
 
+
+
+    while (1)
+    {
+
     address = 0x00AA;
     data[0] = 0x55;
     LowDensByteWrite(data[0]);
     LowDensByteRead(data);
 
-    char test = 1;
 
 
 
@@ -5390,10 +5386,6 @@ void main(void)
     LowDensPageWrite(data,16);
     LowDensSequentialRead(data,16);
 
-
-
-    while (1)
-    {
 
     }
 }

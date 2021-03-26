@@ -499,63 +499,59 @@ Version 4.0 HI-TECH Software Intermediate Code
 "77
 [; ;main.c: 77:     control = 0b10100000;
 [e = _control -> -> 160 `i `uc ]
-"80
-[; ;main.c: 80:     address = 0x00AA;
-[e = _address -> -> 170 `i `ui ]
-"81
-[; ;main.c: 81:     data[0] = 0x55;
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 85 `i `uc ]
 "82
-[; ;main.c: 82:     LowDensByteWrite(data[0]);
-[e ( _LowDensByteWrite (1 *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ]
+[; ;main.c: 82:     while (1)
+[e :U 389 ]
 "83
-[; ;main.c: 83:     LowDensByteRead(data);
-[e ( _LowDensByteRead (1 &U _data ]
+[; ;main.c: 83:     {
+{
 "85
-[; ;main.c: 85:     char test = 1;
-[v _test `uc ~T0 @X0 1 a ]
-[e = _test -> -> 1 `i `uc ]
-"90
-[; ;main.c: 90:     address = 0x00B0;
+[; ;main.c: 85:     address = 0x00AA;
+[e = _address -> -> 170 `i `ui ]
+"86
+[; ;main.c: 86:     data[0] = 0x55;
+[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 85 `i `uc ]
+"87
+[; ;main.c: 87:     LowDensByteWrite(data[0]);
+[e ( _LowDensByteWrite (1 *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ]
+"88
+[; ;main.c: 88:     LowDensByteRead(data);
+[e ( _LowDensByteRead (1 &U _data ]
+"94
+[; ;main.c: 94:     address = 0x00B0;
 [e = _address -> -> 176 `i `ui ]
-"91
-[; ;main.c: 91:     for (i = 0; i < 16; i++)
+"95
+[; ;main.c: 95:     for (i = 0; i < 16; i++)
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 388  ]
-[e $U 389  ]
-[e :U 388 ]
-"92
-[; ;main.c: 92:     {
+[e $ < -> _i `i -> 16 `i 391  ]
+[e $U 392  ]
+[e :U 391 ]
+"96
+[; ;main.c: 96:     {
 {
-"93
-[; ;main.c: 93:         data[i] = (16 -1) - i;
+"97
+[; ;main.c: 97:         data[i] = (16 -1) - i;
 [e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux -> - - -> 16 `i -> 1 `i -> _i `i `uc ]
-"94
-[; ;main.c: 94:     }
+"98
+[; ;main.c: 98:     }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 388  ]
-[e :U 389 ]
-}
-"95
-[; ;main.c: 95:     LowDensPageWrite(data,16);
-[e ( _LowDensPageWrite (2 , &U _data -> -> 16 `i `uc ]
-"96
-[; ;main.c: 96:     LowDensSequentialRead(data,16);
-[e ( _LowDensSequentialRead (2 , &U _data -> -> 16 `i `ui ]
-"100
-[; ;main.c: 100:     while (1)
+[e $ < -> _i `i -> 16 `i 391  ]
 [e :U 392 ]
-"101
-[; ;main.c: 101:     {
-{
+}
+"99
+[; ;main.c: 99:     LowDensPageWrite(data,16);
+[e ( _LowDensPageWrite (2 , &U _data -> -> 16 `i `uc ]
+"100
+[; ;main.c: 100:     LowDensSequentialRead(data,16);
+[e ( _LowDensSequentialRead (2 , &U _data -> -> 16 `i `ui ]
 "103
 [; ;main.c: 103:     }
 }
-[e :U 391 ]
-[e $U 392  ]
-[e :U 393 ]
+[e :U 388 ]
+[e $U 389  ]
+[e :U 390 ]
 "104
 [; ;main.c: 104: }
 [e :UE 387 ]

@@ -45,6 +45,7 @@
 /** V A R I A B L E S **********************************************/
 unsigned char control;              // Control byte variable
 unsigned int address;               // Address word variable
+int temp;
 
 /** P R O T O T Y P E S ********************************************/
 void bit_in(unsigned char *data);   // Bit input function

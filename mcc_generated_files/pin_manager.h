@@ -88,19 +88,19 @@
 #define NA3_SetAnalogMode()      do { ANSELAbits.ANSA4 = 1; } while(0)
 #define NA3_SetDigitalMode()     do { ANSELAbits.ANSA4 = 0; } while(0)
 
-// get/set pin_motiondetect aliases
-#define pin_motiondetect_TRIS                 TRISAbits.TRISA5
-#define pin_motiondetect_LAT                  LATAbits.LATA5
-#define pin_motiondetect_PORT                 PORTAbits.RA5
-#define pin_motiondetect_WPU                  WPUAbits.WPUA5
-#define pin_motiondetect_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
-#define pin_motiondetect_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
-#define pin_motiondetect_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
-#define pin_motiondetect_GetValue()           PORTAbits.RA5
-#define pin_motiondetect_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
-#define pin_motiondetect_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
-#define pin_motiondetect_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
-#define pin_motiondetect_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
+// get/set motion_detect aliases
+#define motion_detect_TRIS                 TRISAbits.TRISA5
+#define motion_detect_LAT                  LATAbits.LATA5
+#define motion_detect_PORT                 PORTAbits.RA5
+#define motion_detect_WPU                  WPUAbits.WPUA5
+#define motion_detect_SetHigh()            do { LATAbits.LATA5 = 1; } while(0)
+#define motion_detect_SetLow()             do { LATAbits.LATA5 = 0; } while(0)
+#define motion_detect_Toggle()             do { LATAbits.LATA5 = ~LATAbits.LATA5; } while(0)
+#define motion_detect_GetValue()           PORTAbits.RA5
+#define motion_detect_SetDigitalInput()    do { TRISAbits.TRISA5 = 1; } while(0)
+#define motion_detect_SetDigitalOutput()   do { TRISAbits.TRISA5 = 0; } while(0)
+#define motion_detect_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
+#define motion_detect_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
 
 // get/set pin_sda aliases
 #define pin_sda_TRIS                 TRISBbits.TRISB4
