@@ -180,7 +180,29 @@ channel_FVR 31
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"49 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+"58 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\eeprom_i2c.c
+[v _bstart bstart `(v  1 e 1 0 ]
+"73
+[v _bstop bstop `(v  1 e 1 0 ]
+"87
+[v _bit_out bit_out `(v  1 e 1 0 ]
+"108
+[v _bit_in bit_in `(v  1 e 1 0 ]
+"128
+[v _byte_out byte_out `(uc  1 e 1 0 ]
+"151
+[v _byte_in byte_in `(uc  1 e 1 0 ]
+"176
+[v _LowDensByteWrite LowDensByteWrite `(v  1 e 1 0 ]
+"221
+[v _LowDensPageWrite LowDensPageWrite `(v  1 e 1 0 ]
+"275
+[v _LowDensByteRead LowDensByteRead `(v  1 e 1 0 ]
+"322
+[v _LowDensSequentialRead LowDensSequentialRead `(v  1 e 1 0 ]
+"390
+[v _ACK_Poll ACK_Poll `(v  1 e 1 0 ]
+"56 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -388,6 +410,15 @@ channel_FVR 31
 ]
 [u S2213 . 1 `S2199 1 . 1 0 `S2208 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES2213  1 e 1 @11 ]
+[s S3237 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 RB4 1 0 :1:4 
+`uc 1 RB5 1 0 :1:5 
+`uc 1 RB6 1 0 :1:6 
+`uc 1 RB7 1 0 :1:7 
+]
+"488
+[u S3243 . 1 `S3237 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES3243  1 e 1 @13 ]
 [s S2651 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
@@ -416,6 +447,15 @@ channel_FVR 31
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1031
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
+[s S3222 . 1 `uc 1 . 1 0 :4:0 
+`uc 1 TRISB4 1 0 :1:4 
+`uc 1 TRISB5 1 0 :1:5 
+`uc 1 TRISB6 1 0 :1:6 
+`uc 1 TRISB7 1 0 :1:7 
+]
+"1045
+[u S3228 . 1 `S3222 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES3228  1 e 1 @141 ]
 "1070
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
 [s S2630 . 1 `uc 1 TMR1IE 1 0 :1:0 
@@ -687,6 +727,12 @@ channel_FVR 31
 [v _UEP1 UEP1 `VEuc  1 e 1 @3737 ]
 "6898
 [v _PLLRDY PLLRDY `VEb  1 e 0 @1238 ]
+"46 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\eeprom_i2c.c
+[v _control control `uc  1 e 1 0 ]
+"47
+[v _address address `ui  1 e 2 0 ]
+"51 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+[v _data data `[16]uc  1 e 16 0 ]
 "61 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
 [v _ADC_InterruptHandler ADC_InterruptHandler `*.37(v  1 e 2 0 ]
 "146 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/i2c_master.c
@@ -905,10 +951,12 @@ channel_FVR 31
 [v _SetupPkt SetupPkt `VES386  1 e 8 @64 ]
 "180
 [v _CtrlTrfData CtrlTrfData `VE[8]uc  1 e 8 @72 ]
-"49 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+"56 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"73
+"75
+[v main@i i `uc  1 a 1 1 ]
+"104
 } 0
 "50 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
@@ -924,10 +972,10 @@ channel_FVR 31
 [v _USBDeviceInit USBDeviceInit `(v  1 e 1 0 ]
 {
 "300
-[v USBDeviceInit@p p `*.39uc  1 a 2 1 ]
-[v USBDeviceInit@i_1171 i `uc  1 a 1 3 ]
+[v USBDeviceInit@p p `*.39uc  1 a 2 0 ]
+[v USBDeviceInit@i_1171 i `uc  1 a 1 2 ]
 "283
-[v USBDeviceInit@i i `uc  1 a 1 4 ]
+[v USBDeviceInit@i i `uc  1 a 1 3 ]
 "375
 } 0
 "1356
@@ -966,6 +1014,123 @@ channel_FVR 31
 {
 [v ADC_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "161
+} 0
+"322 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\eeprom_i2c.c
+[v _LowDensSequentialRead LowDensSequentialRead `(v  1 e 1 0 ]
+{
+[v LowDensSequentialRead@data data `*.4uc  1 a 1 wreg ]
+"324
+[v LowDensSequentialRead@i i `ui  1 a 2 13 ]
+"325
+[v LowDensSequentialRead@temp_control temp_control `uc  1 a 1 12 ]
+"322
+[v LowDensSequentialRead@data data `*.4uc  1 a 1 wreg ]
+[v LowDensSequentialRead@numbytes numbytes `ui  1 p 2 5 ]
+"328
+[v LowDensSequentialRead@data data `*.4uc  1 a 1 11 ]
+"347
+} 0
+"221
+[v _LowDensPageWrite LowDensPageWrite `(v  1 e 1 0 ]
+{
+[v LowDensPageWrite@data data `*.4uc  1 a 1 wreg ]
+"223
+[v LowDensPageWrite@i i `uc  1 a 1 14 ]
+"224
+[v LowDensPageWrite@temp_control temp_control `uc  1 a 1 13 ]
+"221
+[v LowDensPageWrite@data data `*.4uc  1 a 1 wreg ]
+[v LowDensPageWrite@numbytes numbytes `uc  1 p 1 7 ]
+"227
+[v LowDensPageWrite@data data `*.4uc  1 a 1 12 ]
+"238
+} 0
+"176
+[v _LowDensByteWrite LowDensByteWrite `(v  1 e 1 0 ]
+{
+[v LowDensByteWrite@data data `uc  1 a 1 wreg ]
+"178
+[v LowDensByteWrite@temp_control temp_control `uc  1 a 1 12 ]
+"176
+[v LowDensByteWrite@data data `uc  1 a 1 wreg ]
+"181
+[v LowDensByteWrite@data data `uc  1 a 1 11 ]
+"189
+} 0
+"390
+[v _ACK_Poll ACK_Poll `(v  1 e 1 0 ]
+{
+"392
+[v ACK_Poll@result result `uc  1 a 1 6 ]
+"401
+} 0
+"275
+[v _LowDensByteRead LowDensByteRead `(v  1 e 1 0 ]
+{
+[v LowDensByteRead@data data `*.4uc  1 a 1 wreg ]
+"277
+[v LowDensByteRead@temp_control temp_control `uc  1 a 1 10 ]
+"275
+[v LowDensByteRead@data data `*.4uc  1 a 1 wreg ]
+"280
+[v LowDensByteRead@data data `*.4uc  1 a 1 9 ]
+"289
+} 0
+"128
+[v _byte_out byte_out `(uc  1 e 1 0 ]
+{
+[v byte_out@data data `uc  1 a 1 wreg ]
+"131
+[v byte_out@ack ack `uc  1 a 1 4 ]
+"130
+[v byte_out@i i `uc  1 a 1 3 ]
+"128
+[v byte_out@data data `uc  1 a 1 wreg ]
+"133
+[v byte_out@data data `uc  1 a 1 2 ]
+"142
+} 0
+"151
+[v _byte_in byte_in `(uc  1 e 1 0 ]
+{
+[v byte_in@ack ack `uc  1 a 1 wreg ]
+"154
+[v byte_in@retval retval `uc  1 a 1 4 ]
+"153
+[v byte_in@i i `uc  1 a 1 3 ]
+"151
+[v byte_in@ack ack `uc  1 a 1 wreg ]
+"156
+[v byte_in@ack ack `uc  1 a 1 2 ]
+"165
+} 0
+"87
+[v _bit_out bit_out `(v  1 e 1 0 ]
+{
+[v bit_out@data data `uc  1 a 1 wreg ]
+[v bit_out@data data `uc  1 a 1 wreg ]
+"89
+[v bit_out@data data `uc  1 a 1 10 ]
+"101
+} 0
+"108
+[v _bit_in bit_in `(v  1 e 1 0 ]
+{
+[v bit_in@data data `*.4uc  1 a 1 wreg ]
+[v bit_in@data data `*.4uc  1 a 1 wreg ]
+"110
+[v bit_in@data data `*.4uc  1 a 1 0 ]
+"119
+} 0
+"73
+[v _bstop bstop `(v  1 e 1 0 ]
+{
+"80
+} 0
+"58
+[v _bstart bstart `(v  1 e 1 0 ]
+{
+"66
 } 0
 "52 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]

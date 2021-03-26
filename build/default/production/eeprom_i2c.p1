@@ -1,129 +1,29 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2311 `(v ~T0 @X0 0 tf ]
-"1866 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1866: extern volatile unsigned char LATA __attribute__((address(0x10C)));
-[v _LATA `Vuc ~T0 @X0 0 e@268 ]
-"1893
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1893: extern volatile unsigned char LATB __attribute__((address(0x10D)));
-[v _LATB `Vuc ~T0 @X0 0 e@269 ]
-"1932
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1932: extern volatile unsigned char LATC __attribute__((address(0x10E)));
-[v _LATC `Vuc ~T0 @X0 0 e@270 ]
-"1004
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1004: extern volatile unsigned char TRISA __attribute__((address(0x08C)));
-[v _TRISA `Vuc ~T0 @X0 0 e@140 ]
-"1031
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1031: extern volatile unsigned char TRISB __attribute__((address(0x08D)));
-[v _TRISB `Vuc ~T0 @X0 0 e@141 ]
-"1070
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1070: extern volatile unsigned char TRISC __attribute__((address(0x08E)));
-[v _TRISC `Vuc ~T0 @X0 0 e@142 ]
-"2584
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2584: extern volatile unsigned char ANSELC __attribute__((address(0x18E)));
-[v _ANSELC `Vuc ~T0 @X0 0 e@398 ]
-"2548
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2548: extern volatile unsigned char ANSELB __attribute__((address(0x18D)));
-[v _ANSELB `Vuc ~T0 @X0 0 e@397 ]
-"2519
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2519: extern volatile unsigned char ANSELA __attribute__((address(0x18C)));
-[v _ANSELA `Vuc ~T0 @X0 0 e@396 ]
-"3151
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3151: extern volatile unsigned char WPUB __attribute__((address(0x20D)));
-[v _WPUB `Vuc ~T0 @X0 0 e@525 ]
-"3110
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3110: extern volatile unsigned char WPUA __attribute__((address(0x20C)));
-[v _WPUA `Vuc ~T0 @X0 0 e@524 ]
-"1247
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1247:     struct {
-[s S73 :3 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S73 . PS PSA TMR0SE TMR0CS INTEDG nWPUEN ]
-"1255
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1255:     struct {
-[s S74 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S74 . PS0 PS1 PS2 . T0SE T0CS ]
-"1246
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1246: typedef union {
-[u S72 `S73 1 `S74 1 ]
-[n S72 . . . ]
-"1264
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1264: extern volatile OPTION_REGbits_t OPTION_REGbits __attribute__((address(0x095)));
-[v _OPTION_REGbits `VS72 ~T0 @X0 0 e@149 ]
-"2484
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2484: extern volatile unsigned char APFCON __attribute__((address(0x11D)));
-[v _APFCON `Vuc ~T0 @X0 0 e@285 ]
-"4034
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4034:     struct {
-[s S217 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S217 . IOCAF0 IOCAF1 . IOCAF3 IOCAF4 IOCAF5 ]
-"4042
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4042:     struct {
-[s S218 :6 `uc 1 ]
-[n S218 . IOCAF ]
-"4033
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4033: typedef union {
-[u S216 `S217 1 `S218 1 ]
-[n S216 . . . ]
-"4046
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4046: extern volatile IOCAFbits_t IOCAFbits __attribute__((address(0x393)));
-[v _IOCAFbits `VS216 ~T0 @X0 0 e@915 ]
-"3981
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3981:     struct {
-[s S214 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S214 . IOCAN0 IOCAN1 . IOCAN3 IOCAN4 IOCAN5 ]
-"3989
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3989:     struct {
-[s S215 :6 `uc 1 ]
-[n S215 . IOCAN ]
-"3980
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3980: typedef union {
-[u S213 `S214 1 `S215 1 ]
-[n S213 . . . ]
-"3993
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3993: extern volatile IOCANbits_t IOCANbits __attribute__((address(0x392)));
-[v _IOCANbits `VS213 ~T0 @X0 0 e@914 ]
-"3928
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3928:     struct {
-[s S211 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S211 . IOCAP0 IOCAP1 . IOCAP3 IOCAP4 IOCAP5 ]
-"3936
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3936:     struct {
-[s S212 :6 `uc 1 ]
-[n S212 . IOCAP ]
-"3927
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3927: typedef union {
-[u S210 `S211 1 `S212 1 ]
-[n S210 . . . ]
-"3940
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3940: extern volatile IOCAPbits_t IOCAPbits __attribute__((address(0x391)));
-[v _IOCAPbits `VS210 ~T0 @X0 0 e@913 ]
-[v F2304 `(v ~T0 @X0 0 tf ]
-"331 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 331: void IOCAF5_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _IOCAF5_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2304 ]
-"379
-[; ;mcc_generated_files/pin_manager.h: 379: void IOCAF5_DefaultInterruptHandler(void);
-[v _IOCAF5_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
-"357 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 357:     struct {
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
-"367
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 367:     struct {
-[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S32 . . T0IF . T0IE ]
-"356
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 356: typedef union {
-[u S30 `S31 1 `S32 1 ]
-[n S30 . . . ]
-"374
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"308 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 308: void IOCAF5_ISR(void);
-[v _IOCAF5_ISR `(v ~T0 @X0 0 ef ]
-[v F2316 `(v ~T0 @X0 0 tf ]
-[v F2318 `(v ~T0 @X0 0 tf ]
-[v F2320 `(v ~T0 @X0 0 tf ]
+"1037 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1037:     struct {
+[s S65 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S65 . . TRISB4 TRISB5 TRISB6 TRISB7 ]
+"1036
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1036: typedef union {
+[u S64 `S65 1 ]
+[n S64 . . ]
+"1045
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1045: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x08D)));
+[v _TRISBbits `VS64 ~T0 @X0 0 e@141 ]
+"480
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 480:     struct {
+[s S36 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S36 . . RB4 RB5 RB6 RB7 ]
+"479
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 479: typedef union {
+[u S35 `S36 1 ]
+[n S35 . . ]
+"488
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 488: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
+"96 ./eeprom_i2c.h
+[; ;./eeprom_i2c.h: 96: void ACK_Poll(void);
+[v _ACK_Poll `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -556,147 +456,771 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6106
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 6106: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"54 mcc_generated_files/pin_manager.c
-[; ;mcc_generated_files/pin_manager.c: 54: void (*IOCAF5_InterruptHandler)(void);
-[v _IOCAF5_InterruptHandler `*F2311 ~T0 @X0 1 e ]
-"57
-[; ;mcc_generated_files/pin_manager.c: 57: void PIN_MANAGER_Initialize(void)
-[v _PIN_MANAGER_Initialize `(v ~T0 @X0 1 ef ]
+"46 eeprom_i2c.c
+[; ;eeprom_i2c.c: 46: unsigned char control;
+[v _control `uc ~T0 @X0 1 e ]
+"47
+[; ;eeprom_i2c.c: 47: unsigned int address;
+[v _address `ui ~T0 @X0 1 e ]
 "58
-[; ;mcc_generated_files/pin_manager.c: 58: {
+[; ;eeprom_i2c.c: 58: void bstart(void)
+[v _bstart `(v ~T0 @X0 1 ef ]
+"59
+[; ;eeprom_i2c.c: 59: {
 {
-[e :U _PIN_MANAGER_Initialize ]
+[e :U _bstart ]
 [f ]
+"60
+[; ;eeprom_i2c.c: 60:     TRISBbits.TRISB4 = 1;
+[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
+"61
+[; ;eeprom_i2c.c: 61:     PORTBbits.RB6 = 1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
 "62
-[; ;mcc_generated_files/pin_manager.c: 62:     LATA = 0x00;
-[e = _LATA -> -> 0 `i `uc ]
+[; ;eeprom_i2c.c: 62:     TRISBbits.TRISB4 = 0;
+[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
 "63
-[; ;mcc_generated_files/pin_manager.c: 63:     LATB = 0x40;
-[e = _LATB -> -> 64 `i `uc ]
+[; ;eeprom_i2c.c: 63:     PORTBbits.RB4 = 0;
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
 "64
-[; ;mcc_generated_files/pin_manager.c: 64:     LATC = 0x20;
-[e = _LATC -> -> 32 `i `uc ]
-"69
-[; ;mcc_generated_files/pin_manager.c: 69:     TRISA = 0x30;
-[e = _TRISA -> -> 48 `i `uc ]
-"70
-[; ;mcc_generated_files/pin_manager.c: 70:     TRISB = 0xA0;
-[e = _TRISB -> -> 160 `i `uc ]
-"71
-[; ;mcc_generated_files/pin_manager.c: 71:     TRISC = 0xDF;
-[e = _TRISC -> -> 223 `i `uc ]
-"76
-[; ;mcc_generated_files/pin_manager.c: 76:     ANSELC = 0xCC;
-[e = _ANSELC -> -> 204 `i `uc ]
-"77
-[; ;mcc_generated_files/pin_manager.c: 77:     ANSELB = 0x00;
-[e = _ANSELB -> -> 0 `i `uc ]
-"78
-[; ;mcc_generated_files/pin_manager.c: 78:     ANSELA = 0x00;
-[e = _ANSELA -> -> 0 `i `uc ]
-"83
-[; ;mcc_generated_files/pin_manager.c: 83:     WPUB = 0x00;
-[e = _WPUB -> -> 0 `i `uc ]
-"84
-[; ;mcc_generated_files/pin_manager.c: 84:     WPUA = 0x00;
-[e = _WPUA -> -> 0 `i `uc ]
-"85
-[; ;mcc_generated_files/pin_manager.c: 85:     OPTION_REGbits.nWPUEN = 1;
-[e = . . _OPTION_REGbits 0 5 -> -> 1 `i `uc ]
-"91
-[; ;mcc_generated_files/pin_manager.c: 91:     APFCON = 0x00;
-[e = _APFCON -> -> 0 `i `uc ]
-"97
-[; ;mcc_generated_files/pin_manager.c: 97:     IOCAFbits.IOCAF5 = 0;
-[e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
-"99
-[; ;mcc_generated_files/pin_manager.c: 99:     IOCANbits.IOCAN5 = 0;
-[e = . . _IOCANbits 0 5 -> -> 0 `i `uc ]
-"101
-[; ;mcc_generated_files/pin_manager.c: 101:     IOCAPbits.IOCAP5 = 1;
-[e = . . _IOCAPbits 0 5 -> -> 1 `i `uc ]
-"106
-[; ;mcc_generated_files/pin_manager.c: 106:     IOCAF5_SetInterruptHandler(IOCAF5_DefaultInterruptHandler);
-[e ( _IOCAF5_SetInterruptHandler (1 &U _IOCAF5_DefaultInterruptHandler ]
-"109
-[; ;mcc_generated_files/pin_manager.c: 109:     INTCONbits.IOCIE = 1;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"111
-[; ;mcc_generated_files/pin_manager.c: 111: }
+[; ;eeprom_i2c.c: 64:     PORTBbits.RB6 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+"66
+[; ;eeprom_i2c.c: 66: }
 [e :UE 327 ]
 }
-"113
-[; ;mcc_generated_files/pin_manager.c: 113: void PIN_MANAGER_IOC(void)
-[v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"114
-[; ;mcc_generated_files/pin_manager.c: 114: {
+"73
+[; ;eeprom_i2c.c: 73: void bstop(void)
+[v _bstop `(v ~T0 @X0 1 ef ]
+"74
+[; ;eeprom_i2c.c: 74: {
 {
-[e :U _PIN_MANAGER_IOC ]
+[e :U _bstop ]
 [f ]
-"116
-[; ;mcc_generated_files/pin_manager.c: 116:     if(IOCAFbits.IOCAF5 == 1)
-[e $ ! == -> . . _IOCAFbits 0 5 `i -> 1 `i 329  ]
-"117
-[; ;mcc_generated_files/pin_manager.c: 117:     {
-{
-"118
-[; ;mcc_generated_files/pin_manager.c: 118:         IOCAF5_ISR();
-[e ( _IOCAF5_ISR ..  ]
-"119
-[; ;mcc_generated_files/pin_manager.c: 119:     }
-}
-[e :U 329 ]
-"120
-[; ;mcc_generated_files/pin_manager.c: 120: }
+"75
+[; ;eeprom_i2c.c: 75:     PORTBbits.RB6 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+"76
+[; ;eeprom_i2c.c: 76:     TRISBbits.TRISB4 = 0;
+[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
+"77
+[; ;eeprom_i2c.c: 77:     PORTBbits.RB4 = 0;
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"78
+[; ;eeprom_i2c.c: 78:     PORTBbits.RB6 = 1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+"79
+[; ;eeprom_i2c.c: 79:     TRISBbits.TRISB4 = 1;
+[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
+"80
+[; ;eeprom_i2c.c: 80: }
 [e :UE 328 ]
 }
-"125
-[; ;mcc_generated_files/pin_manager.c: 125: void IOCAF5_ISR(void) {
-[v _IOCAF5_ISR `(v ~T0 @X0 1 ef ]
+"87
+[; ;eeprom_i2c.c: 87: void bit_out(unsigned char data)
+[v _bit_out `(v ~T0 @X0 1 ef1`uc ]
+"88
+[; ;eeprom_i2c.c: 88: {
 {
-[e :U _IOCAF5_ISR ]
+[e :U _bit_out ]
+"87
+[; ;eeprom_i2c.c: 87: void bit_out(unsigned char data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"88
+[; ;eeprom_i2c.c: 88: {
 [f ]
-"130
-[; ;mcc_generated_files/pin_manager.c: 130:     if(IOCAF5_InterruptHandler)
-[e $ ! != _IOCAF5_InterruptHandler -> -> 0 `i `*F2316 331  ]
-"131
-[; ;mcc_generated_files/pin_manager.c: 131:     {
+"89
+[; ;eeprom_i2c.c: 89:     PORTBbits.RB6 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+"90
+[; ;eeprom_i2c.c: 90:     if (data & 0x80)
+[e $ ! != & -> _data `i -> 128 `i -> 0 `i 330  ]
+"91
+[; ;eeprom_i2c.c: 91:     {
 {
-"132
-[; ;mcc_generated_files/pin_manager.c: 132:         IOCAF5_InterruptHandler();
-[e ( *U _IOCAF5_InterruptHandler ..  ]
-"133
-[; ;mcc_generated_files/pin_manager.c: 133:     }
+"92
+[; ;eeprom_i2c.c: 92:         TRISBbits.TRISB4 = 1;
+[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
+"93
+[; ;eeprom_i2c.c: 93:     }
+}
+[e $U 331  ]
+"94
+[; ;eeprom_i2c.c: 94:     else
+[e :U 330 ]
+"95
+[; ;eeprom_i2c.c: 95:     {
+{
+"96
+[; ;eeprom_i2c.c: 96:         TRISBbits.TRISB4 = 0;
+[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
+"97
+[; ;eeprom_i2c.c: 97:         PORTBbits.RB4 = 0;
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"98
+[; ;eeprom_i2c.c: 98:     }
 }
 [e :U 331 ]
-"134
-[; ;mcc_generated_files/pin_manager.c: 134:     IOCAFbits.IOCAF5 = 0;
-[e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
-"135
-[; ;mcc_generated_files/pin_manager.c: 135: }
-[e :UE 330 ]
+"99
+[; ;eeprom_i2c.c: 99:     PORTBbits.RB6 = 1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+"100
+[; ;eeprom_i2c.c: 100:     PORTBbits.RB6 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+"101
+[; ;eeprom_i2c.c: 101: }
+[e :UE 329 ]
 }
-"140
-[; ;mcc_generated_files/pin_manager.c: 140: void IOCAF5_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _IOCAF5_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F2318 ]
+"108
+[; ;eeprom_i2c.c: 108: void bit_in(unsigned char *data)
+[v _bit_in `(v ~T0 @X0 1 ef1`*uc ]
+"109
+[; ;eeprom_i2c.c: 109: {
 {
-[e :U _IOCAF5_SetInterruptHandler ]
-[v _InterruptHandler `*F2320 ~T0 @X0 1 r1 ]
+[e :U _bit_in ]
+"108
+[; ;eeprom_i2c.c: 108: void bit_in(unsigned char *data)
+[v _data `*uc ~T0 @X0 1 r1 ]
+"109
+[; ;eeprom_i2c.c: 109: {
 [f ]
-"141
-[; ;mcc_generated_files/pin_manager.c: 141:     IOCAF5_InterruptHandler = InterruptHandler;
-[e = _IOCAF5_InterruptHandler _InterruptHandler ]
-"142
-[; ;mcc_generated_files/pin_manager.c: 142: }
+"110
+[; ;eeprom_i2c.c: 110:     PORTBbits.RB6 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+"111
+[; ;eeprom_i2c.c: 111:     TRISBbits.TRISB4 = 1;
+[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
+"112
+[; ;eeprom_i2c.c: 112:     PORTBbits.RB6 = 1;
+[e = . . _PORTBbits 0 3 -> -> 1 `i `uc ]
+"113
+[; ;eeprom_i2c.c: 113:     *data &= 0xFE;
+[e =& *U _data -> -> 254 `i `uc ]
+"114
+[; ;eeprom_i2c.c: 114:     if (PORTBbits.RB4)
+[e $ ! != -> . . _PORTBbits 0 1 `i -> 0 `i 333  ]
+"115
+[; ;eeprom_i2c.c: 115:     {
+{
+"116
+[; ;eeprom_i2c.c: 116:         *data |= 0x01;
+[e =| *U _data -> -> 1 `i `uc ]
+"117
+[; ;eeprom_i2c.c: 117:     }
+}
+[e :U 333 ]
+"118
+[; ;eeprom_i2c.c: 118:     PORTBbits.RB6 = 0;
+[e = . . _PORTBbits 0 3 -> -> 0 `i `uc ]
+"119
+[; ;eeprom_i2c.c: 119: }
 [e :UE 332 ]
 }
-"147
-[; ;mcc_generated_files/pin_manager.c: 147: void IOCAF5_DefaultInterruptHandler(void){
-[v _IOCAF5_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+"128
+[; ;eeprom_i2c.c: 128: unsigned char byte_out(unsigned char data)
+[v _byte_out `(uc ~T0 @X0 1 ef1`uc ]
+"129
+[; ;eeprom_i2c.c: 129: {
 {
-[e :U _IOCAF5_DefaultInterruptHandler ]
+[e :U _byte_out ]
+"128
+[; ;eeprom_i2c.c: 128: unsigned char byte_out(unsigned char data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"129
+[; ;eeprom_i2c.c: 129: {
 [f ]
-"150
-[; ;mcc_generated_files/pin_manager.c: 150: }
-[e :UE 333 ]
+"130
+[; ;eeprom_i2c.c: 130:     unsigned char i;
+[v _i `uc ~T0 @X0 1 a ]
+"131
+[; ;eeprom_i2c.c: 131:     unsigned char ack;
+[v _ack `uc ~T0 @X0 1 a ]
+"133
+[; ;eeprom_i2c.c: 133:     ack = 0;
+[e = _ack -> -> 0 `i `uc ]
+"134
+[; ;eeprom_i2c.c: 134:     for (i = 0; i < 8; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 335  ]
+[e $U 336  ]
+[e :U 335 ]
+"135
+[; ;eeprom_i2c.c: 135:     {
+{
+"136
+[; ;eeprom_i2c.c: 136:         bit_out(data);
+[e ( _bit_out (1 _data ]
+"137
+[; ;eeprom_i2c.c: 137:         data = data << 1;
+[e = _data -> << -> _data `i -> 1 `i `uc ]
+"138
+[; ;eeprom_i2c.c: 138:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 335  ]
+[e :U 336 ]
+}
+"139
+[; ;eeprom_i2c.c: 139:     bit_in(&ack);
+[e ( _bit_in (1 &U _ack ]
+"141
+[; ;eeprom_i2c.c: 141:     return ack;
+[e ) _ack ]
+[e $UE 334  ]
+"142
+[; ;eeprom_i2c.c: 142: }
+[e :UE 334 ]
+}
+"151
+[; ;eeprom_i2c.c: 151: unsigned char byte_in(unsigned char ack)
+[v _byte_in `(uc ~T0 @X0 1 ef1`uc ]
+"152
+[; ;eeprom_i2c.c: 152: {
+{
+[e :U _byte_in ]
+"151
+[; ;eeprom_i2c.c: 151: unsigned char byte_in(unsigned char ack)
+[v _ack `uc ~T0 @X0 1 r1 ]
+"152
+[; ;eeprom_i2c.c: 152: {
+[f ]
+"153
+[; ;eeprom_i2c.c: 153:     unsigned char i;
+[v _i `uc ~T0 @X0 1 a ]
+"154
+[; ;eeprom_i2c.c: 154:     unsigned char retval;
+[v _retval `uc ~T0 @X0 1 a ]
+"156
+[; ;eeprom_i2c.c: 156:     retval = 0;
+[e = _retval -> -> 0 `i `uc ]
+"157
+[; ;eeprom_i2c.c: 157:     for (i = 0; i < 8; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $ < -> _i `i -> 8 `i 339  ]
+[e $U 340  ]
+[e :U 339 ]
+"158
+[; ;eeprom_i2c.c: 158:     {
+{
+"159
+[; ;eeprom_i2c.c: 159:         retval = retval << 1;
+[e = _retval -> << -> _retval `i -> 1 `i `uc ]
+"160
+[; ;eeprom_i2c.c: 160:         bit_in(&retval);
+[e ( _bit_in (1 &U _retval ]
+"161
+[; ;eeprom_i2c.c: 161:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e $ < -> _i `i -> 8 `i 339  ]
+[e :U 340 ]
+}
+"162
+[; ;eeprom_i2c.c: 162:     bit_out(ack);
+[e ( _bit_out (1 _ack ]
+"164
+[; ;eeprom_i2c.c: 164:     return retval;
+[e ) _retval ]
+[e $UE 338  ]
+"165
+[; ;eeprom_i2c.c: 165: }
+[e :UE 338 ]
+}
+"176
+[; ;eeprom_i2c.c: 176: void LowDensByteWrite(unsigned char data)
+[v _LowDensByteWrite `(v ~T0 @X0 1 ef1`uc ]
+"177
+[; ;eeprom_i2c.c: 177: {
+{
+[e :U _LowDensByteWrite ]
+"176
+[; ;eeprom_i2c.c: 176: void LowDensByteWrite(unsigned char data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"177
+[; ;eeprom_i2c.c: 177: {
+[f ]
+"178
+[; ;eeprom_i2c.c: 178:     unsigned char temp_control;
+[v _temp_control `uc ~T0 @X0 1 a ]
+"181
+[; ;eeprom_i2c.c: 181:     temp_control = (control & 0xF1) | ((address >> 7) & 0x0E);
+[e = _temp_control -> | -> & -> _control `i -> 241 `i `ui & >> _address -> 7 `i -> -> 14 `i `ui `uc ]
+"183
+[; ;eeprom_i2c.c: 183:     bstart();
+[e ( _bstart ..  ]
+"184
+[; ;eeprom_i2c.c: 184:     byte_out(temp_control);
+[e ( _byte_out (1 _temp_control ]
+"185
+[; ;eeprom_i2c.c: 185:     byte_out((unsigned char)address);
+[e ( _byte_out (1 -> _address `uc ]
+"186
+[; ;eeprom_i2c.c: 186:     byte_out(data);
+[e ( _byte_out (1 _data ]
+"187
+[; ;eeprom_i2c.c: 187:     bstop();
+[e ( _bstop ..  ]
+"188
+[; ;eeprom_i2c.c: 188:     ACK_Poll();
+[e ( _ACK_Poll ..  ]
+"189
+[; ;eeprom_i2c.c: 189: }
+[e :UE 342 ]
+}
+"200
+[; ;eeprom_i2c.c: 200: void HighDensByteWrite(unsigned char data)
+[v _HighDensByteWrite `(v ~T0 @X0 1 ef1`uc ]
+"201
+[; ;eeprom_i2c.c: 201: {
+{
+[e :U _HighDensByteWrite ]
+"200
+[; ;eeprom_i2c.c: 200: void HighDensByteWrite(unsigned char data)
+[v _data `uc ~T0 @X0 1 r1 ]
+"201
+[; ;eeprom_i2c.c: 201: {
+[f ]
+"202
+[; ;eeprom_i2c.c: 202:     bstart();
+[e ( _bstart ..  ]
+"203
+[; ;eeprom_i2c.c: 203:     byte_out(control);
+[e ( _byte_out (1 _control ]
+"204
+[; ;eeprom_i2c.c: 204:     byte_out((unsigned char)(address>>8));
+[e ( _byte_out (1 -> >> _address -> 8 `i `uc ]
+"205
+[; ;eeprom_i2c.c: 205:     byte_out((unsigned char)address);
+[e ( _byte_out (1 -> _address `uc ]
+"206
+[; ;eeprom_i2c.c: 206:     byte_out(data);
+[e ( _byte_out (1 _data ]
+"207
+[; ;eeprom_i2c.c: 207:     bstop();
+[e ( _bstop ..  ]
+"208
+[; ;eeprom_i2c.c: 208:     ACK_Poll();
+[e ( _ACK_Poll ..  ]
+"209
+[; ;eeprom_i2c.c: 209: }
+[e :UE 343 ]
+}
+"221
+[; ;eeprom_i2c.c: 221: void LowDensPageWrite(unsigned char *data, unsigned char numbytes)
+[v _LowDensPageWrite `(v ~T0 @X0 1 ef2`*uc`uc ]
+"222
+[; ;eeprom_i2c.c: 222: {
+{
+[e :U _LowDensPageWrite ]
+"221
+[; ;eeprom_i2c.c: 221: void LowDensPageWrite(unsigned char *data, unsigned char numbytes)
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _numbytes `uc ~T0 @X0 1 r2 ]
+"222
+[; ;eeprom_i2c.c: 222: {
+[f ]
+"223
+[; ;eeprom_i2c.c: 223:     unsigned char i;
+[v _i `uc ~T0 @X0 1 a ]
+"224
+[; ;eeprom_i2c.c: 224:     unsigned char temp_control;
+[v _temp_control `uc ~T0 @X0 1 a ]
+"227
+[; ;eeprom_i2c.c: 227:     temp_control = (control & 0xF1) | ((address >> 7) & 0x0E);
+[e = _temp_control -> | -> & -> _control `i -> 241 `i `ui & >> _address -> 7 `i -> -> 14 `i `ui `uc ]
+"229
+[; ;eeprom_i2c.c: 229:     bstart();
+[e ( _bstart ..  ]
+"230
+[; ;eeprom_i2c.c: 230:     byte_out(temp_control);
+[e ( _byte_out (1 _temp_control ]
+"231
+[; ;eeprom_i2c.c: 231:     byte_out((unsigned char)address);
+[e ( _byte_out (1 -> _address `uc ]
+"232
+[; ;eeprom_i2c.c: 232:     for (i = 0; i < numbytes; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 348  ]
+[e :U 345 ]
+"233
+[; ;eeprom_i2c.c: 233:     {
+{
+"234
+[; ;eeprom_i2c.c: 234:         byte_out(data[i]);
+[e ( _byte_out (1 *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
+"235
+[; ;eeprom_i2c.c: 235:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 348 ]
+[e $ < -> _i `i -> _numbytes `i 345  ]
+[e :U 346 ]
+}
+"236
+[; ;eeprom_i2c.c: 236:     bstop();
+[e ( _bstop ..  ]
+"237
+[; ;eeprom_i2c.c: 237:     ACK_Poll();
+[e ( _ACK_Poll ..  ]
+"238
+[; ;eeprom_i2c.c: 238: }
+[e :UE 344 ]
+}
+"250
+[; ;eeprom_i2c.c: 250: void HighDensPageWrite(unsigned char *data, unsigned char numbytes)
+[v _HighDensPageWrite `(v ~T0 @X0 1 ef2`*uc`uc ]
+"251
+[; ;eeprom_i2c.c: 251: {
+{
+[e :U _HighDensPageWrite ]
+"250
+[; ;eeprom_i2c.c: 250: void HighDensPageWrite(unsigned char *data, unsigned char numbytes)
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _numbytes `uc ~T0 @X0 1 r2 ]
+"251
+[; ;eeprom_i2c.c: 251: {
+[f ]
+"252
+[; ;eeprom_i2c.c: 252:     unsigned char i;
+[v _i `uc ~T0 @X0 1 a ]
+"254
+[; ;eeprom_i2c.c: 254:     bstart();
+[e ( _bstart ..  ]
+"255
+[; ;eeprom_i2c.c: 255:     byte_out(control);
+[e ( _byte_out (1 _control ]
+"256
+[; ;eeprom_i2c.c: 256:     byte_out((unsigned char)(address>>8));
+[e ( _byte_out (1 -> >> _address -> 8 `i `uc ]
+"257
+[; ;eeprom_i2c.c: 257:     byte_out((unsigned char)address);
+[e ( _byte_out (1 -> _address `uc ]
+"258
+[; ;eeprom_i2c.c: 258:     for (i = 0; i < numbytes; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 353  ]
+[e :U 350 ]
+"259
+[; ;eeprom_i2c.c: 259:     {
+{
+"260
+[; ;eeprom_i2c.c: 260:         byte_out(data[i]);
+[e ( _byte_out (1 *U + _data * -> _i `ux -> -> # *U _data `ui `ux ]
+"261
+[; ;eeprom_i2c.c: 261:     }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 353 ]
+[e $ < -> _i `i -> _numbytes `i 350  ]
+[e :U 351 ]
+}
+"262
+[; ;eeprom_i2c.c: 262:     bstop();
+[e ( _bstop ..  ]
+"263
+[; ;eeprom_i2c.c: 263:     ACK_Poll();
+[e ( _ACK_Poll ..  ]
+"264
+[; ;eeprom_i2c.c: 264: }
+[e :UE 349 ]
+}
+"275
+[; ;eeprom_i2c.c: 275: void LowDensByteRead(unsigned char *data)
+[v _LowDensByteRead `(v ~T0 @X0 1 ef1`*uc ]
+"276
+[; ;eeprom_i2c.c: 276: {
+{
+[e :U _LowDensByteRead ]
+"275
+[; ;eeprom_i2c.c: 275: void LowDensByteRead(unsigned char *data)
+[v _data `*uc ~T0 @X0 1 r1 ]
+"276
+[; ;eeprom_i2c.c: 276: {
+[f ]
+"277
+[; ;eeprom_i2c.c: 277:     unsigned char temp_control;
+[v _temp_control `uc ~T0 @X0 1 a ]
+"280
+[; ;eeprom_i2c.c: 280:     temp_control = (control & 0xF1) | ((address >> 7) & 0x0E);
+[e = _temp_control -> | -> & -> _control `i -> 241 `i `ui & >> _address -> 7 `i -> -> 14 `i `ui `uc ]
+"282
+[; ;eeprom_i2c.c: 282:     bstart();
+[e ( _bstart ..  ]
+"283
+[; ;eeprom_i2c.c: 283:     byte_out(temp_control);
+[e ( _byte_out (1 _temp_control ]
+"284
+[; ;eeprom_i2c.c: 284:     byte_out((unsigned char)address);
+[e ( _byte_out (1 -> _address `uc ]
+"285
+[; ;eeprom_i2c.c: 285:     bstart();
+[e ( _bstart ..  ]
+"286
+[; ;eeprom_i2c.c: 286:     byte_out(temp_control | 0x01);
+[e ( _byte_out (1 -> | -> _temp_control `i -> 1 `i `uc ]
+"287
+[; ;eeprom_i2c.c: 287:     *data = byte_in(0x80) + 1;
+[e = *U _data -> + -> ( _byte_in (1 -> -> 128 `i `uc `i -> 1 `i `uc ]
+"288
+[; ;eeprom_i2c.c: 288:     bstop();
+[e ( _bstop ..  ]
+"289
+[; ;eeprom_i2c.c: 289: }
+[e :UE 354 ]
+}
+"300
+[; ;eeprom_i2c.c: 300: void HighDensByteRead(unsigned char *data)
+[v _HighDensByteRead `(v ~T0 @X0 1 ef1`*uc ]
+"301
+[; ;eeprom_i2c.c: 301: {
+{
+[e :U _HighDensByteRead ]
+"300
+[; ;eeprom_i2c.c: 300: void HighDensByteRead(unsigned char *data)
+[v _data `*uc ~T0 @X0 1 r1 ]
+"301
+[; ;eeprom_i2c.c: 301: {
+[f ]
+"302
+[; ;eeprom_i2c.c: 302:     bstart();
+[e ( _bstart ..  ]
+"303
+[; ;eeprom_i2c.c: 303:     byte_out(control);
+[e ( _byte_out (1 _control ]
+"304
+[; ;eeprom_i2c.c: 304:     byte_out((unsigned char)(address>>8));
+[e ( _byte_out (1 -> >> _address -> 8 `i `uc ]
+"305
+[; ;eeprom_i2c.c: 305:     byte_out((unsigned char)address);
+[e ( _byte_out (1 -> _address `uc ]
+"306
+[; ;eeprom_i2c.c: 306:     bstart();
+[e ( _bstart ..  ]
+"307
+[; ;eeprom_i2c.c: 307:     byte_out(control | 0x01);
+[e ( _byte_out (1 -> | -> _control `i -> 1 `i `uc ]
+"308
+[; ;eeprom_i2c.c: 308:     *data = byte_in(0x80);
+[e = *U _data ( _byte_in (1 -> -> 128 `i `uc ]
+"309
+[; ;eeprom_i2c.c: 309:     bstop();
+[e ( _bstop ..  ]
+"310
+[; ;eeprom_i2c.c: 310: }
+[e :UE 355 ]
+}
+"322
+[; ;eeprom_i2c.c: 322: void LowDensSequentialRead(unsigned char *data, unsigned int numbytes)
+[v _LowDensSequentialRead `(v ~T0 @X0 1 ef2`*uc`ui ]
+"323
+[; ;eeprom_i2c.c: 323: {
+{
+[e :U _LowDensSequentialRead ]
+"322
+[; ;eeprom_i2c.c: 322: void LowDensSequentialRead(unsigned char *data, unsigned int numbytes)
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _numbytes `ui ~T0 @X0 1 r2 ]
+"323
+[; ;eeprom_i2c.c: 323: {
+[f ]
+"324
+[; ;eeprom_i2c.c: 324:     unsigned int i;
+[v _i `ui ~T0 @X0 1 a ]
+"325
+[; ;eeprom_i2c.c: 325:     unsigned char temp_control;
+[v _temp_control `uc ~T0 @X0 1 a ]
+"328
+[; ;eeprom_i2c.c: 328:     temp_control = (control & 0xF1) | ((address >> 7) & 0x0E);
+[e = _temp_control -> | -> & -> _control `i -> 241 `i `ui & >> _address -> 7 `i -> -> 14 `i `ui `uc ]
+"330
+[; ;eeprom_i2c.c: 330:     bstart();
+[e ( _bstart ..  ]
+"331
+[; ;eeprom_i2c.c: 331:     byte_out(temp_control);
+[e ( _byte_out (1 _temp_control ]
+"332
+[; ;eeprom_i2c.c: 332:     byte_out((unsigned char)address);
+[e ( _byte_out (1 -> _address `uc ]
+"333
+[; ;eeprom_i2c.c: 333:     bstart();
+[e ( _bstart ..  ]
+"334
+[; ;eeprom_i2c.c: 334:     byte_out(temp_control | 0x01);
+[e ( _byte_out (1 -> | -> _temp_control `i -> 1 `i `uc ]
+"335
+[; ;eeprom_i2c.c: 335:     for (i = 0; i < numbytes; i++)
+{
+[e = _i -> -> 0 `i `ui ]
+[e $U 360  ]
+[e :U 357 ]
+"336
+[; ;eeprom_i2c.c: 336:     {
+{
+"337
+[; ;eeprom_i2c.c: 337:         if (i < (numbytes - 1))
+[e $ ! < _i - _numbytes -> -> 1 `i `ui 361  ]
+"338
+[; ;eeprom_i2c.c: 338:         {
+{
+"339
+[; ;eeprom_i2c.c: 339:             data[i] = byte_in(0x00);
+[e = *U + _data * -> _i `ux -> -> # *U _data `ui `ux ( _byte_in (1 -> -> 0 `i `uc ]
+"340
+[; ;eeprom_i2c.c: 340:         }
+}
+[e $U 362  ]
+"341
+[; ;eeprom_i2c.c: 341:         else
+[e :U 361 ]
+"342
+[; ;eeprom_i2c.c: 342:         {
+{
+"343
+[; ;eeprom_i2c.c: 343:             data[i] = byte_in(0x80);
+[e = *U + _data * -> _i `ux -> -> # *U _data `ui `ux ( _byte_in (1 -> -> 128 `i `uc ]
+"344
+[; ;eeprom_i2c.c: 344:         }
+}
+[e :U 362 ]
+"345
+[; ;eeprom_i2c.c: 345:     }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 360 ]
+[e $ < _i _numbytes 357  ]
+[e :U 358 ]
+}
+"346
+[; ;eeprom_i2c.c: 346:     bstop();
+[e ( _bstop ..  ]
+"347
+[; ;eeprom_i2c.c: 347: }
+[e :UE 356 ]
+}
+"359
+[; ;eeprom_i2c.c: 359: void HighDensSequentialRead(unsigned char *data, unsigned int numbytes)
+[v _HighDensSequentialRead `(v ~T0 @X0 1 ef2`*uc`ui ]
+"360
+[; ;eeprom_i2c.c: 360: {
+{
+[e :U _HighDensSequentialRead ]
+"359
+[; ;eeprom_i2c.c: 359: void HighDensSequentialRead(unsigned char *data, unsigned int numbytes)
+[v _data `*uc ~T0 @X0 1 r1 ]
+[v _numbytes `ui ~T0 @X0 1 r2 ]
+"360
+[; ;eeprom_i2c.c: 360: {
+[f ]
+"361
+[; ;eeprom_i2c.c: 361:     unsigned int i;
+[v _i `ui ~T0 @X0 1 a ]
+"363
+[; ;eeprom_i2c.c: 363:     bstart();
+[e ( _bstart ..  ]
+"364
+[; ;eeprom_i2c.c: 364:     byte_out(control);
+[e ( _byte_out (1 _control ]
+"365
+[; ;eeprom_i2c.c: 365:     byte_out((unsigned char)(address>>8));
+[e ( _byte_out (1 -> >> _address -> 8 `i `uc ]
+"366
+[; ;eeprom_i2c.c: 366:     byte_out((unsigned char)address);
+[e ( _byte_out (1 -> _address `uc ]
+"367
+[; ;eeprom_i2c.c: 367:     bstart();
+[e ( _bstart ..  ]
+"368
+[; ;eeprom_i2c.c: 368:     byte_out(control | 0x01);
+[e ( _byte_out (1 -> | -> _control `i -> 1 `i `uc ]
+"369
+[; ;eeprom_i2c.c: 369:     for (i = 0; i < numbytes; i++)
+{
+[e = _i -> -> 0 `i `ui ]
+[e $U 367  ]
+[e :U 364 ]
+"370
+[; ;eeprom_i2c.c: 370:     {
+{
+"371
+[; ;eeprom_i2c.c: 371:         if (i < (numbytes - 1))
+[e $ ! < _i - _numbytes -> -> 1 `i `ui 368  ]
+"372
+[; ;eeprom_i2c.c: 372:         {
+{
+"373
+[; ;eeprom_i2c.c: 373:             data[i] = byte_in(0x00);
+[e = *U + _data * -> _i `ux -> -> # *U _data `ui `ux ( _byte_in (1 -> -> 0 `i `uc ]
+"374
+[; ;eeprom_i2c.c: 374:         }
+}
+[e $U 369  ]
+"375
+[; ;eeprom_i2c.c: 375:         else
+[e :U 368 ]
+"376
+[; ;eeprom_i2c.c: 376:         {
+{
+"377
+[; ;eeprom_i2c.c: 377:             data[i] = byte_in(0x80);
+[e = *U + _data * -> _i `ux -> -> # *U _data `ui `ux ( _byte_in (1 -> -> 128 `i `uc ]
+"378
+[; ;eeprom_i2c.c: 378:         }
+}
+[e :U 369 ]
+"379
+[; ;eeprom_i2c.c: 379:     }
+}
+[e ++ _i -> -> 1 `i `ui ]
+[e :U 367 ]
+[e $ < _i _numbytes 364  ]
+[e :U 365 ]
+}
+"380
+[; ;eeprom_i2c.c: 380:     bstop();
+[e ( _bstop ..  ]
+"381
+[; ;eeprom_i2c.c: 381: }
+[e :UE 363 ]
+}
+"390
+[; ;eeprom_i2c.c: 390: void ACK_Poll(void)
+[v _ACK_Poll `(v ~T0 @X0 1 ef ]
+"391
+[; ;eeprom_i2c.c: 391: {
+{
+[e :U _ACK_Poll ]
+[f ]
+"392
+[; ;eeprom_i2c.c: 392:     unsigned char result;
+[v _result `uc ~T0 @X0 1 a ]
+"394
+[; ;eeprom_i2c.c: 394:     result = 1;
+[e = _result -> -> 1 `i `uc ]
+"395
+[; ;eeprom_i2c.c: 395:     do
+[e :U 373 ]
+"396
+[; ;eeprom_i2c.c: 396:     {
+{
+"397
+[; ;eeprom_i2c.c: 397:         bstart();
+[e ( _bstart ..  ]
+"398
+[; ;eeprom_i2c.c: 398:         result = byte_out(control);
+[e = _result ( _byte_out (1 _control ]
+"399
+[; ;eeprom_i2c.c: 399:     } while (result == 1);
+}
+[e $ == -> _result `i -> 1 `i 373  ]
+[e :U 372 ]
+"400
+[; ;eeprom_i2c.c: 400:     bstop();
+[e ( _bstop ..  ]
+"401
+[; ;eeprom_i2c.c: 401: }
+[e :UE 370 ]
 }

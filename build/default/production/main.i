@@ -5317,6 +5317,33 @@ void OSCILLATOR_Initialize(void);
 void WDT_Initialize(void);
 # 44 "main.c" 2
 
+# 1 "./eeprom_i2c.h" 1
+# 80 "./eeprom_i2c.h"
+extern unsigned char control;
+extern unsigned int address;
+
+
+void bstart(void);
+void bstop(void);
+unsigned char byte_out(unsigned char);
+unsigned char byte_in(unsigned char);
+void LowDensByteWrite(unsigned char);
+void HighDensByteWrite(unsigned char);
+void LowDensPageWrite(unsigned char*,unsigned char);
+void HighDensPageWrite(unsigned char*,unsigned char);
+void LowDensByteRead(unsigned char*);
+void HighDensByteRead(unsigned char*);
+void LowDensSequentialRead(unsigned char*,unsigned int);
+void HighDensSequentialRead(unsigned char*,unsigned int);
+void ACK_Poll(void);
+# 45 "main.c" 2
+
+
+
+
+
+
+unsigned char data[16];
 
 
 
@@ -5338,6 +5365,30 @@ void main(void)
 
 
 
+
+
+    unsigned char i;
+
+    control = 0b10100000;
+
+
+    address = 0x00AA;
+    data[0] = 0x55;
+    LowDensByteWrite(data[0]);
+    LowDensByteRead(data);
+
+    char test = 1;
+
+
+
+
+    address = 0x00B0;
+    for (i = 0; i < 16; i++)
+    {
+        data[i] = (16 -1) - i;
+    }
+    LowDensPageWrite(data,16);
+    LowDensSequentialRead(data,16);
 
 
 

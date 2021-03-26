@@ -15,4 +15,5 @@ mcc_generated_files/usb/usb_hal_pic16f1.h  \
 mcc_generated_files/usb/fixed_address_memory.h  \
 mcc_generated_files/usb/usb_device_generic.h  \
 mcc_generated_files/memory.h  \
-mcc_generated_files/adc.h 
+mcc_generated_files/adc.h  \
+eeprom_i2c.h 

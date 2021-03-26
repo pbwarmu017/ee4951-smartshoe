@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/pin_manager.c"
+# 1 "eeprom_i2c.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,10 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/pin_manager.c" 2
-# 49 "mcc_generated_files/pin_manager.c"
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 54 "mcc_generated_files/pin_manager.h"
+# 1 "eeprom_i2c.c" 2
+# 43 "eeprom_i2c.c"
+# 1 "./eeprom_i2c.h" 1
+# 34 "./eeprom_i2c.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3983,119 +3983,285 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/pin_manager.h" 2
-# 283 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 295 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 308 "mcc_generated_files/pin_manager.h"
-void IOCAF5_ISR(void);
-# 331 "mcc_generated_files/pin_manager.h"
-void IOCAF5_SetInterruptHandler(void (* InterruptHandler)(void));
-# 355 "mcc_generated_files/pin_manager.h"
-extern void (*IOCAF5_InterruptHandler)(void);
-# 379 "mcc_generated_files/pin_manager.h"
-void IOCAF5_DefaultInterruptHandler(void);
-# 49 "mcc_generated_files/pin_manager.c" 2
+# 34 "./eeprom_i2c.h" 2
+# 80 "./eeprom_i2c.h"
+extern unsigned char control;
+extern unsigned int address;
+
+
+void bstart(void);
+void bstop(void);
+unsigned char byte_out(unsigned char);
+unsigned char byte_in(unsigned char);
+void LowDensByteWrite(unsigned char);
+void HighDensByteWrite(unsigned char);
+void LowDensPageWrite(unsigned char*,unsigned char);
+void HighDensPageWrite(unsigned char*,unsigned char);
+void LowDensByteRead(unsigned char*);
+void HighDensByteRead(unsigned char*);
+void LowDensSequentialRead(unsigned char*,unsigned int);
+void HighDensSequentialRead(unsigned char*,unsigned int);
+void ACK_Poll(void);
+# 43 "eeprom_i2c.c" 2
+
+
+
+unsigned char control;
+unsigned int address;
+
+
+void bit_in(unsigned char *data);
+void bit_out(unsigned char data);
 
 
 
 
 
-void (*IOCAF5_InterruptHandler)(void);
 
-
-void PIN_MANAGER_Initialize(void)
+void bstart(void)
 {
-
-
-
-    LATA = 0x00;
-    LATB = 0x40;
-    LATC = 0x20;
-
-
-
-
-    TRISA = 0x30;
-    TRISB = 0xA0;
-    TRISC = 0xDF;
-
-
-
-
-    ANSELC = 0xCC;
-    ANSELB = 0x00;
-    ANSELA = 0x00;
-
-
-
-
-    WPUB = 0x00;
-    WPUA = 0x00;
-    OPTION_REGbits.nWPUEN = 1;
-
-
-
-
-
-    APFCON = 0x00;
-
-
-
-
-
-    IOCAFbits.IOCAF5 = 0;
-
-    IOCANbits.IOCAN5 = 0;
-
-    IOCAPbits.IOCAP5 = 1;
-
-
-
-
-    IOCAF5_SetInterruptHandler(IOCAF5_DefaultInterruptHandler);
-
-
-    INTCONbits.IOCIE = 1;
+    TRISBbits.TRISB4 = 1;
+    PORTBbits.RB6 = 1;
+    TRISBbits.TRISB4 = 0;
+    PORTBbits.RB4 = 0;
+    PORTBbits.RB6 = 0;
 
 }
 
-void PIN_MANAGER_IOC(void)
+
+
+
+
+
+void bstop(void)
 {
+    PORTBbits.RB6 = 0;
+    TRISBbits.TRISB4 = 0;
+    PORTBbits.RB4 = 0;
+    PORTBbits.RB6 = 1;
+    TRISBbits.TRISB4 = 1;
+}
 
-    if(IOCAFbits.IOCAF5 == 1)
+
+
+
+
+
+void bit_out(unsigned char data)
+{
+    PORTBbits.RB6 = 0;
+    if (data & 0x80)
     {
-        IOCAF5_ISR();
+        TRISBbits.TRISB4 = 1;
     }
-}
-
-
-
-
-void IOCAF5_ISR(void) {
-
-
-
-
-    if(IOCAF5_InterruptHandler)
+    else
     {
-        IOCAF5_InterruptHandler();
+        TRISBbits.TRISB4 = 0;
+        PORTBbits.RB4 = 0;
     }
-    IOCAFbits.IOCAF5 = 0;
+    PORTBbits.RB6 = 1;
+    PORTBbits.RB6 = 0;
 }
 
 
 
 
-void IOCAF5_SetInterruptHandler(void (* InterruptHandler)(void)){
-    IOCAF5_InterruptHandler = InterruptHandler;
+
+
+void bit_in(unsigned char *data)
+{
+    PORTBbits.RB6 = 0;
+    TRISBbits.TRISB4 = 1;
+    PORTBbits.RB6 = 1;
+    *data &= 0xFE;
+    if (PORTBbits.RB4)
+    {
+        *data |= 0x01;
+    }
+    PORTBbits.RB6 = 0;
 }
+# 128 "eeprom_i2c.c"
+unsigned char byte_out(unsigned char data)
+{
+    unsigned char i;
+    unsigned char ack;
+
+    ack = 0;
+    for (i = 0; i < 8; i++)
+    {
+        bit_out(data);
+        data = data << 1;
+    }
+    bit_in(&ack);
+
+    return ack;
+}
+# 151 "eeprom_i2c.c"
+unsigned char byte_in(unsigned char ack)
+{
+    unsigned char i;
+    unsigned char retval;
+
+    retval = 0;
+    for (i = 0; i < 8; i++)
+    {
+        retval = retval << 1;
+        bit_in(&retval);
+    }
+    bit_out(ack);
+
+    return retval;
+}
+# 176 "eeprom_i2c.c"
+void LowDensByteWrite(unsigned char data)
+{
+    unsigned char temp_control;
 
 
+    temp_control = (control & 0xF1) | ((address >> 7) & 0x0E);
+
+    bstart();
+    byte_out(temp_control);
+    byte_out((unsigned char)address);
+    byte_out(data);
+    bstop();
+    ACK_Poll();
+}
+# 200 "eeprom_i2c.c"
+void HighDensByteWrite(unsigned char data)
+{
+    bstart();
+    byte_out(control);
+    byte_out((unsigned char)(address>>8));
+    byte_out((unsigned char)address);
+    byte_out(data);
+    bstop();
+    ACK_Poll();
+}
+# 221 "eeprom_i2c.c"
+void LowDensPageWrite(unsigned char *data, unsigned char numbytes)
+{
+    unsigned char i;
+    unsigned char temp_control;
 
 
-void IOCAF5_DefaultInterruptHandler(void){
+    temp_control = (control & 0xF1) | ((address >> 7) & 0x0E);
+
+    bstart();
+    byte_out(temp_control);
+    byte_out((unsigned char)address);
+    for (i = 0; i < numbytes; i++)
+    {
+        byte_out(data[i]);
+    }
+    bstop();
+    ACK_Poll();
+}
+# 250 "eeprom_i2c.c"
+void HighDensPageWrite(unsigned char *data, unsigned char numbytes)
+{
+    unsigned char i;
+
+    bstart();
+    byte_out(control);
+    byte_out((unsigned char)(address>>8));
+    byte_out((unsigned char)address);
+    for (i = 0; i < numbytes; i++)
+    {
+        byte_out(data[i]);
+    }
+    bstop();
+    ACK_Poll();
+}
+# 275 "eeprom_i2c.c"
+void LowDensByteRead(unsigned char *data)
+{
+    unsigned char temp_control;
 
 
+    temp_control = (control & 0xF1) | ((address >> 7) & 0x0E);
+
+    bstart();
+    byte_out(temp_control);
+    byte_out((unsigned char)address);
+    bstart();
+    byte_out(temp_control | 0x01);
+    *data = byte_in(0x80) + 1;
+    bstop();
+}
+# 300 "eeprom_i2c.c"
+void HighDensByteRead(unsigned char *data)
+{
+    bstart();
+    byte_out(control);
+    byte_out((unsigned char)(address>>8));
+    byte_out((unsigned char)address);
+    bstart();
+    byte_out(control | 0x01);
+    *data = byte_in(0x80);
+    bstop();
+}
+# 322 "eeprom_i2c.c"
+void LowDensSequentialRead(unsigned char *data, unsigned int numbytes)
+{
+    unsigned int i;
+    unsigned char temp_control;
+
+
+    temp_control = (control & 0xF1) | ((address >> 7) & 0x0E);
+
+    bstart();
+    byte_out(temp_control);
+    byte_out((unsigned char)address);
+    bstart();
+    byte_out(temp_control | 0x01);
+    for (i = 0; i < numbytes; i++)
+    {
+        if (i < (numbytes - 1))
+        {
+            data[i] = byte_in(0x00);
+        }
+        else
+        {
+            data[i] = byte_in(0x80);
+        }
+    }
+    bstop();
+}
+# 359 "eeprom_i2c.c"
+void HighDensSequentialRead(unsigned char *data, unsigned int numbytes)
+{
+    unsigned int i;
+
+    bstart();
+    byte_out(control);
+    byte_out((unsigned char)(address>>8));
+    byte_out((unsigned char)address);
+    bstart();
+    byte_out(control | 0x01);
+    for (i = 0; i < numbytes; i++)
+    {
+        if (i < (numbytes - 1))
+        {
+            data[i] = byte_in(0x00);
+        }
+        else
+        {
+            data[i] = byte_in(0x80);
+        }
+    }
+    bstop();
+}
+# 390 "eeprom_i2c.c"
+void ACK_Poll(void)
+{
+    unsigned char result;
+
+    result = 1;
+    do
+    {
+        bstart();
+        result = byte_out(control);
+    } while (result == 1);
+    bstop();
 }

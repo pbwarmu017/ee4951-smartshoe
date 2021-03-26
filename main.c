@@ -42,6 +42,13 @@
 */
 
 #include "mcc_generated_files/mcc.h"
+#include "eeprom_i2c.h"
+
+/** D E F I N E S **************************************************/
+#define PAGESIZE    16                  // Page size in bytes
+
+/** V A R I A B L E S **********************************************/
+unsigned char data[PAGESIZE];           // Data array
 
 /*
                          Main application
@@ -65,6 +72,30 @@ void main(void)
 
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
+    unsigned char i;                    // Loop counter
+
+    control = CONTROLBYTE;              // Load control byte
+
+    // Byte write/read routines
+    address = 0x00AA;                   // Load address with 0x00AA
+    data[0] = 0x55;                     // Load data with 0x55
+    LowDensByteWrite(data[0]);          // Write a single byte
+    LowDensByteRead(data);              // Read a single byte
+    
+    char test = 1;
+    //HighDensByteWrite(data[0]);         // Write a single byte
+    //HighDensByteRead(data);             // Read a single byte
+
+    // Page write/read routines
+    address = 0x00B0;                   // Load address with 0x00B0
+    for (i = 0; i < PAGESIZE; i++)      // Loop through full page
+    {
+        data[i] = (PAGESIZE-1) - i;     // Initialize array
+    }
+    LowDensPageWrite(data,PAGESIZE);    // Write a full page
+    LowDensSequentialRead(data,PAGESIZE);// Read a full page
+    //HighDensPageWrite(data,PAGESIZE);   // Write a full page
+    //HighDensSequentialRead(data,PAGESIZE);// Read a full page
 
     while (1)
     {
