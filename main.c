@@ -49,7 +49,11 @@
 
 /** V A R I A B L E S **********************************************/
 unsigned char data[PAGESIZE];           // Data array
+USB_HANDLE USBInHandle;
 
+void USBCBInitEP(void){
+    USBEnableEndpoint(_EP01_IN, USB_IN_ENABLED|USB_DISALLOW_SETUP);
+}
 /*
                          Main application
  */
@@ -81,25 +85,47 @@ void main(void)
 
     while (1)
     {
-     // Byte write/read routines
-    address = 0x00AA;                   // Load address with 0x00AA
-    data[0] = 0x55;                     // Load data with 0x55
-    LowDensByteWrite(data[0]);          // Write a single byte
-    LowDensByteRead(data);              // Read a single byte
-    
-    //HighDensByteWrite(data[0]);         // Write a single byte
-    //HighDensByteRead(data);             // Read a single byte
-        
-        // Page write/read routines
-    address = 0x00B0;                   // Load address with 0x00B0
-    for (i = 0; i < PAGESIZE; i++)      // Loop through full page
-    {
-        data[i] = (PAGESIZE-1) - i;     // Initialize array
-    }
-    LowDensPageWrite(data,PAGESIZE);    // Write a full page
-    LowDensSequentialRead(data,PAGESIZE);// Read a full page
-    //HighDensPageWrite(data,PAGESIZE);   // Write a full page
-    //HighDensSequentialRead(data,PAGESIZE);// Read a full page
+        // Byte write/read routines
+        address = 0x00AA;                   // Load address with 0x00AA
+        data[0] = 0x55;                     // Load data with 0x55
+        LowDensByteWrite(data[0]);          // Write a single byte
+        LowDensByteRead(data);              // Read a single byte
+
+        //HighDensByteWrite(data[0]);         // Write a single byte
+        //HighDensByteRead(data);             // Read a single byte
+
+            // Page write/read routines
+        address = 0x00B0;                   // Load address with 0x00B0
+        for (i = 0; i < PAGESIZE; i++)      // Loop through full page
+        {
+            data[i] = (PAGESIZE-1) - i;     // Initialize array
+        }
+        LowDensPageWrite(data,PAGESIZE);    // Write a full page
+        LowDensSequentialRead(data,PAGESIZE);// Read a full page
+        //HighDensPageWrite(data,PAGESIZE);   // Write a full page
+        //HighDensSequentialRead(data,PAGESIZE);// Read a full page
+
+
+        //USB CODE
+        USBDeviceTasks();
+        if ((USBDeviceState() != CONFIGURED_STATE)||(USBIsDeviceSuspended() == 1))
+        {
+            //device isn't connected or configured
+            continue;
+        }
+        else
+        {
+            //USB Transmit code goes here
+            if(!USBHandleBusy(USBInHandle))
+            {
+                //Write the new data that we wish to send to the host to the INPacket[] array
+                //For first run just sending the data array
+                
+
+                //Send the data contained in the INPacket[] array through endpoint "EP_NUM"
+                USBInHandle = USBTransferOnePacket(_EP01_IN,IN_TO_HOST,(uint8_t*)&data[0],sizeof(data));
+            }
+        }
     }
 }
 /**
