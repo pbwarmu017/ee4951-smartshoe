@@ -56,6 +56,7 @@ void SYSTEM_Initialize(void)
     WDT_Initialize();
     USBDeviceInit();
     ADC_Initialize();
+    TMR0_Initialize();
     USBDeviceAttach();
 }
 
