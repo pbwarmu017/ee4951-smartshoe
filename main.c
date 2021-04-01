@@ -108,7 +108,7 @@ void main(void)
 
         //USB CODE
         USBDeviceTasks();
-        if ((USBDeviceState() != CONFIGURED_STATE)||(USBIsDeviceSuspended() == 1))
+        if ((USBGetDeviceState() != CONFIGURED_STATE)||(USBIsDeviceSuspended() == 1))
         {
             //device isn't connected or configured
             continue;
