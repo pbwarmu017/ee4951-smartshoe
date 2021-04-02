@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/pin_manager.c"
+# 1 "mcc_generated_files/usb/example_mcc_usb_cdc.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,10 +6,797 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/pin_manager.c" 2
-# 49 "mcc_generated_files/pin_manager.c"
-# 1 "mcc_generated_files/pin_manager.h" 1
-# 54 "mcc_generated_files/pin_manager.h"
+# 1 "mcc_generated_files/usb/example_mcc_usb_cdc.c" 2
+# 30 "mcc_generated_files/usb/example_mcc_usb_cdc.c"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\musl_xc8.h" 1 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long uintptr_t;
+# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long intptr_t;
+# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef signed char int8_t;
+
+
+
+
+typedef short int16_t;
+
+
+
+
+typedef __int24 int24_t;
+
+
+
+
+typedef long int32_t;
+
+
+
+
+
+typedef long long int64_t;
+# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef long long intmax_t;
+
+
+
+
+
+typedef unsigned char uint8_t;
+
+
+
+
+typedef unsigned short uint16_t;
+
+
+
+
+typedef __uint24 uint24_t;
+
+
+
+
+typedef unsigned long uint32_t;
+
+
+
+
+
+typedef unsigned long long uint64_t;
+# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef unsigned long long uintmax_t;
+# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+
+
+typedef int8_t int_fast8_t;
+
+typedef int64_t int_fast64_t;
+
+
+typedef int8_t int_least8_t;
+typedef int16_t int_least16_t;
+
+typedef int24_t int_least24_t;
+typedef int24_t int_fast24_t;
+
+typedef int32_t int_least32_t;
+
+typedef int64_t int_least64_t;
+
+
+typedef uint8_t uint_fast8_t;
+
+typedef uint64_t uint_fast64_t;
+
+
+typedef uint8_t uint_least8_t;
+typedef uint16_t uint_least16_t;
+
+typedef uint24_t uint_least24_t;
+typedef uint24_t uint_fast24_t;
+
+typedef uint32_t uint_least32_t;
+
+typedef uint64_t uint_least64_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
+typedef int16_t int_fast16_t;
+typedef int32_t int_fast32_t;
+typedef uint16_t uint_fast16_t;
+typedef uint32_t uint_fast32_t;
+# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
+# 30 "mcc_generated_files/usb/example_mcc_usb_cdc.c" 2
+
+
+# 1 "mcc_generated_files/usb/usb.h" 1
+# 45 "mcc_generated_files/usb/usb.h"
+# 1 "mcc_generated_files/usb/usb_device_config.h" 1
+# 45 "mcc_generated_files/usb/usb.h" 2
+
+
+# 1 "mcc_generated_files/usb/usb_common.h" 1
+# 46 "mcc_generated_files/usb/usb_common.h"
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\limits.h" 1 3
+
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\features.h" 1 3
+# 6 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\limits.h" 2 3
+
+
+
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/limits.h" 1 3
+# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\limits.h" 2 3
+# 46 "mcc_generated_files/usb/usb_common.h" 2
+
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
+# 47 "mcc_generated_files/usb/usb_common.h" 2
+# 132 "mcc_generated_files/usb/usb_common.h"
+typedef union
+{
+    uint8_t bitmap;
+    struct
+    {
+        uint8_t ep_num: 4;
+        uint8_t zero_pkt: 1;
+        uint8_t dts: 1;
+        uint8_t force_dts: 1;
+        uint8_t direction: 1;
+    }field;
+
+} TRANSFER_FLAGS;
+# 206 "mcc_generated_files/usb/usb_common.h"
+typedef enum
+{
+
+    EVENT_NONE = 0,
+
+    EVENT_DEVICE_STACK_BASE = 1,
+
+    EVENT_HOST_STACK_BASE = 100,
+
+
+    EVENT_HUB_ATTACH,
+
+
+    EVENT_STALL,
+
+
+    EVENT_VBUS_SES_REQUEST,
+
+
+
+
+    EVENT_VBUS_OVERCURRENT,
+
+
+
+
+
+    EVENT_VBUS_REQUEST_POWER,
+
+
+
+
+    EVENT_VBUS_RELEASE_POWER,
+# 247 "mcc_generated_files/usb/usb_common.h"
+    EVENT_VBUS_POWER_AVAILABLE,
+
+
+
+    EVENT_UNSUPPORTED_DEVICE,
+
+
+
+    EVENT_CANNOT_ENUMERATE,
+
+
+
+    EVENT_CLIENT_INIT_ERROR,
+
+
+
+
+
+    EVENT_OUT_OF_MEMORY,
+
+
+    EVENT_UNSPECIFIED_ERROR,
+
+
+
+    EVENT_DETACH,
+
+
+
+
+    EVENT_TRANSFER,
+
+
+
+    EVENT_SOF,
+
+
+    EVENT_RESUME,
+
+
+
+    EVENT_SUSPEND,
+
+
+
+    EVENT_RESET,
+
+
+
+
+
+    EVENT_DATA_ISOC_READ,
+
+
+
+
+
+    EVENT_DATA_ISOC_WRITE,
+# 314 "mcc_generated_files/usb/usb_common.h"
+    EVENT_OVERRIDE_CLIENT_DRIVER_SELECTION,
+
+
+
+
+
+
+
+    EVENT_1MS,
+
+
+
+
+
+    EVENT_ALT_INTERFACE,
+
+
+
+
+
+
+    EVENT_HOLD_BEFORE_CONFIGURATION,
+
+
+    EVENT_GENERIC_BASE = 400,
+
+    EVENT_MSD_BASE = 500,
+
+    EVENT_HID_BASE = 600,
+
+    EVENT_PRINTER_BASE = 700,
+
+    EVENT_CDC_BASE = 800,
+
+    EVENT_CHARGER_BASE = 900,
+
+    EVENT_AUDIO_BASE = 1000,
+
+ EVENT_USER_BASE = 10000,
+
+
+
+
+    EVENT_BUS_ERROR = 0x7fff
+
+} USB_EVENT;
+# 371 "mcc_generated_files/usb/usb_common.h"
+typedef struct _transfer_event_data
+{
+    TRANSFER_FLAGS flags;
+    uint32_t size;
+    uint8_t pid;
+
+} USB_TRANSFER_EVENT_DATA;
+# 388 "mcc_generated_files/usb/usb_common.h"
+typedef struct _vbus_power_data
+{
+    uint8_t port;
+    uint8_t current;
+} USB_VBUS_POWER_EVENT_DATA;
+# 401 "mcc_generated_files/usb/usb_common.h"
+typedef struct _override_client_driver_data
+{
+    uint16_t idVendor;
+    uint16_t idProduct;
+    uint8_t bDeviceClass;
+    uint8_t bDeviceSubClass;
+    uint8_t bDeviceProtocol;
+} USB_OVERRIDE_CLIENT_DRIVER_EVENT_DATA;
+# 463 "mcc_generated_files/usb/usb_common.h"
+typedef _Bool (*USB_EVENT_HANDLER) ( USB_EVENT event, void *data, unsigned int size );
+# 47 "mcc_generated_files/usb/usb.h" 2
+
+# 1 "mcc_generated_files/usb/usb_ch9.h" 1
+# 71 "mcc_generated_files/usb/usb_ch9.h"
+typedef struct _USB_DEVICE_DESCRIPTOR
+{
+    uint8_t bLength;
+    uint8_t bDescriptorType;
+    uint16_t bcdUSB;
+    uint8_t bDeviceClass;
+    uint8_t bDeviceSubClass;
+    uint8_t bDeviceProtocol;
+    uint8_t bMaxPacketSize0;
+    uint16_t idVendor;
+    uint16_t idProduct;
+    uint16_t bcdDevice;
+    uint8_t iManufacturer;
+    uint8_t iProduct;
+    uint8_t iSerialNumber;
+    uint8_t bNumConfigurations;
+} USB_DEVICE_DESCRIPTOR;
+
+
+
+
+
+
+
+typedef struct _USB_CONFIGURATION_DESCRIPTOR
+{
+    uint8_t bLength;
+    uint8_t bDescriptorType;
+    uint16_t wTotalLength;
+    uint8_t bNumInterfaces;
+    uint8_t bConfigurationValue;
+    uint8_t iConfiguration;
+    uint8_t bmAttributes;
+    uint8_t bMaxPower;
+} USB_CONFIGURATION_DESCRIPTOR;
+# 118 "mcc_generated_files/usb/usb_ch9.h"
+typedef struct _USB_INTERFACE_DESCRIPTOR
+{
+    uint8_t bLength;
+    uint8_t bDescriptorType;
+    uint8_t bInterfaceNumber;
+    uint8_t bAlternateSetting;
+    uint8_t bNumEndpoints;
+    uint8_t bInterfaceClass;
+    uint8_t bInterfaceSubClass;
+    uint8_t bInterfaceProtocol;
+    uint8_t iInterface;
+} USB_INTERFACE_DESCRIPTOR;
+
+
+
+
+
+
+
+typedef struct _USB_ENDPOINT_DESCRIPTOR
+{
+    uint8_t bLength;
+    uint8_t bDescriptorType;
+    uint8_t bEndpointAddress;
+    uint8_t bmAttributes;
+    uint16_t wMaxPacketSize;
+    uint8_t bInterval;
+} USB_ENDPOINT_DESCRIPTOR;
+# 187 "mcc_generated_files/usb/usb_ch9.h"
+typedef struct
+{
+    uint8_t index;
+    uint8_t type;
+    uint16_t language_id;
+
+} DESCRIPTOR_ID;
+# 202 "mcc_generated_files/usb/usb_ch9.h"
+typedef struct _USB_OTG_DESCRIPTOR
+{
+    uint8_t bLength;
+    uint8_t bDescriptorType;
+    uint8_t bmAttributes;
+} USB_OTG_DESCRIPTOR;
+# 226 "mcc_generated_files/usb/usb_ch9.h"
+typedef struct _USB_STRING_DSC
+{
+    uint8_t bLength;
+    uint8_t bDescriptorType;
+
+} USB_STRING_DESCRIPTOR;
+# 245 "mcc_generated_files/usb/usb_ch9.h"
+typedef struct _USB_DEVICE_QUALIFIER_DESCRIPTOR
+{
+    uint8_t bLength;
+    uint8_t bType;
+    uint16_t bcdUSB;
+    uint8_t bDeviceClass;
+    uint8_t bDeviceSubClass;
+    uint8_t bDeviceProtocol;
+    uint8_t bMaxPacketSize0;
+    uint8_t bNumConfigurations;
+    uint8_t bReserved;
+
+} USB_DEVICE_QUALIFIER_DESCRIPTOR;
+# 268 "mcc_generated_files/usb/usb_ch9.h"
+typedef union
+{
+
+    struct
+    {
+        uint8_t bmRequestType;
+        uint8_t bRequest;
+        uint16_t wValue;
+        uint16_t wIndex;
+        uint16_t wLength;
+    };
+    struct
+    {
+        unsigned :8;
+        unsigned :8;
+        union
+        {
+            uint16_t Val;
+            uint8_t v[2];
+            struct
+            {
+                uint8_t LB;
+                uint8_t HB;
+            } byte;
+        } W_Value;
+
+        union
+        {
+            uint16_t Val;
+            uint8_t v[2];
+            struct
+            {
+                uint8_t LB;
+                uint8_t HB;
+            } byte;
+        } W_Index;
+
+        union
+        {
+            uint16_t Val;
+            uint8_t v[2];
+            struct
+            {
+                uint8_t LB;
+                uint8_t HB;
+            } byte;
+        } W_Length;
+    };
+    struct
+    {
+        unsigned Recipient:5;
+        unsigned RequestType:2;
+        unsigned DataDir:1;
+        unsigned :8;
+        uint8_t bFeature;
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+    };
+    struct
+    {
+        union
+        {
+            uint8_t bmRequestType;
+            struct
+            {
+                uint8_t recipient: 5;
+                uint8_t type: 2;
+                uint8_t direction: 1;
+            };
+        }requestInfo;
+    };
+    struct
+    {
+        unsigned :8;
+        unsigned :8;
+        uint8_t bDscIndex;
+        uint8_t bDescriptorType;
+        uint16_t wLangID;
+        unsigned :8;
+        unsigned :8;
+    };
+    struct
+    {
+        unsigned :8;
+        unsigned :8;
+        uint8_t bDevADR;
+        uint8_t bDevADRH;
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+    };
+    struct
+    {
+        unsigned :8;
+        unsigned :8;
+        uint8_t bConfigurationValue;
+        uint8_t bCfgRSD;
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+    };
+    struct
+    {
+        unsigned :8;
+        unsigned :8;
+        uint8_t bAltID;
+        uint8_t bAltID_H;
+        uint8_t bIntfID;
+        uint8_t bIntfID_H;
+        unsigned :8;
+        unsigned :8;
+    };
+    struct
+    {
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+        uint8_t bEPID;
+        uint8_t bEPID_H;
+        unsigned :8;
+        unsigned :8;
+    };
+    struct
+    {
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+        unsigned EPNum:4;
+        unsigned :3;
+        unsigned EPDir:1;
+        unsigned :8;
+        unsigned :8;
+        unsigned :8;
+    };
+
+
+
+} CTRL_TRF_SETUP, SETUP_PKT, *PSETUP_PKT;
+# 48 "mcc_generated_files/usb/usb.h" 2
+
+
+
+# 1 "mcc_generated_files/usb/usb_device.h" 1
+# 77 "mcc_generated_files/usb/usb_device.h"
+typedef enum
+{
+
+
+
+    DETACHED_STATE
+                            = 0x00 ,
+
+
+    ATTACHED_STATE
+                            = 0x01 ,
+
+
+    POWERED_STATE
+                            = 0x02 ,
+
+
+    DEFAULT_STATE
+                            = 0x04 ,
+
+
+
+
+
+    ADR_PENDING_STATE
+                            = 0x08 ,
+
+
+    ADDRESS_STATE
+                            = 0x10 ,
+
+
+
+
+
+    CONFIGURED_STATE
+                            = 0x20
+} USB_DEVICE_STATE;
+
+
+
+typedef enum
+{
+
+    EVENT_CONFIGURED
+                            = EVENT_DEVICE_STACK_BASE ,
+
+
+    EVENT_SET_DESCRIPTOR,
+
+
+
+
+
+    EVENT_EP0_REQUEST,
+# 160 "mcc_generated_files/usb/usb_device.h"
+    EVENT_ATTACH,
+
+
+
+
+    EVENT_TRANSFER_TERMINATED
+
+} USB_DEVICE_STACK_EVENTS;
+# 199 "mcc_generated_files/usb/usb_device.h"
+void USBDeviceInit(void);
+# 303 "mcc_generated_files/usb/usb_device.h"
+void USBDeviceTasks(void);
+# 355 "mcc_generated_files/usb/usb_device.h"
+void USBEnableEndpoint(uint8_t ep, uint8_t options);
+# 448 "mcc_generated_files/usb/usb_device.h"
+void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
+# 473 "mcc_generated_files/usb/usb_device.h"
+void USBStallEndpoint(uint8_t ep, uint8_t dir);
+# 497 "mcc_generated_files/usb/usb_device.h"
+void USBCancelIO(uint8_t endpoint);
+# 594 "mcc_generated_files/usb/usb_device.h"
+void USBDeviceDetach(void);
+# 639 "mcc_generated_files/usb/usb_device.h"
+void USBDeviceAttach(void);
+# 678 "mcc_generated_files/usb/usb_device.h"
+void USBCtrlEPAllowStatusStage(void);
+# 708 "mcc_generated_files/usb/usb_device.h"
+void USBCtrlEPAllowDataStage(void);
+# 784 "mcc_generated_files/usb/usb_device.h"
+void USBDeferOUTDataStage(void);
+extern volatile _Bool USBDeferOUTDataStagePackets;
+# 854 "mcc_generated_files/usb/usb_device.h"
+void USBDeferStatusStage(void);
+extern volatile _Bool USBDeferStatusStagePacket;
+# 906 "mcc_generated_files/usb/usb_device.h"
+_Bool USBOUTDataStageDeferred(void);
+# 989 "mcc_generated_files/usb/usb_device.h"
+void USBDeferINDataStage(void);
+extern volatile _Bool USBDeferINDataStagePackets;
+# 1043 "mcc_generated_files/usb/usb_device.h"
+_Bool USBINDataStageDeferred(void);
+# 1113 "mcc_generated_files/usb/usb_device.h"
+_Bool USBGetRemoteWakeupStatus(void);
+# 1170 "mcc_generated_files/usb/usb_device.h"
+USB_DEVICE_STATE USBGetDeviceState(void);
+# 1226 "mcc_generated_files/usb/usb_device.h"
+_Bool USBGetSuspendState(void);
+# 1261 "mcc_generated_files/usb/usb_device.h"
+_Bool USBIsDeviceSuspended(void);
+# 1304 "mcc_generated_files/usb/usb_device.h"
+_Bool USBIsBusSuspended(void);
+# 1330 "mcc_generated_files/usb/usb_device.h"
+void USBSoftDetach(void);
+# 1368 "mcc_generated_files/usb/usb_device.h"
+_Bool USBHandleBusy(void* handle);
+# 1406 "mcc_generated_files/usb/usb_device.h"
+uint16_t USBHandleGetLength(void* handle);
+# 1438 "mcc_generated_files/usb/usb_device.h"
+uint16_t USBHandleGetAddr(void*);
+# 1538 "mcc_generated_files/usb/usb_device.h"
+void* USBGetNextHandle(uint8_t ep_num, uint8_t ep_dir);
+# 1571 "mcc_generated_files/usb/usb_device.h"
+void USBEP0Transmit(uint8_t options);
+# 1599 "mcc_generated_files/usb/usb_device.h"
+void USBEP0SendRAMPtr(uint8_t* src, uint16_t size, uint8_t Options);
+# 1631 "mcc_generated_files/usb/usb_device.h"
+void USBEP0SendROMPtr(uint8_t* src, uint16_t size, uint8_t Options);
+# 1659 "mcc_generated_files/usb/usb_device.h"
+void USBEP0Receive(uint8_t* dest, uint16_t size, void (*function));
+# 1694 "mcc_generated_files/usb/usb_device.h"
+void* USBTxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
+# 1731 "mcc_generated_files/usb/usb_device.h"
+void* USBRxOnePacket(uint8_t ep, uint8_t* data, uint16_t len);
+# 1763 "mcc_generated_files/usb/usb_device.h"
+_Bool USB_APPLICATION_EVENT_HANDLER(uint8_t address, USB_EVENT event, void *pdata, uint16_t size);
+# 1808 "mcc_generated_files/usb/usb_device.h"
+void USBIncrement1msInternalTimers(void);
+# 1867 "mcc_generated_files/usb/usb_device.h"
+uint32_t USBGet1msTickCount(void);
+# 1908 "mcc_generated_files/usb/usb_device.h"
+uint8_t USBGetTicksSinceSuspendEnd(void);
+# 1980 "mcc_generated_files/usb/usb_device.h"
+typedef union
+{
+    uint16_t Val;
+    uint8_t v[2];
+    struct
+    {
+        uint8_t LB;
+        uint8_t HB;
+    } byte;
+} uint16_t_VAL;
+
+
+
+
+typedef struct
+{
+    union
+    {
+
+
+        uint8_t *bRam;
+        const uint8_t *bRom;
+        uint16_t *wRam;
+        const uint16_t *wRom;
+    }pSrc;
+    union
+    {
+        struct
+        {
+
+            uint8_t ctrl_trf_mem :1;
+            uint8_t reserved :5;
+
+
+            uint8_t includeZero :1;
+
+            uint8_t busy :1;
+        }bits;
+        uint8_t Val;
+    }info;
+    uint16_t_VAL wCount;
+}IN_PIPE;
+
+extern volatile IN_PIPE inPipes[];
+
+typedef struct
+{
+    union
+    {
+
+
+        uint8_t *bRam;
+        uint16_t *wRam;
+    }pDst;
+    union
+    {
+        struct
+        {
+            uint8_t reserved :7;
+
+            uint8_t busy :1;
+        }bits;
+        uint8_t Val;
+    }info;
+    uint16_t_VAL wCount;
+    void (*pFunc)(void);
+}OUT_PIPE;
+
+extern volatile _Bool RemoteWakeup;
+extern volatile _Bool USBBusIsSuspended;
+extern volatile USB_DEVICE_STATE USBDeviceState;
+extern volatile uint8_t USBActiveConfiguration;
+extern volatile uint8_t USBTicksSinceSuspendEnd;
+
+
+
+
+# 1 "mcc_generated_files/usb/usb_hal.h" 1
+# 34 "mcc_generated_files/usb/usb_hal.h"
+# 1 "mcc_generated_files/usb/usb_hal_pic16f1.h" 1
+# 29 "mcc_generated_files/usb/usb_hal_pic16f1.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -23,29 +810,12 @@ extern double __fpnormalize(double);
 
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 1 3
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\musl_xc8.h" 1 3
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
-
-
-
-
-
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\features.h" 1 3
-# 10 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef long int wchar_t;
 # 122 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
 typedef unsigned size_t;
-# 168 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __int24 int24_t;
-# 204 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef __uint24 uint24_t;
 # 21 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdlib.h" 2 3
 
 
@@ -3983,119 +4753,395 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 54 "mcc_generated_files/pin_manager.h" 2
-# 283 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
-# 295 "mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_IOC(void);
-# 308 "mcc_generated_files/pin_manager.h"
-void IOCAF5_ISR(void);
-# 331 "mcc_generated_files/pin_manager.h"
-void IOCAF5_SetInterruptHandler(void (* InterruptHandler)(void));
-# 355 "mcc_generated_files/pin_manager.h"
-extern void (*IOCAF5_InterruptHandler)(void);
-# 379 "mcc_generated_files/pin_manager.h"
-void IOCAF5_DefaultInterruptHandler(void);
-# 49 "mcc_generated_files/pin_manager.c" 2
+# 29 "mcc_generated_files/usb/usb_hal_pic16f1.h" 2
 
 
 
 
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 1 3
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
+# 411 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
+typedef struct __locale_struct * locale_t;
+# 25 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 2 3
 
-void (*IOCAF5_InterruptHandler)(void);
+
+void *memcpy (void *restrict, const void *restrict, size_t);
+void *memmove (void *, const void *, size_t);
+void *memset (void *, int, size_t);
+int memcmp (const void *, const void *, size_t);
+void *memchr (const void *, int, size_t);
+
+char *strcpy (char *restrict, const char *restrict);
+char *strncpy (char *restrict, const char *restrict, size_t);
+
+char *strcat (char *restrict, const char *restrict);
+char *strncat (char *restrict, const char *restrict, size_t);
+
+int strcmp (const char *, const char *);
+int strncmp (const char *, const char *, size_t);
+
+int strcoll (const char *, const char *);
+size_t strxfrm (char *restrict, const char *restrict, size_t);
+
+char *strchr (const char *, int);
+char *strrchr (const char *, int);
+
+size_t strcspn (const char *, const char *);
+size_t strspn (const char *, const char *);
+char *strpbrk (const char *, const char *);
+char *strstr (const char *, const char *);
+char *strtok (char *restrict, const char *restrict);
+
+size_t strlen (const char *);
+
+char *strerror (int);
+# 65 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\string.h" 3
+char *strtok_r (char *restrict, const char *restrict, char **restrict);
+int strerror_r (int, char *, size_t);
+char *stpcpy(char *restrict, const char *restrict);
+char *stpncpy(char *restrict, const char *restrict, size_t);
+size_t strnlen (const char *, size_t);
+char *strdup (const char *);
+char *strndup (const char *, size_t);
+char *strsignal(int);
+char *strerror_l (int, locale_t);
+int strcoll_l (const char *, const char *, locale_t);
+size_t strxfrm_l (char *restrict, const char *restrict, size_t, locale_t);
 
 
-void PIN_MANAGER_Initialize(void)
+
+
+void *memccpy (void *restrict, const void *restrict, int, size_t);
+# 33 "mcc_generated_files/usb/usb_hal_pic16f1.h" 2
+
+
+
+# 1 "mcc_generated_files/usb/fixed_address_memory.h" 1
+# 36 "mcc_generated_files/usb/usb_hal_pic16f1.h" 2
+# 232 "mcc_generated_files/usb/usb_hal_pic16f1.h"
+typedef union _BD_STAT
 {
+    uint8_t Val;
+    struct{
+
+        unsigned BC8:1;
+        unsigned BC9:1;
+        unsigned BSTALL:1;
+        unsigned DTSEN:1;
+        unsigned INCDIS:1;
+        unsigned KEN:1;
+        unsigned DTS:1;
+        unsigned UOWN:1;
+    };
+    struct{
 
 
-
-    LATA = 0x00;
-    LATB = 0x00;
-    LATC = 0x20;
-
-
-
-
-    TRISA = 0x20;
-    TRISB = 0xA0;
-    TRISC = 0xDF;
-
-
-
-
-    ANSELC = 0xCC;
-    ANSELB = 0x00;
-    ANSELA = 0x10;
+        unsigned :2;
+        unsigned PID0:1;
+        unsigned PID1:1;
+        unsigned PID2:1;
+        unsigned PID3:1;
+        unsigned :1;
+    };
+    struct{
+        unsigned :2;
+        unsigned PID:4;
+        unsigned :2;
+    };
+} BD_STAT;
 
 
-
-
-    WPUB = 0x00;
-    WPUA = 0x00;
-    OPTION_REGbits.nWPUEN = 1;
-
-
-
-
-
-    APFCON = 0x00;
-
-
-
-
-
-    IOCAFbits.IOCAF5 = 0;
-
-    IOCANbits.IOCAN5 = 1;
-
-    IOCAPbits.IOCAP5 = 1;
-
-
-
-
-    IOCAF5_SetInterruptHandler(IOCAF5_DefaultInterruptHandler);
-
-
-    INTCONbits.IOCIE = 1;
-
-}
-
-void PIN_MANAGER_IOC(void)
+typedef union __BDT
 {
-
-    if(IOCAFbits.IOCAF5 == 1)
+    struct
     {
-        IOCAF5_ISR();
-    }
-}
-
-
-
-
-void IOCAF5_ISR(void) {
-
-
-
-
-    if(IOCAF5_InterruptHandler)
+        BD_STAT STAT;
+        uint8_t CNT;
+        uint8_t ADRL;
+        uint8_t ADRH;
+    };
+    struct
     {
-        IOCAF5_InterruptHandler();
+        unsigned filler1:8;
+        unsigned filler2:8;
+        uint16_t ADR;
+    };
+    uint32_t Val;
+    uint8_t v[4];
+} BDT_ENTRY;
+
+
+typedef union __USTAT
+{
+    struct
+    {
+        unsigned char filler1:1;
+        unsigned char ping_pong:1;
+        unsigned char direction:1;
+        unsigned char endpoint_number:4;
+    };
+    uint8_t Val;
+} USTAT_FIELDS;
+
+
+
+
+
+
+
+typedef union _POINTER
+{
+    struct
+    {
+        uint8_t bLow;
+        uint8_t bHigh;
+
+    };
+    uint16_t _word;
+
+
+
+    uint8_t* bRam;
+
+    uint16_t* wRam;
+
+
+    const uint8_t* bRom;
+    const uint16_t* wRom;
+
+
+
+
+} POINTER;
+# 520 "mcc_generated_files/usb/usb_hal_pic16f1.h"
+    extern volatile uint8_t USBActiveConfiguration;
+    extern volatile IN_PIPE inPipes[1];
+    extern volatile OUT_PIPE outPipes[1];
+
+
+extern volatile BDT_ENTRY* pBDTEntryOut[2 +1];
+extern volatile BDT_ENTRY* pBDTEntryIn[2 +1];
+# 34 "mcc_generated_files/usb/usb_hal.h" 2
+# 167 "mcc_generated_files/usb/usb_hal.h"
+void OTGCORE_SetDeviceAddr( uint8_t addr );
+# 203 "mcc_generated_files/usb/usb_hal.h"
+    void USBHALControlUsbResistors( uint8_t flags );
+# 237 "mcc_generated_files/usb/usb_hal.h"
+_Bool USBHALSessionIsValid( void );
+# 263 "mcc_generated_files/usb/usb_hal.h"
+_Bool USBHALControlBusPower( uint8_t cmd );
+# 293 "mcc_generated_files/usb/usb_hal.h"
+unsigned long USBHALGetLastError( void );
+# 326 "mcc_generated_files/usb/usb_hal.h"
+void USBHALHandleBusEvent ( void );
+# 367 "mcc_generated_files/usb/usb_hal.h"
+_Bool OTGCORE_StallPipe( TRANSFER_FLAGS pipe );
+# 404 "mcc_generated_files/usb/usb_hal.h"
+_Bool OTGCORE_UnstallPipe( TRANSFER_FLAGS pipe );
+# 438 "mcc_generated_files/usb/usb_hal.h"
+uint16_t OTGCORE_GetStalledEndpoints ( void );
+# 475 "mcc_generated_files/usb/usb_hal.h"
+_Bool USBHALFlushPipe( TRANSFER_FLAGS pipe );
+# 535 "mcc_generated_files/usb/usb_hal.h"
+_Bool USBHALTransferData ( TRANSFER_FLAGS flags,
+                          void *buffer,
+                          unsigned int size );
+# 575 "mcc_generated_files/usb/usb_hal.h"
+_Bool USBHALSetEpConfiguration ( uint8_t ep_num, uint16_t max_pkt_size, uint16_t flags );
+# 603 "mcc_generated_files/usb/usb_hal.h"
+_Bool USBHALInitialize ( unsigned long flags );
+# 2056 "mcc_generated_files/usb/usb_device.h" 2
+# 51 "mcc_generated_files/usb/usb.h" 2
+
+# 1 "mcc_generated_files/usb/usb_device_cdc.h" 1
+# 26 "mcc_generated_files/usb/usb_device_cdc.h"
+# 1 "mcc_generated_files/usb/usb.h" 1
+# 26 "mcc_generated_files/usb/usb_device_cdc.h" 2
+# 536 "mcc_generated_files/usb/usb_device_cdc.h"
+void CDCInitEP(void);
+# 562 "mcc_generated_files/usb/usb_device_cdc.h"
+void USBCheckCDCRequest(void);
+# 580 "mcc_generated_files/usb/usb_device_cdc.h"
+void CDCNotificationHandler(void);
+# 606 "mcc_generated_files/usb/usb_device_cdc.h"
+_Bool USBCDCEventHandler(USB_EVENT event, void *pdata, uint16_t size);
+# 666 "mcc_generated_files/usb/usb_device_cdc.h"
+uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len);
+# 708 "mcc_generated_files/usb/usb_device_cdc.h"
+void putUSBUSART(uint8_t *data, uint8_t Length);
+# 749 "mcc_generated_files/usb/usb_device_cdc.h"
+void putsUSBUSART(char *data);
+# 792 "mcc_generated_files/usb/usb_device_cdc.h"
+void putrsUSBUSART(const char *data);
+# 844 "mcc_generated_files/usb/usb_device_cdc.h"
+void CDCTxService(void);
+# 858 "mcc_generated_files/usb/usb_device_cdc.h"
+typedef union _LINE_CODING
+{
+    struct
+    {
+        uint8_t _byte[0x07];
+    };
+    struct
+    {
+        uint32_t dwDTERate;
+        uint8_t bCharFormat;
+        uint8_t bParityType;
+        uint8_t bDataBits;
+    };
+} LINE_CODING;
+
+typedef union _CONTROL_SIGNAL_BITMAP
+{
+    uint8_t _byte;
+    struct
+    {
+        unsigned DTE_PRESENT:1;
+        unsigned CARRIER_CONTROL:1;
+    };
+} CONTROL_SIGNAL_BITMAP;
+
+
+
+
+
+typedef struct _USB_CDC_HEADER_FN_DSC
+{
+    uint8_t bFNLength;
+    uint8_t bDscType;
+    uint8_t bDscSubType;
+    uint16_t bcdCDC;
+} USB_CDC_HEADER_FN_DSC;
+
+
+typedef struct _USB_CDC_ACM_FN_DSC
+{
+    uint8_t bFNLength;
+    uint8_t bDscType;
+    uint8_t bDscSubType;
+    uint8_t bmCapabilities;
+} USB_CDC_ACM_FN_DSC;
+
+
+typedef struct _USB_CDC_UNION_FN_DSC
+{
+    uint8_t bFNLength;
+    uint8_t bDscType;
+    uint8_t bDscSubType;
+    uint8_t bMasterIntf;
+    uint8_t bSaveIntf0;
+} USB_CDC_UNION_FN_DSC;
+
+
+typedef struct _USB_CDC_CALL_MGT_FN_DSC
+{
+    uint8_t bFNLength;
+    uint8_t bDscType;
+    uint8_t bDscSubType;
+    uint8_t bmCapabilities;
+    uint8_t bDataInterface;
+} USB_CDC_CALL_MGT_FN_DSC;
+
+typedef union _CDC_NOTICE
+{
+    LINE_CODING GetLineCoding;
+    LINE_CODING SetLineCoding;
+    unsigned char packet[10];
+} CDC_NOTICE, *PCDC_NOTICE;
+
+
+typedef union
+{
+    uint8_t byte;
+    struct
+    {
+        uint8_t DCD :1;
+        uint8_t DSR :1;
+        uint8_t BreakState :1;
+        uint8_t RingDetect :1;
+        uint8_t FramingError :1;
+        uint8_t ParityError :1;
+        uint8_t Overrun :1;
+        uint8_t Reserved :1;
+    }bits;
+}BM_SERIAL_STATE;
+
+
+typedef struct
+{
+    uint8_t bmRequestType;
+    uint8_t bNotification;
+    uint16_t wValue;
+    uint16_t wIndex;
+    uint16_t wLength;
+    BM_SERIAL_STATE SerialState;
+    uint8_t Reserved;
+}SERIAL_STATE_NOTIFICATION;
+
+
+
+extern uint8_t cdc_rx_len;
+extern void* lastTransmission;
+
+extern uint8_t cdc_trf_state;
+extern POINTER pCDCSrc;
+extern uint8_t cdc_tx_len;
+extern uint8_t cdc_mem_type;
+
+extern CDC_NOTICE cdc_notice;
+extern LINE_CODING line_coding;
+
+extern volatile CTRL_TRF_SETUP SetupPkt;
+extern const uint8_t configDescriptor1[];
+# 52 "mcc_generated_files/usb/usb.h" 2
+# 32 "mcc_generated_files/usb/example_mcc_usb_cdc.c" 2
+
+
+static uint8_t readBuffer[64];
+static uint8_t writeBuffer[64];
+
+void MCC_USB_CDC_DemoTasks(void)
+{
+    if( USBDeviceState < CONFIGURED_STATE )
+    {
+        return;
     }
-    IOCAFbits.IOCAF5 = 0;
-}
+
+    if( UCONbits.SUSPND== 1 )
+    {
+        return;
+    }
+
+    if( (cdc_trf_state == 0) == 1)
+    {
+        uint8_t i;
+        uint8_t numBytesRead;
+
+        numBytesRead = getsUSBUSART(readBuffer, sizeof(readBuffer));
+
+        for(i=0; i<numBytesRead; i++)
+        {
+            switch(readBuffer[i])
+            {
+
+                case 0x0A:
+                case 0x0D:
+                    writeBuffer[i] = readBuffer[i];
+                    break;
 
 
+                default:
+                    writeBuffer[i] = readBuffer[i] + 1;
+                    break;
+            }
+        }
 
+        if(numBytesRead > 0)
+        {
+            putUSBUSART(writeBuffer,numBytesRead);
+        }
+    }
 
-void IOCAF5_SetInterruptHandler(void (* InterruptHandler)(void)){
-    IOCAF5_InterruptHandler = InterruptHandler;
-}
-
-
-
-
-void IOCAF5_DefaultInterruptHandler(void){
-
-
+    CDCTxService();
 }

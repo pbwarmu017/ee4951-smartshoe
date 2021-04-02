@@ -49,7 +49,6 @@
 */
 
 #include <xc.h>
-#include "mcc.h"
 #include "tmr0.h"
 
 /**
@@ -66,14 +65,14 @@ void TMR0_Initialize(void)
 {
     // Set TMR0 to the options selected in the User Interface
 	
-    // PSA not_assigned; PS 1:256; TMRSE Increment_hi_lo; mask the nWPUEN and INTEDG bits
-    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xFF & 0x3F)); 
+    // PSA assigned; PS 1:8; TMRSE Increment_hi_lo; mask the nWPUEN and INTEDG bits
+    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD2 & 0x3F)); 
 	
-    // TMR0 156; 
-    TMR0 = 0x9C;
+    // TMR0 6; 
+    TMR0 = 0x06;
 	
     // Load the TMR value to reload variable
-    timer0ReloadVal= 156;
+    timer0ReloadVal= 6;
 
     // Clear Interrupt flag before enabling the interrupt
     INTCONbits.TMR0IF = 0;
@@ -120,8 +119,6 @@ void TMR0_ISR(void)
     }
 
     // add your TMR0 interrupt custom code
-    
-    USBIncrement1msInternalTimers();
 }
 
 

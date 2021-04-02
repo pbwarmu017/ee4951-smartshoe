@@ -27,7 +27,6 @@ please contact mla_licensing@microchip.com
 #ifndef USBCFG_H
 #define USBCFG_H
 
-#include <stdint.h>
 
 /** DEFINITIONS ****************************************************/
 #define USB_EP0_BUFF_SIZE		8	// Valid Options: 8, 16, 32, or 64 bytes.
@@ -37,8 +36,8 @@ please contact mla_licensing@microchip.com
 								// that use EP0 IN or OUT for sending large amounts of
 								// application related data.
 									
-#define USB_MAX_NUM_INT     	1   //Set this number to match the maximum interface number used in the descriptors for this firmware project
-#define USB_MAX_EP_NUMBER	    1   //Set this number to match the maximum endpoint number used in the descriptors for this firmware project
+#define USB_MAX_NUM_INT     	2   //Set this number to match the maximum interface number used in the descriptors for this firmware project
+#define USB_MAX_EP_NUMBER	    2   //Set this number to match the maximum endpoint number used in the descriptors for this firmware project
 
 //Device descriptor - if these two definitions are not defined then
 //  a const USB_DEVICE_DESCRIPTOR variable by the exact name of device_dsc
@@ -89,7 +88,7 @@ please contact mla_licensing@microchip.com
 //  refer to the product family datasheet for more information if this feature
 //  is available on the target processor.
 
-#define USB_SPEED_OPTION USB_LOW_SPEED
+#define USB_SPEED_OPTION USB_FULL_SPEED
 
 //------------------------------------------------------------------------------------------------------------------
 //Option to enable auto-arming of the status stage of control transfers, if no
@@ -134,64 +133,6 @@ please contact mla_licensing@microchip.com
 //Timeout(in milliseconds) = ((1000 * (USB_STATUS_STAGE_TIMEOUT - 1)) / (USBDeviceTasks() polling frequency in Hz))
 //------------------------------------------------------------------------------------------------------------------
 
-//When implemented, the Microsoft OS Descriptor allows the WinUSB driver package 
-//installation to be automatic on Windows 8, and is therefore recommended.
-#define IMPLEMENT_MICROSOFT_OS_DESCRIPTOR
-
-//Some definitions, only needed when using the MS OS descriptor.
-#if defined(IMPLEMENT_MICROSOFT_OS_DESCRIPTOR)
-    #if defined(__XC8)
-        #define PACKED
-    #else
-        #define PACKED __attribute__((packed))
-    #endif
-    #define MICROSOFT_OS_DESCRIPTOR_INDEX   (unsigned char)0xEE //Magic string index number for the Microsoft OS descriptor
-    #define GET_MS_DESCRIPTOR               (unsigned char)0xEE //(arbitarily assigned, but should not clobber/overlap normal bRequests)
-    #define EXTENDED_COMPAT_ID              (uint16_t)0x0004
-    #define EXTENDED_PROPERTIES             (uint16_t)0x0005
-
-    typedef struct PACKED _MS_OS_DESCRIPTOR
-    {
-        uint8_t bLength;
-        uint8_t bDscType;
-        uint16_t string[7];
-        uint8_t vendorCode;
-        uint8_t bPad;
-    }MS_OS_DESCRIPTOR;
-
-    typedef struct PACKED _MS_COMPAT_ID_FEATURE_DESC
-    {
-        uint32_t dwLength;
-        uint16_t bcdVersion;
-        uint16_t wIndex;
-        uint8_t bCount;
-        uint8_t Reserved[7];
-        uint8_t bFirstInterfaceNumber;
-        uint8_t Reserved1;
-        uint8_t compatID[8];
-        uint8_t subCompatID[8];
-        uint8_t Reserved2[6];
-    }MS_COMPAT_ID_FEATURE_DESC;
-
-    typedef struct PACKED _MS_EXT_PROPERTY_FEATURE_DESC
-    {
-        uint32_t dwLength;
-        uint16_t bcdVersion;
-        uint16_t wIndex;
-        uint16_t wCount;
-        uint32_t dwSize;
-        uint32_t dwPropertyDataType;
-        uint16_t wPropertyNameLength;
-        uint16_t bPropertyName[20];
-        uint32_t dwPropertyDataLength;
-        uint16_t bPropertyData[39];
-    }MS_EXT_PROPERTY_FEATURE_DESC;
-    
-    extern const MS_OS_DESCRIPTOR MSOSDescriptor;
-    extern const MS_COMPAT_ID_FEATURE_DESC CompatIDFeatureDescriptor;
-    extern const MS_EXT_PROPERTY_FEATURE_DESC ExtPropertyFeatureDescriptor;
-#endif
-
 #define USB_SUPPORT_DEVICE
 
 #define USB_NUM_STRING_DESCRIPTORS 4  //Set this number to match the total number of string descriptors that are implemented in the usb_descriptors.c file
@@ -213,12 +154,21 @@ please contact mla_licensing@microchip.com
 
 
 /** DEVICE CLASS USAGE *********************************************/
-#define USB_USE_GEN
+#define USB_USE_CDC
 
 /** ENDPOINTS ALLOCATION *******************************************/
-/* Generic */
-#define USBGEN_EP_SIZE           8
-#define USBGEN_EP_NUM            1
+/* CDC */
+#define CDC_COMM_INTF_ID        0x0
+#define CDC_COMM_EP              1
+#define CDC_COMM_IN_EP_SIZE      10
+
+#define CDC_DATA_INTF_ID        0x01
+#define CDC_DATA_EP             2
+#define CDC_DATA_OUT_EP_SIZE    64
+#define CDC_DATA_IN_EP_SIZE     64
+
+#define USB_CDC_SUPPORT_ABSTRACT_CONTROL_MANAGEMENT_CAPABILITIES_D1 //Set_Line_Coding, Set_Control_Line_State, Get_Line_Coding, and Serial_State commands
+//#define USB_CDC_SUPPORT_ABSTRACT_CONTROL_MANAGEMENT_CAPABILITIES_D2 //Send_Break command
 
 /** DEFINITIONS ****************************************************/
 

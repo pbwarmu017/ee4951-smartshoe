@@ -1,5 +1,5 @@
-build/default/production/mcc_generated_files/usb/usb_descriptors.p1:  \
-mcc_generated_files/usb/usb_descriptors.c  \
+build/default/production/mcc_generated_files/usb/example_mcc_usb_cdc.p1:  \
+mcc_generated_files/usb/example_mcc_usb_cdc.c  \
 mcc_generated_files/usb/usb.h  \
 mcc_generated_files/usb/usb_device_config.h  \
 mcc_generated_files/usb/usb_common.h  \

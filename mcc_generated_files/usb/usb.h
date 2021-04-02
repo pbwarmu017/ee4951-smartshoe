@@ -49,7 +49,7 @@ please contact mla_licensing@microchip.com
 
 #if defined( USB_SUPPORT_DEVICE )
     #include "usb_device.h"     // USB Device abstraction layer interface
-    #include "usb_device_generic.h"
+    #include "usb_device_cdc.h"
 #endif
 
 #include "usb_hal.h"            // Hardware Abstraction Layer interface

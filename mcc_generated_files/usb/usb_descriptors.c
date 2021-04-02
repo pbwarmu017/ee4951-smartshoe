@@ -144,7 +144,7 @@ state according to the definition in the USB specification.
  
 /** INCLUDES *******************************************************/
 #include "usb.h"
-#include "usb_device_generic.h"
+#include "usb_device_cdc.h"
 
 /** CONSTANTS ******************************************************/
 #if defined(__18CXX)
@@ -157,12 +157,12 @@ const USB_DEVICE_DESCRIPTOR device_dsc=
     0x12,                   // Size of this descriptor in bytes
     USB_DESCRIPTOR_DEVICE,  // DEVICE descriptor type
     0x0200,                 // USB Spec Release Number in BCD format
-    0x00,                   // Class Code
+    CDC_DEVICE,             // Class Code
     0x00,                   // Subclass code
     0x00,                   // Protocol code
     USB_EP0_BUFF_SIZE,      // Max packet size for EP0, see usb_device_config.h
     0x04D8,                 // Vendor ID
-    0x0053,                 // Product ID
+    0x000A,                 // Product ID
     0x0100,                 // Device release number in BCD format
     0x01,                   // Manufacturer string index
     0x02,                   // Product string index
@@ -175,38 +175,84 @@ const uint8_t configDescriptor1[]={
     /* Configuration Descriptor */
     0x09,//sizeof(USB_CFG_DSC),    // Size of this descriptor in bytes
     USB_DESCRIPTOR_CONFIGURATION,  // CONFIGURATION descriptor type
-    0x20,0x00,                     // Total length of data for this cfg
-    1,                             // Number of interfaces in this cfg
+    67,0,                          // Total length of data for this cfg
+    2,                             // Number of interfaces in this cfg
     1,                             // Index value of this configuration
     0,                             // Configuration string index
     _DEFAULT | _SELF,              // Attributes, see usb_device.h
     50,                            // Max power consumption (2X mA)
-
+							
     /* Interface Descriptor */
-    0x09,//sizeof(USB_INTF_DSC),   // Size of this descriptor in bytes
-    USB_DESCRIPTOR_INTERFACE,      // INTERFACE descriptor type
-    0,                             // Interface Number
-    0,                             // Alternate Setting Number
-    2,                             // Number of endpoints in this intf
-    0xFF,                          // Class code
-    0xFF,                          // Subclass code
-    0xFF,                          // Protocol code
-    0,                             // Interface string index
+    9,//sizeof(USB_INTF_DSC),   // Size of this descriptor in bytes
+    USB_DESCRIPTOR_INTERFACE,   // INTERFACE descriptor type
+    0,                          // Interface Number
+    0,                          // Alternate Setting Number
+    1,                          // Number of endpoints in this intf
+    COMM_INTF,                  // Class code
+    ABSTRACT_CONTROL_MODEL,     // Subclass code
+    V25TER,                     // Protocol code
+    0,                          // Interface string index
+
+    /* CDC Class-Specific Descriptors */
+    sizeof(USB_CDC_HEADER_FN_DSC),
+    CS_INTERFACE,
+    DSC_FN_HEADER,
+    0x10,0x01,
+
+    sizeof(USB_CDC_ACM_FN_DSC),
+    CS_INTERFACE,
+    DSC_FN_ACM,
+    USB_CDC_ACM_FN_DSC_VAL,
+
+    sizeof(USB_CDC_UNION_FN_DSC),
+    CS_INTERFACE,
+    DSC_FN_UNION,
+    CDC_COMM_INTF_ID,
+    CDC_DATA_INTF_ID,
+
+    sizeof(USB_CDC_CALL_MGT_FN_DSC),
+    CS_INTERFACE,
+    DSC_FN_CALL_MGT,
+    0x00,
+    CDC_DATA_INTF_ID,
 
     /* Endpoint Descriptor */
-    0x07,                       /*sizeof(USB_EP_DSC)*/
-    USB_DESCRIPTOR_ENDPOINT,    //Endpoint Descriptor
-    _EP01_OUT,                  //EndpointAddress
-    _INTERRUPT,                 //Attributes
-    USBGEN_EP_SIZE,0x00,        //size
-    10,                          //Interval
-
-    0x07,                       /*sizeof(USB_EP_DSC)*/
+    //sizeof(USB_EP_DSC),DSC_EP,_EP02_IN,_INT,CDC_INT_EP_SIZE,0x02,
+    0x07,/*sizeof(USB_EP_DSC)*/
     USB_DESCRIPTOR_ENDPOINT,    //Endpoint Descriptor
     _EP01_IN,                   //EndpointAddress
     _INTERRUPT,                 //Attributes
-    USBGEN_EP_SIZE,0x00,        //size
-    10                           //Interval
+    0x0A,0x00,                  //size
+    0x02,                       //Interval
+
+    /* Interface Descriptor */
+    9,//sizeof(USB_INTF_DSC),   // Size of this descriptor in bytes
+    USB_DESCRIPTOR_INTERFACE,   // INTERFACE descriptor type
+    1,                          // Interface Number
+    0,                          // Alternate Setting Number
+    2,                          // Number of endpoints in this intf
+    DATA_INTF,                  // Class code
+    0,                          // Subclass code
+    NO_PROTOCOL,                // Protocol code
+    0,                          // Interface string index
+    
+    /* Endpoint Descriptor */
+    //sizeof(USB_EP_DSC),DSC_EP,_EP03_OUT,_BULK,CDC_BULK_OUT_EP_SIZE,0x00,
+    0x07,/*sizeof(USB_EP_DSC)*/
+    USB_DESCRIPTOR_ENDPOINT,    //Endpoint Descriptor
+    _EP02_OUT,                  //EndpointAddress
+    _BULK,                      //Attributes
+    0x40,0x00,                  //size
+    0x00,                       //Interval
+
+    /* Endpoint Descriptor */
+    //sizeof(USB_EP_DSC),DSC_EP,_EP03_IN,_BULK,CDC_BULK_IN_EP_SIZE,0x00
+    0x07,/*sizeof(USB_EP_DSC)*/
+    USB_DESCRIPTOR_ENDPOINT,    //Endpoint Descriptor
+    _EP02_IN,                   //EndpointAddress
+    _BULK,                      //Attributes
+    0x40,0x00,                  //size
+    0x00,                       //Interval
 };
 
 //Language code string descriptor
@@ -251,68 +297,6 @@ const uint8_t *const USB_SD_Ptr[USB_NUM_STRING_DESCRIPTORS]=
     (const uint8_t *const)&sd002,
     (const uint8_t *const)&sd003
 };
-
-#if defined(IMPLEMENT_MICROSOFT_OS_DESCRIPTOR)
-    //Microsoft "OS Descriptor" - This descriptor is based on a Microsoft specific 
-    //specification (not part of the standard USB 2.0 specs or class specs). 
-    //Implementing this special descriptor allows WinUSB driver package installation
-    //to be automatic on Windows 8.  For additional details, see:
-    //http://msdn.microsoft.com/en-us/library/windows/hardware/hh450799(v=vs.85).aspx
-    const MS_OS_DESCRIPTOR MSOSDescriptor =
-    {   
-        sizeof(MSOSDescriptor),         //bLength - lenght of this descriptor in bytes
-        USB_DESCRIPTOR_STRING,          //bDescriptorType - "string"
-        {'M','S','F','T','1','0','0'},  //qwSignature - special values that specifies the OS descriptor spec version that this firmware implements
-        GET_MS_DESCRIPTOR,              //bMS_VendorCode - defines the "GET_MS_DESCRIPTOR" bRequest literal value
-        0x00                            //bPad - always 0x00
-    };
-    
-    
-    //Extended Compat ID OS Feature Descriptor
-    const MS_COMPAT_ID_FEATURE_DESC CompatIDFeatureDescriptor =
-    {
-        //----------Header Section--------------
-        sizeof(CompatIDFeatureDescriptor),  //dwLength
-        0x0100,                             //bcdVersion = 1.00
-        EXTENDED_COMPAT_ID,                 //wIndex
-        0x01,                               //bCount - 0x01 "Function Section(s)" implemented in this descriptor
-        {0,0,0,0,0,0,0},                    //Reserved[7]
-        //----------Function Section 1----------
-        0x00,                               //bFirstInterfaceNumber: the WinUSB interface in this firmware is interface #0
-        0x01,                               //Reserved - fill this reserved byte with 0x01 according to documentation
-        {'W','I','N','U','S','B',0x00,0x00},//compatID - "WINUSB" (with two null terminators to fill all 8 bytes)
-        {0,0,0,0,0,0,0,0},                  //subCompatID - eight bytes of 0
-        {0,0,0,0,0,0}                       //Reserved
-    };    
-    
-    
-    //Extended Properties OS Feature Descriptor
-    const MS_EXT_PROPERTY_FEATURE_DESC ExtPropertyFeatureDescriptor =
-    {
-        //----------Header Section--------------
-        sizeof(ExtPropertyFeatureDescriptor),   //dwLength
-        0x0100,                                 //bcdVersion = 1.00
-        EXTENDED_PROPERTIES,                    //wIndex
-        0x0001,                                 //wCount - 0x0001 "Property Sections" implemented in this descriptor
-        //----------Property Section 1----------
-        132,                                    //dwSize - 132 bytes in this Property Section
-        0x00000001,                             //dwPropertyDataType (Unicode string)
-        40,                                     //wPropertyNameLength - 40 bytes in the bPropertyName field
-        {'D','e','v','i','c','e','I','n','t','e','r','f','a','c','e','G','U','I','D', 0x0000},  //bPropertyName - "DeviceInterfaceGUID"
-        78,                                     //dwPropertyDataLength - 78 bytes in the bPropertyData field (GUID value in UNICODE formatted string, with braces and dashes)
-        //The below value is the Device Interface GUID (a 128-bit long "globally unique identifier")
-        //Please modify the GUID value in your application before moving to production.
-        //When you change the GUID, you must also change the PC application software
-        //that connects to this device, as the software looks for the device based on 
-        //VID, PID, and GUID.  All three values in the PC application must match 
-        //the values in this firmware.
-        //The GUID value can be a randomly generated 128-bit hexadecimal number, 
-        //formatted like the below value.  The actual value is not important,
-        //so long as it is almost certain to be globally unique, and matches the
-        //PC software that communicates with this firmware.
-        {'{','5','8','d','0','7','2','1','0','-','2','7','c','1','-','1','1','d','d','-','b','d','0','b','-','0','8','0','0','2','0','0','c','9','a','6','6','}',0x0000}  //bPropertyData - this is the actual GUID value.  Make sure this matches the PC application code trying to connect to the device.
-    };    
-#endif
 
 #if defined(__18CXX)
     #pragma code

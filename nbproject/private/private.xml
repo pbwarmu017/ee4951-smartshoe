@@ -3,9 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Paul%20MacGregor/Documents/GitHub/ee4951_smartshoe.X/mcc_generated_files/usb/usb_hal_pic16f1.h</file>
-            <file>file:/C:/Users/Paul%20MacGregor/Documents/GitHub/ee4951_smartshoe.X/mcc_generated_files/usb/usb_device.c</file>
-            <file>file:/C:/Users/Paul%20MacGregor/Documents/GitHub/ee4951_smartshoe.X/main.c</file>
+            <file>file:/C:/Users/vespi/SynologyDrive/College%20Courses/Current/Senior%20Design/ee4951_smartshoe.X/mcc_generated_files/pin_manager.c</file>
+            <file>file:/C:/Users/vespi/SynologyDrive/College%20Courses/Current/Senior%20Design/ee4951_smartshoe.X/eeprom_i2c.h</file>
+            <file>file:/C:/Users/vespi/SynologyDrive/College%20Courses/Current/Senior%20Design/ee4951_smartshoe.X/mcc_generated_files/mcc.c</file>
+            <file>file:/C:/Users/vespi/SynologyDrive/College%20Courses/Current/Senior%20Design/ee4951_smartshoe.X/mcc_generated_files/i2c_master.c</file>
+            <file>file:/C:/Users/vespi/SynologyDrive/College%20Courses/Current/Senior%20Design/ee4951_smartshoe.X/eeprom_i2c.c</file>
+            <file>file:/C:/Users/vespi/SynologyDrive/College%20Courses/Current/Senior%20Design/ee4951_smartshoe.X/mcc_generated_files/usb/usb_device.h</file>
+            <file>file:/C:/Users/vespi/SynologyDrive/College%20Courses/Current/Senior%20Design/ee4951_smartshoe.X/main.c</file>
+            <file>file:/C:/Users/vespi/SynologyDrive/College%20Courses/Current/Senior%20Design/ee4951_smartshoe.X/mcc_generated_files/usb/usb_device.c</file>
+            <file>file:/C:/Users/vespi/SynologyDrive/College%20Courses/Current/Senior%20Design/ee4951_smartshoe.X/mcc_generated_files/adc.c</file>
         </group>
     </open-files>
 </project-private>

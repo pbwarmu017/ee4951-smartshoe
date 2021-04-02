@@ -23,7 +23,7 @@ please contact mla_licensing@microchip.com
 #include <stdbool.h>
 #include <stdint.h>
 #include "usb_device.h"
-#include "usb_device_generic.h"
+#include "usb_device_cdc.h"
 
 /*******************************************************************
  * Function:        bool USER_USB_CALLBACK_EVENT_HANDLER(
@@ -73,15 +73,16 @@ bool USER_USB_CALLBACK_EVENT_HANDLER(USB_EVENT event, void *pdata, uint16_t size
             break;
 
         case EVENT_CONFIGURED:
+            CDCInitEP();
             break;
 
         case EVENT_SET_DESCRIPTOR:
             break;
 
         case EVENT_EP0_REQUEST:
-            /* We have received a non-standard USB request.  The vendor driver
+            /* We have received a non-standard USB request.  The CDC driver
              * needs to check to see if the request was for it. */
-            USBCheckVendorRequest();
+            USBCheckCDCRequest();
             break;
 
         case EVENT_BUS_ERROR:

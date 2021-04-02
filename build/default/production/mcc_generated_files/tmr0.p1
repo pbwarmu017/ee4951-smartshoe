@@ -1,13 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2746 `(v ~T0 @X0 0 tf ]
-"355 ./mcc_generated_files/usb/usb_device.h
-[; ;./mcc_generated_files/usb/usb_device.h: 355: void USBEnableEndpoint(uint8_t ep, uint8_t options);
-[v _USBEnableEndpoint `(v ~T0 @X0 0 ef2`uc`uc ]
-[p mainexit ]
-"75 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
-[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
-"357 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[v F2347 `(v ~T0 @X0 0 tf ]
+"1241 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1241: extern volatile unsigned char OPTION_REG __attribute__((address(0x095)));
+[v _OPTION_REG `Vuc ~T0 @X0 0 e@149 ]
+"684
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 684: extern volatile unsigned char TMR0 __attribute__((address(0x015)));
+[v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
+"357
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 357:     struct {
 [s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
@@ -22,48 +21,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"80 ./eeprom_i2c.h
-[; ;./eeprom_i2c.h: 80: extern unsigned char control;
-[v _control `uc ~T0 @X0 0 e ]
-"81
-[; ;./eeprom_i2c.h: 81: extern unsigned int address;
-[v _address `ui ~T0 @X0 0 e ]
-"88
-[; ;./eeprom_i2c.h: 88: void LowDensByteWrite(unsigned char);
-[v _LowDensByteWrite `(v ~T0 @X0 0 ef1`uc ]
-"92
-[; ;./eeprom_i2c.h: 92: void LowDensByteRead(unsigned char*);
-[v _LowDensByteRead `(v ~T0 @X0 0 ef1`*uc ]
-"90
-[; ;./eeprom_i2c.h: 90: void LowDensPageWrite(unsigned char*,unsigned char);
-[v _LowDensPageWrite `(v ~T0 @X0 0 ef2`*uc`uc ]
-"94
-[; ;./eeprom_i2c.h: 94: void LowDensSequentialRead(unsigned char*,unsigned int);
-[v _LowDensSequentialRead `(v ~T0 @X0 0 ef2`*uc`ui ]
-"303 ./mcc_generated_files/usb/usb_device.h
-[; ;./mcc_generated_files/usb/usb_device.h: 303: void USBDeviceTasks(void);
-[v _USBDeviceTasks `(v ~T0 @X0 0 ef ]
-"111 main.c
-[; ;main.c: 111:         if ((USBDeviceState != CONFIGURED_STATE)||(UCONbits.SUSPND == 1))
-[c E3012 0 1 2 4 8 16 32 .. ]
-[n E3012 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
-"2050 ./mcc_generated_files/usb/usb_device.h
-[; ;./mcc_generated_files/usb/usb_device.h: 2050: extern volatile USB_DEVICE_STATE USBDeviceState;
-[v _USBDeviceState `VE3012 ~T0 @X0 0 e ]
-"5010 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5010:     struct {
-[s S268 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S268 . . SUSPND RESUME USBEN PKTDIS SE0 PPBRST ]
-"5009
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5009: typedef union {
-[u S267 `S268 1 ]
-[n S267 . . ]
-"5020
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5020: extern volatile UCONbits_t UCONbits __attribute__((address(0xE8E)));
-[v _UCONbits `VS267 ~T0 @X0 0 e@3726 ]
-"448 ./mcc_generated_files/usb/usb_device.h
-[; ;./mcc_generated_files/usb/usb_device.h: 448: void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
-[v _USBTransferOnePacket `(*v ~T0 @X0 0 ef4`uc`uc`*uc`uc ]
+[v F2339 `(v ~T0 @X0 0 tf ]
+"238 mcc_generated_files/tmr0.h
+[; ;mcc_generated_files/tmr0.h: 238:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2339 ]
+"274
+[; ;mcc_generated_files/tmr0.h: 274: void TMR0_DefaultInterruptHandler(void);
+[v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
+[v F2356 `(v ~T0 @X0 0 tf ]
+[v F2358 `(v ~T0 @X0 0 tf ]
+[v F2360 `(v ~T0 @X0 0 tf ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -496,145 +463,151 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6106
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 6106: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"213 ./mcc_generated_files/i2c_master.h
-[; ;./mcc_generated_files/i2c_master.h: 213: void (*MSSP_InterruptHandler)(void);
-[v _MSSP_InterruptHandler `*F2746 ~T0 @X0 1 e ]
-"51 main.c
-[; ;main.c: 51: unsigned char data[16];
-[v _data `uc ~T0 @X0 -> 16 `i e ]
-"52
-[; ;main.c: 52: void* USBInHandle;
-[v _USBInHandle `*v ~T0 @X0 1 e ]
-"54
-[; ;main.c: 54: void USBCBInitEP(void){
-[v _USBCBInitEP `(v ~T0 @X0 1 ef ]
+"58 mcc_generated_files/tmr0.c
+[; ;mcc_generated_files/tmr0.c: 58: volatile uint8_t timer0ReloadVal;
+[v _timer0ReloadVal `Vuc ~T0 @X0 1 e ]
+"59
+[; ;mcc_generated_files/tmr0.c: 59: void (*TMR0_InterruptHandler)(void);
+[v _TMR0_InterruptHandler `*F2347 ~T0 @X0 1 e ]
+"64
+[; ;mcc_generated_files/tmr0.c: 64: void TMR0_Initialize(void)
+[v _TMR0_Initialize `(v ~T0 @X0 1 ef ]
+"65
+[; ;mcc_generated_files/tmr0.c: 65: {
 {
-[e :U _USBCBInitEP ]
+[e :U _TMR0_Initialize ]
 [f ]
-"55
-[; ;main.c: 55:     USBEnableEndpoint(0x81, 0x02|0x08);
-[e ( _USBEnableEndpoint (2 , -> -> 129 `i `uc -> | -> 2 `i -> 8 `i `uc ]
-"56
-[; ;main.c: 56: }
-[e :UE 397 ]
-}
-[v $root$_main `(v ~T0 @X0 0 e ]
-"60
-[; ;main.c: 60: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
-"61
-[; ;main.c: 61: {
-{
-[e :U _main ]
-[f ]
-"63
-[; ;main.c: 63:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
 "69
-[; ;main.c: 69:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 69:     OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD2 & 0x3F));
+[e = _OPTION_REG -> | & -> _OPTION_REG `i -> 192 `i & -> 210 `i -> 63 `i `uc ]
 "72
-[; ;main.c: 72:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"79
-[; ;main.c: 79:     unsigned char i;
-[v _i `uc ~T0 @X0 1 a ]
+[; ;mcc_generated_files/tmr0.c: 72:     TMR0 = 0x06;
+[e = _TMR0 -> -> 6 `i `uc ]
+"75
+[; ;mcc_generated_files/tmr0.c: 75:     timer0ReloadVal= 6;
+[e = _timer0ReloadVal -> -> 6 `i `uc ]
+"78
+[; ;mcc_generated_files/tmr0.c: 78:     INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "81
-[; ;main.c: 81:     control = 0b10100000;
-[e = _control -> -> 160 `i `uc ]
-"86
-[; ;main.c: 86:     while (1)
-[e :U 400 ]
+[; ;mcc_generated_files/tmr0.c: 81:     INTCONbits.TMR0IE = 1;
+[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
+"84
+[; ;mcc_generated_files/tmr0.c: 84:     TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
+[e ( _TMR0_SetInterruptHandler (1 &U _TMR0_DefaultInterruptHandler ]
+"85
+[; ;mcc_generated_files/tmr0.c: 85: }
+[e :UE 327 ]
+}
 "87
-[; ;main.c: 87:     {
+[; ;mcc_generated_files/tmr0.c: 87: uint8_t TMR0_ReadTimer(void)
+[v _TMR0_ReadTimer `(uc ~T0 @X0 1 ef ]
+"88
+[; ;mcc_generated_files/tmr0.c: 88: {
 {
+[e :U _TMR0_ReadTimer ]
+[f ]
 "89
-[; ;main.c: 89:         address = 0x00AA;
-[e = _address -> -> 170 `i `ui ]
-"90
-[; ;main.c: 90:         data[0] = 0x55;
-[e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 85 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 89:     uint8_t readVal;
+[v _readVal `uc ~T0 @X0 1 a ]
 "91
-[; ;main.c: 91:         LowDensByteWrite(data[0]);
-[e ( _LowDensByteWrite (1 *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ]
-"92
-[; ;main.c: 92:         LowDensByteRead(data);
-[e ( _LowDensByteRead (1 &U _data ]
-"98
-[; ;main.c: 98:         address = 0x00B0;
-[e = _address -> -> 176 `i `ui ]
+[; ;mcc_generated_files/tmr0.c: 91:     readVal = TMR0;
+[e = _readVal _TMR0 ]
+"93
+[; ;mcc_generated_files/tmr0.c: 93:     return readVal;
+[e ) _readVal ]
+[e $UE 328  ]
+"94
+[; ;mcc_generated_files/tmr0.c: 94: }
+[e :UE 328 ]
+}
+"96
+[; ;mcc_generated_files/tmr0.c: 96: void TMR0_WriteTimer(uint8_t timerVal)
+[v _TMR0_WriteTimer `(v ~T0 @X0 1 ef1`uc ]
+"97
+[; ;mcc_generated_files/tmr0.c: 97: {
+{
+[e :U _TMR0_WriteTimer ]
+"96
+[; ;mcc_generated_files/tmr0.c: 96: void TMR0_WriteTimer(uint8_t timerVal)
+[v _timerVal `uc ~T0 @X0 1 r1 ]
+"97
+[; ;mcc_generated_files/tmr0.c: 97: {
+[f ]
 "99
-[; ;main.c: 99:         for (i = 0; i < 16; i++)
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 402  ]
-[e $U 403  ]
-[e :U 402 ]
+[; ;mcc_generated_files/tmr0.c: 99:     TMR0 = timerVal;
+[e = _TMR0 _timerVal ]
 "100
-[; ;main.c: 100:         {
-{
-"101
-[; ;main.c: 101:             data[i] = (16 -1) - i;
-[e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux -> - - -> 16 `i -> 1 `i -> _i `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 100: }
+[e :UE 329 ]
+}
 "102
-[; ;main.c: 102:         }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 402  ]
-[e :U 403 ]
-}
+[; ;mcc_generated_files/tmr0.c: 102: void TMR0_Reload(void)
+[v _TMR0_Reload `(v ~T0 @X0 1 ef ]
 "103
-[; ;main.c: 103:         LowDensPageWrite(data,16);
-[e ( _LowDensPageWrite (2 , &U _data -> -> 16 `i `uc ]
-"104
-[; ;main.c: 104:         LowDensSequentialRead(data,16);
-[e ( _LowDensSequentialRead (2 , &U _data -> -> 16 `i `ui ]
-"110
-[; ;main.c: 110:         USBDeviceTasks();
-[e ( _USBDeviceTasks ..  ]
-"111
-[; ;main.c: 111:         if ((USBDeviceState != CONFIGURED_STATE)||(UCONbits.SUSPND == 1))
-[e $ ! || != -> _USBDeviceState `ui -> . `E3012 6 `ui == -> . . _UCONbits 0 1 `i -> 1 `i 405  ]
+[; ;mcc_generated_files/tmr0.c: 103: {
+{
+[e :U _TMR0_Reload ]
+[f ]
+"105
+[; ;mcc_generated_files/tmr0.c: 105:     TMR0 = timer0ReloadVal;
+[e = _TMR0 _timer0ReloadVal ]
+"106
+[; ;mcc_generated_files/tmr0.c: 106: }
+[e :UE 330 ]
+}
+"108
+[; ;mcc_generated_files/tmr0.c: 108: void TMR0_ISR(void)
+[v _TMR0_ISR `(v ~T0 @X0 1 ef ]
+"109
+[; ;mcc_generated_files/tmr0.c: 109: {
+{
+[e :U _TMR0_ISR ]
+[f ]
 "112
-[; ;main.c: 112:         {
-{
+[; ;mcc_generated_files/tmr0.c: 112:     INTCONbits.TMR0IF = 0;
+[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
 "114
-[; ;main.c: 114:             continue;
-[e $U 399  ]
-"115
-[; ;main.c: 115:         }
-}
-[e $U 406  ]
+[; ;mcc_generated_files/tmr0.c: 114:     TMR0 = timer0ReloadVal;
+[e = _TMR0 _timer0ReloadVal ]
 "116
-[; ;main.c: 116:         else
-[e :U 405 ]
+[; ;mcc_generated_files/tmr0.c: 116:     if(TMR0_InterruptHandler)
+[e $ ! != _TMR0_InterruptHandler -> -> 0 `i `*F2356 332  ]
 "117
-[; ;main.c: 117:         {
+[; ;mcc_generated_files/tmr0.c: 117:     {
 {
+"118
+[; ;mcc_generated_files/tmr0.c: 118:         TMR0_InterruptHandler();
+[e ( *U _TMR0_InterruptHandler ..  ]
 "119
-[; ;main.c: 119:             if(!((USBInHandle != 0x0000) && ((*(volatile uint8_t*)USBInHandle & 0x80) != 0x00)))
-[e $ ! ! && != _USBInHandle -> -> 0 `i `*v != & -> *U -> _USBInHandle `*Vuc `i -> 128 `i -> 0 `i 407  ]
-"120
-[; ;main.c: 120:             {
+[; ;mcc_generated_files/tmr0.c: 119:     }
+}
+[e :U 332 ]
+"122
+[; ;mcc_generated_files/tmr0.c: 122: }
+[e :UE 331 ]
+}
+"125
+[; ;mcc_generated_files/tmr0.c: 125: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
+[v _TMR0_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F2358 ]
 {
+[e :U _TMR0_SetInterruptHandler ]
+[v _InterruptHandler `*F2360 ~T0 @X0 1 r1 ]
+[f ]
 "126
-[; ;main.c: 126:                 USBInHandle = USBTransferOnePacket(0x81,1,(uint8_t*)&data[0],sizeof(data));
-[e = _USBInHandle ( _USBTransferOnePacket (4 , , , -> -> 129 `i `uc -> -> 1 `i `uc &U *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> # _data `ui `uc ]
+[; ;mcc_generated_files/tmr0.c: 126:     TMR0_InterruptHandler = InterruptHandler;
+[e = _TMR0_InterruptHandler _InterruptHandler ]
 "127
-[; ;main.c: 127:             }
+[; ;mcc_generated_files/tmr0.c: 127: }
+[e :UE 333 ]
 }
-[e :U 407 ]
-"128
-[; ;main.c: 128:         }
-}
-[e :U 406 ]
 "129
-[; ;main.c: 129:     }
-}
-[e :U 399 ]
-[e $U 400  ]
-[e :U 401 ]
-"130
-[; ;main.c: 130: }
-[e :UE 398 ]
+[; ;mcc_generated_files/tmr0.c: 129: void TMR0_DefaultInterruptHandler(void){
+[v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+{
+[e :U _TMR0_DefaultInterruptHandler ]
+[f ]
+"132
+[; ;mcc_generated_files/tmr0.c: 132: }
+[e :UE 334 ]
 }
