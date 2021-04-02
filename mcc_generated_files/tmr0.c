@@ -49,6 +49,7 @@
 */
 
 #include <xc.h>
+#include "mcc.h"
 #include "tmr0.h"
 
 /**
