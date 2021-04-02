@@ -54,6 +54,54 @@ USB_HANDLE USBInHandle;
 void USBCBInitEP(void){
     USBEnableEndpoint(_EP01_IN, USB_IN_ENABLED|USB_DISALLOW_SETUP);
 }
+
+static uint8_t readBuffer[64];
+static uint8_t writeBuffer[64];
+
+void MCC_USB_CDC_DemoTasks(void)
+{
+    if( USBGetDeviceState() < CONFIGURED_STATE )
+    {
+        return;
+    }
+
+    if( USBIsDeviceSuspended()== true )
+    {
+        return;
+    }
+
+    if( USBUSARTIsTxTrfReady() == true)
+    {
+        uint8_t i;
+        uint8_t numBytesRead;
+
+        numBytesRead = getsUSBUSART(readBuffer, sizeof(readBuffer));
+
+        for(i=0; i<numBytesRead; i++)
+        {
+            switch(readBuffer[i])
+            {
+                /* echo line feeds and returns without modification. */
+                case 0x0A:
+                case 0x0D:
+                    writeBuffer[i] = readBuffer[i];
+                    break;
+
+                /* all other characters get +1 (e.g. 'a' -> 'b') */
+                default:
+                    writeBuffer[i] = readBuffer[i] + 1;
+                    break;
+            }
+        }
+
+        if(numBytesRead > 0)
+        {
+            putUSBUSART(writeBuffer,numBytesRead);
+        }
+    }
+
+    CDCTxService();
+}
 /*
                          Main application
  */
@@ -108,6 +156,7 @@ void main(void)
 
         //USB CODE
         USBDeviceTasks();
+        MCC_USB_CDC_DemoTasks();
         if ((USBGetDeviceState() != CONFIGURED_STATE)||(USBIsDeviceSuspended() == 1))
         {
             //device isn't connected or configured

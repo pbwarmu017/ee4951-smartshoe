@@ -3,6 +3,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "355 ./mcc_generated_files/usb/usb_device.h
 [; ;./mcc_generated_files/usb/usb_device.h: 355: void USBEnableEndpoint(uint8_t ep, uint8_t options);
 [v _USBEnableEndpoint `(v ~T0 @X0 0 ef2`uc`uc ]
+"63 main.c
+[; ;main.c: 63:     if( USBDeviceState < CONFIGURED_STATE )
+[c E3012 0 1 2 4 8 16 32 .. ]
+[n E3012 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
+"2050 ./mcc_generated_files/usb/usb_device.h
+[; ;./mcc_generated_files/usb/usb_device.h: 2050: extern volatile USB_DEVICE_STATE USBDeviceState;
+[v _USBDeviceState `VE3012 ~T0 @X0 0 e ]
+"5010 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5010:     struct {
+[s S268 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S268 . . SUSPND RESUME USBEN PKTDIS SE0 PPBRST ]
+"5009
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5009: typedef union {
+[u S267 `S268 1 ]
+[n S267 . . ]
+"5020
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5020: extern volatile UCONbits_t UCONbits __attribute__((address(0xE8E)));
+[v _UCONbits `VS267 ~T0 @X0 0 e@3726 ]
+"965 ./mcc_generated_files/usb/usb_device_cdc.h
+[; ;./mcc_generated_files/usb/usb_device_cdc.h: 965: extern uint8_t cdc_trf_state;
+[v _cdc_trf_state `uc ~T0 @X0 0 e ]
+"666
+[; ;./mcc_generated_files/usb/usb_device_cdc.h: 666: uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len);
+[v _getsUSBUSART `(uc ~T0 @X0 0 ef2`*uc`uc ]
+"708
+[; ;./mcc_generated_files/usb/usb_device_cdc.h: 708: void putUSBUSART(uint8_t *data, uint8_t Length);
+[v _putUSBUSART `(v ~T0 @X0 0 ef2`*uc`uc ]
+"844
+[; ;./mcc_generated_files/usb/usb_device_cdc.h: 844: void CDCTxService(void);
+[v _CDCTxService `(v ~T0 @X0 0 ef ]
 [p mainexit ]
 "75 ./mcc_generated_files/mcc.h
 [; ;./mcc_generated_files/mcc.h: 75: void SYSTEM_Initialize(void);
@@ -43,25 +73,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "303 ./mcc_generated_files/usb/usb_device.h
 [; ;./mcc_generated_files/usb/usb_device.h: 303: void USBDeviceTasks(void);
 [v _USBDeviceTasks `(v ~T0 @X0 0 ef ]
-"111 main.c
-[; ;main.c: 111:         if ((USBDeviceState != CONFIGURED_STATE)||(UCONbits.SUSPND == 1))
-[c E3012 0 1 2 4 8 16 32 .. ]
-[n E3012 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
-"2050 ./mcc_generated_files/usb/usb_device.h
-[; ;./mcc_generated_files/usb/usb_device.h: 2050: extern volatile USB_DEVICE_STATE USBDeviceState;
-[v _USBDeviceState `VE3012 ~T0 @X0 0 e ]
-"5010 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5010:     struct {
-[s S268 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S268 . . SUSPND RESUME USBEN PKTDIS SE0 PPBRST ]
-"5009
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5009: typedef union {
-[u S267 `S268 1 ]
-[n S267 . . ]
-"5020
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5020: extern volatile UCONbits_t UCONbits __attribute__((address(0xE8E)));
-[v _UCONbits `VS267 ~T0 @X0 0 e@3726 ]
-"448 ./mcc_generated_files/usb/usb_device.h
+"448
 [; ;./mcc_generated_files/usb/usb_device.h: 448: void* USBTransferOnePacket(uint8_t ep,uint8_t dir,uint8_t* data,uint8_t len);
 [v _USBTransferOnePacket `(*v ~T0 @X0 0 ef4`uc`uc`*uc`uc ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
@@ -518,123 +530,258 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 56: }
 [e :UE 397 ]
 }
-[v $root$_main `(v ~T0 @X0 0 e ]
-"60
-[; ;main.c: 60: void main(void)
-[v _main `(v ~T0 @X0 1 ef ]
+"58
+[; ;main.c: 58: static uint8_t readBuffer[64];
+[v _readBuffer `uc ~T0 @X0 -> 64 `i s ]
+"59
+[; ;main.c: 59: static uint8_t writeBuffer[64];
+[v _writeBuffer `uc ~T0 @X0 -> 64 `i s ]
 "61
-[; ;main.c: 61: {
+[; ;main.c: 61: void MCC_USB_CDC_DemoTasks(void)
+[v _MCC_USB_CDC_DemoTasks `(v ~T0 @X0 1 ef ]
+"62
+[; ;main.c: 62: {
+{
+[e :U _MCC_USB_CDC_DemoTasks ]
+[f ]
+"63
+[; ;main.c: 63:     if( USBDeviceState < CONFIGURED_STATE )
+[e $ ! < -> _USBDeviceState `ui -> . `E3012 6 `ui 399  ]
+"64
+[; ;main.c: 64:     {
+{
+"65
+[; ;main.c: 65:         return;
+[e $UE 398  ]
+"66
+[; ;main.c: 66:     }
+}
+[e :U 399 ]
+"68
+[; ;main.c: 68:     if( UCONbits.SUSPND== 1 )
+[e $ ! == -> . . _UCONbits 0 1 `i -> 1 `i 400  ]
+"69
+[; ;main.c: 69:     {
+{
+"70
+[; ;main.c: 70:         return;
+[e $UE 398  ]
+"71
+[; ;main.c: 71:     }
+}
+[e :U 400 ]
+"73
+[; ;main.c: 73:     if( (cdc_trf_state == 0) == 1)
+[e $ ! == -> == -> _cdc_trf_state `i -> 0 `i `i -> 1 `i 401  ]
+"74
+[; ;main.c: 74:     {
+{
+"75
+[; ;main.c: 75:         uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"76
+[; ;main.c: 76:         uint8_t numBytesRead;
+[v _numBytesRead `uc ~T0 @X0 1 a ]
+"78
+[; ;main.c: 78:         numBytesRead = getsUSBUSART(readBuffer, sizeof(readBuffer));
+[e = _numBytesRead ( _getsUSBUSART (2 , &U _readBuffer -> -> # _readBuffer `ui `uc ]
+"80
+[; ;main.c: 80:         for(i=0; i<numBytesRead; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 405  ]
+[e :U 402 ]
+"81
+[; ;main.c: 81:         {
+{
+"82
+[; ;main.c: 82:             switch(readBuffer[i])
+[e $U 407  ]
+"83
+[; ;main.c: 83:             {
+{
+"85
+[; ;main.c: 85:                 case 0x0A:
+[e :U 408 ]
+"86
+[; ;main.c: 86:                 case 0x0D:
+[e :U 409 ]
+"87
+[; ;main.c: 87:                     writeBuffer[i] = readBuffer[i];
+[e = *U + &U _writeBuffer * -> _i `ux -> -> # *U &U _writeBuffer `ui `ux *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux ]
+"88
+[; ;main.c: 88:                     break;
+[e $U 406  ]
+"91
+[; ;main.c: 91:                 default:
+[e :U 410 ]
+"92
+[; ;main.c: 92:                     writeBuffer[i] = readBuffer[i] + 1;
+[e = *U + &U _writeBuffer * -> _i `ux -> -> # *U &U _writeBuffer `ui `ux -> + -> *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux `i -> 1 `i `uc ]
+"93
+[; ;main.c: 93:                     break;
+[e $U 406  ]
+"94
+[; ;main.c: 94:             }
+}
+[e $U 406  ]
+[e :U 407 ]
+[e [\ -> *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux `i , $ -> 10 `i 408
+ , $ -> 13 `i 409
+ 410 ]
+[e :U 406 ]
+"95
+[; ;main.c: 95:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 405 ]
+[e $ < -> _i `i -> _numBytesRead `i 402  ]
+[e :U 403 ]
+}
+"97
+[; ;main.c: 97:         if(numBytesRead > 0)
+[e $ ! > -> _numBytesRead `i -> 0 `i 411  ]
+"98
+[; ;main.c: 98:         {
+{
+"99
+[; ;main.c: 99:             putUSBUSART(writeBuffer,numBytesRead);
+[e ( _putUSBUSART (2 , &U _writeBuffer _numBytesRead ]
+"100
+[; ;main.c: 100:         }
+}
+[e :U 411 ]
+"101
+[; ;main.c: 101:     }
+}
+[e :U 401 ]
+"103
+[; ;main.c: 103:     CDCTxService();
+[e ( _CDCTxService ..  ]
+"104
+[; ;main.c: 104: }
+[e :UE 398 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"108
+[; ;main.c: 108: void main(void)
+[v _main `(v ~T0 @X0 1 ef ]
+"109
+[; ;main.c: 109: {
 {
 [e :U _main ]
 [f ]
-"63
-[; ;main.c: 63:     SYSTEM_Initialize();
+"111
+[; ;main.c: 111:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"69
-[; ;main.c: 69:     (INTCONbits.GIE = 1);
+"117
+[; ;main.c: 117:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"72
-[; ;main.c: 72:     (INTCONbits.PEIE = 1);
+"120
+[; ;main.c: 120:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"79
-[; ;main.c: 79:     unsigned char i;
+"127
+[; ;main.c: 127:     unsigned char i;
 [v _i `uc ~T0 @X0 1 a ]
-"81
-[; ;main.c: 81:     control = 0b10100000;
+"129
+[; ;main.c: 129:     control = 0b10100000;
 [e = _control -> -> 160 `i `uc ]
-"86
-[; ;main.c: 86:     while (1)
-[e :U 400 ]
-"87
-[; ;main.c: 87:     {
+"134
+[; ;main.c: 134:     while (1)
+[e :U 414 ]
+"135
+[; ;main.c: 135:     {
 {
-"89
-[; ;main.c: 89:         address = 0x00AA;
+"137
+[; ;main.c: 137:         address = 0x00AA;
 [e = _address -> -> 170 `i `ui ]
-"90
-[; ;main.c: 90:         data[0] = 0x55;
+"138
+[; ;main.c: 138:         data[0] = 0x55;
 [e = *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> 85 `i `uc ]
-"91
-[; ;main.c: 91:         LowDensByteWrite(data[0]);
+"139
+[; ;main.c: 139:         LowDensByteWrite(data[0]);
 [e ( _LowDensByteWrite (1 *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux ]
-"92
-[; ;main.c: 92:         LowDensByteRead(data);
+"140
+[; ;main.c: 140:         LowDensByteRead(data);
 [e ( _LowDensByteRead (1 &U _data ]
-"98
-[; ;main.c: 98:         address = 0x00B0;
+"146
+[; ;main.c: 146:         address = 0x00B0;
 [e = _address -> -> 176 `i `ui ]
-"99
-[; ;main.c: 99:         for (i = 0; i < 16; i++)
+"147
+[; ;main.c: 147:         for (i = 0; i < 16; i++)
 {
 [e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 16 `i 402  ]
-[e $U 403  ]
-[e :U 402 ]
-"100
-[; ;main.c: 100:         {
+[e $ < -> _i `i -> 16 `i 416  ]
+[e $U 417  ]
+[e :U 416 ]
+"148
+[; ;main.c: 148:         {
 {
-"101
-[; ;main.c: 101:             data[i] = (16 -1) - i;
+"149
+[; ;main.c: 149:             data[i] = (16 -1) - i;
 [e = *U + &U _data * -> _i `ux -> -> # *U &U _data `ui `ux -> - - -> 16 `i -> 1 `i -> _i `i `uc ]
-"102
-[; ;main.c: 102:         }
+"150
+[; ;main.c: 150:         }
 }
 [e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 16 `i 402  ]
-[e :U 403 ]
+[e $ < -> _i `i -> 16 `i 416  ]
+[e :U 417 ]
 }
-"103
-[; ;main.c: 103:         LowDensPageWrite(data,16);
+"151
+[; ;main.c: 151:         LowDensPageWrite(data,16);
 [e ( _LowDensPageWrite (2 , &U _data -> -> 16 `i `uc ]
-"104
-[; ;main.c: 104:         LowDensSequentialRead(data,16);
+"152
+[; ;main.c: 152:         LowDensSequentialRead(data,16);
 [e ( _LowDensSequentialRead (2 , &U _data -> -> 16 `i `ui ]
-"110
-[; ;main.c: 110:         USBDeviceTasks();
+"158
+[; ;main.c: 158:         USBDeviceTasks();
 [e ( _USBDeviceTasks ..  ]
-"111
-[; ;main.c: 111:         if ((USBDeviceState != CONFIGURED_STATE)||(UCONbits.SUSPND == 1))
-[e $ ! || != -> _USBDeviceState `ui -> . `E3012 6 `ui == -> . . _UCONbits 0 1 `i -> 1 `i 405  ]
-"112
-[; ;main.c: 112:         {
+"159
+[; ;main.c: 159:         MCC_USB_CDC_DemoTasks();
+[e ( _MCC_USB_CDC_DemoTasks ..  ]
+"160
+[; ;main.c: 160:         if ((USBDeviceState != CONFIGURED_STATE)||(UCONbits.SUSPND == 1))
+[e $ ! || != -> _USBDeviceState `ui -> . `E3012 6 `ui == -> . . _UCONbits 0 1 `i -> 1 `i 419  ]
+"161
+[; ;main.c: 161:         {
 {
-"114
-[; ;main.c: 114:             continue;
-[e $U 399  ]
-"115
-[; ;main.c: 115:         }
+"163
+[; ;main.c: 163:             continue;
+[e $U 413  ]
+"164
+[; ;main.c: 164:         }
 }
-[e $U 406  ]
-"116
-[; ;main.c: 116:         else
-[e :U 405 ]
-"117
-[; ;main.c: 117:         {
+[e $U 420  ]
+"165
+[; ;main.c: 165:         else
+[e :U 419 ]
+"166
+[; ;main.c: 166:         {
 {
-"119
-[; ;main.c: 119:             if(!((USBInHandle != 0x0000) && ((*(volatile uint8_t*)USBInHandle & 0x80) != 0x00)))
-[e $ ! ! && != _USBInHandle -> -> 0 `i `*v != & -> *U -> _USBInHandle `*Vuc `i -> 128 `i -> 0 `i 407  ]
-"120
-[; ;main.c: 120:             {
+"168
+[; ;main.c: 168:             if(!((USBInHandle != 0x0000) && ((*(volatile uint8_t*)USBInHandle & 0x80) != 0x00)))
+[e $ ! ! && != _USBInHandle -> -> 0 `i `*v != & -> *U -> _USBInHandle `*Vuc `i -> 128 `i -> 0 `i 421  ]
+"169
+[; ;main.c: 169:             {
 {
-"126
-[; ;main.c: 126:                 USBInHandle = USBTransferOnePacket(0x81,1,(uint8_t*)&data[0],sizeof(data));
+"175
+[; ;main.c: 175:                 USBInHandle = USBTransferOnePacket(0x81,1,(uint8_t*)&data[0],sizeof(data));
 [e = _USBInHandle ( _USBTransferOnePacket (4 , , , -> -> 129 `i `uc -> -> 1 `i `uc &U *U + &U _data * -> -> -> 0 `i `ui `ux -> -> # *U &U _data `ui `ux -> -> # _data `ui `uc ]
-"127
-[; ;main.c: 127:             }
+"176
+[; ;main.c: 176:             }
 }
-[e :U 407 ]
-"128
-[; ;main.c: 128:         }
+[e :U 421 ]
+"177
+[; ;main.c: 177:         }
 }
-[e :U 406 ]
-"129
-[; ;main.c: 129:     }
+[e :U 420 ]
+"178
+[; ;main.c: 178:     }
 }
-[e :U 399 ]
-[e $U 400  ]
-[e :U 401 ]
-"130
-[; ;main.c: 130: }
-[e :UE 398 ]
+[e :U 413 ]
+[e $U 414  ]
+[e :U 415 ]
+"179
+[; ;main.c: 179: }
+[e :UE 412 ]
 }

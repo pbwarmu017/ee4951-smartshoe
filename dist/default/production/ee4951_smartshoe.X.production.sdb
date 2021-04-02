@@ -172,7 +172,7 @@ channel_Temp 29
 channel_DAC 30
 channel_FVR 31
 ]
-"111 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+"63 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 [e E3012 . `uc
 DETACHED_STATE 0
 ATTACHED_STATE 1
@@ -229,16 +229,6 @@ EVENT_EP0_REQUEST 3
 EVENT_ATTACH 4
 EVENT_TRANSFER_TERMINATED 5
 ]
-"39 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/example_mcc_usb_cdc.c
-[e E297 . `uc
-DETACHED_STATE 0
-ATTACHED_STATE 1
-POWERED_STATE 2
-DEFAULT_STATE 4
-ADR_PENDING_STATE 8
-ADDRESS_STATE 16
-CONFIGURED_STATE 32
-]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memcpy.c
 [v _memcpy memcpy `(*.4v  1 e 1 0 ]
 [v i1_memcpy memcpy `(*.4v  1 e 1 0 ]
@@ -271,7 +261,9 @@ CONFIGURED_STATE 32
 [v _LowDensSequentialRead LowDensSequentialRead `(v  1 e 1 0 ]
 "391
 [v _ACK_Poll ACK_Poll `(v  1 e 1 0 ]
-"60 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+"61 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+[v _MCC_USB_CDC_DemoTasks MCC_USB_CDC_DemoTasks `(v  1 e 1 0 ]
+"108
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -518,15 +510,15 @@ CONFIGURED_STATE 32
 ]
 [u S1982 . 1 `S1968 1 . 1 0 `S1977 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES1982  1 e 1 @11 ]
-[s S3040 . 1 `uc 1 . 1 0 :4:0 
+[s S3063 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 RB4 1 0 :1:4 
 `uc 1 RB5 1 0 :1:5 
 `uc 1 RB6 1 0 :1:6 
 `uc 1 RB7 1 0 :1:7 
 ]
 "488
-[u S3046 . 1 `S3040 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES3046  1 e 1 @13 ]
+[u S3069 . 1 `S3063 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES3069  1 e 1 @13 ]
 [s S2420 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
@@ -557,15 +549,15 @@ CONFIGURED_STATE 32
 [v _TRISA TRISA `VEuc  1 e 1 @140 ]
 "1031
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
-[s S3025 . 1 `uc 1 . 1 0 :4:0 
+[s S3048 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 TRISB4 1 0 :1:4 
 `uc 1 TRISB5 1 0 :1:5 
 `uc 1 TRISB6 1 0 :1:6 
 `uc 1 TRISB7 1 0 :1:7 
 ]
 "1045
-[u S3031 . 1 `S3025 1 . 1 0 ]
-[v _TRISBbits TRISBbits `VES3031  1 e 1 @141 ]
+[u S3054 . 1 `S3048 1 . 1 0 ]
+[v _TRISBbits TRISBbits `VES3054  1 e 1 @141 ]
 "1070
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
 [s S2399 . 1 `uc 1 TMR1IE 1 0 :1:0 
@@ -796,6 +788,10 @@ CONFIGURED_STATE 32
 [v _data data `[16]uc  1 e 16 0 ]
 "52
 [v _USBInHandle USBInHandle `*.39v  1 e 2 0 ]
+"58
+[v _readBuffer readBuffer `[64]uc  1 s 64 readBuffer ]
+"59
+[v _writeBuffer writeBuffer `[64]uc  1 s 64 writeBuffer ]
 "146 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/i2c_master.c
 [v _i2c_fsmStateTable i2c_fsmStateTable `DC[16]*.37(E2728  1 e 32 0 ]
 [s S2145 . 29 `[6]*.37(E360 1 callbackTable 12 0 `[6]*.1v 1 callbackPayload 6 12 `us 1 time_out 2 18 `us 1 time_out_value 2 20 `uc 1 address 1 22 `*.1uc 1 data_ptr 1 23 `ui 1 data_length 2 24 `E2728 1 state 1 26 `E355 1 error 1 27 `uc 1 addressNackCheck 1 28 :1:0 
@@ -1011,33 +1007,43 @@ CONFIGURED_STATE 32
 [v _cdc_data_tx cdc_data_tx `VE[64]uc  1 e 64 @8320 ]
 "66
 [v _cdc_data_rx cdc_data_rx `VE[64]uc  1 e 64 @8384 ]
-[s S3122 . 7 `[7]uc 1 _byte 7 0 ]
+[s S3145 . 7 `[7]uc 1 _byte 7 0 ]
 "76
-[s S3124 . 7 `ul 1 dwDTERate 4 0 `uc 1 bCharFormat 1 4 `uc 1 bParityType 1 5 `uc 1 bDataBits 1 6 ]
-[u S3129 _LINE_CODING 7 `S3122 1 . 7 0 `S3124 1 . 7 0 ]
-[v _line_coding line_coding `S3129  1 e 7 0 ]
+[s S3147 . 7 `ul 1 dwDTERate 4 0 `uc 1 bCharFormat 1 4 `uc 1 bParityType 1 5 `uc 1 bDataBits 1 6 ]
+[u S3152 _LINE_CODING 7 `S3145 1 . 7 0 `S3147 1 . 7 0 ]
+[v _line_coding line_coding `S3152  1 e 7 0 ]
 "83
 [v _cdc_rx_len cdc_rx_len `uc  1 e 1 0 ]
 "84
 [v _cdc_trf_state cdc_trf_state `uc  1 e 1 0 ]
+[s S3159 . 2 `uc 1 bLow 1 0 `uc 1 bHigh 1 1 ]
+"85
+[u S3162 _POINTER 2 `S3159 1 . 2 0 `us 1 _word 2 0 `*.39uc 1 bRam 2 0 `*.39us 1 wRam 2 0 `*.39DCuc 1 bRom 2 0 `*.39DCus 1 wRom 2 0 ]
+[v _pCDCSrc pCDCSrc `S3162  1 e 2 0 ]
+"86
+[v _pCDCDst pCDCDst `S3162  1 e 2 0 ]
+"87
+[v _cdc_tx_len cdc_tx_len `uc  1 e 1 0 ]
+"88
+[v _cdc_mem_type cdc_mem_type `uc  1 e 1 0 ]
 "90
 [v _CDCDataOutHandle CDCDataOutHandle `*.39v  1 e 2 0 ]
 "91
 [v _CDCDataInHandle CDCDataInHandle `*.39v  1 e 2 0 ]
-[s S3146 . 1 `uc 1 DTE_PRESENT 1 0 :1:0 
+[s S3169 . 1 `uc 1 DTE_PRESENT 1 0 :1:0 
 `uc 1 CARRIER_CONTROL 1 0 :1:1 
 ]
 "94
-[u S3149 _CONTROL_SIGNAL_BITMAP 1 `uc 1 _byte 1 0 `S3146 1 . 1 0 ]
-[v _control_signal_bitmap control_signal_bitmap `S3149  1 e 1 0 ]
+[u S3172 _CONTROL_SIGNAL_BITMAP 1 `uc 1 _byte 1 0 `S3169 1 . 1 0 ]
+[v _control_signal_bitmap control_signal_bitmap `S3172  1 e 1 0 ]
 "110
 [v _dummy_encapsulated_cmd_response dummy_encapsulated_cmd_response `[8]uc  1 e 8 0 ]
-"60 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+"108 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"79
+"127
 [v main@i i `uc  1 a 1 3 ]
-"130
+"179
 } 0
 "481 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 [v _USBDeviceTasks USBDeviceTasks `(v  1 e 1 0 ]
@@ -1229,48 +1235,7 @@ CONFIGURED_STATE 32
 {
 "347
 } 0
-"999 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-[v _USBTransferOnePacket USBTransferOnePacket `(*.39v  1 e 1 0 ]
-{
-[v USBTransferOnePacket@ep ep `uc  1 a 1 wreg ]
-[s S307 . 1 `uc 1 BC8 1 0 :1:0 
-`uc 1 BC9 1 0 :1:1 
-`uc 1 BSTALL 1 0 :1:2 
-`uc 1 DTSEN 1 0 :1:3 
-`uc 1 INCDIS 1 0 :1:4 
-`uc 1 KEN 1 0 :1:5 
-`uc 1 DTS 1 0 :1:6 
-`uc 1 UOWN 1 0 :1:7 
-]
-"1001
-[s S316 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 PID0 1 0 :1:2 
-`uc 1 PID1 1 0 :1:3 
-`uc 1 PID2 1 0 :1:4 
-`uc 1 PID3 1 0 :1:5 
-`uc 1 . 1 0 :1:6 
-]
-[s S323 . 1 `uc 1 . 1 0 :2:0 
-`uc 1 PID 1 0 :4:2 
-`uc 1 . 1 0 :2:6 
-]
-[u S327 _BD_STAT 1 `uc 1 Val 1 0 `S307 1 . 1 0 `S316 1 . 1 0 `S323 1 . 1 0 ]
-[s S332 . 4 `S327 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
-[s S337 . 4 `uc 1 filler1 1 0 :8:0 
-`uc 1 filler2 1 1 :8:0 
-`us 1 ADR 2 2 ]
-[u S341 __BDT 4 `S332 1 . 4 0 `S337 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
-[v USBTransferOnePacket@handle handle `*.39VES341  1 a 2 14 ]
-"999
-[v USBTransferOnePacket@ep ep `uc  1 a 1 wreg ]
-[v USBTransferOnePacket@dir dir `uc  1 p 1 5 ]
-[v USBTransferOnePacket@data data `*.39uc  1 p 2 6 ]
-[v USBTransferOnePacket@len len `uc  1 p 1 8 ]
-"1004
-[v USBTransferOnePacket@ep ep `uc  1 a 1 13 ]
-"1051
-} 0
-"882
+"882 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 [v _USBEnableEndpoint USBEnableEndpoint `(v  1 e 1 0 ]
 {
 [v USBEnableEndpoint@ep ep `uc  1 a 1 wreg ]
@@ -1416,6 +1381,85 @@ CONFIGURED_STATE 32
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
 {
 "86
+} 0
+"61 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+[v _MCC_USB_CDC_DemoTasks MCC_USB_CDC_DemoTasks `(v  1 e 1 0 ]
+{
+"75
+[v MCC_USB_CDC_DemoTasks@i i `uc  1 a 1 23 ]
+"76
+[v MCC_USB_CDC_DemoTasks@numBytesRead numBytesRead `uc  1 a 1 22 ]
+"104
+} 0
+"574 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_cdc.c
+[v _putUSBUSART putUSBUSART `(v  1 e 1 0 ]
+{
+[v putUSBUSART@data data `*.7uc  1 a 1 wreg ]
+[v putUSBUSART@data data `*.7uc  1 a 1 wreg ]
+[v putUSBUSART@length length `uc  1 p 1 5 ]
+"599
+[v putUSBUSART@data data `*.7uc  1 a 1 7 ]
+"605
+} 0
+"503
+[v _getsUSBUSART getsUSBUSART `(uc  1 e 1 0 ]
+{
+[v getsUSBUSART@buffer buffer `*.6uc  1 a 1 wreg ]
+[v getsUSBUSART@buffer buffer `*.6uc  1 a 1 wreg ]
+[v getsUSBUSART@len len `uc  1 p 1 16 ]
+"505
+[v getsUSBUSART@buffer buffer `*.6uc  1 a 1 19 ]
+"532
+} 0
+"854
+[v _CDCTxService CDCTxService `(v  1 e 1 0 ]
+{
+"856
+[v CDCTxService@byte_to_send byte_to_send `uc  1 a 1 18 ]
+"857
+[v CDCTxService@i i `uc  1 a 1 17 ]
+"950
+} 0
+"999 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+[v _USBTransferOnePacket USBTransferOnePacket `(*.39v  1 e 1 0 ]
+{
+[v USBTransferOnePacket@ep ep `uc  1 a 1 wreg ]
+[s S307 . 1 `uc 1 BC8 1 0 :1:0 
+`uc 1 BC9 1 0 :1:1 
+`uc 1 BSTALL 1 0 :1:2 
+`uc 1 DTSEN 1 0 :1:3 
+`uc 1 INCDIS 1 0 :1:4 
+`uc 1 KEN 1 0 :1:5 
+`uc 1 DTS 1 0 :1:6 
+`uc 1 UOWN 1 0 :1:7 
+]
+"1001
+[s S316 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID0 1 0 :1:2 
+`uc 1 PID1 1 0 :1:3 
+`uc 1 PID2 1 0 :1:4 
+`uc 1 PID3 1 0 :1:5 
+`uc 1 . 1 0 :1:6 
+]
+[s S323 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 PID 1 0 :4:2 
+`uc 1 . 1 0 :2:6 
+]
+[u S327 _BD_STAT 1 `uc 1 Val 1 0 `S307 1 . 1 0 `S316 1 . 1 0 `S323 1 . 1 0 ]
+[s S332 . 4 `S327 1 STAT 1 0 `uc 1 CNT 1 1 `uc 1 ADRL 1 2 `uc 1 ADRH 1 3 ]
+[s S337 . 4 `uc 1 filler1 1 0 :8:0 
+`uc 1 filler2 1 1 :8:0 
+`us 1 ADR 2 2 ]
+[u S341 __BDT 4 `S332 1 . 4 0 `S337 1 . 4 0 `ul 1 Val 4 0 `[4]uc 1 v 4 0 ]
+[v USBTransferOnePacket@handle handle `*.39VES341  1 a 2 14 ]
+"999
+[v USBTransferOnePacket@ep ep `uc  1 a 1 wreg ]
+[v USBTransferOnePacket@dir dir `uc  1 p 1 5 ]
+[v USBTransferOnePacket@data data `*.39uc  1 p 2 6 ]
+[v USBTransferOnePacket@len len `uc  1 p 1 8 ]
+"1004
+[v USBTransferOnePacket@ep ep `uc  1 a 1 13 ]
+"1051
 } 0
 "323 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\eeprom_i2c.c
 [v _LowDensSequentialRead LowDensSequentialRead `(v  1 e 1 0 ]
