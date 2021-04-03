@@ -1,54 +1,37 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"357 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 357:     struct {
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
-"367
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 367:     struct {
-[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S32 . . T0IF . T0IE ]
-"356
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 356: typedef union {
-[u S30 `S31 1 `S32 1 ]
-[n S30 . . . ]
-"374
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"2650
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2650: extern volatile unsigned char PMADRL __attribute__((address(0x191)));
-[v _PMADRL `Vuc ~T0 @X0 0 e@401 ]
-"2670
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2670: extern volatile unsigned char PMADRH __attribute__((address(0x192)));
-[v _PMADRH `Vuc ~T0 @X0 0 e@402 ]
-"2743
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2743:     struct {
-[s S151 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S151 . RD WR WREN WRERR FREE LWLO CFGS ]
-"2742
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2742: typedef union {
-[u S150 `S151 1 ]
-[n S150 . . ]
-"2753
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2753: extern volatile PMCON1bits_t PMCON1bits __attribute__((address(0x195)));
-[v _PMCON1bits `VS150 ~T0 @X0 0 e@405 ]
-"31 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\pic.h
-[v ___nop `(v ~T0 @X0 0 ef ]
-[p i ___nop ]
-"2717 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2717: extern volatile unsigned char PMDATH __attribute__((address(0x194)));
-[v _PMDATH `Vuc ~T0 @X0 0 e@404 ]
-"2697
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2697: extern volatile unsigned char PMDATL __attribute__((address(0x193)));
-[v _PMDATL `Vuc ~T0 @X0 0 e@403 ]
-"164 mcc_generated_files/memory.h
-[; ;mcc_generated_files/memory.h: 164: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-[v _FLASH_WriteBlock `(c ~T0 @X0 0 ef2`us`*us ]
-"189
-[; ;mcc_generated_files/memory.h: 189: void FLASH_EraseBlock(uint16_t startAddr);
-[v _FLASH_EraseBlock `(v ~T0 @X0 0 ef1`us ]
-"2793 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 2793: extern volatile unsigned char PMCON2 __attribute__((address(0x196)));
-[v _PMCON2 `Vuc ~T0 @X0 0 e@406 ]
+"1037 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1037:     struct {
+[s S65 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S65 . . TRISB4 TRISB5 TRISB6 TRISB7 ]
+"1036
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1036: typedef union {
+[u S64 `S65 1 ]
+[n S64 . . ]
+"1045
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1045: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x08D)));
+[v _TRISBbits `VS64 ~T0 @X0 0 e@141 ]
+"480
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 480:     struct {
+[s S36 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S36 . . RB4 RB5 RB6 RB7 ]
+"479
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 479: typedef union {
+[u S35 `S36 1 ]
+[n S35 . . ]
+"488
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 488: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
+[v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
+"1899
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1899:     struct {
+[s S105 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S105 . . LATB4 LATB5 LATB6 LATB7 ]
+"1898
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1898: typedef union {
+[u S104 `S105 1 ]
+[n S104 . . ]
+"1907
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1907: extern volatile LATBbits_t LATBbits __attribute__((address(0x10D)));
+[v _LATBbits `VS104 ~T0 @X0 0 e@269 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -481,296 +464,381 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6106
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 6106: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"58 mcc_generated_files/memory.c
-[; ;mcc_generated_files/memory.c: 58: uint16_t FLASH_ReadWord(uint16_t flashAddr)
-[v _FLASH_ReadWord `(us ~T0 @X0 1 ef1`us ]
-"59
-[; ;mcc_generated_files/memory.c: 59: {
+"6 24aa32a.c
+[v __i2cstart `(v ~T0 @X0 1 ef ]
+"7
 {
-[e :U _FLASH_ReadWord ]
-"58
-[; ;mcc_generated_files/memory.c: 58: uint16_t FLASH_ReadWord(uint16_t flashAddr)
-[v _flashAddr `us ~T0 @X0 1 r1 ]
-"59
-[; ;mcc_generated_files/memory.c: 59: {
+[e :U __i2cstart ]
 [f ]
-"60
-[; ;mcc_generated_files/memory.c: 60:     uint8_t GIEBitValue = INTCONbits.GIE;
-[v _GIEBitValue `uc ~T0 @X0 1 a ]
-[e = _GIEBitValue . . _INTCONbits 0 7 ]
-"62
-[; ;mcc_generated_files/memory.c: 62:     INTCONbits.GIE = 0;
-[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-"63
-[; ;mcc_generated_files/memory.c: 63:     PMADRL = (flashAddr & 0x00FF);
-[e = _PMADRL -> & -> _flashAddr `ui -> -> 255 `i `ui `uc ]
-"64
-[; ;mcc_generated_files/memory.c: 64:     PMADRH = ((flashAddr & 0xFF00) >> 8);
-[e = _PMADRH -> >> & -> _flashAddr `ui -> 65280 `ui -> 8 `i `uc ]
-"66
-[; ;mcc_generated_files/memory.c: 66:     PMCON1bits.CFGS = 0;
-[e = . . _PMCON1bits 0 6 -> -> 0 `i `uc ]
-"67
-[; ;mcc_generated_files/memory.c: 67:     PMCON1bits.RD = 1;
-[e = . . _PMCON1bits 0 0 -> -> 1 `i `uc ]
-"68
-[; ;mcc_generated_files/memory.c: 68:     __nop();
-[e ( ___nop ..  ]
-"69
-[; ;mcc_generated_files/memory.c: 69:     __nop();
-[e ( ___nop ..  ]
-"70
-[; ;mcc_generated_files/memory.c: 70:     INTCONbits.GIE = GIEBitValue;
-[e = . . _INTCONbits 0 7 _GIEBitValue ]
-"72
-[; ;mcc_generated_files/memory.c: 72:     return ((uint16_t)((PMDATH << 8) | PMDATL));
-[e ) -> | << -> _PMDATH `i -> 8 `i -> _PMDATL `i `us ]
-[e $UE 327  ]
-"73
-[; ;mcc_generated_files/memory.c: 73: }
+"8
+[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
+"9
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"10
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"11
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"12
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"13
 [e :UE 327 ]
 }
-"75
-[; ;mcc_generated_files/memory.c: 75: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word)
-[v _FLASH_WriteWord `(v ~T0 @X0 1 ef3`us`*us`us ]
-"76
-[; ;mcc_generated_files/memory.c: 76: {
+"19
+[v __i2cstop `(v ~T0 @X0 1 ef ]
+"20
 {
-[e :U _FLASH_WriteWord ]
-"75
-[; ;mcc_generated_files/memory.c: 75: void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word)
-[v _flashAddr `us ~T0 @X0 1 r1 ]
-[v _ramBuf `*us ~T0 @X0 1 r2 ]
-[v _word `us ~T0 @X0 1 r3 ]
-"76
-[; ;mcc_generated_files/memory.c: 76: {
+[e :U __i2cstop ]
 [f ]
-"77
-[; ;mcc_generated_files/memory.c: 77:     uint16_t blockStartAddr = (uint16_t)(flashAddr & ((0x2000 -1) ^ (32 -1)));
-[v _blockStartAddr `us ~T0 @X0 1 a ]
-[e = _blockStartAddr -> & -> _flashAddr `ui -> ^ - -> 8192 `i -> 1 `i - -> 32 `i -> 1 `i `ui `us ]
-"78
-[; ;mcc_generated_files/memory.c: 78:     uint8_t offset = (uint8_t)(flashAddr & (32 -1));
-[v _offset `uc ~T0 @X0 1 a ]
-[e = _offset -> & -> _flashAddr `ui -> - -> 32 `i -> 1 `i `ui `uc ]
-"79
-[; ;mcc_generated_files/memory.c: 79:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
-"82
-[; ;mcc_generated_files/memory.c: 82:     for (i=0; i<32; i++)
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 32 `i 329  ]
-[e $U 330  ]
-[e :U 329 ]
-"83
-[; ;mcc_generated_files/memory.c: 83:     {
-{
-"84
-[; ;mcc_generated_files/memory.c: 84:         ramBuf[i] = FLASH_ReadWord((blockStartAddr+i));
-[e = *U + _ramBuf * -> _i `ux -> -> # *U _ramBuf `ui `ux ( _FLASH_ReadWord (1 -> + -> _blockStartAddr `ui -> _i `ui `us ]
-"85
-[; ;mcc_generated_files/memory.c: 85:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 32 `i 329  ]
-[e :U 330 ]
-}
-"88
-[; ;mcc_generated_files/memory.c: 88:     ramBuf[offset] = word;
-[e = *U + _ramBuf * -> _offset `ux -> -> # *U _ramBuf `ui `ux _word ]
-"91
-[; ;mcc_generated_files/memory.c: 91:     FLASH_WriteBlock(blockStartAddr, ramBuf);
-[e ( _FLASH_WriteBlock (2 , _blockStartAddr _ramBuf ]
-"92
-[; ;mcc_generated_files/memory.c: 92: }
+"21
+[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
+"22
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"23
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"24
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"25
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"26
 [e :UE 328 ]
 }
-"94
-[; ;mcc_generated_files/memory.c: 94: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray)
-[v _FLASH_WriteBlock `(c ~T0 @X0 1 ef2`us`*us ]
-"95
-[; ;mcc_generated_files/memory.c: 95: {
+"33
+[v __writeBit `(v ~T0 @X0 1 ef1`uc ]
+"34
 {
-[e :U _FLASH_WriteBlock ]
-"94
-[; ;mcc_generated_files/memory.c: 94: int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray)
-[v _writeAddr `us ~T0 @X0 1 r1 ]
-[v _flashWordArray `*us ~T0 @X0 1 r2 ]
-"95
-[; ;mcc_generated_files/memory.c: 95: {
+[e :U __writeBit ]
+"33
+[v _data `uc ~T0 @X0 1 r1 ]
+"34
 [f ]
-"96
-[; ;mcc_generated_files/memory.c: 96:     uint16_t blockStartAddr = (uint16_t )(writeAddr & ((0x2000 -1) ^ (32 -1)));
-[v _blockStartAddr `us ~T0 @X0 1 a ]
-[e = _blockStartAddr -> & -> _writeAddr `ui -> ^ - -> 8192 `i -> 1 `i - -> 32 `i -> 1 `i `ui `us ]
-"97
-[; ;mcc_generated_files/memory.c: 97:     uint8_t GIEBitValue = INTCONbits.GIE;
-[v _GIEBitValue `uc ~T0 @X0 1 a ]
-[e = _GIEBitValue . . _INTCONbits 0 7 ]
-"98
-[; ;mcc_generated_files/memory.c: 98:     uint8_t i;
-[v _i `uc ~T0 @X0 1 a ]
-"101
-[; ;mcc_generated_files/memory.c: 101:     if( writeAddr != blockStartAddr )
-[e $ ! != -> _writeAddr `ui -> _blockStartAddr `ui 333  ]
-"102
-[; ;mcc_generated_files/memory.c: 102:     {
+"35
+[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
+"36
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"37
+[e $ ! != & -> _data `i -> 128 `i -> 0 `i 330  ]
+"38
 {
-"103
-[; ;mcc_generated_files/memory.c: 103:         return -1;
-[e ) -> -U -> 1 `i `c ]
-[e $UE 332  ]
-"104
-[; ;mcc_generated_files/memory.c: 104:     }
+"39
+[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+"40
+}
+[e $U 331  ]
+"41
+[e :U 330 ]
+"42
+{
+"43
+[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+"44
+}
+[e :U 331 ]
+"45
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"46
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"47
+[e :UE 329 ]
+}
+"54
+[v __readBit `(v ~T0 @X0 1 ef1`*uc ]
+"55
+{
+[e :U __readBit ]
+"54
+[v _data `*uc ~T0 @X0 1 r1 ]
+"55
+[f ]
+"56
+[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
+"57
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"58
+[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+"59
+[e =& *U _data -> -> 254 `i `uc ]
+"60
+[e $ ! != -> . . _PORTBbits 0 1 `i -> 0 `i 333  ]
+"61
+{
+"62
+[e =| *U _data -> -> 1 `i `uc ]
+"63
 }
 [e :U 333 ]
-"106
-[; ;mcc_generated_files/memory.c: 106:     INTCONbits.GIE = 0;
-[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-"109
-[; ;mcc_generated_files/memory.c: 109:     FLASH_EraseBlock(writeAddr);
-[e ( _FLASH_EraseBlock (1 _writeAddr ]
-"112
-[; ;mcc_generated_files/memory.c: 112:     PMCON1bits.CFGS = 0;
-[e = . . _PMCON1bits 0 6 -> -> 0 `i `uc ]
-"113
-[; ;mcc_generated_files/memory.c: 113:     PMCON1bits.WREN = 1;
-[e = . . _PMCON1bits 0 2 -> -> 1 `i `uc ]
-"114
-[; ;mcc_generated_files/memory.c: 114:     PMCON1bits.LWLO = 1;
-[e = . . _PMCON1bits 0 5 -> -> 1 `i `uc ]
-"116
-[; ;mcc_generated_files/memory.c: 116:     for (i=0; i<32; i++)
-{
-[e = _i -> -> 0 `i `uc ]
-[e $ < -> _i `i -> 32 `i 334  ]
-[e $U 335  ]
-[e :U 334 ]
-"117
-[; ;mcc_generated_files/memory.c: 117:     {
-{
-"119
-[; ;mcc_generated_files/memory.c: 119:         PMADRL = (writeAddr & 0xFF);
-[e = _PMADRL -> & -> _writeAddr `ui -> -> 255 `i `ui `uc ]
-"121
-[; ;mcc_generated_files/memory.c: 121:         PMADRH = ((writeAddr & 0xFF00) >> 8);
-[e = _PMADRH -> >> & -> _writeAddr `ui -> 65280 `ui -> 8 `i `uc ]
-"124
-[; ;mcc_generated_files/memory.c: 124:         PMDATL = flashWordArray[i];
-[e = _PMDATL -> *U + _flashWordArray * -> _i `ux -> -> # *U _flashWordArray `ui `ux `uc ]
-"125
-[; ;mcc_generated_files/memory.c: 125:         PMDATH = ((flashWordArray[i] & 0xFF00) >> 8);
-[e = _PMDATH -> >> & -> *U + _flashWordArray * -> _i `ux -> -> # *U _flashWordArray `ui `ux `ui -> 65280 `ui -> 8 `i `uc ]
-"127
-[; ;mcc_generated_files/memory.c: 127:         if(i == (32 -1))
-[e $ ! == -> _i `i - -> 32 `i -> 1 `i 337  ]
-"128
-[; ;mcc_generated_files/memory.c: 128:         {
-{
-"130
-[; ;mcc_generated_files/memory.c: 130:             PMCON1bits.LWLO = 0;
-[e = . . _PMCON1bits 0 5 -> -> 0 `i `uc ]
-"131
-[; ;mcc_generated_files/memory.c: 131:         }
-}
-[e :U 337 ]
-"133
-[; ;mcc_generated_files/memory.c: 133:         PMCON2 = 0x55;
-[e = _PMCON2 -> -> 85 `i `uc ]
-"134
-[; ;mcc_generated_files/memory.c: 134:         PMCON2 = 0xAA;
-[e = _PMCON2 -> -> 170 `i `uc ]
-"135
-[; ;mcc_generated_files/memory.c: 135:         PMCON1bits.WR = 1;
-[e = . . _PMCON1bits 0 1 -> -> 1 `i `uc ]
-"136
-[; ;mcc_generated_files/memory.c: 136:         __nop();
-[e ( ___nop ..  ]
-"137
-[; ;mcc_generated_files/memory.c: 137:         __nop();
-[e ( ___nop ..  ]
-"139
-[; ;mcc_generated_files/memory.c: 139:      writeAddr++;
-[e ++ _writeAddr -> -> 1 `i `us ]
-"140
-[; ;mcc_generated_files/memory.c: 140:     }
-}
-[e ++ _i -> -> 1 `i `uc ]
-[e $ < -> _i `i -> 32 `i 334  ]
-[e :U 335 ]
-}
-"142
-[; ;mcc_generated_files/memory.c: 142:     PMCON1bits.WREN = 0;
-[e = . . _PMCON1bits 0 2 -> -> 0 `i `uc ]
-"143
-[; ;mcc_generated_files/memory.c: 143:     INTCONbits.GIE = GIEBitValue;
-[e = . . _INTCONbits 0 7 _GIEBitValue ]
-"145
-[; ;mcc_generated_files/memory.c: 145:     return 0;
-[e ) -> -> 0 `i `c ]
-[e $UE 332  ]
-"146
-[; ;mcc_generated_files/memory.c: 146: }
+"64
+[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+"65
 [e :UE 332 ]
 }
-"148
-[; ;mcc_generated_files/memory.c: 148: void FLASH_EraseBlock(uint16_t startAddr)
-[v _FLASH_EraseBlock `(v ~T0 @X0 1 ef1`us ]
-"149
-[; ;mcc_generated_files/memory.c: 149: {
+"75
+[v __writeByte `(uc ~T0 @X0 1 ef1`uc ]
+"76
 {
-[e :U _FLASH_EraseBlock ]
-"148
-[; ;mcc_generated_files/memory.c: 148: void FLASH_EraseBlock(uint16_t startAddr)
-[v _startAddr `us ~T0 @X0 1 r1 ]
-"149
-[; ;mcc_generated_files/memory.c: 149: {
+[e :U __writeByte ]
+"75
+[v _data `uc ~T0 @X0 1 r1 ]
+"76
 [f ]
-"150
-[; ;mcc_generated_files/memory.c: 150:     uint8_t GIEBitValue = INTCONbits.GIE;
-[v _GIEBitValue `uc ~T0 @X0 1 a ]
-[e = _GIEBitValue . . _INTCONbits 0 7 ]
-"153
-[; ;mcc_generated_files/memory.c: 153:     INTCONbits.GIE = 0;
-[e = . . _INTCONbits 0 7 -> -> 0 `i `uc ]
-"155
-[; ;mcc_generated_files/memory.c: 155:     PMADRL = (startAddr & 0xFF);
-[e = _PMADRL -> & -> _startAddr `ui -> -> 255 `i `ui `uc ]
-"157
-[; ;mcc_generated_files/memory.c: 157:     PMADRH = ((startAddr & 0xFF00) >> 8);
-[e = _PMADRH -> >> & -> _startAddr `ui -> 65280 `ui -> 8 `i `uc ]
-"160
-[; ;mcc_generated_files/memory.c: 160:     PMCON1bits.CFGS = 0;
-[e = . . _PMCON1bits 0 6 -> -> 0 `i `uc ]
-"161
-[; ;mcc_generated_files/memory.c: 161:     PMCON1bits.FREE = 1;
-[e = . . _PMCON1bits 0 4 -> -> 1 `i `uc ]
-"162
-[; ;mcc_generated_files/memory.c: 162:     PMCON1bits.WREN = 1;
-[e = . . _PMCON1bits 0 2 -> -> 1 `i `uc ]
-"165
-[; ;mcc_generated_files/memory.c: 165:     PMCON2 = 0x55;
-[e = _PMCON2 -> -> 85 `i `uc ]
-"166
-[; ;mcc_generated_files/memory.c: 166:     PMCON2 = 0xAA;
-[e = _PMCON2 -> -> 170 `i `uc ]
-"167
-[; ;mcc_generated_files/memory.c: 167:     PMCON1bits.WR = 1;
-[e = . . _PMCON1bits 0 1 -> -> 1 `i `uc ]
-"168
-[; ;mcc_generated_files/memory.c: 168:     __nop();
-[e ( ___nop ..  ]
-"169
-[; ;mcc_generated_files/memory.c: 169:     __nop();
-[e ( ___nop ..  ]
-"171
-[; ;mcc_generated_files/memory.c: 171:     PMCON1bits.WREN = 0;
-[e = . . _PMCON1bits 0 2 -> -> 0 `i `uc ]
-"172
-[; ;mcc_generated_files/memory.c: 172:     INTCONbits.GIE = GIEBitValue;
-[e = . . _INTCONbits 0 7 _GIEBitValue ]
-"173
-[; ;mcc_generated_files/memory.c: 173: }
+"77
+[v _i `uc ~T0 @X0 1 a ]
+"78
+[v _ack `uc ~T0 @X0 1 a ]
+[e = _ack -> -> 1 `i `uc ]
+"79
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 8 `i 335  ]
+[e $U 336  ]
+[e :U 335 ]
+"80
+{
+"81
+[e ( __writeBit (1 _data ]
+"82
+[e = _data -> << -> _data `i -> 1 `i `uc ]
+"83
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 8 `i 335  ]
+[e :U 336 ]
+}
+"84
+[e ( __readBit (1 &U _ack ]
+"85
+[e ) _ack ]
+[e $UE 334  ]
+"86
+[e :UE 334 ]
+}
+"94
+[v __readByte `(uc ~T0 @X0 1 ef1`uc ]
+"95
+{
+[e :U __readByte ]
+"94
+[v _ack `uc ~T0 @X0 1 r1 ]
+"95
+[f ]
+"96
+[v _ret `uc ~T0 @X0 1 a ]
+[e = _ret -> -> 0 `i `uc ]
+"97
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 8 `i 339  ]
+[e $U 340  ]
+[e :U 339 ]
+"98
+{
+"99
+[e = _ret -> << -> _ret `i -> 1 `i `uc ]
+"100
+[e ( __readBit (1 &U _ret ]
+"102
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 8 `i 339  ]
+[e :U 340 ]
+}
+"103
+[e ( __writeBit (1 _ack ]
+"104
+[e ) _ret ]
+[e $UE 338  ]
+"105
 [e :UE 338 ]
+}
+"111
+[v _ACK_Poll `(v ~T0 @X0 1 ef ]
+"112
+{
+[e :U _ACK_Poll ]
+[f ]
+"113
+[v _ackstat `uc ~T0 @X0 1 a ]
+[e = _ackstat -> -> 1 `i `uc ]
+"115
+[e :U 345 ]
+"116
+{
+"117
+[e ( __i2cstart ..  ]
+"118
+[e = _ackstat ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"119
+}
+[e $ == -> _ackstat `i -> 1 `i 345  ]
+[e :U 344 ]
+"120
+[e ( __i2cstop ..  ]
+"121
+[e :UE 342 ]
+}
+"131
+[v _eeprom_writeByte `(v ~T0 @X0 1 ef2`ui`uc ]
+"132
+{
+[e :U _eeprom_writeByte ]
+"131
+[v _address `ui ~T0 @X0 1 r1 ]
+[v _data `uc ~T0 @X0 1 r2 ]
+"132
+[f ]
+"133
+[v _addressmsb `uc ~T0 @X0 1 a ]
+[e = _addressmsb -> >> _address -> 8 `i `uc ]
+"134
+[v _addresslsb `uc ~T0 @X0 1 a ]
+[e = _addresslsb -> _address `uc ]
+"135
+[e ( __i2cstart ..  ]
+"136
+[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"137
+[e ( __writeByte (1 _addressmsb ]
+"138
+[e ( __writeByte (1 _addresslsb ]
+"139
+[e ( __writeByte (1 _data ]
+"140
+[e ( __i2cstop ..  ]
+"141
+[e ( _ACK_Poll ..  ]
+"142
+[e :UE 346 ]
+}
+"152
+[v _eeprom_writePage `(v ~T0 @X0 1 ef2`ui`*uc ]
+"153
+{
+[e :U _eeprom_writePage ]
+"152
+[v _address `ui ~T0 @X0 1 r1 ]
+[v _data `*uc ~T0 @X0 1 r2 ]
+"153
+[f ]
+"154
+[v _addressmsb `uc ~T0 @X0 1 a ]
+[e = _addressmsb -> >> -> -> _address `uc `i -> 8 `i `uc ]
+"155
+[v _addresslsb `uc ~T0 @X0 1 a ]
+[e = _addresslsb -> _address `uc ]
+"156
+[e $ ! != % _address -> -> 32 `i `ui -> -> 0 `i `ui 348  ]
+[e $UE 347  ]
+[e :U 348 ]
+"157
+[e ( __i2cstart ..  ]
+"158
+[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"159
+[e ( __writeByte (1 _addressmsb ]
+"160
+[e ( __writeByte (1 _addresslsb ]
+"161
+{
+[v _i `i ~T0 @X0 1 a ]
+[e = _i -> 0 `i ]
+[e $ < _i -> 32 `i 349  ]
+[e $U 350  ]
+[e :U 349 ]
+"162
+{
+"163
+[e ( __writeByte (1 *U + _data * -> _i `x -> -> # *U _data `i `x ]
+"164
+}
+[e ++ _i -> 1 `i ]
+[e $ < _i -> 32 `i 349  ]
+[e :U 350 ]
+}
+"165
+[e ( __i2cstop ..  ]
+"166
+[e ( _ACK_Poll ..  ]
+"167
+[e :UE 347 ]
+}
+"176
+[v _eeprom_readByte `(v ~T0 @X0 1 ef2`ui`*uc ]
+"177
+{
+[e :U _eeprom_readByte ]
+"176
+[v _address `ui ~T0 @X0 1 r1 ]
+[v _data `*uc ~T0 @X0 1 r2 ]
+"177
+[f ]
+"178
+[v _addressmsb `uc ~T0 @X0 1 a ]
+[e = _addressmsb -> >> _address -> 8 `i `uc ]
+"179
+[v _addresslsb `uc ~T0 @X0 1 a ]
+[e = _addresslsb -> _address `uc ]
+"181
+[e ( __i2cstart ..  ]
+"182
+[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"183
+[e ( __writeByte (1 _addressmsb ]
+"184
+[e ( __writeByte (1 _addresslsb ]
+"185
+[e ( __i2cstart ..  ]
+"186
+[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+"187
+[e = *U _data ( __readByte (1 -> -> 128 `i `uc ]
+"188
+[e ( __i2cstop ..  ]
+"190
+[e :UE 352 ]
+}
+"197
+[v _eeprom_readMem `(v ~T0 @X0 1 ef1`*uc ]
+"198
+{
+[e :U _eeprom_readMem ]
+"197
+[v _byte `*uc ~T0 @X0 1 r1 ]
+"198
+[f ]
+"199
+[e ( __i2cstart ..  ]
+"200
+[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"201
+[e ( __writeByte (1 -> -> 0 `i `uc ]
+"202
+[e ( __writeByte (1 -> -> 255 `i `uc ]
+"203
+[e ( __i2cstart ..  ]
+"204
+[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+"205
+{
+[v _i `us ~T0 @X0 1 a ]
+[e = _i -> -> 0 `i `us ]
+[e $ < -> _i `ui -> -> 4095 `i `ui 354  ]
+[e $U 355  ]
+[e :U 354 ]
+"206
+{
+"207
+[e = *U _byte ( __readByte (1 -> -> 0 `i `uc ]
+"208
+}
+[e ++ _i -> -> 1 `i `us ]
+[e $ < -> _i `ui -> -> 4095 `i `ui 354  ]
+[e :U 355 ]
+}
+"209
+[e = *U _byte ( __readByte (1 -> -> 128 `i `uc ]
+"210
+[e ( __i2cstop ..  ]
+"211
+[e :UE 353 ]
 }

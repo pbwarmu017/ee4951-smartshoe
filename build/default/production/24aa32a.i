@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/memory.c"
+# 1 "24aa32a.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/memory.c" 2
-# 51 "mcc_generated_files/memory.c"
+# 1 "24aa32a.c" 2
+# 1 "./24aa32a.h" 1
+# 40 "./24aa32a.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3981,227 +3982,198 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 51 "mcc_generated_files/memory.c" 2
-
-# 1 "mcc_generated_files/memory.h" 1
-# 54 "mcc_generated_files/memory.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
-# 54 "mcc_generated_files/memory.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
+# 40 "./24aa32a.h" 2
 
 
-
-
-typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
+void _i2cstart(void);
+void _i2cstop(void);
+void _writeBit(unsigned char data);
+void _readBit(unsigned char *data);
+unsigned char _writeByte(unsigned char data);
+unsigned char _readByte(unsigned char ack);
+void ACK_Poll(void);
+void eeprom_writeByte(unsigned int address, unsigned char data);
+void eeprom_writePage(unsigned int address, unsigned char *data);
+void eeprom_readByte(unsigned int address, unsigned char *data);
+void eeprom_readMem(unsigned char *data);
+# 1 "24aa32a.c" 2
 
 
 
 
 
-typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 55 "mcc_generated_files/memory.h" 2
-# 99 "mcc_generated_files/memory.h"
-uint16_t FLASH_ReadWord(uint16_t flashAddr);
-# 128 "mcc_generated_files/memory.h"
-void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-# 164 "mcc_generated_files/memory.h"
-int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-# 189 "mcc_generated_files/memory.h"
-void FLASH_EraseBlock(uint16_t startAddr);
-# 52 "mcc_generated_files/memory.c" 2
-
-
-
-
-
-
-uint16_t FLASH_ReadWord(uint16_t flashAddr)
+void _i2cstart(void)
 {
-    uint8_t GIEBitValue = INTCONbits.GIE;
+    TRISBbits.TRISB4 = 0;
+ PORTBbits.RB4 = 1;
+ LATBbits.LATB6 = 1;
+ PORTBbits.RB4 = 0;
+ LATBbits.LATB6 = 0;
+  }
 
-    INTCONbits.GIE = 0;
-    PMADRL = (flashAddr & 0x00FF);
-    PMADRH = ((flashAddr & 0xFF00) >> 8);
 
-    PMCON1bits.CFGS = 0;
-    PMCON1bits.RD = 1;
-    __nop();
-    __nop();
-    INTCONbits.GIE = GIEBitValue;
 
-    return ((uint16_t)((PMDATH << 8) | PMDATL));
+
+
+void _i2cstop(void)
+{
+    TRISBbits.TRISB4 = 0;
+ LATBbits.LATB6 = 0;
+ PORTBbits.RB4 = 0;
+ LATBbits.LATB6 = 1;
+ PORTBbits.RB4 = 1;
 }
 
-void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word)
+
+
+
+
+
+void _writeBit(unsigned char data)
 {
-    uint16_t blockStartAddr = (uint16_t)(flashAddr & ((0x2000 -1) ^ (32 -1)));
-    uint8_t offset = (uint8_t)(flashAddr & (32 -1));
-    uint8_t i;
-
-
-    for (i=0; i<32; i++)
-    {
-        ramBuf[i] = FLASH_ReadWord((blockStartAddr+i));
+ TRISBbits.TRISB4 = 0;
+ LATBbits.LATB6 = 0;
+ if(data & 0x80)
+ {
+  PORTBbits.RB4 = 1;
     }
-
-
-    ramBuf[offset] = word;
-
-
-    FLASH_WriteBlock(blockStartAddr, ramBuf);
+    else
+    {
+        PORTBbits.RB4 = 0;
+    }
+ LATBbits.LATB6 = 1;
+ LATBbits.LATB6 = 0;
 }
 
-int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray)
+
+
+
+
+
+void _readBit(unsigned char *data)
+ {
+  TRISBbits.TRISB4 = 1;
+  LATBbits.LATB6 = 0;
+  LATBbits.LATB6 = 1;
+  *data &= 0xFE;
+  if(PORTBbits.RB4)
+ {
+  *data |= 0x01;
+ }
+ LATBbits.LATB6 = 0;
+}
+# 75 "24aa32a.c"
+unsigned char _writeByte(unsigned char data)
 {
-    uint16_t blockStartAddr = (uint16_t )(writeAddr & ((0x2000 -1) ^ (32 -1)));
-    uint8_t GIEBitValue = INTCONbits.GIE;
-    uint8_t i;
-
-
-    if( writeAddr != blockStartAddr )
-    {
-        return -1;
-    }
-
-    INTCONbits.GIE = 0;
-
-
-    FLASH_EraseBlock(writeAddr);
-
-
-    PMCON1bits.CFGS = 0;
-    PMCON1bits.WREN = 1;
-    PMCON1bits.LWLO = 1;
-
-    for (i=0; i<32; i++)
-    {
-
-        PMADRL = (writeAddr & 0xFF);
-
-        PMADRH = ((writeAddr & 0xFF00) >> 8);
-
-
-        PMDATL = flashWordArray[i];
-        PMDATH = ((flashWordArray[i] & 0xFF00) >> 8);
-
-        if(i == (32 -1))
-        {
-
-            PMCON1bits.LWLO = 0;
-        }
-
-        PMCON2 = 0x55;
-        PMCON2 = 0xAA;
-        PMCON1bits.WR = 1;
-        __nop();
-        __nop();
-
-     writeAddr++;
-    }
-
-    PMCON1bits.WREN = 0;
-    INTCONbits.GIE = GIEBitValue;
-
-    return 0;
+ unsigned char i;
+ unsigned char ack = 1;
+ for (int i = 0; i < 8; i++)
+ {
+  _writeBit(data);
+  data = (unsigned char)(data << 1);
+ }
+ _readBit(&ack);
+ return ack;
 }
 
-void FLASH_EraseBlock(uint16_t startAddr)
+
+
+
+
+
+
+unsigned char _readByte(unsigned char ack)
 {
-    uint8_t GIEBitValue = INTCONbits.GIE;
+ unsigned char ret = 0;
+ for (int i = 0; i < 8; i++)
+ {
+  ret = (unsigned char)(ret << 1);
+  _readBit(&ret);
+
+ }
+ _writeBit(ack);
+ return(ret);
+}
 
 
-    INTCONbits.GIE = 0;
-
-    PMADRL = (startAddr & 0xFF);
-
-    PMADRH = ((startAddr & 0xFF00) >> 8);
 
 
-    PMCON1bits.CFGS = 0;
-    PMCON1bits.FREE = 1;
-    PMCON1bits.WREN = 1;
+
+void ACK_Poll(void)
+{
+ unsigned char ackstat = 1;
+
+ do
+ {
+  _i2cstart();
+  ackstat = _writeByte(0b10100000 | (0b000 << 1) | 0x00);
+ } while(ackstat == 1);
+ _i2cstop();
+}
+# 131 "24aa32a.c"
+void eeprom_writeByte(unsigned int address, unsigned char data)
+{
+    unsigned char addressmsb = (unsigned char)(address >> 8);
+    unsigned char addresslsb = (unsigned char)address;
+ _i2cstart();
+ _writeByte(0b10100000 | (0b000 << 1) | 0x00);
+ _writeByte(addressmsb);
+ _writeByte(addresslsb);
+ _writeByte(data);
+ _i2cstop();
+ ACK_Poll();
+}
+# 152 "24aa32a.c"
+void eeprom_writePage(unsigned int address, unsigned char *data)
+{
+    unsigned char addressmsb = (unsigned char)address >> 8;
+    unsigned char addresslsb = (unsigned char)address;
+ if(address % 0x20 != 0) return;
+ _i2cstart();
+ _writeByte(0b10100000 | (0b000 << 1) | 0x00);
+ _writeByte(addressmsb);
+ _writeByte(addresslsb);
+ for (int i = 0; i < 32; i++)
+ {
+ _writeByte(data[i]);
+ }
+ _i2cstop();
+ ACK_Poll();
+}
+# 176 "24aa32a.c"
+void eeprom_readByte(unsigned int address, unsigned char *data)
+{
+    unsigned char addressmsb = (unsigned char)(address >> 8);
+    unsigned char addresslsb = (unsigned char)address;
+
+ _i2cstart();
+ _writeByte(0b10100000 | (0b000 << 1) | 0x00);
+ _writeByte(addressmsb);
+ _writeByte(addresslsb);
+ _i2cstart();
+ _writeByte(0b10100000 | (0b000 << 1) | 0x01);
+ *data = _readByte(0x80);
+ _i2cstop();
+
+}
 
 
-    PMCON2 = 0x55;
-    PMCON2 = 0xAA;
-    PMCON1bits.WR = 1;
-    __nop();
-    __nop();
 
-    PMCON1bits.WREN = 0;
-    INTCONbits.GIE = GIEBitValue;
+
+
+
+void eeprom_readMem(unsigned char *byte)
+{
+    _i2cstart();
+ _writeByte(0b10100000 | (0b000 << 1) | 0x00);
+ _writeByte(0);
+ _writeByte(0xFF);
+ _i2cstart();
+ _writeByte(0b10100000 | (0b000 << 1) | 0x01);
+ for (unsigned short i = 0; i < 0xFFF; i++)
+ {
+        *byte = _readByte(0x00);
+ }
+    *byte = _readByte(0x80);
+    _i2cstop();
 }

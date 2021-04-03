@@ -102,23 +102,6 @@
 #define motion_detect_SetPullup()          do { WPUAbits.WPUA5 = 1; } while(0)
 #define motion_detect_ResetPullup()        do { WPUAbits.WPUA5 = 0; } while(0)
 
-// get/set pin_sda aliases
-#define pin_sda_TRIS                 TRISBbits.TRISB4
-#define pin_sda_LAT                  LATBbits.LATB4
-#define pin_sda_PORT                 PORTBbits.RB4
-#define pin_sda_WPU                  WPUBbits.WPUB4
-#define pin_sda_ANS                  ANSELBbits.ANSB4
-#define pin_sda_SetHigh()            do { LATBbits.LATB4 = 1; } while(0)
-#define pin_sda_SetLow()             do { LATBbits.LATB4 = 0; } while(0)
-#define pin_sda_Toggle()             do { LATBbits.LATB4 = ~LATBbits.LATB4; } while(0)
-#define pin_sda_GetValue()           PORTBbits.RB4
-#define pin_sda_SetDigitalInput()    do { TRISBbits.TRISB4 = 1; } while(0)
-#define pin_sda_SetDigitalOutput()   do { TRISBbits.TRISB4 = 0; } while(0)
-#define pin_sda_SetPullup()          do { WPUBbits.WPUB4 = 1; } while(0)
-#define pin_sda_ResetPullup()        do { WPUBbits.WPUB4 = 0; } while(0)
-#define pin_sda_SetAnalogMode()      do { ANSELBbits.ANSB4 = 1; } while(0)
-#define pin_sda_SetDigitalMode()     do { ANSELBbits.ANSB4 = 0; } while(0)
-
 // get/set NA1 aliases
 #define NA1_TRIS                 TRISBbits.TRISB5
 #define NA1_LAT                  LATBbits.LATB5
@@ -135,20 +118,6 @@
 #define NA1_ResetPullup()        do { WPUBbits.WPUB5 = 0; } while(0)
 #define NA1_SetAnalogMode()      do { ANSELBbits.ANSB5 = 1; } while(0)
 #define NA1_SetDigitalMode()     do { ANSELBbits.ANSB5 = 0; } while(0)
-
-// get/set pin_scl aliases
-#define pin_scl_TRIS                 TRISBbits.TRISB6
-#define pin_scl_LAT                  LATBbits.LATB6
-#define pin_scl_PORT                 PORTBbits.RB6
-#define pin_scl_WPU                  WPUBbits.WPUB6
-#define pin_scl_SetHigh()            do { LATBbits.LATB6 = 1; } while(0)
-#define pin_scl_SetLow()             do { LATBbits.LATB6 = 0; } while(0)
-#define pin_scl_Toggle()             do { LATBbits.LATB6 = ~LATBbits.LATB6; } while(0)
-#define pin_scl_GetValue()           PORTBbits.RB6
-#define pin_scl_SetDigitalInput()    do { TRISBbits.TRISB6 = 1; } while(0)
-#define pin_scl_SetDigitalOutput()   do { TRISBbits.TRISB6 = 0; } while(0)
-#define pin_scl_SetPullup()          do { WPUBbits.WPUB6 = 1; } while(0)
-#define pin_scl_ResetPullup()        do { WPUBbits.WPUB6 = 0; } while(0)
 
 // get/set NA2 aliases
 #define NA2_TRIS                 TRISBbits.TRISB7

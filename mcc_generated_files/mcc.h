@@ -53,9 +53,7 @@
 #include <stdbool.h>
 #include <conio.h>
 #include "interrupt_manager.h"
-#include "i2c_master.h"
 #include "usb/usb.h"
-#include "memory.h"
 #include "tmr0.h"
 #include "adc.h"
 

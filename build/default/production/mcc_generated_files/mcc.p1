@@ -1,16 +1,12 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2746 `(v ~T0 @X0 0 tf ]
-"89 mcc_generated_files/i2c_master.h
-[; ;mcc_generated_files/i2c_master.h: 89: void I2C_Initialize(void);
-[v _I2C_Initialize `(v ~T0 @X0 0 ef ]
-"283 mcc_generated_files/pin_manager.h
-[; ;mcc_generated_files/pin_manager.h: 283: void PIN_MANAGER_Initialize (void);
+"252 mcc_generated_files/pin_manager.h
+[; ;mcc_generated_files/pin_manager.h: 252: void PIN_MANAGER_Initialize (void);
 [v _PIN_MANAGER_Initialize `(v ~T0 @X0 0 ef ]
-"88 mcc_generated_files/mcc.h
-[; ;mcc_generated_files/mcc.h: 88: void OSCILLATOR_Initialize(void);
+"86 mcc_generated_files/mcc.h
+[; ;mcc_generated_files/mcc.h: 86: void OSCILLATOR_Initialize(void);
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 0 ef ]
-"100
-[; ;mcc_generated_files/mcc.h: 100: void WDT_Initialize(void);
+"98
+[; ;mcc_generated_files/mcc.h: 98: void WDT_Initialize(void);
 [v _WDT_Initialize `(v ~T0 @X0 0 ef ]
 "199 mcc_generated_files/usb/usb_device.h
 [; ;mcc_generated_files/usb/usb_device.h: 199: void USBDeviceInit(void);
@@ -474,9 +470,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6106
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 6106: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"213 mcc_generated_files/i2c_master.h
-[; ;mcc_generated_files/i2c_master.h: 213: void (*MSSP_InterruptHandler)(void);
-[v _MSSP_InterruptHandler `*F2746 ~T0 @X0 1 e ]
 "50 mcc_generated_files/mcc.c
 [; ;mcc_generated_files/mcc.c: 50: void SYSTEM_Initialize(void)
 [v _SYSTEM_Initialize `(v ~T0 @X0 1 ef ]
@@ -486,84 +479,81 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _SYSTEM_Initialize ]
 [f ]
 "53
-[; ;mcc_generated_files/mcc.c: 53:     I2C_Initialize();
-[e ( _I2C_Initialize ..  ]
-"54
-[; ;mcc_generated_files/mcc.c: 54:     PIN_MANAGER_Initialize();
+[; ;mcc_generated_files/mcc.c: 53:     PIN_MANAGER_Initialize();
 [e ( _PIN_MANAGER_Initialize ..  ]
-"55
-[; ;mcc_generated_files/mcc.c: 55:     OSCILLATOR_Initialize();
+"54
+[; ;mcc_generated_files/mcc.c: 54:     OSCILLATOR_Initialize();
 [e ( _OSCILLATOR_Initialize ..  ]
-"56
-[; ;mcc_generated_files/mcc.c: 56:     WDT_Initialize();
+"55
+[; ;mcc_generated_files/mcc.c: 55:     WDT_Initialize();
 [e ( _WDT_Initialize ..  ]
-"57
-[; ;mcc_generated_files/mcc.c: 57:     USBDeviceInit();
+"56
+[; ;mcc_generated_files/mcc.c: 56:     USBDeviceInit();
 [e ( _USBDeviceInit ..  ]
-"58
-[; ;mcc_generated_files/mcc.c: 58:     ADC_Initialize();
+"57
+[; ;mcc_generated_files/mcc.c: 57:     ADC_Initialize();
 [e ( _ADC_Initialize ..  ]
-"59
-[; ;mcc_generated_files/mcc.c: 59:     TMR0_Initialize();
+"58
+[; ;mcc_generated_files/mcc.c: 58:     TMR0_Initialize();
 [e ( _TMR0_Initialize ..  ]
-"60
-[; ;mcc_generated_files/mcc.c: 60:     USBDeviceAttach();
+"59
+[; ;mcc_generated_files/mcc.c: 59:     USBDeviceAttach();
 [e ( _USBDeviceAttach ..  ]
-"61
-[; ;mcc_generated_files/mcc.c: 61: }
-[e :UE 397 ]
+"60
+[; ;mcc_generated_files/mcc.c: 60: }
+[e :UE 395 ]
 }
-"63
-[; ;mcc_generated_files/mcc.c: 63: void OSCILLATOR_Initialize(void)
+"62
+[; ;mcc_generated_files/mcc.c: 62: void OSCILLATOR_Initialize(void)
 [v _OSCILLATOR_Initialize `(v ~T0 @X0 1 ef ]
-"64
-[; ;mcc_generated_files/mcc.c: 64: {
+"63
+[; ;mcc_generated_files/mcc.c: 63: {
 {
 [e :U _OSCILLATOR_Initialize ]
 [f ]
-"66
-[; ;mcc_generated_files/mcc.c: 66:     OSCCON = 0x7C;
+"65
+[; ;mcc_generated_files/mcc.c: 65:     OSCCON = 0x7C;
 [e = _OSCCON -> -> 124 `i `uc ]
-"68
-[; ;mcc_generated_files/mcc.c: 68:     OSCTUNE = 0x00;
+"67
+[; ;mcc_generated_files/mcc.c: 67:     OSCTUNE = 0x00;
 [e = _OSCTUNE -> -> 0 `i `uc ]
-"70
-[; ;mcc_generated_files/mcc.c: 70:     ACTCON = 0x00;
+"69
+[; ;mcc_generated_files/mcc.c: 69:     ACTCON = 0x00;
 [e = _ACTCON -> -> 0 `i `uc ]
-"72
-[; ;mcc_generated_files/mcc.c: 72:     BORCON = 0x00;
+"71
+[; ;mcc_generated_files/mcc.c: 71:     BORCON = 0x00;
 [e = _BORCON -> -> 0 `i `uc ]
+"73
+[; ;mcc_generated_files/mcc.c: 73:     while(PLLRDY == 0)
+[e $U 397  ]
+[e :U 398 ]
 "74
-[; ;mcc_generated_files/mcc.c: 74:     while(PLLRDY == 0)
-[e $U 399  ]
-[e :U 400 ]
-"75
-[; ;mcc_generated_files/mcc.c: 75:     {
+[; ;mcc_generated_files/mcc.c: 74:     {
 {
-"76
-[; ;mcc_generated_files/mcc.c: 76:     }
+"75
+[; ;mcc_generated_files/mcc.c: 75:     }
 }
+[e :U 397 ]
+"73
+[; ;mcc_generated_files/mcc.c: 73:     while(PLLRDY == 0)
+[e $ == -> _PLLRDY `i -> 0 `i 398  ]
 [e :U 399 ]
-"74
-[; ;mcc_generated_files/mcc.c: 74:     while(PLLRDY == 0)
-[e $ == -> _PLLRDY `i -> 0 `i 400  ]
-[e :U 401 ]
-"77
-[; ;mcc_generated_files/mcc.c: 77: }
-[e :UE 398 ]
+"76
+[; ;mcc_generated_files/mcc.c: 76: }
+[e :UE 396 ]
 }
-"79
-[; ;mcc_generated_files/mcc.c: 79: void WDT_Initialize(void)
+"78
+[; ;mcc_generated_files/mcc.c: 78: void WDT_Initialize(void)
 [v _WDT_Initialize `(v ~T0 @X0 1 ef ]
-"80
-[; ;mcc_generated_files/mcc.c: 80: {
+"79
+[; ;mcc_generated_files/mcc.c: 79: {
 {
 [e :U _WDT_Initialize ]
 [f ]
-"82
-[; ;mcc_generated_files/mcc.c: 82:     WDTCON = 0x16;
+"81
+[; ;mcc_generated_files/mcc.c: 81:     WDTCON = 0x16;
 [e = _WDTCON -> -> 22 `i `uc ]
-"83
-[; ;mcc_generated_files/mcc.c: 83: }
-[e :UE 402 ]
+"82
+[; ;mcc_generated_files/mcc.c: 82: }
+[e :UE 400 ]
 }

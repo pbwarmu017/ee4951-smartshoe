@@ -5097,3 +5097,51 @@ extern const uint8_t configDescriptor1[];
 # 52 "mcc_generated_files/usb/usb.h" 2
 # 32 "mcc_generated_files/usb/example_mcc_usb_cdc.c" 2
 
+
+static uint8_t readBuffer[64];
+static uint8_t writeBuffer[64];
+
+void MCC_USB_CDC_DemoTasks(void)
+{
+    if( USBDeviceState < CONFIGURED_STATE )
+    {
+        return;
+    }
+
+    if( UCONbits.SUSPND== 1 )
+    {
+        return;
+    }
+
+    if( (cdc_trf_state == 0) == 1)
+    {
+        uint8_t i;
+        uint8_t numBytesRead;
+
+        numBytesRead = getsUSBUSART(readBuffer, sizeof(readBuffer));
+
+        for(i=0; i<numBytesRead; i++)
+        {
+            switch(readBuffer[i])
+            {
+
+                case 0x0A:
+                case 0x0D:
+                    writeBuffer[i] = readBuffer[i];
+                    break;
+
+
+                default:
+                    writeBuffer[i] = readBuffer[i] + 1;
+                    break;
+            }
+        }
+
+        if(numBytesRead > 0)
+        {
+            putUSBUSART(writeBuffer,numBytesRead);
+        }
+    }
+
+    CDCTxService();
+}

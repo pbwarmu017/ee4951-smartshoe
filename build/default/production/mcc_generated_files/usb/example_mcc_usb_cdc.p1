@@ -1,4 +1,34 @@
 Version 4.0 HI-TECH Software Intermediate Code
+"39 mcc_generated_files/usb/example_mcc_usb_cdc.c
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 39:     if( USBDeviceState < CONFIGURED_STATE )
+[c E297 0 1 2 4 8 16 32 .. ]
+[n E297 . DETACHED_STATE ATTACHED_STATE POWERED_STATE DEFAULT_STATE ADR_PENDING_STATE ADDRESS_STATE CONFIGURED_STATE  ]
+"2050 mcc_generated_files/usb/usb_device.h
+[; ;mcc_generated_files/usb/usb_device.h: 2050: extern volatile USB_DEVICE_STATE USBDeviceState;
+[v _USBDeviceState `VE297 ~T0 @X0 0 e ]
+"5010 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5010:     struct {
+[s S310 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S310 . . SUSPND RESUME USBEN PKTDIS SE0 PPBRST ]
+"5009
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5009: typedef union {
+[u S309 `S310 1 ]
+[n S309 . . ]
+"5020
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 5020: extern volatile UCONbits_t UCONbits __attribute__((address(0xE8E)));
+[v _UCONbits `VS309 ~T0 @X0 0 e@3726 ]
+"965 mcc_generated_files/usb/usb_device_cdc.h
+[; ;mcc_generated_files/usb/usb_device_cdc.h: 965: extern uint8_t cdc_trf_state;
+[v _cdc_trf_state `uc ~T0 @X0 0 e ]
+"666
+[; ;mcc_generated_files/usb/usb_device_cdc.h: 666: uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len);
+[v _getsUSBUSART `(uc ~T0 @X0 0 ef2`*uc`uc ]
+"708
+[; ;mcc_generated_files/usb/usb_device_cdc.h: 708: void putUSBUSART(uint8_t *data, uint8_t Length);
+[v _putUSBUSART `(v ~T0 @X0 0 ef2`*uc`uc ]
+"844
+[; ;mcc_generated_files/usb/usb_device_cdc.h: 844: void CDCTxService(void);
+[v _CDCTxService `(v ~T0 @X0 0 ef ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -431,3 +461,135 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6106
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 6106: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
+"34 mcc_generated_files/usb/example_mcc_usb_cdc.c
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 34: static uint8_t readBuffer[64];
+[v _readBuffer `uc ~T0 @X0 -> 64 `i s ]
+"35
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 35: static uint8_t writeBuffer[64];
+[v _writeBuffer `uc ~T0 @X0 -> 64 `i s ]
+"37
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 37: void MCC_USB_CDC_DemoTasks(void)
+[v _MCC_USB_CDC_DemoTasks `(v ~T0 @X0 1 ef ]
+"38
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 38: {
+{
+[e :U _MCC_USB_CDC_DemoTasks ]
+[f ]
+"39
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 39:     if( USBDeviceState < CONFIGURED_STATE )
+[e $ ! < -> _USBDeviceState `ui -> . `E297 6 `ui 395  ]
+"40
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 40:     {
+{
+"41
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 41:         return;
+[e $UE 394  ]
+"42
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 42:     }
+}
+[e :U 395 ]
+"44
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 44:     if( UCONbits.SUSPND== 1 )
+[e $ ! == -> . . _UCONbits 0 1 `i -> 1 `i 396  ]
+"45
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 45:     {
+{
+"46
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 46:         return;
+[e $UE 394  ]
+"47
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 47:     }
+}
+[e :U 396 ]
+"49
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 49:     if( (cdc_trf_state == 0) == 1)
+[e $ ! == -> == -> _cdc_trf_state `i -> 0 `i `i -> 1 `i 397  ]
+"50
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 50:     {
+{
+"51
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 51:         uint8_t i;
+[v _i `uc ~T0 @X0 1 a ]
+"52
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 52:         uint8_t numBytesRead;
+[v _numBytesRead `uc ~T0 @X0 1 a ]
+"54
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 54:         numBytesRead = getsUSBUSART(readBuffer, sizeof(readBuffer));
+[e = _numBytesRead ( _getsUSBUSART (2 , &U _readBuffer -> -> # _readBuffer `ui `uc ]
+"56
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 56:         for(i=0; i<numBytesRead; i++)
+{
+[e = _i -> -> 0 `i `uc ]
+[e $U 401  ]
+[e :U 398 ]
+"57
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 57:         {
+{
+"58
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 58:             switch(readBuffer[i])
+[e $U 403  ]
+"59
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 59:             {
+{
+"61
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 61:                 case 0x0A:
+[e :U 404 ]
+"62
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 62:                 case 0x0D:
+[e :U 405 ]
+"63
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 63:                     writeBuffer[i] = readBuffer[i];
+[e = *U + &U _writeBuffer * -> _i `ux -> -> # *U &U _writeBuffer `ui `ux *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux ]
+"64
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 64:                     break;
+[e $U 402  ]
+"67
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 67:                 default:
+[e :U 406 ]
+"68
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 68:                     writeBuffer[i] = readBuffer[i] + 1;
+[e = *U + &U _writeBuffer * -> _i `ux -> -> # *U &U _writeBuffer `ui `ux -> + -> *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux `i -> 1 `i `uc ]
+"69
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 69:                     break;
+[e $U 402  ]
+"70
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 70:             }
+}
+[e $U 402  ]
+[e :U 403 ]
+[e [\ -> *U + &U _readBuffer * -> _i `ux -> -> # *U &U _readBuffer `ui `ux `i , $ -> 10 `i 404
+ , $ -> 13 `i 405
+ 406 ]
+[e :U 402 ]
+"71
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 71:         }
+}
+[e ++ _i -> -> 1 `i `uc ]
+[e :U 401 ]
+[e $ < -> _i `i -> _numBytesRead `i 398  ]
+[e :U 399 ]
+}
+"73
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 73:         if(numBytesRead > 0)
+[e $ ! > -> _numBytesRead `i -> 0 `i 407  ]
+"74
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 74:         {
+{
+"75
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 75:             putUSBUSART(writeBuffer,numBytesRead);
+[e ( _putUSBUSART (2 , &U _writeBuffer _numBytesRead ]
+"76
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 76:         }
+}
+[e :U 407 ]
+"77
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 77:     }
+}
+[e :U 397 ]
+"79
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 79:     CDCTxService();
+[e ( _CDCTxService ..  ]
+"80
+[; ;mcc_generated_files/usb/example_mcc_usb_cdc.c: 80: }
+[e :UE 394 ]
+}
