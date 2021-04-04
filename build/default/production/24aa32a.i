@@ -3996,7 +3996,7 @@ void I2C_MasterSendAck(void);
 void I2C_MasterSendNack(void);
 void eeprom_writeByte(unsigned short address, unsigned char *databyte);
 void eeprom_writePage(unsigned short address, unsigned char *data);
-void eeprom_storeBurstGroup(unsigned short address, unsigned char data[][4]);
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4]);
 void eeprom_readByte(unsigned short address, unsigned char *databyte);
 void eeprom_readMem(unsigned char *databyte);
 # 1 "24aa32a.c" 2
@@ -4098,27 +4098,31 @@ void eeprom_writePage(unsigned short address, unsigned char *data)
  ACK_Poll();
 }
 # 130 "24aa32a.c"
-void eeprom_storeBurstGroup(unsigned short address, unsigned char data[][4])
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4])
 {
  if(address % 0x20 != 0) return;
 
- for(unsigned char row = 0; row < 50; row++)
+ for(unsigned char pagewritten = 0; pagewritten < 13; pagewritten++)
  {
-  address += (0x20 * row);
-  unsigned char addressmsb = (unsigned char)address >> 8;
-        unsigned char addresslsb = (unsigned char)address;
+  unsigned char addressmsb = (unsigned char)(address >> 8);
+        unsigned char addresslsb = (unsigned char)(address);
   I2C_MasterStart();
   I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x00);
 
   I2C_MasterWrite(addressmsb);
   I2C_MasterWrite(addresslsb);
-  for (unsigned char column = 0; column < 32; column++)
+  for (unsigned char row = 0; row < 4; row++)
   {
-   I2C_MasterWrite(data[row][column]);
+            for(unsigned char column = 0; column < 4; column++)
+            {
+                I2C_MasterWrite((unsigned char)((data[row + (pagewritten * 4)][column]) >> 8));
+                I2C_MasterWrite((unsigned char)(data[row + (pagewritten * 4)][column]));
+            }
   }
-  I2C_MasterStop();
-  ACK_Poll();
- }
+        I2C_MasterStop();
+        ACK_Poll();
+        address += 0x20;
+    }
 }
 
 
@@ -4144,7 +4148,7 @@ void eeprom_readByte(unsigned short address, unsigned char *databyte)
  I2C_MasterStop();
 
 }
-# 185 "24aa32a.c"
+# 189 "24aa32a.c"
 void eeprom_readMem(unsigned char *databyte)
 {
    I2C_MasterStart();

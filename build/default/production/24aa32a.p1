@@ -71,7 +71,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3755
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3755: extern volatile SSPCON2bits_t SSPCON2bits __attribute__((address(0x216)));
 [v _SSPCON2bits `VS204 ~T0 @X0 0 e@534 ]
-[v F2348 `uc ~T0 @X0 -> 4 `i t ]
+[v F2348 `us ~T0 @X0 -> 4 `i t ]
 "3204
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3204: extern volatile unsigned char SSPBUF __attribute__((address(0x211)));
 [v _SSPBUF `Vuc ~T0 @X0 0 e@529 ]
@@ -745,7 +745,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _eeprom_storeBurstGroup ]
 "130
 [v _address `us ~T0 @X0 1 r1 ]
-[v F2351 `uc ~T0 @X0 -> 4 `i t ]
+[v F2351 `us ~T0 @X0 -> 4 `i t ]
 [v _data `*F2351 ~T0 @X0 1 r2 ]
 "131
 [f ]
@@ -755,148 +755,165 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 349 ]
 "134
 {
-[v _row `uc ~T0 @X0 1 a ]
-[e = _row -> -> 0 `i `uc ]
-[e $ < -> _row `i -> 50 `i 350  ]
+[v _pagewritten `uc ~T0 @X0 1 a ]
+[e = _pagewritten -> -> 0 `i `uc ]
+[e $ < -> _pagewritten `i -> 13 `i 350  ]
 [e $U 351  ]
 [e :U 350 ]
 "135
 {
 "136
-[e =+ _address -> * -> 32 `i -> _row `i `us ]
-"137
 [v _addressmsb `uc ~T0 @X0 1 a ]
-[e = _addressmsb -> >> -> -> _address `uc `i -> 8 `i `uc ]
-"138
+[e = _addressmsb -> >> -> _address `ui -> 8 `i `uc ]
+"137
 [v _addresslsb `uc ~T0 @X0 1 a ]
 [e = _addresslsb -> _address `uc ]
-"139
+"138
 [e ( _I2C_MasterStart ..  ]
-"140
+"139
 [e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"142
+"141
 [e ( _I2C_MasterWrite (1 _addressmsb ]
-"143
+"142
 [e ( _I2C_MasterWrite (1 _addresslsb ]
+"143
+{
+[v _row `uc ~T0 @X0 1 a ]
+[e = _row -> -> 0 `i `uc ]
+[e $ < -> _row `i -> 4 `i 353  ]
+[e $U 354  ]
+[e :U 353 ]
 "144
+{
+"145
 {
 [v _column `uc ~T0 @X0 1 a ]
 [e = _column -> -> 0 `i `uc ]
-[e $ < -> _column `i -> 32 `i 353  ]
-[e $U 354  ]
-[e :U 353 ]
-"145
-{
+[e $ < -> _column `i -> 4 `i 356  ]
+[e $U 357  ]
+[e :U 356 ]
 "146
-[e ( _I2C_MasterWrite (1 *U + &U *U + _data * -> _row `ux -> * -> # *U &U *U _data `ui -> -> 4 `i `ui `ux * -> _column `ux -> -> # *U &U *U + _data * -> _row `ux -> * -> # *U &U *U _data `ui -> -> 4 `i `ui `ux `ui `ux ]
+{
 "147
+[e ( _I2C_MasterWrite (1 -> >> -> *U + &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 4 `i `x -> * -> # *U &U *U _data `ui -> 4 `i `x * -> _column `ux -> -> # *U &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 4 `i `x -> * -> # *U &U *U _data `ui -> 4 `i `x `ui `ux `ui -> 8 `i `uc ]
+"148
+[e ( _I2C_MasterWrite (1 -> *U + &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 4 `i `x -> * -> # *U &U *U _data `ui -> 4 `i `x * -> _column `ux -> -> # *U &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 4 `i `x -> * -> # *U &U *U _data `ui -> 4 `i `x `ui `ux `uc ]
+"149
 }
 [e ++ _column -> -> 1 `i `uc ]
-[e $ < -> _column `i -> 32 `i 353  ]
-[e :U 354 ]
+[e $ < -> _column `i -> 4 `i 356  ]
+[e :U 357 ]
 }
-"148
-[e ( _I2C_MasterStop ..  ]
-"149
-[e ( _ACK_Poll ..  ]
 "150
 }
 [e ++ _row -> -> 1 `i `uc ]
-[e $ < -> _row `i -> 50 `i 350  ]
-[e :U 351 ]
+[e $ < -> _row `i -> 4 `i 353  ]
+[e :U 354 ]
 }
 "151
+[e ( _I2C_MasterStop ..  ]
+"152
+[e ( _ACK_Poll ..  ]
+"153
+[e =+ _address -> -> 32 `i `us ]
+"154
+}
+[e ++ _pagewritten -> -> 1 `i `uc ]
+[e $ < -> _pagewritten `i -> 13 `i 350  ]
+[e :U 351 ]
+}
+"155
 [e :UE 348 ]
 }
-"159
+"163
 [v _eeprom_readByte `(v ~T0 @X0 1 ef2`us`*uc ]
-"160
+"164
 {
 [e :U _eeprom_readByte ]
-"159
+"163
 [v _address `us ~T0 @X0 1 r1 ]
 [v _databyte `*uc ~T0 @X0 1 r2 ]
-"160
+"164
 [f ]
-"161
+"165
 [v _addressmsb `uc ~T0 @X0 1 a ]
 [e = _addressmsb -> >> -> _address `ui -> 8 `i `uc ]
-"162
+"166
 [v _addresslsb `uc ~T0 @X0 1 a ]
 [e = _addresslsb -> _address `uc ]
-"164
-[e ( _I2C_MasterStart ..  ]
-"165
-[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"166
-[e ( _I2C_MasterWrite (1 _addressmsb ]
-"167
-[e ( _I2C_MasterWrite (1 _addresslsb ]
 "168
 [e ( _I2C_MasterStart ..  ]
 "169
-[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
 "170
-[e ( _I2C_MasterSetReceive ..  ]
+[e ( _I2C_MasterWrite (1 _addressmsb ]
 "171
-[e = *U _databyte _SSPBUF ]
+[e ( _I2C_MasterWrite (1 _addresslsb ]
 "172
-[e ( _I2C_MasterSendNack ..  ]
+[e ( _I2C_MasterStart ..  ]
 "173
-[e ( _I2C_MasterStop ..  ]
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+"174
+[e ( _I2C_MasterSetReceive ..  ]
 "175
-[e :UE 356 ]
+[e = *U _databyte _SSPBUF ]
+"176
+[e ( _I2C_MasterSendNack ..  ]
+"177
+[e ( _I2C_MasterStop ..  ]
+"179
+[e :UE 359 ]
 }
-"185
+"189
 [v _eeprom_readMem `(v ~T0 @X0 1 ef1`*uc ]
-"186
+"190
 {
 [e :U _eeprom_readMem ]
-"185
+"189
 [v _databyte `*uc ~T0 @X0 1 r1 ]
-"186
-[f ]
-"187
-[e ( _I2C_MasterStart ..  ]
-"188
-[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
 "190
-[e ( _I2C_MasterWrite (1 -> -> 0 `i `uc ]
+[f ]
 "191
-[e ( _I2C_MasterWrite (1 -> -> 0 `i `uc ]
-"192
 [e ( _I2C_MasterStart ..  ]
-"193
-[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+"192
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
 "194
+[e ( _I2C_MasterWrite (1 -> -> 0 `i `uc ]
+"195
+[e ( _I2C_MasterWrite (1 -> -> 0 `i `uc ]
+"196
+[e ( _I2C_MasterStart ..  ]
+"197
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+"198
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `us ]
-[e $ < -> _i `ui -> -> 4095 `i `ui 358  ]
-[e $U 359  ]
-[e :U 358 ]
-"195
-{
-"196
-[e ( _I2C_MasterSetReceive ..  ]
-"197
-[e = *U _databyte _SSPBUF ]
-"198
-[e ( _I2C_MasterSendAck ..  ]
+[e $ < -> _i `ui -> -> 4095 `i `ui 361  ]
+[e $U 362  ]
+[e :U 361 ]
 "199
-}
-[e ++ _i -> -> 1 `i `us ]
-[e $ < -> _i `ui -> -> 4095 `i `ui 358  ]
-[e :U 359 ]
-}
+{
 "200
 [e ( _I2C_MasterSetReceive ..  ]
 "201
 [e = *U _databyte _SSPBUF ]
 "202
-[e ( _I2C_MasterSendNack ..  ]
+[e ( _I2C_MasterSendAck ..  ]
 "203
-[e ( _I2C_MasterStop ..  ]
+}
+[e ++ _i -> -> 1 `i `us ]
+[e $ < -> _i `ui -> -> 4095 `i `ui 361  ]
+[e :U 362 ]
+}
 "204
-[e :UE 357 ]
+[e ( _I2C_MasterSetReceive ..  ]
+"205
+[e = *U _databyte _SSPBUF ]
+"206
+[e ( _I2C_MasterSendNack ..  ]
+"207
+[e ( _I2C_MasterStop ..  ]
+"208
+[e :UE 360 ]
 }

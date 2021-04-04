@@ -26,7 +26,6 @@
         <itemPath>mcc_generated_files/device_config.h</itemPath>
         <itemPath>mcc_generated_files/interrupt_manager.h</itemPath>
       </logicalFolder>
-      <itemPath>eeprom_i2c.h</itemPath>
       <itemPath>24aa32a.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"

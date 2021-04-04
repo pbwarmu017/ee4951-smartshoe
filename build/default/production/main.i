@@ -5145,25 +5145,6 @@ extern const uint8_t configDescriptor1[];
 # 52 "./mcc_generated_files/usb/usb.h" 2
 # 56 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/tmr0.h" 1
-# 98 "./mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "./mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 168 "./mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 204 "./mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 219 "./mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 238 "./mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 256 "./mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 274 "./mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
-
 # 1 "./mcc_generated_files/adc.h" 1
 # 72 "./mcc_generated_files/adc.h"
 typedef uint16_t adc_result_t;
@@ -5201,6 +5182,25 @@ adc_result_t ADC_GetConversionResult(void);
 adc_result_t ADC_GetConversion(adc_channel_t channel);
 # 319 "./mcc_generated_files/adc.h"
 void ADC_TemperatureAcquisitionDelay(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/tmr0.h" 1
+# 98 "./mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "./mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 168 "./mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "./mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 219 "./mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 238 "./mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 256 "./mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 274 "./mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
 # 58 "./mcc_generated_files/mcc.h" 2
 # 73 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
@@ -5223,12 +5223,12 @@ void I2C_MasterSendAck(void);
 void I2C_MasterSendNack(void);
 void eeprom_writeByte(unsigned short address, unsigned char *databyte);
 void eeprom_writePage(unsigned short address, unsigned char *data);
-void eeprom_storeBurstGroup(unsigned short address, unsigned char data[][4]);
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4]);
 void eeprom_readByte(unsigned short address, unsigned char *databyte);
 void eeprom_readMem(unsigned char *databyte);
 # 46 "main.c" 2
 
-unsigned char measarray[50][4] = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,15}, {16,17,18,19},
+unsigned short measarray[52][4] = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,15}, {16,17,18,19},
                                 {20,21,22,23}, {24,25,26,27}, {28,29,30,31}, {32,33,34,35}, {36,37,38,39},
                                 {40,41,42,43}, {44,45,46,47}, {48,49,50,51}, {52,53,54,55}, {56,57,58,59},
                                 {60,61,62,63}, {64,65,66,67}, {68,69,70,71}, {72,73,74,75}, {76,77,78,79},
@@ -5237,7 +5237,7 @@ unsigned char measarray[50][4] = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,1
                                 {120,121,122,123}, {124,125,126,127}, {128,129,130,131}, {132,133,134,135}, {136,137,138,139},
                                 {140,141,142,143}, {144,145,146,147}, {148,149,150,151}, {152,153,154,155}, {156,157,158,159},
                                 {160,161,162,163}, {164,165,166,167}, {168,169,170,171}, {172,173,174,175}, {176,177,178,179},
-                                {180,181,182,183}, {184,185,186,187}, {188,189,190,191}, {192,193,194,195}, {196,197,198,199} };
+                                {180,181,182,183}, {184,185,186,187}, {188,189,190,191}, {192,193,194,195}, {196,197,198,199}, {200,201,202,203}, {204,205,206,207}};
 unsigned char data[32] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
 unsigned char byte;
 
@@ -5267,10 +5267,7 @@ void main(void)
 
             writeout_flag = 0;
             eeprom_storeBurstGroup(0x00, measarray);
-
-
-
-
+            eeprom_readMem(&byte);
         }
     }
 }
