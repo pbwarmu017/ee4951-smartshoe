@@ -5240,6 +5240,10 @@ unsigned short measarray[52][4] = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,
                                 {180,181,182,183}, {184,185,186,187}, {188,189,190,191}, {192,193,194,195}, {196,197,198,199}, {200,201,202,203}, {204,205,206,207}};
 unsigned char data[32] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
 unsigned char byte;
+unsigned char row = 0;
+unsigned char column = 0;
+unsigned char writecomplete = 0;
+unsigned short currentEepromAddress = 0;
 
 
 
@@ -5255,19 +5259,67 @@ void main(void)
     {
         if(measurement_flag)
         {
+            column = 0;
             measurement_flag = 0;
+            ADCON0bits.CHS = 9;
+            ADCON0bits.ADON = 1;
+            ADCON0bits.ADGO = 1;
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADGO = 1;
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADON = 0;
+            measarray[row][column++] = (ADRESH << 8) | ADRESL;
+
+            ADCON0bits.CHS = 8;
+            ADCON0bits.ADON = 1;
+            ADCON0bits.ADGO = 1;
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADGO = 1;
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADON = 0;
+            measarray[row][column++] = (ADRESH << 8) | ADRESL;
+
+            ADCON0bits.CHS = 7;
+            ADCON0bits.ADON = 1;
+            ADCON0bits.ADGO = 1;
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADGO = 1;
+            while(ADCON0bits.GO_nDONE);
+            measarray[row][column++] = (ADRESH << 8) | ADRESL;
+            ADCON0bits.ADON = 0;
+
+            ADCON0bits.CHS = 6;
+            ADCON0bits.ADON = 1;
+            ADCON0bits.ADGO = 1;
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADGO = 1;
+            while(ADCON0bits.GO_nDONE);
+            measarray[row++][column] = (ADRESH << 8) | ADRESL;
+            ADCON0bits.ADON = 0;
 
         }
         if(sleep_flag)
         {
             sleep_flag = 0;
+            TRISCbits.TRISC5 = 0;
+            IOCAFbits.IOCAF5 = 0;
+            INTCONbits.IOCIE = 1;
+            __asm("SLEEP");
+            INTCONbits.IOCIE = 0;
+            TRISCbits.TRISC5 = 1;
+            IOCAFbits.IOCAF5 = 0;
+            writecomplete = 0;
+            writeout_flag = 0;
+            measurement_count = 0;
         }
-        if(writeout_flag)
+        if(writeout_flag && !writecomplete)
         {
 
             writeout_flag = 0;
-            eeprom_storeBurstGroup(0x00, measarray);
-            eeprom_readMem(&byte);
+            eeprom_storeBurstGroup(currentEepromAddress, measarray);
+            currentEepromAddress += 0x1A0;
+
+            writecomplete = 1;
         }
     }
 }

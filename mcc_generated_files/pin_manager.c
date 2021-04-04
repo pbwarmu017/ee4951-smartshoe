@@ -61,14 +61,14 @@ void PIN_MANAGER_Initialize(void)
     */
     LATA = 0x00;
     LATB = 0x00;
-    LATC = 0x20;
+    LATC = 0x00;
 
     /**
     TRISx registers
     */
     TRISA = 0x30;
     TRISB = 0xF0;
-    TRISC = 0xDF;
+    TRISC = 0xFF;
 
     /**
     ANSELx registers
@@ -105,8 +105,6 @@ void PIN_MANAGER_Initialize(void)
     // register default IOC callback functions at runtime; use these methods to register a custom function
     IOCAF5_SetInterruptHandler(IOCAF5_DefaultInterruptHandler);
    
-    // Enable IOCI interrupt 
-    INTCONbits.IOCIE = 1; 
     
 }
   

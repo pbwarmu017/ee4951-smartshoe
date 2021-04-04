@@ -194,8 +194,6 @@ channel_FVR 31
 [v _I2C_MasterSendNack I2C_MasterSendNack `(v  1 e 1 0 ]
 "130
 [v _eeprom_storeBurstGroup eeprom_storeBurstGroup `(v  1 e 1 0 ]
-"189
-[v _eeprom_readMem eeprom_readMem `(v  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memcpy.c
 [v _memcpy memcpy `(*.4v  1 e 1 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
@@ -204,7 +202,7 @@ channel_FVR 31
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"64 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+"68 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -218,21 +216,19 @@ channel_FVR 31
 [v _WDT_Initialize WDT_Initialize `(v  1 e 1 0 ]
 "57 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"113
-[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
-"125
+"123
 [v _IOCAF5_ISR IOCAF5_ISR `(v  1 e 1 0 ]
-"140
+"138
 [v _IOCAF5_SetInterruptHandler IOCAF5_SetInterruptHandler `(v  1 e 1 0 ]
-"147
+"145
 [v _IOCAF5_DefaultInterruptHandler IOCAF5_DefaultInterruptHandler `(v  1 e 1 0 ]
 "69 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 "113
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
-"145
+"148
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
-"149
+"152
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 "281 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 [v _USBDeviceInit USBDeviceInit `(v  1 e 1 0 ]
@@ -295,7 +291,7 @@ channel_FVR 31
 [v _CDCTxService CDCTxService `(v  1 e 1 0 ]
 "49 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
 [v _USER_USB_CALLBACK_EVENT_HANDLER USER_USB_CALLBACK_EVENT_HANDLER `(a  1 e 1 0 ]
-[s S2378 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S2424 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -305,14 +301,14 @@ channel_FVR 31
 `uc 1 GIE 1 0 :1:7 
 ]
 "374 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[s S2387 . 1 `uc 1 . 1 0 :2:0 
+[s S2433 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S2392 . 1 `S2378 1 . 1 0 `S2387 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES2392  1 e 1 @11 ]
-[s S2619 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S2438 . 1 `S2424 1 . 1 0 `S2433 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES2438  1 e 1 @11 ]
+[s S2670 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -322,8 +318,8 @@ channel_FVR 31
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "592
-[u S2628 . 1 `S2619 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES2628  1 e 1 @17 ]
+[u S2679 . 1 `S2670 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES2679  1 e 1 @17 ]
 [s S331 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ACTIF 1 0 :1:1 
 `uc 1 USBIF 1 0 :1:2 
@@ -344,6 +340,18 @@ channel_FVR 31
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
 "1070
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S2594 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1087
+[u S2603 . 1 `S2594 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES2603  1 e 1 @142 ]
 [s S241 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ACTIE 1 0 :1:1 
 `uc 1 USBIE 1 0 :1:2 
@@ -439,7 +447,7 @@ channel_FVR 31
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
 "3435
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
-[s S2640 . 1 `uc 1 SSP1M0 1 0 :1:0 
+[s S2691 . 1 `uc 1 SSP1M0 1 0 :1:0 
 `uc 1 SSP1M1 1 0 :1:1 
 `uc 1 SSP1M2 1 0 :1:2 
 `uc 1 SSP1M3 1 0 :1:3 
@@ -449,16 +457,16 @@ channel_FVR 31
 `uc 1 WCOL 1 0 :1:7 
 ]
 "3467
-[s S2649 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S2700 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 . 1 0 :1:4 
 `uc 1 SSP1EN 1 0 :1:5 
 `uc 1 SSP1OV 1 0 :1:6 
 ]
-[u S2654 . 1 `S2640 1 . 1 0 `S2649 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES2654  1 e 1 @533 ]
+[u S2705 . 1 `S2691 1 . 1 0 `S2700 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES2705  1 e 1 @533 ]
 "3678
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
-[s S2681 . 1 `uc 1 SEN 1 0 :1:0 
+[s S2732 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -468,10 +476,10 @@ channel_FVR 31
 `uc 1 GCEN 1 0 :1:7 
 ]
 "3700
-[u S2690 . 1 `S2681 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES2690  1 e 1 @534 ]
+[u S2741 . 1 `S2732 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES2741  1 e 1 @534 ]
 "3755
-[v _SSPCON2bits SSPCON2bits `VES2690  1 e 1 @534 ]
+[v _SSPCON2bits SSPCON2bits `VES2741  1 e 1 @534 ]
 [s S2346 . 1 `uc 1 IOCAP0 1 0 :1:0 
 `uc 1 IOCAP1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
@@ -576,8 +584,14 @@ channel_FVR 31
 [v _PLLRDY PLLRDY `VEb  1 e 0 @1238 ]
 "47 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 [v _measarray measarray `[52][4]us  1 e 416 @8784 ]
-"58
-[v _byte byte `uc  1 e 1 0 ]
+"59
+[v _row row `uc  1 e 1 0 ]
+"60
+[v _column column `uc  1 e 1 0 ]
+"61
+[v _writecomplete writecomplete `uc  1 e 1 0 ]
+"62
+[v _currentEepromAddress currentEepromAddress `us  1 e 2 0 ]
 "54 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
 [v _IOCAF5_InterruptHandler IOCAF5_InterruptHandler `*.37(v  1 e 2 0 ]
 "53 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
@@ -831,24 +845,24 @@ channel_FVR 31
 [v _control_signal_bitmap control_signal_bitmap `S1617  1 e 1 0 ]
 "110
 [v _dummy_encapsulated_cmd_response dummy_encapsulated_cmd_response `[8]uc  1 e 8 0 ]
-"64 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+"68 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"89
+"141
 } 0
 "130 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 [v _eeprom_storeBurstGroup eeprom_storeBurstGroup `(v  1 e 1 0 ]
 {
 "145
-[v eeprom_storeBurstGroup@column column `uc  1 a 1 4 ]
+[v eeprom_storeBurstGroup@column column `uc  1 a 1 24 ]
 "143
-[v eeprom_storeBurstGroup@row row `uc  1 a 1 3 ]
+[v eeprom_storeBurstGroup@row row `uc  1 a 1 23 ]
 "137
-[v eeprom_storeBurstGroup@addresslsb addresslsb `uc  1 a 1 1 ]
+[v eeprom_storeBurstGroup@addresslsb addresslsb `uc  1 a 1 21 ]
 "136
-[v eeprom_storeBurstGroup@addressmsb addressmsb `uc  1 a 1 0 ]
+[v eeprom_storeBurstGroup@addressmsb addressmsb `uc  1 a 1 20 ]
 "134
-[v eeprom_storeBurstGroup@pagewritten pagewritten `uc  1 a 1 2 ]
+[v eeprom_storeBurstGroup@pagewritten pagewritten `uc  1 a 1 22 ]
 "130
 [v eeprom_storeBurstGroup@address address `us  1 p 2 6 ]
 [v eeprom_storeBurstGroup@data data `*.39[4]us  1 p 2 8 ]
@@ -858,18 +872,6 @@ channel_FVR 31
 [v _ACK_Poll ACK_Poll `(v  1 e 1 0 ]
 {
 "24
-} 0
-"189
-[v _eeprom_readMem eeprom_readMem `(v  1 e 1 0 ]
-{
-[v eeprom_readMem@databyte databyte `*.5uc  1 a 1 wreg ]
-"198
-[v eeprom_readMem@i i `us  1 a 2 8 ]
-"189
-[v eeprom_readMem@databyte databyte `*.5uc  1 a 1 wreg ]
-"191
-[v eeprom_readMem@databyte databyte `*.5uc  1 a 1 7 ]
-"208
 } 0
 "52
 [v _I2C_MasterWrite I2C_MasterWrite `(v  1 e 1 0 ]
@@ -889,21 +891,6 @@ channel_FVR 31
 [v _I2C_MasterStart I2C_MasterStart `(v  1 e 1 0 ]
 {
 "44
-} 0
-"58
-[v _I2C_MasterSetReceive I2C_MasterSetReceive `(v  1 e 1 0 ]
-{
-"62
-} 0
-"71
-[v _I2C_MasterSendNack I2C_MasterSendNack `(v  1 e 1 0 ]
-{
-"76
-} 0
-"64
-[v _I2C_MasterSendAck I2C_MasterSendAck `(v  1 e 1 0 ]
-{
-"69
 } 0
 "35
 [v _I2C_WaitForCompletion I2C_WaitForCompletion `(v  1 e 1 0 ]
@@ -940,22 +927,22 @@ channel_FVR 31
 {
 "90
 } 0
-"145
+"148
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 5 ]
-"147
+"150
 } 0
 "57 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"111
+"109
 } 0
-"140
+"138
 [v _IOCAF5_SetInterruptHandler IOCAF5_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v IOCAF5_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 5 ]
-"142
+"140
 } 0
 "62 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
@@ -975,7 +962,7 @@ channel_FVR 31
 "52 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
-"78
+"74
 } 0
 "481 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 [v _USBDeviceTasks USBDeviceTasks `(v  1 e 1 0 ]
@@ -1307,25 +1294,10 @@ channel_FVR 31
 "113 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
-"142
+"145
 } 0
-"149
+"152
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
-"152
-} 0
-"113 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
-[v _PIN_MANAGER_IOC PIN_MANAGER_IOC `(v  1 e 1 0 ]
-{
-"120
-} 0
-"125
-[v _IOCAF5_ISR IOCAF5_ISR `(v  1 e 1 0 ]
-{
-"135
-} 0
-"147
-[v _IOCAF5_DefaultInterruptHandler IOCAF5_DefaultInterruptHandler `(v  1 e 1 0 ]
-{
-"150
+"155
 } 0

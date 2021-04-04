@@ -124,18 +124,21 @@ void TMR0_ISR(void)
     }
     if(++waitforsleep_count >= 30000)
     {
+        waitforsleep_count = 0;
         sleep_flag = 1;
     }
-    if(++counter >= 20)
+    if(++counter >= 38) //38 milliseconds have passed
     {
-        if(++measurement_count <= 50)
+        if(measurement_count < 52)
         {
+        measurement_count++;
         measurement_flag = 1; //arranges for execution of measurement burst
         }
         else
         {
             writeout_flag = 1; //arranges for EEPROM write and wait cycle
         }
+        counter = 0;
         
     }
     // add your TMR0 interrupt custom code

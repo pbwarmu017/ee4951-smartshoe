@@ -56,6 +56,10 @@ unsigned short measarray[52][4] = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,
                                 {180,181,182,183}, {184,185,186,187}, {188,189,190,191}, {192,193,194,195}, {196,197,198,199}, {200,201,202,203}, {204,205,206,207}};
 unsigned char data[32] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
 unsigned char byte;
+unsigned char row = 0;
+unsigned char column = 0;
+unsigned char writecomplete = 0;
+unsigned short currentEepromAddress = 0;
 
 /*
                          Main application
@@ -71,19 +75,69 @@ void main(void)
     {
         if(measurement_flag)
         {
+            column = 0;
             measurement_flag = 0;
-            //code to command a measurement burst
+            ADCON0bits.CHS = 9; //green wire
+            ADCON0bits.ADON = 1;
+            ADCON0bits.ADGO = 1; //initiate conversion.
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADGO = 1; //initiate conversion.
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADON = 0;
+            measarray[row][column++] = (ADRESH << 8) | ADRESL;
+            
+            ADCON0bits.CHS = 8; //white wire
+            ADCON0bits.ADON = 1;
+            ADCON0bits.ADGO = 1; //initiate conversion.
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADGO = 1; //initiate conversion.
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADON = 0;
+            measarray[row][column++] = (ADRESH << 8) | ADRESL;
+            
+            ADCON0bits.CHS = 7; //yellow wire
+            ADCON0bits.ADON = 1;
+            ADCON0bits.ADGO = 1; //initiate conversion.
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADGO = 1; //initiate conversion.
+            while(ADCON0bits.GO_nDONE);
+            measarray[row][column++] = (ADRESH << 8) | ADRESL;
+            ADCON0bits.ADON = 0;
+            
+            ADCON0bits.CHS = 6; //red wire
+            ADCON0bits.ADON = 1;
+            ADCON0bits.ADGO = 1; //initiate conversion.
+            while(ADCON0bits.GO_nDONE);
+            ADCON0bits.ADGO = 1; //initiate conversion.
+            while(ADCON0bits.GO_nDONE);
+            measarray[row++][column] = (ADRESH << 8) | ADRESL;
+            ADCON0bits.ADON = 0;
+            
         }
         if(sleep_flag) //prepare for and then command the system to sleep. 
         {
             sleep_flag = 0;
+            TRISCbits.TRISC5 = 0; //turn on LED
+            IOCAFbits.IOCAF5 = 0;
+            INTCONbits.IOCIE = 1; //enable IOC interrupt
+            asm("SLEEP");
+            INTCONbits.IOCIE = 0; //disable IOC interrupt
+            TRISCbits.TRISC5 = 1; //turn off LED
+            IOCAFbits.IOCAF5 = 0;
+            writecomplete = 0;
+            writeout_flag = 0;
+            measurement_count = 0; //queue up another round of measurements. 
         }
-        if(writeout_flag)
+        if(writeout_flag && !writecomplete) //writecomplete is set to 0 after it wakes up from sleep
         {
             //code to write data array to EEPROM
             writeout_flag = 0;
-            eeprom_storeBurstGroup(0x00, measarray);
-            eeprom_readMem(&byte);
+            if(currentEepromAddress >= 0xFFF) currentEepromAddress = 0; //roll over 
+
+                eeprom_storeBurstGroup(currentEepromAddress, measarray);
+                currentEepromAddress += 0x1A0; //increment by 13 pages.
+                //eeprom_readMem(&byte);
+                writecomplete = 1;
         }
     }
 }
