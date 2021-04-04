@@ -50,7 +50,12 @@
 
 #include <xc.h>
 #include "tmr0.h"
-
+short counter = 0;
+short waitforsleep_count = 0;
+char sleep_flag = 0;
+char writeout_flag = 0;
+char measurement_count = 0;
+char measurement_flag = 0;
 /**
   Section: Global Variables Definitions
 */
@@ -117,7 +122,22 @@ void TMR0_ISR(void)
     {
         TMR0_InterruptHandler();
     }
-
+    if(++waitforsleep_count >= 30000)
+    {
+        sleep_flag = 1;
+    }
+    if(++counter >= 20)
+    {
+        if(++measurement_count <= 50)
+        {
+        measurement_flag = 1; //arranges for execution of measurement burst
+        }
+        else
+        {
+            writeout_flag = 1; //arranges for EEPROM write and wait cycle
+        }
+        
+    }
     // add your TMR0 interrupt custom code
 }
 

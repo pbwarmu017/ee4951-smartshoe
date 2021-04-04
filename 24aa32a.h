@@ -28,28 +28,29 @@
 
 #ifndef     HEADER_24AA32A
 
-#define     HEADER_24AA32A
-#define     SCL         LATBbits.LATB6   // I2C clock, PORTB pin 6
-#define     SDA         PORTBbits.RB4 // I2C data, PORTB pin 4
-#define     SDA_TRIS    TRISBbits.TRISB4// SDA tris bit, PORTB pin 4
 #define     CONTROLBYTE 0b10100000      // Control byte
 #define		HWADDRESSBITS 		0b000 					//EEPROM Address
-#define     ACKBIT      0x00            // ACK bit
-#define     NAKBIT      0x80            // NAK bit
+
+#define I2CINTERRUPTFLAG PIR1bits.SSP1IF
+#define I2CINTERRUPTENABLE PIE1bits.SSP1IE
+#define NACKFLAG SSP1CON2bits.ACKSTAT
 
 #include <xc.h> // include processor files - each processor file is guarded.  
 
-void _i2cstart(void);
-void _i2cstop(void);
-void _writeBit(unsigned char data);
-void _readBit(unsigned char *data);
-unsigned char _writeByte(unsigned char data);
-unsigned char _readByte(unsigned char ack);
+void I2C_Initialize();
 void ACK_Poll(void);
-void eeprom_writeByte(unsigned int address, unsigned char data);
-void eeprom_writePage(unsigned int address, unsigned char *data);
-void eeprom_readByte(unsigned int address, unsigned char *data);
-void eeprom_readMem(unsigned char *data);
+void I2C_WaitForCompletion(void);
+void I2C_MasterStart(void);
+void I2C_MasterStop(void);
+void I2C_MasterWrite(unsigned char data);
+void I2C_MasterSetReceive(void);
+void I2C_MasterSendAck(void);
+void I2C_MasterSendNack(void);
+void eeprom_writeByte(unsigned short address, unsigned char *databyte);
+void eeprom_writePage(unsigned short address, unsigned char *data);
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4]);
+void eeprom_readByte(unsigned short address, unsigned char *databyte);
+void eeprom_readMem(unsigned char *databyte);
 
 #ifdef	__cplusplus
 extern "C" {

@@ -1,123 +1,26 @@
 #include "24aa32a.h"
 
-/**
- * @brief      Generates a start condition
- */
-void _i2cstart(void)
+//
+// @brief      Initializes the I2C peripheral
+//
+void I2C_Initialize(void)
 {
-    SDA_TRIS = 0; //ensure this is set to be an output
-	SDA = 1;
-	SCL = 1;
-	SDA = 0;
-	SCL = 0;
-		}// end void bit_start(void)
-
-
-/**
- * @brief      Generates a stop condition
- */
-void _i2cstop(void)
-{
-    SDA_TRIS = 0;
-	SCL = 0;
-	SDA = 0;
-	SCL = 1;
-	SDA = 1;
-} // end void bit_stop(void)
-
-/**
- * @brief      writes out a bit to I2C
- *
- * @param[in]  data  The data
- */
-void _writeBit(unsigned char data)
-{
-	SDA_TRIS = 0; //make SDA an output
-	SCL = 0; //Pull SCL low
-	if(data & 0x80) //If the leading bit is a 1
-	{
-		SDA = 1;
-    }
-    else
-    {
-        SDA = 0;
-    }
-	SCL = 1;
-	SCL = 0;
-} //end void bit_write(unsigned char *data){
-
-/**
- * @brief      reads in a bit from I2C
- *
- * @param      data  The data
- */
-void _readBit(unsigned char *data)
-	{
-		SDA_TRIS = 1; //make SDA an input
-		SCL = 0;
-		SCL = 1;
-		*data &= 0xFE; //clear trailing bit
-		if(SDA) //check data line
-	{
-		*data |= 0x01; // if data line is high, write a 1 to the end
-	}
-	SCL = 0;
+    SSP1STAT = 0x00;
+    SSP1CON1 = 0x08;
+    SSP1CON2 = 0x00;
+    SSP1ADD = 0x13;
+    PIR1bits.SSP1IF = 0;
+    SSP1CON1bits.SSPEN = 1;
 }
-
-
-/**
- * @brief      writes a byte out to I2C
- *
- * @param[in]  data  The data to be sent
- *
- * @return     ack status from slave
- */
-unsigned char _writeByte(unsigned char data)
-{
-	unsigned char i; //loop counter
-	unsigned char ack = 1; 
-	for (int i = 0; i < 8; i++)
-	{
-		_writeBit(data); //push the data
-		data = (unsigned char)(data << 1);
-	}
-	_readBit(&ack); 
-	return ack;
-}
-/**
- * @brief      reads a byte from I2C
- *
- * @param[in]  ack   The acknowledge
- *
- * @return     { description_of_the_return_value }
- */
-unsigned char _readByte(unsigned char ack)
-{
-	unsigned char ret = 0;
-	for (int i = 0; i < 8; i++)
-	{
-		ret = (unsigned char)(ret << 1);
-		_readBit(&ret);
-
-	}
-	_writeBit(ack); //gives the option to respond with an ACK or NAK. (needed for sequential reads)
-	return(ret);
-}
-
-/**
- * @brief      Polls for an acknowledgment from the EEPROM to inidicate that it is finshed with a
- *             write cycle
- */
 void ACK_Poll(void)
 {
-	unsigned char ackstat = 1;
-
 	do
 	{
-		_i2cstart();
-		ackstat = _writeByte(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); 
-	} while(ackstat == 1); //NACK response
-	_i2cstop();
+		I2C_MasterStart();
+
+	I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); 
+	} while(NACKFLAG); //NACK response
+	I2C_MasterStop();
 }
 
 /**
@@ -128,17 +31,61 @@ void ACK_Poll(void)
  * @param[in]  address  The 16 bit address
  * @param[in]  data     The data byte
  */
-void eeprom_writeByte(unsigned int address, unsigned char data)
+
+void I2C_WaitForCompletion(void)
+{
+	while(!PIR1bits.SSP1IF);
+    PIR1bits.SSP1IF = 0;
+}
+void I2C_MasterStart(void)
+{
+    SSP1CON2bits.SEN = 1;
+    I2C_WaitForCompletion();
+  }
+
+void I2C_MasterStop(void)
+{
+    SSP1CON2bits.PEN = 1;
+    I2C_WaitForCompletion();
+}
+
+void I2C_MasterWrite(unsigned char data)
+{
+	SSP1BUF = data;
+	I2C_WaitForCompletion();
+}
+
+void I2C_MasterSetReceive(void)
+{
+	SSPCON2bits.RCEN = 1;;
+	I2C_WaitForCompletion();
+}
+
+void I2C_MasterSendAck(void)
+{
+	SSPCON2bits.ACKDT = 0;
+	SSPCON2bits.ACKEN = 1;
+	I2C_WaitForCompletion();
+}
+
+void I2C_MasterSendNack(void)
+{
+	SSPCON2bits.ACKDT = 1;
+	SSPCON2bits.ACKEN = 1;
+	I2C_WaitForCompletion();
+}
+
+void eeprom_writeByte(unsigned short address, unsigned char *data)
 {
     unsigned char addressmsb = (unsigned char)(address >> 8);
     unsigned char addresslsb = (unsigned char)address;
-	_i2cstart();
-	_writeByte(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //trailing 0 commands a write cycle
-	_writeByte(addressmsb); //write the MSB address bits
-	_writeByte(addresslsb); //write the LSB address bits
-	_writeByte(data); //write out the data byte;
-	_i2cstop();
-	ACK_Poll(); //wait for the EEPROM to finish its write cycle. 
+    I2C_MasterStart();
+    I2C_MasterWrite( (CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00) ); //trailing 0 commands a write cycle
+    I2C_MasterWrite(addressmsb);    //write the MSB address bits
+    I2C_MasterWrite(addresslsb);    //write the LSB address bits
+    I2C_MasterWrite(*data);//write out the data byte;
+    I2C_MasterStop();
+    ACK_Poll();//wait for the EEPROM to finish its write cycle. 
 }
 
 /**
@@ -147,66 +94,116 @@ void eeprom_writeByte(unsigned int address, unsigned char data)
  * @param[in]  address  The 16 bit address
  * @param      data     The data byte array pointer (16 elements)
  *
- * @return     If the address is not the beginning of the page, returns 
+ * @return     If the address is not the beginning of the page, returns
  */
-void eeprom_writePage(unsigned int address, unsigned char *data)
+void eeprom_writePage(unsigned short address, unsigned char *data)
 {
-    unsigned char addressmsb = (unsigned char)address >> 8;
-    unsigned char addresslsb = (unsigned char)address;
+   unsigned char addressmsb = (unsigned char)address >> 8;
+   unsigned char addresslsb = (unsigned char)address;
 	if(address % 0x20 != 0) return; //address is not the start of a page
-	_i2cstart();
-	_writeByte(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //trailing 0 commands a write cycle
-	_writeByte(addressmsb); //write the MSB address bits
-	_writeByte(addresslsb); //write the LSB address bits
+	I2C_MasterStart();
+	I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //trailing 0 commands a write cycle
+	I2C_MasterWrite(addressmsb); //write the MSB address bits
+	I2C_MasterWrite(addresslsb); //write the LSB address bits
 	for (int i = 0; i < 32; i++)
 	{
-	_writeByte(data[i]); //write out the data byte;
+	I2C_MasterWrite(data[i]); //write out the data byte;
 	}
-	_i2cstop();
+	I2C_MasterStop();
 	ACK_Poll(); //wait for the EEPROM to finish its write cycle. 
 }
 
-/**
- * @brief      reads a byte from EEPROM at the specified address and writes it to the address
- *             provided by the data pointer.
- *
- * @param[in]  address  The 16 bit EEPROM address
- * @param      data     The data byte pointer
- */
-void eeprom_readByte(unsigned int address, unsigned char *data)
-{
-    unsigned char addressmsb = (unsigned char)(address >> 8);
-    unsigned char addresslsb = (unsigned char)address;
-	//first we set the address to be read
-	_i2cstart();
-	_writeByte(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //start a write cycle to set the address
-	_writeByte(addressmsb);
-	_writeByte(addresslsb);
-	_i2cstart(); //this terminates the write cycle
-	_writeByte(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x01); //start a read cycle at the current address
-	*data = _readByte(NAKBIT);
-	_i2cstop();
-  
-}
 
 /**
- * @brief      reads the entire contents of the EEPROM, one byte at a time, to data.
+ * @brief      This takes a group of 50 measurement bursts and writes them out to EEPROM 4 bursts at
+ *             a time, as this is what will fit on a single page in EEPROM. We cannnot write across
+ *             page boundaries in a single operation. With a 10 bit ADC, we are using 16 bits per
+ *             measurement for simplicity. 4 measurements per burst makes 8 bytes per burst. It is
+ *             only really safe to assume that we have around 400 bytes of ram available for interim
+ *             storage, so this means we are allowed 50 bursts before we need to write ito ut to
+ *             EEPROM. To collect data over two seconds, we need to measure once every 40
+ *             milliseconds
  *
- * @param      data  The data byte
+ * @param[in]  address  The 16 bit address of where to start storing this data in EEPROM
+ * @param      data     The pointer to the start of the 50*4 burst storage array
  */
-void eeprom_readMem(unsigned char *byte)
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4])
 {
-    _i2cstart();
-	_writeByte(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //start a write cycle to set the address
-	_writeByte(0);
-	_writeByte(0xFF);
-	_i2cstart(); //this terminates the write cycle
-	_writeByte(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x01); //start a read cycle at the current address
+	if(address % 0x20 != 0) return; //address is not the start of a page
+
+	for(unsigned char pagewritten = 0; pagewritten < 13; pagewritten++)
+	{
+		unsigned char addressmsb = (unsigned char)(address >> 8);
+        unsigned char addresslsb = (unsigned char)(address);
+		I2C_MasterStart();
+		I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //trailing 0 commands a write cycle
+			
+		I2C_MasterWrite(addressmsb); //write the MSB address bits
+		I2C_MasterWrite(addresslsb); //write the LSB address bits
+		for (unsigned char row = 0; row < 4; row++) //we are going to write 4 rows of data at a time
+		{
+            for(unsigned char column = 0; column < 4; column++)
+            {
+                I2C_MasterWrite((unsigned char)((data[row + (pagewritten * 4)][column]) >> 8)); //write out upper half of 16 bit measurement;
+                I2C_MasterWrite((unsigned char)(data[row + (pagewritten * 4)][column])); //write out lower half of 16 bit measurement;
+            }
+		}
+        I2C_MasterStop();
+        ACK_Poll(); //wait for the EEPROM to finish its write cycle. 
+        address += 0x20; //increment the address by a page at a time
+    }
+}
+/**
+* @brief      reads a byte from EEPROM at the specified address and writes it to the address
+*             provided by the data pointer.
+*
+* @param[in]  address  The 16 bit EEPROM address
+* @param      data     The data byte pointer
+*/
+void eeprom_readByte(unsigned short address, unsigned char *databyte)
+{
+   unsigned char addressmsb = (unsigned char)(address >> 8);
+   unsigned char addresslsb = (unsigned char)address;
+	//first we set the address to be read
+	I2C_MasterStart();
+	I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //start a write cycle to set the address
+	I2C_MasterWrite(addressmsb);
+	I2C_MasterWrite(addresslsb);
+	I2C_MasterStart(); //this terminates the write cycle
+	I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x01); //start a read cycle at the current address
+	I2C_MasterSetReceive();
+	*databyte = SSPBUF;
+	I2C_MasterSendNack();
+	I2C_MasterStop();
+ 
+}
+//
+// /**
+// * { list_item_description }
+// @brief      reads the entire contents of the EEPROM, one byte at a time, to an outside variable. The
+//             idea here is that the contents of that variable will be passed to the USB bus.
+//
+// @param      byte  The byte
+// @param      data  The data byte pointer */
+//
+void eeprom_readMem(unsigned char *databyte)
+{
+   I2C_MasterStart();
+	I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //start a write cycle to set the address
+	//set the address to read from (we want the start of memory)
+	I2C_MasterWrite(0);
+	I2C_MasterWrite(0);
+	I2C_MasterStart(); //this terminates the write cycle
+	I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x01); //start a read cycle at the current address
 	for (unsigned short i = 0; i < 0xFFF; i++)
 	{
-        *byte = _readByte(ACKBIT);
+       I2C_MasterSetReceive();
+       *databyte = SSPBUF;
+       I2C_MasterSendAck();
 	}
-    *byte = _readByte(NAKBIT);
-    _i2cstop();
+		I2C_MasterSetReceive();
+     *databyte = SSPBUF;
+     I2C_MasterSendNack();
+     I2C_MasterStop();
 }
-
+//

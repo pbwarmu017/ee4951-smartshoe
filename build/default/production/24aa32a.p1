@@ -1,37 +1,80 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"1037 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1037:     struct {
-[s S65 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S65 . . TRISB4 TRISB5 TRISB6 TRISB7 ]
-"1036
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1036: typedef union {
-[u S64 `S65 1 ]
-[n S64 . . ]
-"1045
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1045: extern volatile TRISBbits_t TRISBbits __attribute__((address(0x08D)));
-[v _TRISBbits `VS64 ~T0 @X0 0 e@141 ]
-"480
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 480:     struct {
-[s S36 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S36 . . RB4 RB5 RB6 RB7 ]
-"479
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 479: typedef union {
-[u S35 `S36 1 ]
-[n S35 . . ]
-"488
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 488: extern volatile PORTBbits_t PORTBbits __attribute__((address(0x00D)));
-[v _PORTBbits `VS35 ~T0 @X0 0 e@13 ]
-"1899
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1899:     struct {
-[s S105 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S105 . . LATB4 LATB5 LATB6 LATB7 ]
-"1898
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1898: typedef union {
-[u S104 `S105 1 ]
-[n S104 . . ]
-"1907
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1907: extern volatile LATBbits_t LATBbits __attribute__((address(0x10D)));
-[v _LATBbits `VS104 ~T0 @X0 0 e@269 ]
+"3313 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3313: extern volatile unsigned char SSP1STAT __attribute__((address(0x214)));
+[v _SSP1STAT `Vuc ~T0 @X0 0 e@532 ]
+"3435
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3435: extern volatile unsigned char SSP1CON1 __attribute__((address(0x215)));
+[v _SSP1CON1 `Vuc ~T0 @X0 0 e@533 ]
+"3678
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3678: extern volatile unsigned char SSP1CON2 __attribute__((address(0x216)));
+[v _SSP1CON2 `Vuc ~T0 @X0 0 e@534 ]
+"3237
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3237: extern volatile unsigned char SSP1ADD __attribute__((address(0x212)));
+[v _SSP1ADD `Vuc ~T0 @X0 0 e@530 ]
+"581
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 581:     struct {
+[s S40 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S40 . TMR1IF TMR2IF . SSP1IF TXIF RCIF ADIF TMR1GIF ]
+"580
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 580: typedef union {
+[u S39 `S40 1 ]
+[n S39 . . ]
+"592
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 592: extern volatile PIR1bits_t PIR1bits __attribute__((address(0x011)));
+[v _PIR1bits `VS39 ~T0 @X0 0 e@17 ]
+"3450
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3450:     struct {
+[s S194 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S194 . SSP1M0 SSP1M1 SSP1M2 SSP1M3 CKP SSPEN SSPOV WCOL ]
+"3460
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3460:     struct {
+[s S195 :4 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S195 . SSPM . SSP1EN SSP1OV ]
+"3449
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3449: typedef union {
+[u S193 `S194 1 `S195 1 ]
+[n S193 . . . ]
+"3467
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3467: extern volatile SSP1CON1bits_t SSP1CON1bits __attribute__((address(0x215)));
+[v _SSP1CON1bits `VS193 ~T0 @X0 0 e@533 ]
+"43 ./24aa32a.h
+[; ;./24aa32a.h: 43: void I2C_MasterStart(void);
+[v _I2C_MasterStart `(v ~T0 @X0 0 ef ]
+"45
+[; ;./24aa32a.h: 45: void I2C_MasterWrite(unsigned char data);
+[v _I2C_MasterWrite `(v ~T0 @X0 0 ef1`uc ]
+"3689 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3689:     struct {
+[s S203 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S203 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"3688
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3688: typedef union {
+[u S202 `S203 1 ]
+[n S202 . . ]
+"3700
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3700: extern volatile SSP1CON2bits_t SSP1CON2bits __attribute__((address(0x216)));
+[v _SSP1CON2bits `VS202 ~T0 @X0 0 e@534 ]
+"44 ./24aa32a.h
+[; ;./24aa32a.h: 44: void I2C_MasterStop(void);
+[v _I2C_MasterStop `(v ~T0 @X0 0 ef ]
+"3199 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3199: extern volatile unsigned char SSP1BUF __attribute__((address(0x211)));
+[v _SSP1BUF `Vuc ~T0 @X0 0 e@529 ]
+"3744
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3744:     struct {
+[s S205 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S205 . SEN RSEN PEN RCEN ACKEN ACKDT ACKSTAT GCEN ]
+"3743
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3743: typedef union {
+[u S204 `S205 1 ]
+[n S204 . . ]
+"3755
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3755: extern volatile SSPCON2bits_t SSPCON2bits __attribute__((address(0x216)));
+[v _SSPCON2bits `VS204 ~T0 @X0 0 e@534 ]
+[v F2348 `uc ~T0 @X0 -> 4 `i t ]
+"3204
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3204: extern volatile unsigned char SSPBUF __attribute__((address(0x211)));
+[v _SSPBUF `Vuc ~T0 @X0 0 e@529 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -465,380 +508,395 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 6106: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 "6 24aa32a.c
-[v __i2cstart `(v ~T0 @X0 1 ef ]
+[v _I2C_Initialize `(v ~T0 @X0 1 ef ]
 "7
 {
-[e :U __i2cstart ]
+[e :U _I2C_Initialize ]
 [f ]
 "8
-[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
+[e = _SSP1STAT -> -> 0 `i `uc ]
 "9
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
+[e = _SSP1CON1 -> -> 8 `i `uc ]
 "10
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
+[e = _SSP1CON2 -> -> 0 `i `uc ]
 "11
-[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
+[e = _SSP1ADD -> -> 19 `i `uc ]
 "12
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
 "13
+[e = . . _SSP1CON1bits 0 5 -> -> 1 `i `uc ]
+"14
 [e :UE 327 ]
 }
-"19
-[v __i2cstop `(v ~T0 @X0 1 ef ]
-"20
-{
-[e :U __i2cstop ]
-[f ]
-"21
-[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
-"22
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"23
-[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-"24
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-"25
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-"26
-[e :UE 328 ]
-}
-"33
-[v __writeBit `(v ~T0 @X0 1 ef1`uc ]
-"34
-{
-[e :U __writeBit ]
-"33
-[v _data `uc ~T0 @X0 1 r1 ]
-"34
-[f ]
-"35
-[e = . . _TRISBbits 0 1 -> -> 0 `i `uc ]
-"36
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"37
-[e $ ! != & -> _data `i -> 128 `i -> 0 `i 330  ]
-"38
-{
-"39
-[e = . . _PORTBbits 0 1 -> -> 1 `i `uc ]
-"40
-}
-[e $U 331  ]
-"41
-[e :U 330 ]
-"42
-{
-"43
-[e = . . _PORTBbits 0 1 -> -> 0 `i `uc ]
-"44
-}
-[e :U 331 ]
-"45
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-"46
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"47
-[e :UE 329 ]
-}
-"54
-[v __readBit `(v ~T0 @X0 1 ef1`*uc ]
-"55
-{
-[e :U __readBit ]
-"54
-[v _data `*uc ~T0 @X0 1 r1 ]
-"55
-[f ]
-"56
-[e = . . _TRISBbits 0 1 -> -> 1 `i `uc ]
-"57
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"58
-[e = . . _LATBbits 0 3 -> -> 1 `i `uc ]
-"59
-[e =& *U _data -> -> 254 `i `uc ]
-"60
-[e $ ! != -> . . _PORTBbits 0 1 `i -> 0 `i 333  ]
-"61
-{
-"62
-[e =| *U _data -> -> 1 `i `uc ]
-"63
-}
-[e :U 333 ]
-"64
-[e = . . _LATBbits 0 3 -> -> 0 `i `uc ]
-"65
-[e :UE 332 ]
-}
-"75
-[v __writeByte `(uc ~T0 @X0 1 ef1`uc ]
-"76
-{
-[e :U __writeByte ]
-"75
-[v _data `uc ~T0 @X0 1 r1 ]
-"76
-[f ]
-"77
-[v _i `uc ~T0 @X0 1 a ]
-"78
-[v _ack `uc ~T0 @X0 1 a ]
-[e = _ack -> -> 1 `i `uc ]
-"79
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 335  ]
-[e $U 336  ]
-[e :U 335 ]
-"80
-{
-"81
-[e ( __writeBit (1 _data ]
-"82
-[e = _data -> << -> _data `i -> 1 `i `uc ]
-"83
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 335  ]
-[e :U 336 ]
-}
-"84
-[e ( __readBit (1 &U _ack ]
-"85
-[e ) _ack ]
-[e $UE 334  ]
-"86
-[e :UE 334 ]
-}
-"94
-[v __readByte `(uc ~T0 @X0 1 ef1`uc ]
-"95
-{
-[e :U __readByte ]
-"94
-[v _ack `uc ~T0 @X0 1 r1 ]
-"95
-[f ]
-"96
-[v _ret `uc ~T0 @X0 1 a ]
-[e = _ret -> -> 0 `i `uc ]
-"97
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 8 `i 339  ]
-[e $U 340  ]
-[e :U 339 ]
-"98
-{
-"99
-[e = _ret -> << -> _ret `i -> 1 `i `uc ]
-"100
-[e ( __readBit (1 &U _ret ]
-"102
-}
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 8 `i 339  ]
-[e :U 340 ]
-}
-"103
-[e ( __writeBit (1 _ack ]
-"104
-[e ) _ret ]
-[e $UE 338  ]
-"105
-[e :UE 338 ]
-}
-"111
+"15
 [v _ACK_Poll `(v ~T0 @X0 1 ef ]
-"112
+"16
 {
 [e :U _ACK_Poll ]
 [f ]
-"113
-[v _ackstat `uc ~T0 @X0 1 a ]
-[e = _ackstat -> -> 1 `i `uc ]
-"115
-[e :U 345 ]
-"116
+"17
+[e :U 331 ]
+"18
 {
-"117
-[e ( __i2cstart ..  ]
-"118
-[e = _ackstat ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"119
+"19
+[e ( _I2C_MasterStart ..  ]
+"21
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"22
 }
-[e $ == -> _ackstat `i -> 1 `i 345  ]
-[e :U 344 ]
-"120
-[e ( __i2cstop ..  ]
-"121
-[e :UE 342 ]
+[e $ != -> . . _SSP1CON2bits 0 6 `i -> 0 `i 331  ]
+[e :U 330 ]
+"23
+[e ( _I2C_MasterStop ..  ]
+"24
+[e :UE 328 ]
 }
-"131
-[v _eeprom_writeByte `(v ~T0 @X0 1 ef2`ui`uc ]
-"132
+"35
+[v _I2C_WaitForCompletion `(v ~T0 @X0 1 ef ]
+"36
+{
+[e :U _I2C_WaitForCompletion ]
+[f ]
+"37
+[e $U 333  ]
+[e :U 334 ]
+[e :U 333 ]
+[e $ ! != -> . . _PIR1bits 0 3 `i -> 0 `i 334  ]
+[e :U 335 ]
+"38
+[e = . . _PIR1bits 0 3 -> -> 0 `i `uc ]
+"39
+[e :UE 332 ]
+}
+"40
+[v _I2C_MasterStart `(v ~T0 @X0 1 ef ]
+"41
+{
+[e :U _I2C_MasterStart ]
+[f ]
+"42
+[e = . . _SSP1CON2bits 0 0 -> -> 1 `i `uc ]
+"43
+[e ( _I2C_WaitForCompletion ..  ]
+"44
+[e :UE 336 ]
+}
+"46
+[v _I2C_MasterStop `(v ~T0 @X0 1 ef ]
+"47
+{
+[e :U _I2C_MasterStop ]
+[f ]
+"48
+[e = . . _SSP1CON2bits 0 2 -> -> 1 `i `uc ]
+"49
+[e ( _I2C_WaitForCompletion ..  ]
+"50
+[e :UE 337 ]
+}
+"52
+[v _I2C_MasterWrite `(v ~T0 @X0 1 ef1`uc ]
+"53
+{
+[e :U _I2C_MasterWrite ]
+"52
+[v _data `uc ~T0 @X0 1 r1 ]
+"53
+[f ]
+"54
+[e = _SSP1BUF _data ]
+"55
+[e ( _I2C_WaitForCompletion ..  ]
+"56
+[e :UE 338 ]
+}
+"58
+[v _I2C_MasterSetReceive `(v ~T0 @X0 1 ef ]
+"59
+{
+[e :U _I2C_MasterSetReceive ]
+[f ]
+"60
+[e = . . _SSPCON2bits 0 3 -> -> 1 `i `uc ]
+"61
+[e ( _I2C_WaitForCompletion ..  ]
+"62
+[e :UE 339 ]
+}
+"64
+[v _I2C_MasterSendAck `(v ~T0 @X0 1 ef ]
+"65
+{
+[e :U _I2C_MasterSendAck ]
+[f ]
+"66
+[e = . . _SSPCON2bits 0 5 -> -> 0 `i `uc ]
+"67
+[e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
+"68
+[e ( _I2C_WaitForCompletion ..  ]
+"69
+[e :UE 340 ]
+}
+"71
+[v _I2C_MasterSendNack `(v ~T0 @X0 1 ef ]
+"72
+{
+[e :U _I2C_MasterSendNack ]
+[f ]
+"73
+[e = . . _SSPCON2bits 0 5 -> -> 1 `i `uc ]
+"74
+[e = . . _SSPCON2bits 0 4 -> -> 1 `i `uc ]
+"75
+[e ( _I2C_WaitForCompletion ..  ]
+"76
+[e :UE 341 ]
+}
+"78
+[v _eeprom_writeByte `(v ~T0 @X0 1 ef2`us`*uc ]
+"79
 {
 [e :U _eeprom_writeByte ]
-"131
-[v _address `ui ~T0 @X0 1 r1 ]
-[v _data `uc ~T0 @X0 1 r2 ]
-"132
+"78
+[v _address `us ~T0 @X0 1 r1 ]
+[v _data `*uc ~T0 @X0 1 r2 ]
+"79
 [f ]
-"133
+"80
 [v _addressmsb `uc ~T0 @X0 1 a ]
-[e = _addressmsb -> >> _address -> 8 `i `uc ]
-"134
+[e = _addressmsb -> >> -> _address `ui -> 8 `i `uc ]
+"81
 [v _addresslsb `uc ~T0 @X0 1 a ]
 [e = _addresslsb -> _address `uc ]
-"135
-[e ( __i2cstart ..  ]
-"136
-[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"137
-[e ( __writeByte (1 _addressmsb ]
-"138
-[e ( __writeByte (1 _addresslsb ]
-"139
-[e ( __writeByte (1 _data ]
-"140
-[e ( __i2cstop ..  ]
-"141
+"82
+[e ( _I2C_MasterStart ..  ]
+"83
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"84
+[e ( _I2C_MasterWrite (1 _addressmsb ]
+"85
+[e ( _I2C_MasterWrite (1 _addresslsb ]
+"86
+[e ( _I2C_MasterWrite (1 *U _data ]
+"87
+[e ( _I2C_MasterStop ..  ]
+"88
 [e ( _ACK_Poll ..  ]
-"142
-[e :UE 346 ]
+"89
+[e :UE 342 ]
 }
-"152
-[v _eeprom_writePage `(v ~T0 @X0 1 ef2`ui`*uc ]
-"153
+"99
+[v _eeprom_writePage `(v ~T0 @X0 1 ef2`us`*uc ]
+"100
 {
 [e :U _eeprom_writePage ]
-"152
-[v _address `ui ~T0 @X0 1 r1 ]
+"99
+[v _address `us ~T0 @X0 1 r1 ]
 [v _data `*uc ~T0 @X0 1 r2 ]
-"153
+"100
 [f ]
-"154
+"101
 [v _addressmsb `uc ~T0 @X0 1 a ]
 [e = _addressmsb -> >> -> -> _address `uc `i -> 8 `i `uc ]
-"155
+"102
 [v _addresslsb `uc ~T0 @X0 1 a ]
 [e = _addresslsb -> _address `uc ]
-"156
-[e $ ! != % _address -> -> 32 `i `ui -> -> 0 `i `ui 348  ]
-[e $UE 347  ]
-[e :U 348 ]
-"157
-[e ( __i2cstart ..  ]
-"158
-[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"159
-[e ( __writeByte (1 _addressmsb ]
-"160
-[e ( __writeByte (1 _addresslsb ]
-"161
+"103
+[e $ ! != % -> _address `ui -> -> 32 `i `ui -> -> 0 `i `ui 344  ]
+[e $UE 343  ]
+[e :U 344 ]
+"104
+[e ( _I2C_MasterStart ..  ]
+"105
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"106
+[e ( _I2C_MasterWrite (1 _addressmsb ]
+"107
+[e ( _I2C_MasterWrite (1 _addresslsb ]
+"108
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 32 `i 349  ]
-[e $U 350  ]
-[e :U 349 ]
-"162
+[e $ < _i -> 32 `i 345  ]
+[e $U 346  ]
+[e :U 345 ]
+"109
 {
-"163
-[e ( __writeByte (1 *U + _data * -> _i `x -> -> # *U _data `i `x ]
-"164
+"110
+[e ( _I2C_MasterWrite (1 *U + _data * -> _i `x -> -> # *U _data `i `x ]
+"111
 }
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 32 `i 349  ]
-[e :U 350 ]
+[e $ < _i -> 32 `i 345  ]
+[e :U 346 ]
 }
-"165
-[e ( __i2cstop ..  ]
-"166
+"112
+[e ( _I2C_MasterStop ..  ]
+"113
 [e ( _ACK_Poll ..  ]
-"167
-[e :UE 347 ]
+"114
+[e :UE 343 ]
 }
-"176
-[v _eeprom_readByte `(v ~T0 @X0 1 ef2`ui`*uc ]
-"177
+"130
+[v _eeprom_storeBurstGroup `(v ~T0 @X0 1 ef2`us`*F2348 ]
+"131
 {
-[e :U _eeprom_readByte ]
-"176
-[v _address `ui ~T0 @X0 1 r1 ]
-[v _data `*uc ~T0 @X0 1 r2 ]
-"177
+[e :U _eeprom_storeBurstGroup ]
+"130
+[v _address `us ~T0 @X0 1 r1 ]
+[v F2351 `uc ~T0 @X0 -> 4 `i t ]
+[v _data `*F2351 ~T0 @X0 1 r2 ]
+"131
 [f ]
-"178
+"132
+[e $ ! != % -> _address `ui -> -> 32 `i `ui -> -> 0 `i `ui 349  ]
+[e $UE 348  ]
+[e :U 349 ]
+"134
+{
+[v _row `uc ~T0 @X0 1 a ]
+[e = _row -> -> 0 `i `uc ]
+[e $ < -> _row `i -> 50 `i 350  ]
+[e $U 351  ]
+[e :U 350 ]
+"135
+{
+"136
+[e =+ _address -> * -> 32 `i -> _row `i `us ]
+"137
 [v _addressmsb `uc ~T0 @X0 1 a ]
-[e = _addressmsb -> >> _address -> 8 `i `uc ]
-"179
+[e = _addressmsb -> >> -> -> _address `uc `i -> 8 `i `uc ]
+"138
 [v _addresslsb `uc ~T0 @X0 1 a ]
 [e = _addresslsb -> _address `uc ]
-"181
-[e ( __i2cstart ..  ]
-"182
-[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"183
-[e ( __writeByte (1 _addressmsb ]
-"184
-[e ( __writeByte (1 _addresslsb ]
-"185
-[e ( __i2cstart ..  ]
-"186
-[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
-"187
-[e = *U _data ( __readByte (1 -> -> 128 `i `uc ]
-"188
-[e ( __i2cstop ..  ]
-"190
-[e :UE 352 ]
+"139
+[e ( _I2C_MasterStart ..  ]
+"140
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"142
+[e ( _I2C_MasterWrite (1 _addressmsb ]
+"143
+[e ( _I2C_MasterWrite (1 _addresslsb ]
+"144
+{
+[v _column `uc ~T0 @X0 1 a ]
+[e = _column -> -> 0 `i `uc ]
+[e $ < -> _column `i -> 32 `i 353  ]
+[e $U 354  ]
+[e :U 353 ]
+"145
+{
+"146
+[e ( _I2C_MasterWrite (1 *U + &U *U + _data * -> _row `ux -> * -> # *U &U *U _data `ui -> -> 4 `i `ui `ux * -> _column `ux -> -> # *U &U *U + _data * -> _row `ux -> * -> # *U &U *U _data `ui -> -> 4 `i `ui `ux `ui `ux ]
+"147
 }
-"197
+[e ++ _column -> -> 1 `i `uc ]
+[e $ < -> _column `i -> 32 `i 353  ]
+[e :U 354 ]
+}
+"148
+[e ( _I2C_MasterStop ..  ]
+"149
+[e ( _ACK_Poll ..  ]
+"150
+}
+[e ++ _row -> -> 1 `i `uc ]
+[e $ < -> _row `i -> 50 `i 350  ]
+[e :U 351 ]
+}
+"151
+[e :UE 348 ]
+}
+"159
+[v _eeprom_readByte `(v ~T0 @X0 1 ef2`us`*uc ]
+"160
+{
+[e :U _eeprom_readByte ]
+"159
+[v _address `us ~T0 @X0 1 r1 ]
+[v _databyte `*uc ~T0 @X0 1 r2 ]
+"160
+[f ]
+"161
+[v _addressmsb `uc ~T0 @X0 1 a ]
+[e = _addressmsb -> >> -> _address `ui -> 8 `i `uc ]
+"162
+[v _addresslsb `uc ~T0 @X0 1 a ]
+[e = _addresslsb -> _address `uc ]
+"164
+[e ( _I2C_MasterStart ..  ]
+"165
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"166
+[e ( _I2C_MasterWrite (1 _addressmsb ]
+"167
+[e ( _I2C_MasterWrite (1 _addresslsb ]
+"168
+[e ( _I2C_MasterStart ..  ]
+"169
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+"170
+[e ( _I2C_MasterSetReceive ..  ]
+"171
+[e = *U _databyte _SSPBUF ]
+"172
+[e ( _I2C_MasterSendNack ..  ]
+"173
+[e ( _I2C_MasterStop ..  ]
+"175
+[e :UE 356 ]
+}
+"185
 [v _eeprom_readMem `(v ~T0 @X0 1 ef1`*uc ]
-"198
+"186
 {
 [e :U _eeprom_readMem ]
-"197
-[v _byte `*uc ~T0 @X0 1 r1 ]
-"198
+"185
+[v _databyte `*uc ~T0 @X0 1 r1 ]
+"186
 [f ]
-"199
-[e ( __i2cstart ..  ]
-"200
-[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"201
-[e ( __writeByte (1 -> -> 0 `i `uc ]
-"202
-[e ( __writeByte (1 -> -> 255 `i `uc ]
-"203
-[e ( __i2cstart ..  ]
-"204
-[e ( __writeByte (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
-"205
+"187
+[e ( _I2C_MasterStart ..  ]
+"188
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"190
+[e ( _I2C_MasterWrite (1 -> -> 0 `i `uc ]
+"191
+[e ( _I2C_MasterWrite (1 -> -> 0 `i `uc ]
+"192
+[e ( _I2C_MasterStart ..  ]
+"193
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+"194
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `us ]
-[e $ < -> _i `ui -> -> 4095 `i `ui 354  ]
-[e $U 355  ]
-[e :U 354 ]
-"206
+[e $ < -> _i `ui -> -> 4095 `i `ui 358  ]
+[e $U 359  ]
+[e :U 358 ]
+"195
 {
-"207
-[e = *U _byte ( __readByte (1 -> -> 0 `i `uc ]
-"208
+"196
+[e ( _I2C_MasterSetReceive ..  ]
+"197
+[e = *U _databyte _SSPBUF ]
+"198
+[e ( _I2C_MasterSendAck ..  ]
+"199
 }
 [e ++ _i -> -> 1 `i `us ]
-[e $ < -> _i `ui -> -> 4095 `i `ui 354  ]
-[e :U 355 ]
+[e $ < -> _i `ui -> -> 4095 `i `ui 358  ]
+[e :U 359 ]
 }
-"209
-[e = *U _byte ( __readByte (1 -> -> 128 `i `uc ]
-"210
-[e ( __i2cstop ..  ]
-"211
-[e :UE 353 ]
+"200
+[e ( _I2C_MasterSetReceive ..  ]
+"201
+[e = *U _databyte _SSPBUF ]
+"202
+[e ( _I2C_MasterSendNack ..  ]
+"203
+[e ( _I2C_MasterStop ..  ]
+"204
+[e :UE 357 ]
 }
