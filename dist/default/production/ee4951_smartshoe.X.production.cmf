@@ -11,30 +11,26 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\vespi\AppData\Local\Temp\svsc.o
-reset_vec CODE 0 0 0 2 2
-end_init CODE 0 26 26 2 2
-config CONFIG 4 8007 8007 2 2
 $dist/default/production\ee4951_smartshoe.X.production.o
 cinit CODE 0 28 28 57 2
-text1 CODE 0 748 748 AD 2
+text1 CODE 0 74D 74D AD 2
 text2 CODE 0 15CB 15CB 10 2
-text3 CODE 0 7F5 7F5 9 2
-text4 CODE 0 1571 1571 6 2
-text5 CODE 0 156B 156B 6 2
-text6 CODE 0 1577 1577 7 2
+text3 CODE 0 1590 1590 9 2
+text4 CODE 0 7FA 7FA 6 2
+text5 CODE 0 1568 1568 6 2
+text6 CODE 0 156E 156E 7 2
 text7 CODE 0 15DB 15DB 16 2
-text8 CODE 0 1567 1567 4 2
-text9 CODE 0 693 693 B5 2
+text8 CODE 0 1564 1564 4 2
+text9 CODE 0 698 698 B5 2
 text10 CODE 0 1626 1626 1E 2
 text11 CODE 0 15F1 15F1 19 2
-text12 CODE 0 1590 1590 9 2
+text12 CODE 0 1587 1587 9 2
 text13 CODE 0 16A6 16A6 24 2
-text14 CODE 0 1587 1587 9 2
+text14 CODE 0 157E 157E 9 2
 text15 CODE 0 15BD 15BD E 2
-text16 CODE 0 157E 157E 9 2
+text16 CODE 0 1575 1575 9 2
 text17 CODE 0 1599 1599 C 2
-text19 CODE 0 4B0 4B0 119 2
+text19 CODE 0 4B5 4B5 119 2
 text20 CODE 0 EA9 EA9 AB 2
 text21 CODE 0 1684 1684 22 2
 text22 CODE 0 1644 1644 20 2
@@ -47,11 +43,11 @@ text28 CODE 0 E07 E07 A2 2
 text29 CODE 0 92C 92C 60 2
 text30 CODE 0 BDD BDD 88 2
 text31 CODE 0 D7A D7A 8D 2
-text32 CODE 0 5C9 5C9 CA 2
+text32 CODE 0 5CE 5CE CA 2
 text33 CODE 0 98C 98C 68 2
 text34 CODE 0 CEF CEF 8B 2
 text35 CODE 0 21F 21F 15A 2
-text36 CODE 0 801 801 32 2
+text36 CODE 0 800 800 32 2
 text37 CODE 0 9F4 9F4 6F 2
 text38 CODE 0 174A 174A 38 2
 text39 CODE 0 C65 C65 8A 2
@@ -62,11 +58,11 @@ text43 CODE 0 F54 F54 AC 2
 text44 CODE 0 A63 A63 7A 2
 text45 CODE 0 ADD ADD 7F 2
 text46 CODE 0 B5C B5C 81 2
-text47 CODE 0 833 833 4D 2
-text48 CODE 0 7FE 7FE 1 2
+text47 CODE 0 832 832 4E 2
+text48 CODE 0 3 3 1 2
 idataBIGRAM CODE 0 7F 7F 1A0 2
 nvBANK4 BANK4 1 267 267 2 1
-maintext CODE 0 379 379 137 2
+maintext CODE 0 379 379 13C 2
 cstackCOMMON COMMON 1 70 70 E 1
 cstackBANK0 BANK0 1 60 60 10 1
 cstackBANK1 BANK1 1 A0 A0 19 1
@@ -90,6 +86,10 @@ idataBANK4 CODE 0 1664 1664 20 2
 dataBANK4 BANK4 1 247 247 20 1
 clrtext CODE 0 15A5 15A5 C 2
 config CONFIG 4 8007 8007 2 2
+$C:\Users\vespi\AppData\Local\Temp\s1v6s.o
+reset_vec CODE 0 0 0 2 2
+end_init CODE 0 26 26 2 2
+config CONFIG 4 8007 8007 2 2
 # %UNUSED Section
 # This section enumerates the unused ranges of each CLASS. Each entry
 # is described on a single line as follows:
@@ -108,13 +108,11 @@ BANK4 269-26F 1
 BANK5 2E8-2EF 1
 BANK6 360-36F 1
 BANK7 3A0-3BF 1
-CONST 2-3 2
-CONST 7FF-800 2
-CONST 1000-1566 2
+CONST 2-2 2
+CONST 1000-1563 2
 CONST 18B5-1FFF 2
-ENTRY 2-3 2
-ENTRY 7FF-800 2
-ENTRY 1000-1566 2
+ENTRY 2-2 2
+ENTRY 1000-1563 2
 ENTRY 18B5-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
@@ -140,9 +138,8 @@ SFR29 E80-EEF 1
 SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2220-224F 1
-CODE 2-3 2
-CODE 7FF-800 2
-CODE 1000-1566 2
+CODE 2-2 2
+CODE 1000-1563 2
 CODE 18B5-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
@@ -155,13 +152,11 @@ SFR7 380-39F 1
 SFR8 400-41F 1
 SFR9 480-49F 1
 BIGRAM 2000-23EF 1
-STRCODE 2-3 2
-STRCODE 7FF-800 2
-STRCODE 1000-1566 2
+STRCODE 2-2 2
+STRCODE 1000-1563 2
 STRCODE 18B5-1FFF 2
-STRING 2-3 2
-STRING 7FF-800 2
-STRING 1000-1566 2
+STRING 2-2 2
+STRING 1000-1563 2
 STRING 18B5-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
@@ -177,81 +172,81 @@ STRING 18B5-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\ee4951_smartshoe.X.production.o
-28 cinit CODE >4823:C:\Users\vespi\AppData\Local\Temp\svsc.s
-28 cinit CODE >4826:C:\Users\vespi\AppData\Local\Temp\svsc.s
-28 cinit CODE >5042:C:\Users\vespi\AppData\Local\Temp\svsc.s
-29 cinit CODE >5043:C:\Users\vespi\AppData\Local\Temp\svsc.s
-2A cinit CODE >5044:C:\Users\vespi\AppData\Local\Temp\svsc.s
-2B cinit CODE >5045:C:\Users\vespi\AppData\Local\Temp\svsc.s
-2C cinit CODE >5046:C:\Users\vespi\AppData\Local\Temp\svsc.s
-2D cinit CODE >5047:C:\Users\vespi\AppData\Local\Temp\svsc.s
-2E cinit CODE >5048:C:\Users\vespi\AppData\Local\Temp\svsc.s
-2F cinit CODE >5049:C:\Users\vespi\AppData\Local\Temp\svsc.s
-30 cinit CODE >5050:C:\Users\vespi\AppData\Local\Temp\svsc.s
-31 cinit CODE >5051:C:\Users\vespi\AppData\Local\Temp\svsc.s
-32 cinit CODE >5052:C:\Users\vespi\AppData\Local\Temp\svsc.s
-33 cinit CODE >5053:C:\Users\vespi\AppData\Local\Temp\svsc.s
-36 cinit CODE >5057:C:\Users\vespi\AppData\Local\Temp\svsc.s
-37 cinit CODE >5058:C:\Users\vespi\AppData\Local\Temp\svsc.s
-38 cinit CODE >5059:C:\Users\vespi\AppData\Local\Temp\svsc.s
-39 cinit CODE >5060:C:\Users\vespi\AppData\Local\Temp\svsc.s
-3A cinit CODE >5061:C:\Users\vespi\AppData\Local\Temp\svsc.s
-3B cinit CODE >5062:C:\Users\vespi\AppData\Local\Temp\svsc.s
-3C cinit CODE >5063:C:\Users\vespi\AppData\Local\Temp\svsc.s
-3D cinit CODE >5064:C:\Users\vespi\AppData\Local\Temp\svsc.s
-3E cinit CODE >5065:C:\Users\vespi\AppData\Local\Temp\svsc.s
-3F cinit CODE >5066:C:\Users\vespi\AppData\Local\Temp\svsc.s
-40 cinit CODE >5067:C:\Users\vespi\AppData\Local\Temp\svsc.s
-41 cinit CODE >5068:C:\Users\vespi\AppData\Local\Temp\svsc.s
-44 cinit CODE >5091:C:\Users\vespi\AppData\Local\Temp\svsc.s
-45 cinit CODE >5092:C:\Users\vespi\AppData\Local\Temp\svsc.s
-46 cinit CODE >5093:C:\Users\vespi\AppData\Local\Temp\svsc.s
-47 cinit CODE >5094:C:\Users\vespi\AppData\Local\Temp\svsc.s
-48 cinit CODE >5095:C:\Users\vespi\AppData\Local\Temp\svsc.s
-49 cinit CODE >5096:C:\Users\vespi\AppData\Local\Temp\svsc.s
-4A cinit CODE >5097:C:\Users\vespi\AppData\Local\Temp\svsc.s
-4B cinit CODE >5098:C:\Users\vespi\AppData\Local\Temp\svsc.s
-4C cinit CODE >5099:C:\Users\vespi\AppData\Local\Temp\svsc.s
-4F cinit CODE >5103:C:\Users\vespi\AppData\Local\Temp\svsc.s
-50 cinit CODE >5104:C:\Users\vespi\AppData\Local\Temp\svsc.s
-51 cinit CODE >5105:C:\Users\vespi\AppData\Local\Temp\svsc.s
-52 cinit CODE >5106:C:\Users\vespi\AppData\Local\Temp\svsc.s
-53 cinit CODE >5107:C:\Users\vespi\AppData\Local\Temp\svsc.s
-54 cinit CODE >5108:C:\Users\vespi\AppData\Local\Temp\svsc.s
-55 cinit CODE >5109:C:\Users\vespi\AppData\Local\Temp\svsc.s
-56 cinit CODE >5110:C:\Users\vespi\AppData\Local\Temp\svsc.s
-57 cinit CODE >5111:C:\Users\vespi\AppData\Local\Temp\svsc.s
-5A cinit CODE >5115:C:\Users\vespi\AppData\Local\Temp\svsc.s
-5B cinit CODE >5116:C:\Users\vespi\AppData\Local\Temp\svsc.s
-5C cinit CODE >5117:C:\Users\vespi\AppData\Local\Temp\svsc.s
-5D cinit CODE >5118:C:\Users\vespi\AppData\Local\Temp\svsc.s
-5E cinit CODE >5119:C:\Users\vespi\AppData\Local\Temp\svsc.s
-5F cinit CODE >5120:C:\Users\vespi\AppData\Local\Temp\svsc.s
-60 cinit CODE >5121:C:\Users\vespi\AppData\Local\Temp\svsc.s
-61 cinit CODE >5122:C:\Users\vespi\AppData\Local\Temp\svsc.s
-62 cinit CODE >5123:C:\Users\vespi\AppData\Local\Temp\svsc.s
-65 cinit CODE >5127:C:\Users\vespi\AppData\Local\Temp\svsc.s
-66 cinit CODE >5128:C:\Users\vespi\AppData\Local\Temp\svsc.s
-67 cinit CODE >5129:C:\Users\vespi\AppData\Local\Temp\svsc.s
-68 cinit CODE >5130:C:\Users\vespi\AppData\Local\Temp\svsc.s
-69 cinit CODE >5131:C:\Users\vespi\AppData\Local\Temp\svsc.s
-6A cinit CODE >5132:C:\Users\vespi\AppData\Local\Temp\svsc.s
-6B cinit CODE >5133:C:\Users\vespi\AppData\Local\Temp\svsc.s
-6C cinit CODE >5134:C:\Users\vespi\AppData\Local\Temp\svsc.s
-6D cinit CODE >5135:C:\Users\vespi\AppData\Local\Temp\svsc.s
-70 cinit CODE >5139:C:\Users\vespi\AppData\Local\Temp\svsc.s
-71 cinit CODE >5140:C:\Users\vespi\AppData\Local\Temp\svsc.s
-72 cinit CODE >5141:C:\Users\vespi\AppData\Local\Temp\svsc.s
-73 cinit CODE >5142:C:\Users\vespi\AppData\Local\Temp\svsc.s
-74 cinit CODE >5143:C:\Users\vespi\AppData\Local\Temp\svsc.s
-75 cinit CODE >5144:C:\Users\vespi\AppData\Local\Temp\svsc.s
-76 cinit CODE >5145:C:\Users\vespi\AppData\Local\Temp\svsc.s
-77 cinit CODE >5146:C:\Users\vespi\AppData\Local\Temp\svsc.s
-78 cinit CODE >5147:C:\Users\vespi\AppData\Local\Temp\svsc.s
-7B cinit CODE >5153:C:\Users\vespi\AppData\Local\Temp\svsc.s
-7B cinit CODE >5155:C:\Users\vespi\AppData\Local\Temp\svsc.s
-7C cinit CODE >5156:C:\Users\vespi\AppData\Local\Temp\svsc.s
-7D cinit CODE >5157:C:\Users\vespi\AppData\Local\Temp\svsc.s
+28 cinit CODE >4821:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+28 cinit CODE >4824:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+28 cinit CODE >5040:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+29 cinit CODE >5041:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+2A cinit CODE >5042:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+2B cinit CODE >5043:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+2C cinit CODE >5044:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+2D cinit CODE >5045:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+2E cinit CODE >5046:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+2F cinit CODE >5047:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+30 cinit CODE >5048:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+31 cinit CODE >5049:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+32 cinit CODE >5050:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+33 cinit CODE >5051:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+36 cinit CODE >5055:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+37 cinit CODE >5056:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+38 cinit CODE >5057:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+39 cinit CODE >5058:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+3A cinit CODE >5059:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+3B cinit CODE >5060:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+3C cinit CODE >5061:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+3D cinit CODE >5062:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+3E cinit CODE >5063:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+3F cinit CODE >5064:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+40 cinit CODE >5065:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+41 cinit CODE >5066:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+44 cinit CODE >5089:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+45 cinit CODE >5090:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+46 cinit CODE >5091:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+47 cinit CODE >5092:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+48 cinit CODE >5093:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+49 cinit CODE >5094:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+4A cinit CODE >5095:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+4B cinit CODE >5096:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+4C cinit CODE >5097:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+4F cinit CODE >5101:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+50 cinit CODE >5102:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+51 cinit CODE >5103:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+52 cinit CODE >5104:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+53 cinit CODE >5105:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+54 cinit CODE >5106:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+55 cinit CODE >5107:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+56 cinit CODE >5108:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+57 cinit CODE >5109:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+5A cinit CODE >5113:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+5B cinit CODE >5114:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+5C cinit CODE >5115:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+5D cinit CODE >5116:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+5E cinit CODE >5117:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+5F cinit CODE >5118:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+60 cinit CODE >5119:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+61 cinit CODE >5120:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+62 cinit CODE >5121:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+65 cinit CODE >5125:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+66 cinit CODE >5126:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+67 cinit CODE >5127:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+68 cinit CODE >5128:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+69 cinit CODE >5129:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+6A cinit CODE >5130:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+6B cinit CODE >5131:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+6C cinit CODE >5132:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+6D cinit CODE >5133:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+70 cinit CODE >5137:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+71 cinit CODE >5138:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+72 cinit CODE >5139:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+73 cinit CODE >5140:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+74 cinit CODE >5141:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+75 cinit CODE >5142:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+76 cinit CODE >5143:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+77 cinit CODE >5144:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+78 cinit CODE >5145:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+7B cinit CODE >5151:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+7B cinit CODE >5153:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+7C cinit CODE >5154:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+7D cinit CODE >5155:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
 4 intentry CODE >52:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/interrupt_manager.c
 E intentry CODE >57:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/interrupt_manager.c
@@ -262,16 +257,16 @@ E intentry CODE >57:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior 
 23 intentry CODE >64:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/interrupt_manager.c
 24 intentry CODE >73:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/interrupt_manager.c
 24 intentry CODE >74:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/interrupt_manager.c
-7FE text48 CODE >152:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-7FE text48 CODE >155:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-833 text47 CODE >113:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-833 text47 CODE >117:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-834 text47 CODE >119:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-838 text47 CODE >121:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-83F text47 CODE >123:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-844 text47 CODE >125:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-856 text47 CODE >127:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-859 text47 CODE >128:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+3 text48 CODE >152:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+3 text48 CODE >155:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+832 text47 CODE >113:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+832 text47 CODE >117:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+833 text47 CODE >119:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+837 text47 CODE >121:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+83E text47 CODE >123:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+843 text47 CODE >125:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+855 text47 CODE >127:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+858 text47 CODE >128:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 85B text47 CODE >130:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 86D text47 CODE >132:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 874 text47 CODE >134:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
@@ -467,14 +462,14 @@ A46 text37 CODE >231:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior
 A48 text37 CODE >232:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_cdc.c
 A49 text37 CODE >258:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_cdc.c
 A62 text37 CODE >260:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_cdc.c
-801 text36 CODE >49:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
-801 text36 CODE >51:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
-802 text36 CODE >76:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
-805 text36 CODE >77:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
-806 text36 CODE >85:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
-809 text36 CODE >86:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
-80A text36 CODE >96:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
-832 text36 CODE >98:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
+800 text36 CODE >49:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
+800 text36 CODE >51:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
+801 text36 CODE >76:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
+804 text36 CODE >77:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
+805 text36 CODE >85:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
+808 text36 CODE >86:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
+809 text36 CODE >96:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
+831 text36 CODE >98:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
 21F text35 CODE >2758:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 21F text35 CODE >2803:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 22C text35 CODE >2806:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
@@ -574,26 +569,26 @@ D79 text34 CODE >2116:C:\Users\vespi\SynologyDrive\College Courses\Current\Senio
 9EE text33 CODE >2185:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 9EF text33 CODE >2186:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 9F3 text33 CODE >2188:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-5C9 text32 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-5C9 text32 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-5CD text32 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-5D4 text32 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-5DA text32 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-5EC text32 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-5F6 text32 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-602 text32 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-60E text32 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-620 text32 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-632 text32 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-63C text32 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-648 text32 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-65A text32 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-664 text32 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-671 text32 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-675 text32 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-679 text32 CODE >34:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-67D text32 CODE >86:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
-692 text32 CODE >90:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+5CE text32 CODE >4:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+5CE text32 CODE >6:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+5D2 text32 CODE >13:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+5D9 text32 CODE >14:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+5DF text32 CODE >15:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+5F1 text32 CODE >16:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+5FB text32 CODE >17:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+607 text32 CODE >18:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+613 text32 CODE >19:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+625 text32 CODE >20:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+637 text32 CODE >21:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+641 text32 CODE >22:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+64D text32 CODE >23:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+65F text32 CODE >24:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+669 text32 CODE >31:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+676 text32 CODE >32:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+67A text32 CODE >33:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+67E text32 CODE >34:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+682 text32 CODE >86:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
+697 text32 CODE >90:C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\memset.c
 D7A text31 CODE >1972:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 D7A text31 CODE >1977:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 D7C text31 CODE >1980:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
@@ -813,64 +808,64 @@ F47 text20 CODE >370:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior
 F50 text20 CODE >371:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 F51 text20 CODE >374:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 F53 text20 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4B0 text19 CODE >481:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4B0 text19 CODE >594:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4B6 text19 CODE >605:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4BB text19 CODE >612:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4BC text19 CODE >618:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4BD text19 CODE >619:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4BE text19 CODE >620:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4C3 text19 CODE >638:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4CC text19 CODE >640:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4D2 text19 CODE >644:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4D5 text19 CODE >651:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4DA text19 CODE >653:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4DC text19 CODE >654:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4DD text19 CODE >655:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4DD text19 CODE >667:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4E5 text19 CODE >669:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4E8 text19 CODE >673:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4EA text19 CODE >675:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4EE text19 CODE >685:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4F3 text19 CODE >691:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4FB text19 CODE >698:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-4FE text19 CODE >712:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-503 text19 CODE >715:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-507 text19 CODE >717:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-517 text19 CODE >719:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-51D text19 CODE >722:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-520 text19 CODE >739:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-526 text19 CODE >741:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-528 text19 CODE >742:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-528 text19 CODE >748:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-52D text19 CODE >750:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-530 text19 CODE >755:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-539 text19 CODE >757:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-53C text19 CODE >760:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-545 text19 CODE >762:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-555 text19 CODE >763:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-557 text19 CODE >778:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-55E text19 CODE >780:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-560 text19 CODE >781:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-561 text19 CODE >782:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-561 text19 CODE >787:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-566 text19 CODE >789:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-568 text19 CODE >791:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-56D text19 CODE >794:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-572 text19 CODE >795:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-57A text19 CODE >797:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-57F text19 CODE >802:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-584 text19 CODE >804:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-593 text19 CODE >805:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-594 text19 CODE >808:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-5A3 text19 CODE >814:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-5A8 text19 CODE >816:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-5AB text19 CODE >817:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-5AC text19 CODE >820:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-5BB text19 CODE >827:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-5C6 text19 CODE >828:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-5C6 text19 CODE >830:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-5C8 text19 CODE >831:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4B5 text19 CODE >481:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4B5 text19 CODE >594:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4BB text19 CODE >605:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4C0 text19 CODE >612:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4C1 text19 CODE >618:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4C2 text19 CODE >619:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4C3 text19 CODE >620:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4C8 text19 CODE >638:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4D1 text19 CODE >640:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4D7 text19 CODE >644:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4DA text19 CODE >651:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4DF text19 CODE >653:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4E1 text19 CODE >654:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4E2 text19 CODE >655:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4E2 text19 CODE >667:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4EA text19 CODE >669:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4ED text19 CODE >673:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4EF text19 CODE >675:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4F3 text19 CODE >685:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+4F8 text19 CODE >691:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+500 text19 CODE >698:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+503 text19 CODE >712:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+508 text19 CODE >715:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+50C text19 CODE >717:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+51C text19 CODE >719:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+522 text19 CODE >722:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+525 text19 CODE >739:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+52B text19 CODE >741:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+52D text19 CODE >742:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+52D text19 CODE >748:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+532 text19 CODE >750:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+535 text19 CODE >755:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+53E text19 CODE >757:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+541 text19 CODE >760:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+54A text19 CODE >762:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+55A text19 CODE >763:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+55C text19 CODE >778:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+563 text19 CODE >780:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+565 text19 CODE >781:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+566 text19 CODE >782:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+566 text19 CODE >787:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+56B text19 CODE >789:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+56D text19 CODE >791:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+572 text19 CODE >794:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+577 text19 CODE >795:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+57F text19 CODE >797:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+584 text19 CODE >802:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+589 text19 CODE >804:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+598 text19 CODE >805:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+599 text19 CODE >808:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+5A8 text19 CODE >814:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+5AD text19 CODE >816:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+5B0 text19 CODE >817:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+5B1 text19 CODE >820:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+5C0 text19 CODE >827:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+5CB text19 CODE >828:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+5CB text19 CODE >830:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+5CD text19 CODE >831:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 1599 text17 CODE >6:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 1599 text17 CODE >8:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 159B text17 CODE >9:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
@@ -879,13 +874,13 @@ F53 text20 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior
 15A0 text17 CODE >12:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 15A2 text17 CODE >13:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 15A4 text17 CODE >14:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-157E text16 CODE >67:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
-157E text16 CODE >72:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
-1581 text16 CODE >75:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
-1582 text16 CODE >78:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
-1583 text16 CODE >81:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
-1584 text16 CODE >84:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
-1586 text16 CODE >86:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
+1575 text16 CODE >67:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
+1575 text16 CODE >72:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
+1578 text16 CODE >75:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
+1579 text16 CODE >78:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
+157A text16 CODE >81:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
+157B text16 CODE >84:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
+157D text16 CODE >86:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
 15BD text15 CODE >62:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 15BD text15 CODE >65:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 15C0 text15 CODE >67:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
@@ -894,9 +889,9 @@ F53 text20 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior
 15C5 text15 CODE >73:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 15C5 text15 CODE >75:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 15CA text15 CODE >76:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
-1587 text14 CODE >138:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
-1587 text14 CODE >139:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
-158F text14 CODE >140:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
+157E text14 CODE >138:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
+157E text14 CODE >139:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
+1586 text14 CODE >140:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
 16A6 text13 CODE >57:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
 16A6 text13 CODE >62:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
 16A8 text13 CODE >63:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
@@ -916,9 +911,9 @@ F53 text20 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior
 16C0 text13 CODE >101:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
 16C1 text13 CODE >106:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
 16C9 text13 CODE >109:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
-1590 text12 CODE >148:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-1590 text12 CODE >149:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
-1598 text12 CODE >150:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+1587 text12 CODE >148:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+1587 text12 CODE >149:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+158F text12 CODE >150:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 15F1 text11 CODE >69:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 15F1 text11 CODE >74:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 15F6 text11 CODE >77:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
@@ -936,50 +931,50 @@ F53 text20 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior
 1637 text10 CODE >1376:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 163E text10 CODE >1379:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 1643 text10 CODE >1386:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-693 text9 CODE >281:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-693 text9 CODE >285:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-695 text9 CODE >292:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-697 text9 CODE >295:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-698 text9 CODE >298:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-699 text9 CODE >300:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6B2 text9 CODE >302:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6B9 text9 CODE >311:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6BB text9 CODE >313:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6CC text9 CODE >314:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6D6 text9 CODE >317:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6D8 text9 CODE >320:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6D9 text9 CODE >323:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6DA text9 CODE >326:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6DB text9 CODE >331:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6E1 text9 CODE >333:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6E3 text9 CODE >334:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6E5 text9 CODE >335:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6E7 text9 CODE >336:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6EC text9 CODE >340:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6F2 text9 CODE >341:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6F8 text9 CODE >343:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6F9 text9 CODE >344:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6FA text9 CODE >345:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6FB text9 CODE >349:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-6FD text9 CODE >351:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-705 text9 CODE >352:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-70D text9 CODE >353:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-713 text9 CODE >354:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-719 text9 CODE >355:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-723 text9 CODE >358:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-728 text9 CODE >360:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-72B text9 CODE >362:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-730 text9 CODE >363:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-732 text9 CODE >364:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-738 text9 CODE >365:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-739 text9 CODE >368:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-73B text9 CODE >370:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-744 text9 CODE >371:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-745 text9 CODE >374:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-747 text9 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
-1567 text8 CODE >78:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
-1567 text8 CODE >81:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
-156A text8 CODE >82:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
+698 text9 CODE >281:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+698 text9 CODE >285:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+69A text9 CODE >292:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+69C text9 CODE >295:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+69D text9 CODE >298:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+69E text9 CODE >300:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6B7 text9 CODE >302:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6BE text9 CODE >311:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6C0 text9 CODE >313:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6D1 text9 CODE >314:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6DB text9 CODE >317:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6DD text9 CODE >320:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6DE text9 CODE >323:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6DF text9 CODE >326:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6E0 text9 CODE >331:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6E6 text9 CODE >333:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6E8 text9 CODE >334:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6EA text9 CODE >335:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6EC text9 CODE >336:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6F1 text9 CODE >340:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6F7 text9 CODE >341:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6FD text9 CODE >343:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6FE text9 CODE >344:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+6FF text9 CODE >345:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+700 text9 CODE >349:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+702 text9 CODE >351:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+70A text9 CODE >352:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+712 text9 CODE >353:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+718 text9 CODE >354:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+71E text9 CODE >355:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+728 text9 CODE >358:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+72D text9 CODE >360:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+730 text9 CODE >362:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+735 text9 CODE >363:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+737 text9 CODE >364:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+73D text9 CODE >365:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+73E text9 CODE >368:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+740 text9 CODE >370:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+749 text9 CODE >371:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+74A text9 CODE >374:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+74C text9 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
+1564 text8 CODE >78:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
+1564 text8 CODE >81:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
+1567 text8 CODE >82:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 15DB text7 CODE >50:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 15DB text7 CODE >53:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 15DE text7 CODE >54:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
@@ -989,22 +984,22 @@ F53 text20 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior
 15EA text7 CODE >58:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 15ED text7 CODE >59:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
 15F0 text7 CODE >60:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/mcc.c
-1577 text6 CODE >35:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-1577 text6 CODE >37:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-157C text6 CODE >38:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-157D text6 CODE >39:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-156B text5 CODE >40:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-156B text5 CODE >42:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-156D text5 CODE >43:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-1570 text5 CODE >44:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-1571 text4 CODE >46:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-1571 text4 CODE >48:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-1573 text4 CODE >49:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-1576 text4 CODE >50:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7F5 text3 CODE >52:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7F7 text3 CODE >54:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7FA text3 CODE >55:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7FD text3 CODE >56:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+156E text6 CODE >35:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+156E text6 CODE >37:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+1573 text6 CODE >38:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+1574 text6 CODE >39:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+1568 text5 CODE >40:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+1568 text5 CODE >42:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+156A text5 CODE >43:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+156D text5 CODE >44:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7FA text4 CODE >46:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7FA text4 CODE >48:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7FC text4 CODE >49:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7FF text4 CODE >50:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+1590 text3 CODE >52:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+1592 text3 CODE >54:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+1595 text3 CODE >55:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+1598 text3 CODE >56:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 15CB text2 CODE >15:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 15CB text2 CODE >17:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 15CB text2 CODE >19:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
@@ -1012,26 +1007,26 @@ F53 text20 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior
 15D2 text2 CODE >22:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 15D7 text2 CODE >23:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 15DA text2 CODE >24:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-748 text1 CODE >130:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-748 text1 CODE >132:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-756 text1 CODE >134:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-757 text1 CODE >136:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-75B text1 CODE >137:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-75F text1 CODE >138:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-762 text1 CODE >139:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-766 text1 CODE >141:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-76B text1 CODE >142:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-770 text1 CODE >143:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-772 text1 CODE >145:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-773 text1 CODE >147:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7A0 text1 CODE >148:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7CA text1 CODE >149:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7D5 text1 CODE >150:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7DF text1 CODE >151:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7E2 text1 CODE >152:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7E5 text1 CODE >153:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7EA text1 CODE >154:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
-7F4 text1 CODE >155:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+74D text1 CODE >130:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+74D text1 CODE >132:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+75B text1 CODE >134:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+75C text1 CODE >136:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+760 text1 CODE >137:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+764 text1 CODE >138:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+767 text1 CODE >139:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+76B text1 CODE >141:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+770 text1 CODE >142:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+775 text1 CODE >143:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+777 text1 CODE >145:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+778 text1 CODE >147:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7A5 text1 CODE >148:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7CF text1 CODE >149:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7DA text1 CODE >150:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7E4 text1 CODE >151:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7E7 text1 CODE >152:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7EA text1 CODE >153:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7EF text1 CODE >154:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
+7F9 text1 CODE >155:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 379 maintext CODE >68:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 379 maintext CODE >70:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 37C maintext CODE >71:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
@@ -1074,49 +1069,48 @@ F53 text20 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior
 473 maintext CODE >114:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 475 maintext CODE >117:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 47B maintext CODE >119:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-47C maintext CODE >120:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-47E maintext CODE >121:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-480 maintext CODE >122:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-481 maintext CODE >123:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-482 maintext CODE >124:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-483 maintext CODE >125:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-485 maintext CODE >126:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-487 maintext CODE >127:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-489 maintext CODE >128:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-48A maintext CODE >129:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-48B maintext CODE >131:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-495 maintext CODE >134:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-496 maintext CODE >135:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-4A5 maintext CODE >136:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-4AA maintext CODE >138:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-15A5 clrtext CODE >5074:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15A5 clrtext CODE >5075:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15A6 clrtext CODE >5076:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15A6 clrtext CODE >5077:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15A7 clrtext CODE >5078:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15A8 clrtext CODE >5079:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15A9 clrtext CODE >5080:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15AA clrtext CODE >5081:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15AB clrtext CODE >5082:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15AC clrtext CODE >5083:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15AD clrtext CODE >5084:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15AE clrtext CODE >5085:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15AF clrtext CODE >5086:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B0 clrtext CODE >5087:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B1 inittext CODE >5025:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B1 inittext CODE >5026:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B2 inittext CODE >5027:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B2 inittext CODE >5028:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B3 inittext CODE >5029:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B4 inittext CODE >5030:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B5 inittext CODE >5031:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B6 inittext CODE >5032:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B7 inittext CODE >5033:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B8 inittext CODE >5034:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15B9 inittext CODE >5035:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15BA inittext CODE >5036:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15BB inittext CODE >5037:C:\Users\vespi\AppData\Local\Temp\svsc.s
-15BC inittext CODE >5038:C:\Users\vespi\AppData\Local\Temp\svsc.s
+47C maintext CODE >121:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+47E maintext CODE >122:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+47F maintext CODE >123:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+480 maintext CODE >124:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+481 maintext CODE >126:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+483 maintext CODE >127:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+485 maintext CODE >128:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+486 maintext CODE >129:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+487 maintext CODE >131:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+491 maintext CODE >134:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+492 maintext CODE >135:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+49D maintext CODE >137:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+4AB maintext CODE >138:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+4B0 maintext CODE >140:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+15A5 clrtext CODE >5072:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15A5 clrtext CODE >5073:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15A6 clrtext CODE >5074:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15A6 clrtext CODE >5075:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15A7 clrtext CODE >5076:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15A8 clrtext CODE >5077:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15A9 clrtext CODE >5078:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15AA clrtext CODE >5079:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15AB clrtext CODE >5080:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15AC clrtext CODE >5081:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15AD clrtext CODE >5082:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15AE clrtext CODE >5083:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15AF clrtext CODE >5084:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B0 clrtext CODE >5085:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B1 inittext CODE >5023:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B1 inittext CODE >5024:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B2 inittext CODE >5025:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B2 inittext CODE >5026:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B3 inittext CODE >5027:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B4 inittext CODE >5028:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B5 inittext CODE >5029:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B6 inittext CODE >5030:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B7 inittext CODE >5031:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B8 inittext CODE >5032:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15B9 inittext CODE >5033:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15BA inittext CODE >5034:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15BB inittext CODE >5035:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
+15BC inittext CODE >5036:C:\Users\vespi\AppData\Local\Temp\s1v6s.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -1132,7 +1126,7 @@ F53 text20 CODE >375:C:\Users\vespi\SynologyDrive\College Courses\Current\Senior
 eeprom_storeBurstGroup@address A6 0 BANK1 1 cstackBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 I2C_MasterWrite@data A5 0 BANK1 1 cstackBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 ___latbits 2 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-_I2C_WaitForCompletion 2AEE 0 CODE 0 text6 dist/default/production\ee4951_smartshoe.X.production.o
+_I2C_WaitForCompletion 2ADC 0 CODE 0 text6 dist/default/production\ee4951_smartshoe.X.production.o
 __LdataBANK4 0 0 ABS 0 dataBANK4 -
 _measurement_flag 1DA 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 USBStdGetStatusHandler@p 72 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
@@ -1153,7 +1147,7 @@ __end_of_USBStdSetCfgHandler 1C0E 0 CODE 0 text31 dist/default/production\ee4951
 USBEnableEndpoint@options 77 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_ACK_Poll 2BB6 0 CODE 0 text2 dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_USBIncrement1msInternalTimers 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_WDT_Initialize 2AD6 0 CODE 0 text8 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_WDT_Initialize 2AD0 0 CODE 0 text8 dist/default/production\ee4951_smartshoe.X.production.o
 __Hstrings 0 0 ABS 0 strings -
 _LATA 10C 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _LATB 10D 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
@@ -1167,17 +1161,17 @@ _UEP0 E98 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _UEP1 E99 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _WPUA 20C 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _WPUB 20D 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\vespi\AppData\Local\Temp\svsc.o
+___sp 0 0 STACK 2 stack C:\Users\vespi\AppData\Local\Temp\s1v6s.o
 _main 6F2 0 CODE 0 maintext dist/default/production\ee4951_smartshoe.X.production.o
 _pDst 1EC 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_USBCtrlTrfTxService 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-start 4C 0 CODE 0 init C:\Users\vespi\AppData\Local\Temp\svsc.o
-_TMR0_InterruptHandler 1C7 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
+start 4C 0 CODE 0 init C:\Users\vespi\AppData\Local\Temp\s1v6s.o
+_TMR0_InterruptHandler 1C9 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 _USBTransferOnePacket 18CA 0 CODE 0 text39 dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_TMR0_SetInterruptHandler 2B32 0 CODE 0 text12 dist/default/production\ee4951_smartshoe.X.production.o
-_USBDeviceInit D26 0 CODE 0 text9 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_TMR0_SetInterruptHandler 2B20 0 CODE 0 text12 dist/default/production\ee4951_smartshoe.X.production.o
+_USBDeviceInit D30 0 CODE 0 text9 dist/default/production\ee4951_smartshoe.X.production.o
 _pBDTEntryEP0OutNext BE 0 BANK1 1 bssBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 _OPTION_REGbits 95 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_USBDeviceTasks 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
@@ -1192,12 +1186,12 @@ _CtrlTrfData 58 0 ABS 1 - dist/default/production\ee4951_smartshoe.X.production.
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 TMR0_SetInterruptHandler@InterruptHandler A5 0 BANK1 1 cstackBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_IOCAF5_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\svsc.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\svsc.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\svsc.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\svsc.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\svsc.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\svsc.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\s1v6s.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\s1v6s.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\s1v6s.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\s1v6s.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\s1v6s.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\vespi\AppData\Local\Temp\s1v6s.o
 i1USBDeviceInit@i_665 73 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
 _writeBuffer 320 0 BANK6 1 bssBANK6 dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_ADC_Initialize 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
@@ -1225,9 +1219,9 @@ _ANSELA 18C 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _ANSELB 18D 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _ANSELC 18E 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _APFCON 11D 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-_TMR0_DefaultInterruptHandler FFC 0 CODE 0 text48 dist/default/production\ee4951_smartshoe.X.production.o
+_TMR0_DefaultInterruptHandler 6 0 CODE 0 text48 dist/default/production\ee4951_smartshoe.X.production.o
 _BORCON 116 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-_I2C_MasterStop 2AE2 0 CODE 0 text4 dist/default/production\ee4951_smartshoe.X.production.o
+_I2C_MasterStop FF4 0 CODE 0 text4 dist/default/production\ee4951_smartshoe.X.production.o
 _measurement_count 1DB 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_USBCtrlEPServiceComplete 1D52 0 CODE 0 text28 dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_INTERRUPT_InterruptManager 4C 0 CODE 0 intentry dist/default/production\ee4951_smartshoe.X.production.o
@@ -1237,10 +1231,10 @@ __end_of_USBStdGetStatusHandler 13E8 0 CODE 0 text33 dist/default/production\ee4
 _IOCAF5_InterruptHandler 267 0 BANK4 1 nvBANK4 dist/default/production\ee4951_smartshoe.X.production.o
 _SetupPkt 50 0 ABS 1 - dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_USBCheckCDCRequest 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-_IOCAF5_SetInterruptHandler 2B0E 0 CODE 0 text14 dist/default/production\ee4951_smartshoe.X.production.o
+_IOCAF5_SetInterruptHandler 2AFC 0 CODE 0 text14 dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_USBCtrlTrfOutHandler 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 USBEnableEndpoint@ep 7C 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
-_eeprom_storeBurstGroup E90 0 CODE 0 text1 dist/default/production\ee4951_smartshoe.X.production.o
+_eeprom_storeBurstGroup E9A 0 CODE 0 text1 dist/default/production\ee4951_smartshoe.X.production.o
 __Lmaintext 0 0 ABS 0 maintext -
 __LnvBANK4 0 0 ABS 0 nvBANK4 -
 __size_of_USBStdGetDscHandler 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
@@ -1251,8 +1245,8 @@ _USBCtrlTrfRxService 1EA8 0 CODE 0 text43 dist/default/production\ee4951_smartsh
 USBStdFeatureReqHandler@pUEP 68 0 BANK0 1 cstackBANK0 dist/default/production\ee4951_smartshoe.X.production.o
 USBCtrlTrfRxService@byteToRead 75 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
 _OPTION_REG 95 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-___stackhi 224F 0 ABS 0 - C:\Users\vespi\AppData\Local\Temp\svsc.o
-___stacklo 2220 0 ABS 0 - C:\Users\vespi\AppData\Local\Temp\svsc.o
+___stackhi 224F 0 ABS 0 - C:\Users\vespi\AppData\Local\Temp\s1v6s.o
+___stacklo 2220 0 ABS 0 - C:\Users\vespi\AppData\Local\Temp\s1v6s.o
 __size_of_USBDeviceInit 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __LidataBIGRAM 0 0 ABS 0 idataBIGRAM -
 __end_of_USBCtrlTrfOutHandler 2F78 0 CODE 0 text42 dist/default/production\ee4951_smartshoe.X.production.o
@@ -1260,26 +1254,25 @@ _USBBusIsSuspended 1EA 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartsh
 memcpy@tmp 77 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
 _USBDeferOUTDataStagePackets 1E3 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 _PIN_MANAGER_Initialize 2D4C 0 CODE 0 text13 dist/default/production\ee4951_smartshoe.X.production.o
-_waitforsleep_count 1C9 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
+_waitforsleep_count 234 0 BANK4 1 bssBANK4 dist/default/production\ee4951_smartshoe.X.production.o
 start_initialization 50 0 CODE 0 cinit dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_I2C_MasterStop 2AEE 0 CODE 0 text4 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_I2C_MasterStop 1000 0 CODE 0 text4 dist/default/production\ee4951_smartshoe.X.production.o
 _OSCCON 99 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _PLLRDY 4D6 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-_TRISCbits 8E 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_USBCheckStdRequest 18CA 0 CODE 0 text30 dist/default/production\ee4951_smartshoe.X.production.o
 _IOCAF5_DefaultInterruptHandler 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _device_dsc 311A 0 STRCODE 0 stringtext6 dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_memcpy 2E94 0 CODE 0 text26 dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_memset D26 0 CODE 0 text32 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_memset D30 0 CODE 0 text32 dist/default/production\ee4951_smartshoe.X.production.o
 _USBTicksSinceSuspendEnd 1E2 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_SYSTEM_Initialize 2BE2 0 CODE 0 text7 dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_USBDeviceInit E90 0 CODE 0 text9 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_USBDeviceInit E9A 0 CODE 0 text9 dist/default/production\ee4951_smartshoe.X.production.o
 _USBStdGetDscHandler 19DE 0 CODE 0 text34 dist/default/production\ee4951_smartshoe.X.production.o
 clear_ram0 2B4A 0 CODE 0 clrtext dist/default/production\ee4951_smartshoe.X.production.o
 __pcstackBANK0 60 0 BANK0 1 cstackBANK0 dist/default/production\ee4951_smartshoe.X.production.o
 __pcstackBANK1 A0 0 BANK1 1 cstackBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 __pcstackBANK5 2E0 0 BANK5 1 cstackBANK5 dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_USER_USB_CALLBACK_EVENT_HANDLER 1066 0 CODE 0 text36 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_USER_USB_CALLBACK_EVENT_HANDLER 1064 0 CODE 0 text36 dist/default/production\ee4951_smartshoe.X.production.o
 _SSPBUF 211 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_USBCtrlTrfTxService 17BA 0 CODE 0 text46 dist/default/production\ee4951_smartshoe.X.production.o
 _USBStallHandler 2DDE 0 CODE 0 text23 dist/default/production\ee4951_smartshoe.X.production.o
@@ -1288,7 +1281,7 @@ _cdc_data_tx 2080 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.productio
 __end_of_USBEnableEndpoint 2DDE 0 CODE 0 text40 dist/default/production\ee4951_smartshoe.X.production.o
 _readBuffer 2A0 0 BANK5 1 bssBANK5 dist/default/production\ee4951_smartshoe.X.production.o
 _WDTCON 97 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\vespi\AppData\Local\Temp\svsc.o
+___int_sp 0 0 STACK 2 stack C:\Users\vespi\AppData\Local\Temp\s1v6s.o
 _UIEbits E92 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _UIRbits E90 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __Hbank0 0 0 ABS 0 bank0 -
@@ -1485,21 +1478,21 @@ _BothEP0OutUOWNsSet 1E9 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smarts
 _UCONbits E8E 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 USBCtrlTrfRxService@i 74 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_USBStdFeatureReqHandler 6F2 0 CODE 0 text35 dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_TMR0_DefaultInterruptHandler FFE 0 CODE 0 text48 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_TMR0_DefaultInterruptHandler 8 0 CODE 0 text48 dist/default/production\ee4951_smartshoe.X.production.o
 _column 1D6 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 __HidataBIGRAM 0 0 ABS 0 idataBIGRAM -
 _SYSTEM_Initialize 2BB6 0 CODE 0 text7 dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_eeprom_storeBurstGroup FEA 0 CODE 0 text1 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_eeprom_storeBurstGroup FF4 0 CODE 0 text1 dist/default/production\ee4951_smartshoe.X.production.o
 _USBAlternateInterface 1ED 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 _USBDeviceState C5 0 BANK1 1 bssBANK1 dist/default/production\ee4951_smartshoe.X.production.o
-_USBDeviceTasks 960 0 CODE 0 text19 dist/default/production\ee4951_smartshoe.X.production.o
+_USBDeviceTasks 96A 0 CODE 0 text19 dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_USBStdGetStatusHandler 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __HnvBANK4 0 0 ABS 0 nvBANK4 -
 __end_of_USBStdGetDscHandler 1AF4 0 CODE 0 text34 dist/default/production\ee4951_smartshoe.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
 __size_of_USBStallHandler 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_USBCtrlTrfSetupHandler 11AC 0 CODE 0 text27 dist/default/production\ee4951_smartshoe.X.production.o
-reset_vec 0 0 CODE 0 reset_vec C:\Users\vespi\AppData\Local\Temp\svsc.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\vespi\AppData\Local\Temp\s1v6s.o
 _USBEnableEndpoint 2D94 0 CODE 0 text40 dist/default/production\ee4951_smartshoe.X.production.o
 __pdataBANK4 247 0 BANK4 1 dataBANK4 dist/default/production\ee4951_smartshoe.X.production.o
 __LbssBANK1 0 0 ABS 0 bssBANK1 -
@@ -1519,7 +1512,7 @@ __Lstringtext8 0 0 ABS 0 stringtext8 -
 __end_of_USBCtrlEPService 1258 0 CODE 0 text25 dist/default/production\ee4951_smartshoe.X.production.o
 _INTERRUPT_InterruptManager 8 0 CODE 0 intentry dist/default/production\ee4951_smartshoe.X.production.o
 _USBCtrlTrfInHandler 15BA 0 CODE 0 text45 dist/default/production\ee4951_smartshoe.X.production.o
-_ADC_Initialize 2AFC 0 CODE 0 text16 dist/default/production\ee4951_smartshoe.X.production.o
+_ADC_Initialize 2AEA 0 CODE 0 text16 dist/default/production\ee4951_smartshoe.X.production.o
 _IOCAFbits 393 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 eeprom_storeBurstGroup@addresslsb B5 0 BANK1 1 cstackBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 eeprom_storeBurstGroup@addressmsb B4 0 BANK1 1 cstackBANK1 dist/default/production\ee4951_smartshoe.X.production.o
@@ -1528,18 +1521,18 @@ _IOCAPbits 391 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_USBTransferOnePacket 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _PIE2bits 92 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _memcpy 2E38 0 CODE 0 text26 dist/default/production\ee4951_smartshoe.X.production.o
-_memset B92 0 CODE 0 text32 dist/default/production\ee4951_smartshoe.X.production.o
+_memset B9C 0 CODE 0 text32 dist/default/production\ee4951_smartshoe.X.production.o
 USBConfigureEndpoint@handle 76 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
-_TMR0_ISR 1066 0 CODE 0 text47 dist/default/production\ee4951_smartshoe.X.production.o
+_TMR0_ISR 1064 0 CODE 0 text47 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext10 2C4C 0 CODE 0 text10 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext11 2BE2 0 CODE 0 text11 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext12 2B20 0 CODE 0 text12 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext12 2B0E 0 CODE 0 text12 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext13 2D4C 0 CODE 0 text13 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext14 2B0E 0 CODE 0 text14 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext14 2AFC 0 CODE 0 text14 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext15 2B7A 0 CODE 0 text15 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext16 2AFC 0 CODE 0 text16 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext16 2AEA 0 CODE 0 text16 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext17 2B32 0 CODE 0 text17 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext19 960 0 CODE 0 text19 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext19 96A 0 CODE 0 text19 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext20 1D52 0 CODE 0 text20 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext21 2D08 0 CODE 0 text21 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext22 2C88 0 CODE 0 text22 dist/default/production\ee4951_smartshoe.X.production.o
@@ -1552,11 +1545,11 @@ __ptext28 1C0E 0 CODE 0 text28 dist/default/production\ee4951_smartshoe.X.produc
 __ptext29 1258 0 CODE 0 text29 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext30 17BA 0 CODE 0 text30 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext31 1AF4 0 CODE 0 text31 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext32 B92 0 CODE 0 text32 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext32 B9C 0 CODE 0 text32 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext33 1318 0 CODE 0 text33 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext34 19DE 0 CODE 0 text34 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext35 43E 0 CODE 0 text35 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext36 1002 0 CODE 0 text36 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext36 1000 0 CODE 0 text36 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext37 13E8 0 CODE 0 text37 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext38 2E94 0 CODE 0 text38 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext39 18CA 0 CODE 0 text39 dist/default/production\ee4951_smartshoe.X.production.o
@@ -1567,8 +1560,8 @@ __ptext43 1EA8 0 CODE 0 text43 dist/default/production\ee4951_smartshoe.X.produc
 __ptext44 14C6 0 CODE 0 text44 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext45 15BA 0 CODE 0 text45 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext46 16B8 0 CODE 0 text46 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext47 1066 0 CODE 0 text47 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext48 FFC 0 CODE 0 text48 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext47 1064 0 CODE 0 text47 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext48 6 0 CODE 0 text48 dist/default/production\ee4951_smartshoe.X.production.o
 i1USBDeviceInit@i 74 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
 i1USBDeviceInit@p 71 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_USBCtrlEPService 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
@@ -1614,16 +1607,16 @@ USBDeviceInit@i_665 A8 0 BANK1 1 cstackBANK1 dist/default/production\ee4951_smar
 _RemoteWakeup 1EB 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 eeprom_storeBurstGroup@data A8 0 BANK1 1 cstackBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_USBDeviceAttach 2C88 0 CODE 0 text10 dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_USBDeviceTasks B92 0 CODE 0 text19 dist/default/production\ee4951_smartshoe.X.production.o
-_TMR0_SetInterruptHandler 2B20 0 CODE 0 text12 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_USBDeviceTasks B9C 0 CODE 0 text19 dist/default/production\ee4951_smartshoe.X.production.o
+_TMR0_SetInterruptHandler 2B0E 0 CODE 0 text12 dist/default/production\ee4951_smartshoe.X.production.o
 _ep_data_out 1C1 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 USBEnableEndpoint@p 7A 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
 _dummy_encapsulated_cmd_response 238 0 BANK4 1 bssBANK4 dist/default/production\ee4951_smartshoe.X.production.o
 _cdc_mem_type 1DF 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_USBConfigureEndpoint 3000 0 CODE 0 text41 dist/default/production\ee4951_smartshoe.X.production.o
 _USBCtrlEPAllowDataStage 1258 0 CODE 0 text29 dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_I2C_MasterStart 2AE2 0 CODE 0 text5 dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_I2C_MasterWrite FFC 0 CODE 0 text3 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_I2C_MasterStart 2ADC 0 CODE 0 text5 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_I2C_MasterWrite 2B32 0 CODE 0 text3 dist/default/production\ee4951_smartshoe.X.production.o
 _OSCTUNE 98 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _ADCON0bits 9D 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_USBCtrlEPAllowDataStage 1318 0 CODE 0 text29 dist/default/production\ee4951_smartshoe.X.production.o
@@ -1634,7 +1627,7 @@ __Lspace_3 0 0 ABS 0 - -
 __Lspace_4 0 0 ABS 0 - -
 __size_of_memcpy 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_memset 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_ADC_Initialize 2B0E 0 CODE 0 text16 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_ADC_Initialize 2AFC 0 CODE 0 text16 dist/default/production\ee4951_smartshoe.X.production.o
 _USBCtrlTrfOutHandler 2F04 0 CODE 0 text42 dist/default/production\ee4951_smartshoe.X.production.o
 __HcstackBANK0 0 0 ABS 0 cstackBANK0 -
 __HcstackBANK1 0 0 ABS 0 cstackBANK1 -
@@ -1651,7 +1644,7 @@ _TMR0_Initialize 2BE2 0 CODE 0 text11 dist/default/production\ee4951_smartshoe.X
 __Hintentry 4C 0 CODE 0 intentry -
 _USBDeferStatusStagePacket 1E7 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_CDCInitEP 2F04 0 CODE 0 text38 dist/default/production\ee4951_smartshoe.X.production.o
-_USER_USB_CALLBACK_EVENT_HANDLER 1002 0 CODE 0 text36 dist/default/production\ee4951_smartshoe.X.production.o
+_USER_USB_CALLBACK_EVENT_HANDLER 1000 0 CODE 0 text36 dist/default/production\ee4951_smartshoe.X.production.o
 __Lstrings 0 0 ABS 0 strings -
 __size_of_CDCInitEP 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
@@ -1670,15 +1663,15 @@ _measarray 2250 0 ABS 1 - dist/default/production\ee4951_smartshoe.X.production.
 USBConfigureEndpoint@EPNum 75 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
 _USB_SD_Ptr 313E 0 STRCODE 0 stringtext1 dist/default/production\ee4951_smartshoe.X.production.o
 _SSPCON2bits 216 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-__ptext1 E90 0 CODE 0 text1 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext1 E9A 0 CODE 0 text1 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext2 2B96 0 CODE 0 text2 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext3 FEA 0 CODE 0 text3 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext4 2AE2 0 CODE 0 text4 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext5 2AD6 0 CODE 0 text5 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext6 2AEE 0 CODE 0 text6 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext3 2B20 0 CODE 0 text3 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext4 FF4 0 CODE 0 text4 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext5 2AD0 0 CODE 0 text5 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext6 2ADC 0 CODE 0 text6 dist/default/production\ee4951_smartshoe.X.production.o
 __ptext7 2BB6 0 CODE 0 text7 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext8 2ACE 0 CODE 0 text8 dist/default/production\ee4951_smartshoe.X.production.o
-__ptext9 D26 0 CODE 0 text9 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext8 2AC8 0 CODE 0 text8 dist/default/production\ee4951_smartshoe.X.production.o
+__ptext9 D30 0 CODE 0 text9 dist/default/production\ee4951_smartshoe.X.production.o
 _USBDeviceAttach 2C4C 0 CODE 0 text10 dist/default/production\ee4951_smartshoe.X.production.o
 eeprom_storeBurstGroup@column B8 0 BANK1 1 cstackBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_USBCheckStdRequest 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
@@ -1689,9 +1682,9 @@ _CDCInitEP 2E94 0 CODE 0 text38 dist/default/production\ee4951_smartshoe.X.produ
 _USBCtrlEPServiceComplete 1C0E 0 CODE 0 text28 dist/default/production\ee4951_smartshoe.X.production.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
-_I2C_MasterStart 2AD6 0 CODE 0 text5 dist/default/production\ee4951_smartshoe.X.production.o
+_I2C_MasterStart 2AD0 0 CODE 0 text5 dist/default/production\ee4951_smartshoe.X.production.o
 _configDescriptor1 3000 0 STRCODE 0 stringtext3 dist/default/production\ee4951_smartshoe.X.production.o
-_I2C_MasterWrite FEA 0 CODE 0 text3 dist/default/production\ee4951_smartshoe.X.production.o
+_I2C_MasterWrite 2B20 0 CODE 0 text3 dist/default/production\ee4951_smartshoe.X.production.o
 USBStdFeatureReqHandler@current_ep_data 6A 0 BANK0 1 cstackBANK0 dist/default/production\ee4951_smartshoe.X.production.o
 _pBDTEntryEP0OutCurrent C4 0 BANK1 1 bssBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 USBTransferOnePacket@data 71 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
@@ -1712,7 +1705,7 @@ _timer0ReloadVal 1D9 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe
 __size_of_USBWakeFromSuspend 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __pidataBANK4 2CC8 0 CODE 0 idataBANK4 dist/default/production\ee4951_smartshoe.X.production.o
 USBCtrlTrfTxService@byteToSend 72 0 COMMON 1 cstackCOMMON dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_IOCAF5_SetInterruptHandler 2B20 0 CODE 0 text14 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_IOCAF5_SetInterruptHandler 2B0E 0 CODE 0 text14 dist/default/production\ee4951_smartshoe.X.production.o
 _USTATcopy C6 0 BANK1 1 bssBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_eeprom_storeBurstGroup 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __Lclrtext 0 0 ABS 0 clrtext -
@@ -1730,8 +1723,8 @@ __size_of_ACK_Poll 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.produc
 __Hend_init 50 0 CODE 0 end_init -
 __size_of_TMR0_SetInterruptHandler 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __end_of_USB_SD_Ptr 314E 0 STRCODE 0 stringtext1 dist/default/production\ee4951_smartshoe.X.production.o
-_currentEepromAddress 234 0 BANK4 1 bssBANK4 dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_main 960 0 CODE 0 maintext dist/default/production\ee4951_smartshoe.X.production.o
+_currentEepromAddress 1C7 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_main 96A 0 CODE 0 maintext dist/default/production\ee4951_smartshoe.X.production.o
 __end_ofi1_USBDeviceInit 1EA8 0 CODE 0 text20 dist/default/production\ee4951_smartshoe.X.production.o
 _TRISA 8C 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 _TRISB 8D 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
@@ -1754,12 +1747,12 @@ _sd002 30EE 0 STRCODE 0 stringtext5 dist/default/production\ee4951_smartshoe.X.p
 _sd003 314E 0 STRCODE 0 stringtext7 dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_USBSuspend 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-_WDT_Initialize 2ACE 0 CODE 0 text8 dist/default/production\ee4951_smartshoe.X.production.o
+_WDT_Initialize 2AC8 0 CODE 0 text8 dist/default/production\ee4951_smartshoe.X.production.o
 __pintentry 8 0 CODE 0 intentry dist/default/production\ee4951_smartshoe.X.production.o
 __HdataBANK4 0 0 ABS 0 dataBANK4 -
 __end_of_OSCILLATOR_Initialize 2B96 0 CODE 0 text15 dist/default/production\ee4951_smartshoe.X.production.o
 __pdataBIGRAM 2250 0 ABS 0 - dist/default/production\ee4951_smartshoe.X.production.o
-__end_of_I2C_WaitForCompletion 2AFC 0 CODE 0 text6 dist/default/production\ee4951_smartshoe.X.production.o
+__end_of_I2C_WaitForCompletion 2AEA 0 CODE 0 text6 dist/default/production\ee4951_smartshoe.X.production.o
 __initialization 50 0 CODE 0 cinit dist/default/production\ee4951_smartshoe.X.production.o
 __pbssBANK1 B9 0 BANK1 1 bssBANK1 dist/default/production\ee4951_smartshoe.X.production.o
 __pbssBANK3 1B0 0 BANK3 1 bssBANK3 dist/default/production\ee4951_smartshoe.X.production.o
@@ -1820,18 +1813,18 @@ _measarray 1 2250 0
 # All other numeric quantities are in decimal.
 %SEGMENTS
 text2 0 15CB 2B96 10 2
-text4 0 1571 2AE2 6 2
-text5 0 156B 2AD6 6 2
-text6 0 1577 2AEE 7 2
+text3 0 1590 2B20 9 2
+text5 0 1568 2AD0 6 2
+text6 0 156E 2ADC 7 2
 text7 0 15DB 2BB6 16 2
-text8 0 1567 2ACE 4 2
+text8 0 1564 2AC8 4 2
 text10 0 1626 2C4C 1E 2
 text11 0 15F1 2BE2 19 2
-text12 0 1590 2B20 9 2
+text12 0 1587 2B0E 9 2
 text13 0 16A6 2D4C 24 2
-text14 0 1587 2B0E 9 2
+text14 0 157E 2AFC 9 2
 text15 0 15BD 2B7A E 2
-text16 0 157E 2AFC 9 2
+text16 0 1575 2AEA 9 2
 text17 0 1599 2B32 C 2
 text20 0 EA9 1D52 AB 2
 text21 0 1684 2D08 22 2
@@ -1847,7 +1840,7 @@ text30 0 BDD 17BA 88 2
 text31 0 D7A 1AF4 8D 2
 text33 0 98C 1318 68 2
 text34 0 CEF 19DE 8B 2
-text36 0 801 1002 32 2
+text36 0 800 1000 32 2
 text37 0 9F4 13E8 6F 2
 text38 0 174A 2E94 38 2
 text39 0 C65 18CA 8A 2
@@ -1858,13 +1851,14 @@ text43 0 F54 1EA8 AC 2
 text44 0 A63 14C6 7A 2
 text45 0 ADD 15BA 7F 2
 text46 0 B5C 16B8 81 2
-text47 0 833 1066 4D 2
+text47 0 832 1064 4E 2
+text48 0 3 6 1 2
 cstackCOMMON 1 70 70 E 1
 cstackBANK0 1 60 60 10 1
 cstackBANK1 1 A0 A0 28 1
 inittext 0 15B1 2B62 C 2
 stringtext3 0 1800 3000 B5 2
-intentry 0 4 8 7FB 2
+intentry 0 4 8 7FC 2
 reset_vec 0 0 0 2 2
 bssBANK3 1 1B0 1B0 3F 1
 bssBANK4 1 220 220 49 1

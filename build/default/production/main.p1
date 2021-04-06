@@ -52,18 +52,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38 ./externs.h
 [; ;./externs.h: 38: extern unsigned char sleep_flag;
 [v _sleep_flag `uc ~T0 @X0 0 e ]
-"1076 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1076:     struct {
-[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S67 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"1075
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1075: typedef union {
-[u S66 `S67 1 ]
-[n S66 . . ]
-"1087
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1087: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x08E)));
-[v _TRISCbits `VS66 ~T0 @X0 0 e@142 ]
-"4034
+"4034 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4034:     struct {
 [s S217 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S217 . IOCAF0 IOCAF1 . IOCAF3 IOCAF4 IOCAF5 ]
@@ -1086,9 +1075,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "119
 [; ;main.c: 119:             sleep_flag = 0;
 [e = _sleep_flag -> -> 0 `i `uc ]
-"120
-[; ;main.c: 120:             TRISCbits.TRISC5 = 0;
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 "121
 [; ;main.c: 121:             IOCAFbits.IOCAF5 = 0;
 [e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
@@ -1101,9 +1087,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "124
 [; ;main.c: 124:             INTCONbits.IOCIE = 0;
 [e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"125
-[; ;main.c: 125:             TRISCbits.TRISC5 = 1;
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
 "126
 [; ;main.c: 126:             IOCAFbits.IOCAF5 = 0;
 [e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
@@ -1130,25 +1113,30 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 134:             writeout_flag = 0;
 [e = _writeout_flag -> -> 0 `i `uc ]
 "135
-[; ;main.c: 135:             eeprom_storeBurstGroup(currentEepromAddress, measarray);
+[; ;main.c: 135:             if(currentEepromAddress >= 0xFFF) currentEepromAddress = 0;
+[e $ ! >= -> _currentEepromAddress `ui -> -> 4095 `i `ui 426  ]
+[e = _currentEepromAddress -> -> 0 `i `us ]
+[e :U 426 ]
+"137
+[; ;main.c: 137:                 eeprom_storeBurstGroup(currentEepromAddress, measarray);
 [e ( _eeprom_storeBurstGroup (2 , _currentEepromAddress &U _measarray ]
-"136
-[; ;main.c: 136:             currentEepromAddress += 0x1A0;
-[e =+ _currentEepromAddress -> -> 416 `i `us ]
 "138
-[; ;main.c: 138:             writecomplete = 1;
+[; ;main.c: 138:                 currentEepromAddress += 0x1A0;
+[e =+ _currentEepromAddress -> -> 416 `i `us ]
+"140
+[; ;main.c: 140:                 writecomplete = 1;
 [e = _writecomplete -> -> 1 `i `uc ]
-"139
-[; ;main.c: 139:         }
+"141
+[; ;main.c: 141:         }
 }
 [e :U 425 ]
-"140
-[; ;main.c: 140:     }
+"142
+[; ;main.c: 142:     }
 }
 [e :U 396 ]
 [e $U 397  ]
 [e :U 398 ]
-"141
-[; ;main.c: 141: }
+"143
+[; ;main.c: 143: }
 [e :UE 395 ]
 }

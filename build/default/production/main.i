@@ -5301,12 +5301,12 @@ void main(void)
         if(sleep_flag)
         {
             sleep_flag = 0;
-            TRISCbits.TRISC5 = 0;
+
             IOCAFbits.IOCAF5 = 0;
             INTCONbits.IOCIE = 1;
             __asm("SLEEP");
             INTCONbits.IOCIE = 0;
-            TRISCbits.TRISC5 = 1;
+
             IOCAFbits.IOCAF5 = 0;
             writecomplete = 0;
             writeout_flag = 0;
@@ -5316,10 +5316,12 @@ void main(void)
         {
 
             writeout_flag = 0;
-            eeprom_storeBurstGroup(currentEepromAddress, measarray);
-            currentEepromAddress += 0x1A0;
+            if(currentEepromAddress >= 0xFFF) currentEepromAddress = 0;
 
-            writecomplete = 1;
+                eeprom_storeBurstGroup(currentEepromAddress, measarray);
+                currentEepromAddress += 0x1A0;
+
+                writecomplete = 1;
         }
     }
 }

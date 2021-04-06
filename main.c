@@ -117,12 +117,12 @@ void main(void)
         if(sleep_flag) //prepare for and then command the system to sleep. 
         {
             sleep_flag = 0;
-            TRISCbits.TRISC5 = 0; //turn on LED
+            //TRISCbits.TRISC5 = 0; //turn on LED
             IOCAFbits.IOCAF5 = 0;
             INTCONbits.IOCIE = 1; //enable IOC interrupt
             asm("SLEEP");
             INTCONbits.IOCIE = 0; //disable IOC interrupt
-            TRISCbits.TRISC5 = 1; //turn off LED
+            //TRISCbits.TRISC5 = 1; //turn off LED
             IOCAFbits.IOCAF5 = 0;
             writecomplete = 0;
             writeout_flag = 0;
