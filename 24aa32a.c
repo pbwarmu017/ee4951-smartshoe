@@ -107,7 +107,7 @@ void eeprom_writePage(unsigned short address, unsigned char *data)
 	I2C_MasterWrite(addresslsb); //write the LSB address bits
 	for (int i = 0; i < 32; i++)
 	{
-	I2C_MasterWrite(data[i]); //write out the data byte;
+        I2C_MasterWrite(data[i]); //write out the data byte;
 	}
 	I2C_MasterStop();
 	ACK_Poll(); //wait for the EEPROM to finish its write cycle. 
@@ -127,7 +127,7 @@ void eeprom_writePage(unsigned short address, unsigned char *data)
  * @param[in]  address  The 16 bit address of where to start storing this data in EEPROM
  * @param      data     The pointer to the start of the 50*4 burst storage array
  */
-void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4])
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8])
 {
 	if(address % 0x20 != 0) return; //address is not the start of a page
 
@@ -140,12 +140,12 @@ void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4])
 			
 		I2C_MasterWrite(addressmsb); //write the MSB address bits
 		I2C_MasterWrite(addresslsb); //write the LSB address bits
-		for (unsigned char row = 0; row < 4; row++) //we are going to write 4 rows of data at a time
+		for (unsigned char row = 0; row < 2; row++) //we are going to write 4 rows of data at a time
 		{
-            for(unsigned char column = 0; column < 4; column++)
+            for(unsigned char column = 0; column < 8; column++)
             {
-                I2C_MasterWrite((unsigned char)((data[row + (pagewritten * 4)][column]) >> 8)); //write out upper half of 16 bit measurement;
-                I2C_MasterWrite((unsigned char)(data[row + (pagewritten * 4)][column])); //write out lower half of 16 bit measurement;
+                I2C_MasterWrite((unsigned char)((data[row + (pagewritten * 2)][column]) >> 8)); //write out upper half of 16 bit number;
+                I2C_MasterWrite((unsigned char)(data[row + (pagewritten * 2)][column])); //write out lower half of 16 bit number;
             }
 		}
         I2C_MasterStop();

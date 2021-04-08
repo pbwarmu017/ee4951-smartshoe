@@ -71,7 +71,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "3755
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3755: extern volatile SSPCON2bits_t SSPCON2bits __attribute__((address(0x216)));
 [v _SSPCON2bits `VS204 ~T0 @X0 0 e@534 ]
-[v F2348 `us ~T0 @X0 -> 4 `i t ]
+[v F2348 `us ~T0 @X0 -> 8 `i t ]
 "3204
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 3204: extern volatile unsigned char SSPBUF __attribute__((address(0x211)));
 [v _SSPBUF `Vuc ~T0 @X0 0 e@529 ]
@@ -745,7 +745,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _eeprom_storeBurstGroup ]
 "130
 [v _address `us ~T0 @X0 1 r1 ]
-[v F2351 `us ~T0 @X0 -> 4 `i t ]
+[v F2351 `us ~T0 @X0 -> 8 `i t ]
 [v _data `*F2351 ~T0 @X0 1 r2 ]
 "131
 [f ]
@@ -780,7 +780,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _row `uc ~T0 @X0 1 a ]
 [e = _row -> -> 0 `i `uc ]
-[e $ < -> _row `i -> 4 `i 353  ]
+[e $ < -> _row `i -> 2 `i 353  ]
 [e $U 354  ]
 [e :U 353 ]
 "144
@@ -789,25 +789,25 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _column `uc ~T0 @X0 1 a ]
 [e = _column -> -> 0 `i `uc ]
-[e $ < -> _column `i -> 4 `i 356  ]
+[e $ < -> _column `i -> 8 `i 356  ]
 [e $U 357  ]
 [e :U 356 ]
 "146
 {
 "147
-[e ( _I2C_MasterWrite (1 -> >> -> *U + &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 4 `i `x -> * -> # *U &U *U _data `ui -> 4 `i `x * -> _column `ux -> -> # *U &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 4 `i `x -> * -> # *U &U *U _data `ui -> 4 `i `x `ui `ux `ui -> 8 `i `uc ]
+[e ( _I2C_MasterWrite (1 -> >> -> *U + &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x * -> _column `ux -> -> # *U &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x `ui `ux `ui -> 8 `i `uc ]
 "148
-[e ( _I2C_MasterWrite (1 -> *U + &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 4 `i `x -> * -> # *U &U *U _data `ui -> 4 `i `x * -> _column `ux -> -> # *U &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 4 `i `x -> * -> # *U &U *U _data `ui -> 4 `i `x `ui `ux `uc ]
+[e ( _I2C_MasterWrite (1 -> *U + &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x * -> _column `ux -> -> # *U &U *U + _data * -> + -> _row `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x `ui `ux `uc ]
 "149
 }
 [e ++ _column -> -> 1 `i `uc ]
-[e $ < -> _column `i -> 4 `i 356  ]
+[e $ < -> _column `i -> 8 `i 356  ]
 [e :U 357 ]
 }
 "150
 }
 [e ++ _row -> -> 1 `i `uc ]
-[e $ < -> _row `i -> 4 `i 353  ]
+[e $ < -> _row `i -> 2 `i 353  ]
 [e :U 354 ]
 }
 "151

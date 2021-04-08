@@ -48,7 +48,7 @@ void I2C_MasterSendAck(void);
 void I2C_MasterSendNack(void);
 void eeprom_writeByte(unsigned short address, unsigned char *databyte);
 void eeprom_writePage(unsigned short address, unsigned char *data);
-void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4]);
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8]);
 void eeprom_readByte(unsigned short address, unsigned char *databyte);
 void eeprom_readMem(unsigned char *databyte);
 

@@ -164,16 +164,6 @@ ADR_PENDING_STATE 8
 ADDRESS_STATE 16
 CONFIGURED_STATE 32
 ]
-"88 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
-[e E2337 . `uc
-pin_red 6
-pin_yellow 7
-pin_white 8
-pin_green 9
-channel_Temp 29
-channel_DAC 30
-channel_FVR 31
-]
 "6 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 [v _I2C_Initialize I2C_Initialize `(v  1 e 1 0 ]
 "15
@@ -202,7 +192,11 @@ channel_FVR 31
 [v ___fladd __fladd `(d  1 e 4 0 ]
 "4 C:\Program Files\Microchip\xc8\v2.31\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"68 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+"96 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+[v _takeMeasurement takeMeasurement `(v  1 e 1 0 ]
+"104
+[v _measurementBurst measurementBurst `(v  1 e 1 0 ]
+"159
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
 [v _ADC_Initialize ADC_Initialize `(v  1 e 1 0 ]
@@ -291,7 +285,7 @@ channel_FVR 31
 [v _CDCTxService CDCTxService `(v  1 e 1 0 ]
 "49 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_events.c
 [v _USER_USB_CALLBACK_EVENT_HANDLER USER_USB_CALLBACK_EVENT_HANDLER `(a  1 e 1 0 ]
-[s S2424 . 1 `uc 1 IOCIF 1 0 :1:0 
+[s S2364 . 1 `uc 1 IOCIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 IOCIE 1 0 :1:3 
@@ -301,14 +295,14 @@ channel_FVR 31
 `uc 1 GIE 1 0 :1:7 
 ]
 "374 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[s S2433 . 1 `uc 1 . 1 0 :2:0 
+[s S2373 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S2438 . 1 `S2424 1 . 1 0 `S2433 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES2438  1 e 1 @11 ]
-[s S2641 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S2378 . 1 `S2364 1 . 1 0 `S2373 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES2378  1 e 1 @11 ]
+[s S2606 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -318,8 +312,8 @@ channel_FVR 31
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "592
-[u S2650 . 1 `S2641 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES2650  1 e 1 @17 ]
+[u S2615 . 1 `S2606 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES2615  1 e 1 @17 ]
 [s S331 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ACTIF 1 0 :1:1 
 `uc 1 USBIF 1 0 :1:2 
@@ -354,7 +348,7 @@ channel_FVR 31
 [v _PIE2bits PIE2bits `VES250  1 e 1 @146 ]
 "1241
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @149 ]
-[s S2269 . 1 `uc 1 PS 1 0 :3:0 
+[s S2209 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 TMR0SE 1 0 :1:4 
 `uc 1 TMR0CS 1 0 :1:5 
@@ -362,15 +356,15 @@ channel_FVR 31
 `uc 1 nWPUEN 1 0 :1:7 
 ]
 "1264
-[s S2276 . 1 `uc 1 PS0 1 0 :1:0 
+[s S2216 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
 ]
-[u S2283 . 1 `S2269 1 . 1 0 `S2276 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES2283  1 e 1 @149 ]
+[u S2223 . 1 `S2209 1 . 1 0 `S2216 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES2223  1 e 1 @149 ]
 "1381
 [v _WDTCON WDTCON `VEuc  1 e 1 @151 ]
 "1440
@@ -383,12 +377,12 @@ channel_FVR 31
 [v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
 "1678
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
-[s S2203 . 1 `uc 1 ADON 1 0 :1:0 
+[s S2487 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "1703
-[s S2207 . 1 `uc 1 . 1 0 :1:0 
+[s S2491 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -396,11 +390,11 @@ channel_FVR 31
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S2215 . 1 `uc 1 . 1 0 :1:0 
+[s S2499 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S2218 . 1 `S2203 1 . 1 0 `S2207 1 . 1 0 `S2215 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES2218  1 e 1 @157 ]
+[u S2502 . 1 `S2487 1 . 1 0 `S2491 1 . 1 0 `S2499 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES2502  1 e 1 @157 ]
 "1758
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "1824
@@ -435,7 +429,7 @@ channel_FVR 31
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
 "3435
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
-[s S2662 . 1 `uc 1 SSP1M0 1 0 :1:0 
+[s S2627 . 1 `uc 1 SSP1M0 1 0 :1:0 
 `uc 1 SSP1M1 1 0 :1:1 
 `uc 1 SSP1M2 1 0 :1:2 
 `uc 1 SSP1M3 1 0 :1:3 
@@ -445,16 +439,16 @@ channel_FVR 31
 `uc 1 WCOL 1 0 :1:7 
 ]
 "3467
-[s S2671 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S2636 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 . 1 0 :1:4 
 `uc 1 SSP1EN 1 0 :1:5 
 `uc 1 SSP1OV 1 0 :1:6 
 ]
-[u S2676 . 1 `S2662 1 . 1 0 `S2671 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES2676  1 e 1 @533 ]
+[u S2641 . 1 `S2627 1 . 1 0 `S2636 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES2641  1 e 1 @533 ]
 "3678
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
-[s S2703 . 1 `uc 1 SEN 1 0 :1:0 
+[s S2668 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -464,11 +458,11 @@ channel_FVR 31
 `uc 1 GCEN 1 0 :1:7 
 ]
 "3700
-[u S2712 . 1 `S2703 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES2712  1 e 1 @534 ]
+[u S2677 . 1 `S2668 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES2677  1 e 1 @534 ]
 "3755
-[v _SSPCON2bits SSPCON2bits `VES2712  1 e 1 @534 ]
-[s S2346 . 1 `uc 1 IOCAP0 1 0 :1:0 
+[v _SSPCON2bits SSPCON2bits `VES2677  1 e 1 @534 ]
+[s S2286 . 1 `uc 1 IOCAP0 1 0 :1:0 
 `uc 1 IOCAP1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 IOCAP3 1 0 :1:3 
@@ -476,11 +470,11 @@ channel_FVR 31
 `uc 1 IOCAP5 1 0 :1:5 
 ]
 "3940
-[s S2353 . 1 `uc 1 IOCAP 1 0 :6:0 
+[s S2293 . 1 `uc 1 IOCAP 1 0 :6:0 
 ]
-[u S2355 . 1 `S2346 1 . 1 0 `S2353 1 . 1 0 ]
-[v _IOCAPbits IOCAPbits `VES2355  1 e 1 @913 ]
-[s S2324 . 1 `uc 1 IOCAN0 1 0 :1:0 
+[u S2295 . 1 `S2286 1 . 1 0 `S2293 1 . 1 0 ]
+[v _IOCAPbits IOCAPbits `VES2295  1 e 1 @913 ]
+[s S2264 . 1 `uc 1 IOCAN0 1 0 :1:0 
 `uc 1 IOCAN1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 IOCAN3 1 0 :1:3 
@@ -488,11 +482,11 @@ channel_FVR 31
 `uc 1 IOCAN5 1 0 :1:5 
 ]
 "3993
-[s S2331 . 1 `uc 1 IOCAN 1 0 :6:0 
+[s S2271 . 1 `uc 1 IOCAN 1 0 :6:0 
 ]
-[u S2333 . 1 `S2324 1 . 1 0 `S2331 1 . 1 0 ]
-[v _IOCANbits IOCANbits `VES2333  1 e 1 @914 ]
-[s S2302 . 1 `uc 1 IOCAF0 1 0 :1:0 
+[u S2273 . 1 `S2264 1 . 1 0 `S2271 1 . 1 0 ]
+[v _IOCANbits IOCANbits `VES2273  1 e 1 @914 ]
+[s S2242 . 1 `uc 1 IOCAF0 1 0 :1:0 
 `uc 1 IOCAF1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 IOCAF3 1 0 :1:3 
@@ -500,10 +494,10 @@ channel_FVR 31
 `uc 1 IOCAF5 1 0 :1:5 
 ]
 "4046
-[s S2309 . 1 `uc 1 IOCAF 1 0 :6:0 
+[s S2249 . 1 `uc 1 IOCAF 1 0 :6:0 
 ]
-[u S2311 . 1 `S2302 1 . 1 0 `S2309 1 . 1 0 ]
-[v _IOCAFbits IOCAFbits `VES2311  1 e 1 @915 ]
+[u S2251 . 1 `S2242 1 . 1 0 `S2249 1 . 1 0 ]
+[v _IOCAFbits IOCAFbits `VES2251  1 e 1 @915 ]
 "4301
 [v _ACTCON ACTCON `VEuc  1 e 1 @923 ]
 "5004
@@ -570,16 +564,18 @@ channel_FVR 31
 [v _UEP1 UEP1 `VEuc  1 e 1 @3737 ]
 "6898
 [v _PLLRDY PLLRDY `VEb  1 e 0 @1238 ]
-"47 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
-[v _measarray measarray `[52][4]us  1 e 416 @8784 ]
-"59
-[v _row row `uc  1 e 1 0 ]
-"60
-[v _column column `uc  1 e 1 0 ]
-"61
-[v _writecomplete writecomplete `uc  1 e 1 0 ]
-"62
-[v _currentEepromAddress currentEepromAddress `us  1 e 2 0 ]
+"56 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+[v _measarray measarray `[26][8]us  1 s 416 measarray ]
+"86
+[v _row row `uc  1 s 1 row ]
+"87
+[v _column column `uc  1 s 1 column ]
+"88
+[v _burst_count burst_count `uc  1 s 1 burst_count ]
+"89
+[v _write_complete write_complete `uc  1 s 1 write_complete ]
+"91
+[v _currentEepromAddress currentEepromAddress `us  1 s 2 currentEepromAddress ]
 "54 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
 [v _IOCAF5_InterruptHandler IOCAF5_InterruptHandler `*.37(v  1 e 2 0 ]
 "53 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
@@ -591,7 +587,7 @@ channel_FVR 31
 "56
 [v _writeout_flag writeout_flag `uc  1 e 1 0 ]
 "57
-[v _measurement_count measurement_count `uc  1 e 1 0 ]
+[v _measurementburst_count measurementburst_count `s  1 e 2 0 ]
 "58
 [v _measurement_flag measurement_flag `uc  1 e 1 0 ]
 "63
@@ -833,27 +829,43 @@ channel_FVR 31
 [v _control_signal_bitmap control_signal_bitmap `S1617  1 e 1 0 ]
 "110
 [v _dummy_encapsulated_cmd_response dummy_encapsulated_cmd_response `[8]uc  1 e 8 0 ]
-"68 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+"159 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"143
+"206
+} 0
+"104
+[v _measurementBurst measurementBurst `(v  1 e 1 0 ]
+{
+[v measurementBurst@measurement_type measurement_type `uc  1 a 1 wreg ]
+[v measurementBurst@measurement_type measurement_type `uc  1 a 1 wreg ]
+[v measurementBurst@measurement_type measurement_type `uc  1 a 1 0 ]
+"157
+} 0
+"96
+[v _takeMeasurement takeMeasurement `(v  1 e 1 0 ]
+{
+[v takeMeasurement@channel channel `uc  1 a 1 wreg ]
+[v takeMeasurement@channel channel `uc  1 a 1 wreg ]
+[v takeMeasurement@channel channel `uc  1 a 1 6 ]
+"102
 } 0
 "130 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c
 [v _eeprom_storeBurstGroup eeprom_storeBurstGroup `(v  1 e 1 0 ]
 {
 "145
-[v eeprom_storeBurstGroup@column column `uc  1 a 1 24 ]
+[v eeprom_storeBurstGroup@column column `uc  1 a 1 4 ]
 "143
-[v eeprom_storeBurstGroup@row row `uc  1 a 1 23 ]
+[v eeprom_storeBurstGroup@row row `uc  1 a 1 3 ]
 "137
-[v eeprom_storeBurstGroup@addresslsb addresslsb `uc  1 a 1 21 ]
+[v eeprom_storeBurstGroup@addresslsb addresslsb `uc  1 a 1 1 ]
 "136
-[v eeprom_storeBurstGroup@addressmsb addressmsb `uc  1 a 1 20 ]
+[v eeprom_storeBurstGroup@addressmsb addressmsb `uc  1 a 1 0 ]
 "134
-[v eeprom_storeBurstGroup@pagewritten pagewritten `uc  1 a 1 22 ]
+[v eeprom_storeBurstGroup@pagewritten pagewritten `uc  1 a 1 2 ]
 "130
 [v eeprom_storeBurstGroup@address address `us  1 p 2 6 ]
-[v eeprom_storeBurstGroup@data data `*.39[4]us  1 p 2 8 ]
+[v eeprom_storeBurstGroup@data data `*.39[8]us  1 p 2 8 ]
 "155
 } 0
 "15

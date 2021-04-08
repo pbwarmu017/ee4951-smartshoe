@@ -16,7 +16,7 @@
         Product Revision  :  PIC10 / PIC12 / PIC16 / PIC18 MCUs - 1.81.7
         Device            :  PIC16F1459
         Driver Version    :  2.00
-*/
+ */
 
 /*
     (c) 2018 Microchip Technology Inc. and its subsidiaries. 
@@ -39,82 +39,145 @@
     CLAIMS IN ANY WAY RELATED TO THIS SOFTWARE WILL NOT EXCEED THE AMOUNT 
     OF FEES, IF ANY, THAT YOU HAVE PAID DIRECTLY TO MICROCHIP FOR THIS 
     SOFTWARE.
-*/
+ */
 #include <xc.h>
 #include "externs.h"
 #include "mcc_generated_files/mcc.h"
 #include "24aa32a.h"
-unsigned short measarray[52][4] = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,15}, {16,17,18,19}, 
-                                {20,21,22,23}, {24,25,26,27}, {28,29,30,31}, {32,33,34,35}, {36,37,38,39}, 
-                                {40,41,42,43}, {44,45,46,47}, {48,49,50,51}, {52,53,54,55}, {56,57,58,59}, 
-                                {60,61,62,63}, {64,65,66,67}, {68,69,70,71}, {72,73,74,75}, {76,77,78,79}, 
-                                {80,81,82,83}, {84,85,86,87}, {88,89,90,91}, {92,93,94,95}, {96,97,98,99}, 
-                                {100,101,102,103}, {104,105,106,107}, {108,109,110,111}, {112,113,114,115}, {116,117,118,119}, 
-                                {120,121,122,123}, {124,125,126,127}, {128,129,130,131}, {132,133,134,135}, {136,137,138,139}, 
-                                {140,141,142,143}, {144,145,146,147}, {148,149,150,151}, {152,153,154,155}, {156,157,158,159}, 
-                                {160,161,162,163}, {164,165,166,167}, {168,169,170,171}, {172,173,174,175}, {176,177,178,179}, 
-                                {180,181,182,183}, {184,185,186,187}, {188,189,190,191}, {192,193,194,195}, {196,197,198,199}, {200,201,202,203}, {204,205,206,207}};
-unsigned char data[32] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
-unsigned char byte;
-unsigned char row = 0;
-unsigned char column = 0;
-unsigned char writecomplete = 0;
-unsigned short currentEepromAddress = 0;
+
+#define GREENWIRE 9
+#define WHITEWIRE 8
+#define YELLOWWIRE 7
+#define REDWIRE 6
+#define ARRANGEMENT_WPPWW 0 //Whole-Part-Part-Whole-Whole
+#define ARRANGEMENT_PPWWPP 1 //Part-Part-Whole-Whole-Part-Part
+#define ARRANGEMENT_PWWPPW 3 //Whole-Whole-Part-Part-Whole
+
+static unsigned short measarray[26][8] = {
+    {0, 1, 2, 3, 4, 5, 6, 7},
+    {8, 9, 10, 11, 12, 13, 14, 15},
+    {16, 17, 18, 19, 20, 21, 22, 23},
+    {24, 25, 26, 27, 28, 29, 30, 31},
+    {32, 33, 34, 35, 36, 37, 38, 39},
+    {40, 41, 42, 43, 44, 45, 46, 47},
+    {48, 49, 50, 51, 52, 53, 54, 55},
+    {56, 57, 58, 59, 60, 61, 62, 63},
+    {64, 65, 66, 67, 68, 69, 70, 71},
+    {72, 73, 74, 75, 76, 77, 78, 79},
+    {80, 81, 82, 83, 84, 85, 86, 87},
+    {88, 89, 90, 91, 92, 93, 94, 95},
+    {96, 97, 98, 99, 100, 101, 102, 103},
+    {104, 105, 106, 107, 108, 109, 110, 111},
+    {112, 113, 114, 115, 116, 117, 118, 119},
+    {120, 121, 122, 123, 124, 125, 126, 127},
+    {128, 129, 130, 131, 132, 133, 134, 135},
+    {136, 137, 138, 139, 140, 141, 142, 143},
+    {144, 145, 146, 147, 148, 149, 150, 151},
+    {152, 153, 154, 155, 156, 157, 158, 159},
+    {160, 161, 162, 163, 164, 165, 166, 167},
+    {168, 169, 170, 171, 172, 173, 174, 175},
+    {176, 177, 178, 179, 180, 181, 182, 183},
+    {184, 185, 186, 187, 188, 189, 190, 191},
+    {192, 193, 194, 195, 196, 197, 198, 199},
+    {200, 201, 202, 203, 204, 205, 206, 207}};
+
+//unsigned char data[32] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
+static unsigned char byte;
+static unsigned char row = 0;
+static unsigned char column = 0;
+static unsigned char burst_count = 0;
+static unsigned char write_complete = 0;
+static unsigned char second_round = 0;
+static unsigned short currentEepromAddress = 0;
 
 /*
                          Main application
  */
+void takeMeasurement(unsigned char channel) {
+    ADCON0bits.CHS = channel;
+    ADCON0bits.ADON = 1;
+    ADCON0bits.ADGO = 1; //initiate conversion.
+    while (ADCON0bits.GO_nDONE);
+    ADCON0bits.ADON = 0;
+}
 
-void main(void)
-{
+void measurementBurst(unsigned char measurement_type){
+    if (measurement_type == ARRANGEMENT_WPPWW) {
+        takeMeasurement(GREENWIRE);
+        measarray[row][column] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5); // XGGGGGGG GGG-----
+        takeMeasurement(WHITEWIRE);
+        measarray[row][column] |= (unsigned short)(ADRESH << 3); // xggggggg gggWW---
+        measarray[row][column++] |= (unsigned short)(ADRESL >> 5); // xggggggg gggwwWWW
+        //1 short full
+        measarray[row][column] = (unsigned short)(ADRESL << 10); // XWWWWW-- --------
+        takeMeasurement(YELLOWWIRE);
+        measarray[row][column++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xwwwwwYY YYYYYYYY
+        //2 short full
+        takeMeasurement(REDWIRE);
+        measarray[row][column] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5); // XRRRRRRR RRR-----
+
+    }
+    if (measurement_type == ARRANGEMENT_PPWWPP) {
+        takeMeasurement(GREENWIRE);
+        measarray[row][column] |= (unsigned short)(ADRESH << 3); // xrrrrrrr rrrGG---
+        measarray[row][column++] |= (unsigned short)(ADRESL >> 5); // xrrrrrrr rrrggGGG
+        //3 short full
+        measarray[row][column] = (unsigned short)(ADRESL << 10); // XGGGGG-- --------
+        takeMeasurement(WHITEWIRE);
+        measarray[row][column++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xgggggWW WWWWWWWW
+        //4 short full
+        takeMeasurement(YELLOWWIRE);
+        measarray[row][column] = (unsigned short)(ADRESH << 13); // XYY----- --------
+        measarray[row][column] |= (unsigned short)(ADRESL << 5); // xyyYYYYY YYY-----
+        takeMeasurement(REDWIRE);
+        measarray[row][column] |= (unsigned short)(ADRESH << 3); // xyyyyyyy yyyRR---
+        measarray[row][column++] |= (unsigned short)(ADRESL >> 5); // xyyyyyyy yyyrrRRR
+        //5 short full      
+    }
+    if (measurement_type == ARRANGEMENT_PWWPPW) {
+        measarray[row][column] = (unsigned short)(ADRESL << 10); // XRRRRR-- --------
+        takeMeasurement(GREENWIRE);
+        measarray[row][column] |= (unsigned short)(ADRESH << 8); // xrrrrrGG --------
+        measarray[row][column++] |= (unsigned short)(ADRESL); // xrrrrrgg GGGGGGGG
+        //6 short full
+        takeMeasurement(WHITEWIRE);
+        measarray[row][column] = (unsigned short)(ADRESH << 13); // xWW----- --------
+        measarray[row][column] = (unsigned short)(ADRESL << 5); // xwwWWWWW WWW-----
+
+        takeMeasurement(YELLOWWIRE);
+        measarray[row][column] |= (unsigned short)(ADRESH << 3); // xwwWWWWW WWWYY---
+        measarray[row][column++] |= (unsigned short)(ADRESL >> 5); // xwwWwwww wwwyyYYY
+        //7 short full
+        measarray[row][column] = (unsigned short)(ADRESL << 10); // XYYYYY-- --------
+        takeMeasurement(REDWIRE);
+        measarray[row++][column] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xyyyyyRR RRRRRRRR
+        column = 0;
+        ADCON0bits.ADON = 0;
+    }
+}
+
+void main(void) {
     SYSTEM_Initialize();
     I2C_Initialize();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
-    while(1)
-    {
-        if(measurement_flag)
-        {
-            column = 0;
+    while (1) {
+        if (measurement_flag) {
             measurement_flag = 0;
-            ADCON0bits.CHS = 9; //green wire
-            ADCON0bits.ADON = 1;
-            ADCON0bits.ADGO = 1; //initiate conversion.
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADGO = 1; //initiate conversion.
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADON = 0;
-            measarray[row][column++] = (ADRESH << 8) | ADRESL;
-            
-            ADCON0bits.CHS = 8; //white wire
-            ADCON0bits.ADON = 1;
-            ADCON0bits.ADGO = 1; //initiate conversion.
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADGO = 1; //initiate conversion.
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADON = 0;
-            measarray[row][column++] = (ADRESH << 8) | ADRESL;
-            
-            ADCON0bits.CHS = 7; //yellow wire
-            ADCON0bits.ADON = 1;
-            ADCON0bits.ADGO = 1; //initiate conversion.
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADGO = 1; //initiate conversion.
-            while(ADCON0bits.GO_nDONE);
-            measarray[row][column++] = (ADRESH << 8) | ADRESL;
-            ADCON0bits.ADON = 0;
-            
-            ADCON0bits.CHS = 6; //red wire
-            ADCON0bits.ADON = 1;
-            ADCON0bits.ADGO = 1; //initiate conversion.
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADGO = 1; //initiate conversion.
-            while(ADCON0bits.GO_nDONE);
-            measarray[row++][column] = (ADRESH << 8) | ADRESL;
-            ADCON0bits.ADON = 0;
-            
+            if (burst_count == 0) {
+                measurementBurst(ARRANGEMENT_WPPWW);
+                burst_count++;
+            }
+            else if (burst_count == 1) {
+                measurementBurst(ARRANGEMENT_PPWWPP);
+                burst_count++;
+            }
+            else if (burst_count == 2) {
+                measurementBurst(ARRANGEMENT_PWWPPW);
+                burst_count = 0;
+            }
         }
-        if(sleep_flag) //prepare for and then command the system to sleep. 
+        if (sleep_flag) //prepare for and then command the system to sleep. 
         {
             sleep_flag = 0;
             //TRISCbits.TRISC5 = 0; //turn on LED
@@ -124,20 +187,20 @@ void main(void)
             INTCONbits.IOCIE = 0; //disable IOC interrupt
             //TRISCbits.TRISC5 = 1; //turn off LED
             IOCAFbits.IOCAF5 = 0;
-            writecomplete = 0;
+            write_complete = 0;
             writeout_flag = 0;
-            measurement_count = 0; //queue up another round of measurements. 
+            measurementburst_count = 0; //queue up another round of measurements. 
         }
-        if(writeout_flag && !writecomplete) //writecomplete is set to 0 after it wakes up from sleep
+        if (writeout_flag && !write_complete) //writecomplete is set to 0 after it wakes up from sleep
         {
             //code to write data array to EEPROM
             writeout_flag = 0;
-            if(currentEepromAddress >= 0xFFF) currentEepromAddress = 0; //roll over 
+            if (currentEepromAddress >= 0xFFF) currentEepromAddress = 0; //roll over 
 
-                eeprom_storeBurstGroup(currentEepromAddress, measarray);
-                currentEepromAddress += 0x1A0; //increment by 13 pages.
-                //eeprom_readMem(&byte);
-                writecomplete = 1;
+            eeprom_storeBurstGroup(currentEepromAddress, measarray);
+            currentEepromAddress += 0x1A0; //increment by 13 pages.
+            //eeprom_readMem(&byte);
+            write_complete = 1;
         }
     }
 }

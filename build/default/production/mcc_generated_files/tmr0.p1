@@ -488,10 +488,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "57
-[; ;mcc_generated_files/tmr0.c: 57: char measurement_count = 0;
-[v _measurement_count `uc ~T0 @X0 1 e ]
-[i _measurement_count
--> -> 0 `i `uc
+[; ;mcc_generated_files/tmr0.c: 57: short measurementburst_count = 0;
+[v _measurementburst_count `s ~T0 @X0 1 e ]
+[i _measurementburst_count
+-> -> 0 `i `s
 ]
 "58
 [; ;mcc_generated_files/tmr0.c: 58: char measurement_flag = 0;
@@ -636,20 +636,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 }
 [e :U 333 ]
 "130
-[; ;mcc_generated_files/tmr0.c: 130:     if(++counter >= 38)
-[e $ ! >= -> =+ _counter -> -> 1 `i `s `i -> 38 `i 334  ]
+[; ;mcc_generated_files/tmr0.c: 130:     if(++counter >= 10)
+[e $ ! >= -> =+ _counter -> -> 1 `i `s `i -> 10 `i 334  ]
 "131
 [; ;mcc_generated_files/tmr0.c: 131:     {
 {
 "132
-[; ;mcc_generated_files/tmr0.c: 132:         if(measurement_count < 52)
-[e $ ! < -> _measurement_count `i -> 52 `i 335  ]
+[; ;mcc_generated_files/tmr0.c: 132:         if(measurementburst_count < 78)
+[e $ ! < -> _measurementburst_count `i -> 78 `i 335  ]
 "133
 [; ;mcc_generated_files/tmr0.c: 133:         {
 {
 "134
-[; ;mcc_generated_files/tmr0.c: 134:         measurement_count++;
-[e ++ _measurement_count -> -> 1 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 134:         measurementburst_count++;
+[e ++ _measurementburst_count -> -> 1 `i `s ]
 "135
 [; ;mcc_generated_files/tmr0.c: 135:         measurement_flag = 1;
 [e = _measurement_flag -> -> 1 `i `uc ]

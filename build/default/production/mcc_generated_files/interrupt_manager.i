@@ -5161,18 +5161,6 @@ typedef enum
 } adc_channel_t;
 # 139 "mcc_generated_files/adc.h"
 void ADC_Initialize(void);
-# 169 "mcc_generated_files/adc.h"
-void ADC_SelectChannel(adc_channel_t channel);
-# 196 "mcc_generated_files/adc.h"
-void ADC_StartConversion(void);
-# 228 "mcc_generated_files/adc.h"
-_Bool ADC_IsConversionDone(void);
-# 261 "mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversionResult(void);
-# 291 "mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 319 "mcc_generated_files/adc.h"
-void ADC_TemperatureAcquisitionDelay(void);
 # 57 "mcc_generated_files/mcc.h" 2
 
 # 1 "mcc_generated_files/tmr0.h" 1

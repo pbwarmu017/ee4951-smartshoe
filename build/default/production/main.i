@@ -3989,7 +3989,7 @@ extern unsigned short waitforsleep_count;
 extern unsigned char sleep_flag;
 extern char writeout_flag;
 extern char measurement_flag;
-extern char measurement_count;
+extern short measurementburst_count;
 extern short counter;
 # 44 "main.c" 2
 
@@ -5170,18 +5170,6 @@ typedef enum
 } adc_channel_t;
 # 139 "./mcc_generated_files/adc.h"
 void ADC_Initialize(void);
-# 169 "./mcc_generated_files/adc.h"
-void ADC_SelectChannel(adc_channel_t channel);
-# 196 "./mcc_generated_files/adc.h"
-void ADC_StartConversion(void);
-# 228 "./mcc_generated_files/adc.h"
-_Bool ADC_IsConversionDone(void);
-# 261 "./mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversionResult(void);
-# 291 "./mcc_generated_files/adc.h"
-adc_result_t ADC_GetConversion(adc_channel_t channel);
-# 319 "./mcc_generated_files/adc.h"
-void ADC_TemperatureAcquisitionDelay(void);
 # 57 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr0.h" 1
@@ -5223,82 +5211,136 @@ void I2C_MasterSendAck(void);
 void I2C_MasterSendNack(void);
 void eeprom_writeByte(unsigned short address, unsigned char *databyte);
 void eeprom_writePage(unsigned short address, unsigned char *data);
-void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4]);
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8]);
 void eeprom_readByte(unsigned short address, unsigned char *databyte);
 void eeprom_readMem(unsigned char *databyte);
 # 46 "main.c" 2
+# 56 "main.c"
+static unsigned short measarray[26][8] = {
+    {0, 1, 2, 3, 4, 5, 6, 7},
+    {8, 9, 10, 11, 12, 13, 14, 15},
+    {16, 17, 18, 19, 20, 21, 22, 23},
+    {24, 25, 26, 27, 28, 29, 30, 31},
+    {32, 33, 34, 35, 36, 37, 38, 39},
+    {40, 41, 42, 43, 44, 45, 46, 47},
+    {48, 49, 50, 51, 52, 53, 54, 55},
+    {56, 57, 58, 59, 60, 61, 62, 63},
+    {64, 65, 66, 67, 68, 69, 70, 71},
+    {72, 73, 74, 75, 76, 77, 78, 79},
+    {80, 81, 82, 83, 84, 85, 86, 87},
+    {88, 89, 90, 91, 92, 93, 94, 95},
+    {96, 97, 98, 99, 100, 101, 102, 103},
+    {104, 105, 106, 107, 108, 109, 110, 111},
+    {112, 113, 114, 115, 116, 117, 118, 119},
+    {120, 121, 122, 123, 124, 125, 126, 127},
+    {128, 129, 130, 131, 132, 133, 134, 135},
+    {136, 137, 138, 139, 140, 141, 142, 143},
+    {144, 145, 146, 147, 148, 149, 150, 151},
+    {152, 153, 154, 155, 156, 157, 158, 159},
+    {160, 161, 162, 163, 164, 165, 166, 167},
+    {168, 169, 170, 171, 172, 173, 174, 175},
+    {176, 177, 178, 179, 180, 181, 182, 183},
+    {184, 185, 186, 187, 188, 189, 190, 191},
+    {192, 193, 194, 195, 196, 197, 198, 199},
+    {200, 201, 202, 203, 204, 205, 206, 207}};
 
-unsigned short measarray[52][4] = {{0,1,2,3}, {4,5,6,7}, {8,9,10,11}, {12,13,14,15}, {16,17,18,19},
-                                {20,21,22,23}, {24,25,26,27}, {28,29,30,31}, {32,33,34,35}, {36,37,38,39},
-                                {40,41,42,43}, {44,45,46,47}, {48,49,50,51}, {52,53,54,55}, {56,57,58,59},
-                                {60,61,62,63}, {64,65,66,67}, {68,69,70,71}, {72,73,74,75}, {76,77,78,79},
-                                {80,81,82,83}, {84,85,86,87}, {88,89,90,91}, {92,93,94,95}, {96,97,98,99},
-                                {100,101,102,103}, {104,105,106,107}, {108,109,110,111}, {112,113,114,115}, {116,117,118,119},
-                                {120,121,122,123}, {124,125,126,127}, {128,129,130,131}, {132,133,134,135}, {136,137,138,139},
-                                {140,141,142,143}, {144,145,146,147}, {148,149,150,151}, {152,153,154,155}, {156,157,158,159},
-                                {160,161,162,163}, {164,165,166,167}, {168,169,170,171}, {172,173,174,175}, {176,177,178,179},
-                                {180,181,182,183}, {184,185,186,187}, {188,189,190,191}, {192,193,194,195}, {196,197,198,199}, {200,201,202,203}, {204,205,206,207}};
-unsigned char data[32] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
-unsigned char byte;
-unsigned char row = 0;
-unsigned char column = 0;
-unsigned char writecomplete = 0;
-unsigned short currentEepromAddress = 0;
+
+static unsigned char byte;
+static unsigned char row = 0;
+static unsigned char column = 0;
+static unsigned char burst_count = 0;
+static unsigned char write_complete = 0;
+static unsigned char second_round = 0;
+static unsigned short currentEepromAddress = 0;
 
 
 
 
+void takeMeasurement(unsigned char channel) {
+    ADCON0bits.CHS = channel;
+    ADCON0bits.ADON = 1;
+    ADCON0bits.ADGO = 1;
+    while (ADCON0bits.GO_nDONE);
+    ADCON0bits.ADON = 0;
+}
 
-void main(void)
-{
+void measurementBurst(unsigned char measurement_type){
+    if (measurement_type == 0) {
+        takeMeasurement(9);
+        measarray[row][column] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5);
+        takeMeasurement(8);
+        measarray[row][column] |= (unsigned short)(ADRESH << 3);
+        measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+
+        measarray[row][column] = (unsigned short)(ADRESL << 10);
+        takeMeasurement(7);
+        measarray[row][column++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+
+        takeMeasurement(6);
+        measarray[row][column] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5);
+
+    }
+    if (measurement_type == 1) {
+        takeMeasurement(9);
+        measarray[row][column] |= (unsigned short)(ADRESH << 3);
+        measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+
+        measarray[row][column] = (unsigned short)(ADRESL << 10);
+        takeMeasurement(8);
+        measarray[row][column++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+
+        takeMeasurement(7);
+        measarray[row][column] = (unsigned short)(ADRESH << 13);
+        measarray[row][column] |= (unsigned short)(ADRESL << 5);
+        takeMeasurement(6);
+        measarray[row][column] |= (unsigned short)(ADRESH << 3);
+        measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+
+    }
+    if (measurement_type == 3) {
+        measarray[row][column] = (unsigned short)(ADRESL << 10);
+        takeMeasurement(9);
+        measarray[row][column] |= (unsigned short)(ADRESH << 8);
+        measarray[row][column++] |= (unsigned short)(ADRESL);
+
+        takeMeasurement(8);
+        measarray[row][column] = (unsigned short)(ADRESH << 13);
+        measarray[row][column] = (unsigned short)(ADRESL << 5);
+
+        takeMeasurement(7);
+        measarray[row][column] |= (unsigned short)(ADRESH << 3);
+        measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+
+        measarray[row][column] = (unsigned short)(ADRESL << 10);
+        takeMeasurement(6);
+        measarray[row++][column] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+        column = 0;
+        ADCON0bits.ADON = 0;
+    }
+}
+
+void main(void) {
     SYSTEM_Initialize();
     I2C_Initialize();
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
-    while(1)
-    {
-        if(measurement_flag)
-        {
-            column = 0;
+    while (1) {
+        if (measurement_flag) {
             measurement_flag = 0;
-            ADCON0bits.CHS = 9;
-            ADCON0bits.ADON = 1;
-            ADCON0bits.ADGO = 1;
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADGO = 1;
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADON = 0;
-            measarray[row][column++] = (ADRESH << 8) | ADRESL;
-
-            ADCON0bits.CHS = 8;
-            ADCON0bits.ADON = 1;
-            ADCON0bits.ADGO = 1;
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADGO = 1;
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADON = 0;
-            measarray[row][column++] = (ADRESH << 8) | ADRESL;
-
-            ADCON0bits.CHS = 7;
-            ADCON0bits.ADON = 1;
-            ADCON0bits.ADGO = 1;
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADGO = 1;
-            while(ADCON0bits.GO_nDONE);
-            measarray[row][column++] = (ADRESH << 8) | ADRESL;
-            ADCON0bits.ADON = 0;
-
-            ADCON0bits.CHS = 6;
-            ADCON0bits.ADON = 1;
-            ADCON0bits.ADGO = 1;
-            while(ADCON0bits.GO_nDONE);
-            ADCON0bits.ADGO = 1;
-            while(ADCON0bits.GO_nDONE);
-            measarray[row++][column] = (ADRESH << 8) | ADRESL;
-            ADCON0bits.ADON = 0;
-
+            if (burst_count == 0) {
+                measurementBurst(0);
+                burst_count++;
+            }
+            else if (burst_count == 1) {
+                measurementBurst(1);
+                burst_count++;
+            }
+            else if (burst_count == 2) {
+                measurementBurst(3);
+                burst_count = 0;
+            }
         }
-        if(sleep_flag)
+        if (sleep_flag)
         {
             sleep_flag = 0;
 
@@ -5308,20 +5350,20 @@ void main(void)
             INTCONbits.IOCIE = 0;
 
             IOCAFbits.IOCAF5 = 0;
-            writecomplete = 0;
+            write_complete = 0;
             writeout_flag = 0;
-            measurement_count = 0;
+            measurementburst_count = 0;
         }
-        if(writeout_flag && !writecomplete)
+        if (writeout_flag && !write_complete)
         {
 
             writeout_flag = 0;
-            if(currentEepromAddress >= 0xFFF) currentEepromAddress = 0;
+            if (currentEepromAddress >= 0xFFF) currentEepromAddress = 0;
 
-                eeprom_storeBurstGroup(currentEepromAddress, measarray);
-                currentEepromAddress += 0x1A0;
+            eeprom_storeBurstGroup(currentEepromAddress, measarray);
+            currentEepromAddress += 0x1A0;
 
-                writecomplete = 1;
+            write_complete = 1;
         }
     }
 }

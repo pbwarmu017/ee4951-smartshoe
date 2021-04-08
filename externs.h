@@ -38,7 +38,7 @@ extern unsigned short waitforsleep_count;
 extern unsigned char sleep_flag;
 extern char writeout_flag;
 extern char measurement_flag;
-extern char measurement_count;
+extern short measurementburst_count;
 extern short counter;
 
 

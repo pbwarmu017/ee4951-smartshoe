@@ -4096,7 +4096,7 @@ short counter = 0;
 short waitforsleep_count = 0;
 char sleep_flag = 0;
 char writeout_flag = 0;
-char measurement_count = 0;
+short measurementburst_count = 0;
 char measurement_flag = 0;
 
 
@@ -4169,11 +4169,11 @@ void TMR0_ISR(void)
         waitforsleep_count = 0;
         sleep_flag = 1;
     }
-    if(++counter >= 38)
+    if(++counter >= 10)
     {
-        if(measurement_count < 52)
+        if(measurementburst_count < 78)
         {
-        measurement_count++;
+        measurementburst_count++;
         measurement_flag = 1;
         }
         else

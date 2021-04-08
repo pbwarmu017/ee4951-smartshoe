@@ -166,7 +166,7 @@ void ADC_Initialize(void);
     convertedValue = ADC_GetConversionResult();
     </code>
 */
-void ADC_SelectChannel(adc_channel_t channel);
+//void ADC_SelectChannel(adc_channel_t channel);
 
 /**
   @Summary
@@ -193,7 +193,7 @@ void ADC_SelectChannel(adc_channel_t channel);
     convertedValue = ADC_GetConversionResult();
     </code>
 */
-void ADC_StartConversion(void);
+//void ADC_StartConversion(void);
 
 /**
   @Summary
@@ -225,7 +225,7 @@ void ADC_StartConversion(void);
     convertedValue = ADC_GetConversionResult();
     </code>
  */
-bool ADC_IsConversionDone(void);
+//bool ADC_IsConversionDone(void);
 
 /**
   @Summary
@@ -258,7 +258,7 @@ bool ADC_IsConversionDone(void);
     convertedValue = ADC_GetConversionResult();
     </code>
  */
-adc_result_t ADC_GetConversionResult(void);
+//adc_result_t ADC_GetConversionResult(void);
 
 /**
   @Summary
@@ -288,7 +288,7 @@ adc_result_t ADC_GetConversionResult(void);
     conversion = ADC_GetConversion(AN1_Channel);
     </code>
 */
-adc_result_t ADC_GetConversion(adc_channel_t channel);
+//adc_result_t ADC_GetConversion(adc_channel_t channel);
 
 /**
   @Summary
@@ -316,7 +316,7 @@ adc_result_t ADC_GetConversion(adc_channel_t channel);
     convertedValue = ADC_GetConversionResult();
     </code>
 */
-void ADC_TemperatureAcquisitionDelay(void);
+//void ADC_TemperatureAcquisitionDelay(void);
 
 #ifdef __cplusplus  // Provide C++ Compatibility
 

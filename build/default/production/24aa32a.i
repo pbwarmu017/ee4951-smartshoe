@@ -3996,7 +3996,7 @@ void I2C_MasterSendAck(void);
 void I2C_MasterSendNack(void);
 void eeprom_writeByte(unsigned short address, unsigned char *databyte);
 void eeprom_writePage(unsigned short address, unsigned char *data);
-void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4]);
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8]);
 void eeprom_readByte(unsigned short address, unsigned char *databyte);
 void eeprom_readMem(unsigned char *databyte);
 # 1 "24aa32a.c" 2
@@ -4092,13 +4092,13 @@ void eeprom_writePage(unsigned short address, unsigned char *data)
  I2C_MasterWrite(addresslsb);
  for (int i = 0; i < 32; i++)
  {
- I2C_MasterWrite(data[i]);
+        I2C_MasterWrite(data[i]);
  }
  I2C_MasterStop();
  ACK_Poll();
 }
 # 130 "24aa32a.c"
-void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4])
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8])
 {
  if(address % 0x20 != 0) return;
 
@@ -4111,12 +4111,12 @@ void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][4])
 
   I2C_MasterWrite(addressmsb);
   I2C_MasterWrite(addresslsb);
-  for (unsigned char row = 0; row < 4; row++)
+  for (unsigned char row = 0; row < 2; row++)
   {
-            for(unsigned char column = 0; column < 4; column++)
+            for(unsigned char column = 0; column < 8; column++)
             {
-                I2C_MasterWrite((unsigned char)((data[row + (pagewritten * 4)][column]) >> 8));
-                I2C_MasterWrite((unsigned char)(data[row + (pagewritten * 4)][column]));
+                I2C_MasterWrite((unsigned char)((data[row + (pagewritten * 2)][column]) >> 8));
+                I2C_MasterWrite((unsigned char)(data[row + (pagewritten * 2)][column]));
             }
   }
         I2C_MasterStop();
