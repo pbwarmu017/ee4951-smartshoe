@@ -4096,6 +4096,7 @@ short counter = 0;
 short waitforsleep_count = 0;
 char sleep_flag = 0;
 char writeout_flag = 0;
+unsigned short heartbeat_counter = 0;
 short measurementburst_count = 0;
 char measurement_flag = 0;
 
@@ -4163,6 +4164,15 @@ void TMR0_ISR(void)
     if(TMR0_InterruptHandler)
     {
         TMR0_InterruptHandler();
+    }
+    if(++heartbeat_counter >= 5000)
+    {
+        TRISCbits.TRISC5 = 0;
+        if(heartbeat_counter >= 5020)
+        {
+            TRISCbits.TRISC5 = 1;
+            heartbeat_counter = 0;
+        }
     }
     if(++waitforsleep_count >= 30000)
     {

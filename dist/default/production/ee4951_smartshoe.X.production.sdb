@@ -216,13 +216,13 @@ CONFIGURED_STATE 32
 [v _IOCAF5_SetInterruptHandler IOCAF5_SetInterruptHandler `(v  1 e 1 0 ]
 "145
 [v _IOCAF5_DefaultInterruptHandler IOCAF5_DefaultInterruptHandler `(v  1 e 1 0 ]
-"69 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+"70 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
-"113
+"114
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
-"148
+"158
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
-"152
+"162
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 "281 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device.c
 [v _USBDeviceInit USBDeviceInit `(v  1 e 1 0 ]
@@ -302,7 +302,7 @@ CONFIGURED_STATE 32
 ]
 [u S2378 . 1 `S2364 1 . 1 0 `S2373 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES2378  1 e 1 @11 ]
-[s S2606 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S2636 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -312,8 +312,8 @@ CONFIGURED_STATE 32
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "592
-[u S2615 . 1 `S2606 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES2615  1 e 1 @17 ]
+[u S2645 . 1 `S2636 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES2645  1 e 1 @17 ]
 [s S331 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ACTIF 1 0 :1:1 
 `uc 1 USBIF 1 0 :1:2 
@@ -334,6 +334,18 @@ CONFIGURED_STATE 32
 [v _TRISB TRISB `VEuc  1 e 1 @141 ]
 "1070
 [v _TRISC TRISC `VEuc  1 e 1 @142 ]
+[s S2407 . 1 `uc 1 TRISC0 1 0 :1:0 
+`uc 1 TRISC1 1 0 :1:1 
+`uc 1 TRISC2 1 0 :1:2 
+`uc 1 TRISC3 1 0 :1:3 
+`uc 1 TRISC4 1 0 :1:4 
+`uc 1 TRISC5 1 0 :1:5 
+`uc 1 TRISC6 1 0 :1:6 
+`uc 1 TRISC7 1 0 :1:7 
+]
+"1087
+[u S2416 . 1 `S2407 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES2416  1 e 1 @142 ]
 [s S241 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ACTIE 1 0 :1:1 
 `uc 1 USBIE 1 0 :1:2 
@@ -377,12 +389,12 @@ CONFIGURED_STATE 32
 [v _ADRESH ADRESH `VEuc  1 e 1 @156 ]
 "1678
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @157 ]
-[s S2487 . 1 `uc 1 ADON 1 0 :1:0 
+[s S2517 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 GO_nDONE 1 0 :1:1 
 `uc 1 CHS 1 0 :5:2 
 ]
 "1703
-[s S2491 . 1 `uc 1 . 1 0 :1:0 
+[s S2521 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADGO 1 0 :1:1 
 `uc 1 CHS0 1 0 :1:2 
 `uc 1 CHS1 1 0 :1:3 
@@ -390,11 +402,11 @@ CONFIGURED_STATE 32
 `uc 1 CHS3 1 0 :1:5 
 `uc 1 CHS4 1 0 :1:6 
 ]
-[s S2499 . 1 `uc 1 . 1 0 :1:0 
+[s S2529 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 GO 1 0 :1:1 
 ]
-[u S2502 . 1 `S2487 1 . 1 0 `S2491 1 . 1 0 `S2499 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES2502  1 e 1 @157 ]
+[u S2532 . 1 `S2517 1 . 1 0 `S2521 1 . 1 0 `S2529 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES2532  1 e 1 @157 ]
 "1758
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @158 ]
 "1824
@@ -429,7 +441,7 @@ CONFIGURED_STATE 32
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
 "3435
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
-[s S2627 . 1 `uc 1 SSP1M0 1 0 :1:0 
+[s S2657 . 1 `uc 1 SSP1M0 1 0 :1:0 
 `uc 1 SSP1M1 1 0 :1:1 
 `uc 1 SSP1M2 1 0 :1:2 
 `uc 1 SSP1M3 1 0 :1:3 
@@ -439,16 +451,16 @@ CONFIGURED_STATE 32
 `uc 1 WCOL 1 0 :1:7 
 ]
 "3467
-[s S2636 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S2666 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 . 1 0 :1:4 
 `uc 1 SSP1EN 1 0 :1:5 
 `uc 1 SSP1OV 1 0 :1:6 
 ]
-[u S2641 . 1 `S2627 1 . 1 0 `S2636 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES2641  1 e 1 @533 ]
+[u S2671 . 1 `S2657 1 . 1 0 `S2666 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES2671  1 e 1 @533 ]
 "3678
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
-[s S2668 . 1 `uc 1 SEN 1 0 :1:0 
+[s S2698 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -458,10 +470,10 @@ CONFIGURED_STATE 32
 `uc 1 GCEN 1 0 :1:7 
 ]
 "3700
-[u S2677 . 1 `S2668 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES2677  1 e 1 @534 ]
+[u S2707 . 1 `S2698 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES2707  1 e 1 @534 ]
 "3755
-[v _SSPCON2bits SSPCON2bits `VES2677  1 e 1 @534 ]
+[v _SSPCON2bits SSPCON2bits `VES2707  1 e 1 @534 ]
 [s S2286 . 1 `uc 1 IOCAP0 1 0 :1:0 
 `uc 1 IOCAP1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
@@ -587,12 +599,14 @@ CONFIGURED_STATE 32
 "56
 [v _writeout_flag writeout_flag `uc  1 e 1 0 ]
 "57
-[v _measurementburst_count measurementburst_count `s  1 e 2 0 ]
+[v _heartbeat_counter heartbeat_counter `us  1 e 2 0 ]
 "58
+[v _measurementburst_count measurementburst_count `s  1 e 2 0 ]
+"59
 [v _measurement_flag measurement_flag `uc  1 e 1 0 ]
-"63
-[v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
 "64
+[v _timer0ReloadVal timer0ReloadVal `VEuc  1 e 1 0 ]
+"65
 [v _TMR0_InterruptHandler TMR0_InterruptHandler `*.37(v  1 e 2 0 ]
 "34 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/example_mcc_usb_cdc.c
 [v _readBuffer readBuffer `[64]uc  1 s 64 readBuffer ]
@@ -922,16 +936,16 @@ CONFIGURED_STATE 32
 {
 "1386
 } 0
-"69 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+"70 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 [v _TMR0_Initialize TMR0_Initialize `(v  1 e 1 0 ]
 {
-"90
+"91
 } 0
-"148
+"158
 [v _TMR0_SetInterruptHandler TMR0_SetInterruptHandler `(v  1 e 1 0 ]
 {
 [v TMR0_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 5 ]
-"150
+"160
 } 0
 "57 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
@@ -1291,13 +1305,13 @@ CONFIGURED_STATE 32
 [v USBCtrlTrfTxService@byteToSend byteToSend `uc  1 a 1 2 ]
 "1829
 } 0
-"113 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
+"114 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/tmr0.c
 [v _TMR0_ISR TMR0_ISR `(v  1 e 1 0 ]
 {
-"145
+"155
 } 0
-"152
+"162
 [v _TMR0_DefaultInterruptHandler TMR0_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
-"155
+"165
 } 0
