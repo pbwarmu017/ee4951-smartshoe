@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/tmr0.c"
+# 1 "24aa32a.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,9 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/tmr0.c" 2
-# 51 "mcc_generated_files/tmr0.c"
+# 1 "24aa32a.c" 2
+# 1 "./24aa32a.h" 1
+# 38 "./24aa32a.h"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3981,232 +3982,190 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 51 "mcc_generated_files/tmr0.c" 2
-
-# 1 "mcc_generated_files/tmr0.h" 1
-# 54 "mcc_generated_files/tmr0.h"
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
-# 127 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uintptr_t;
-# 142 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long intptr_t;
-# 158 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef signed char int8_t;
+# 38 "./24aa32a.h" 2
 
 
-
-
-typedef short int16_t;
-# 173 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long int32_t;
+void I2C_Initialize();
+void ACK_Poll(void);
+void I2C_WaitForCompletion(void);
+void I2C_MasterStart(void);
+void I2C_MasterStop(void);
+void I2C_MasterWrite(unsigned char data);
+void I2C_MasterSetReceive(void);
+void I2C_MasterSendAck(void);
+void I2C_MasterSendNack(void);
+void eeprom_writeByte(unsigned short address, unsigned char *databyte);
+void eeprom_writePage(unsigned short address, unsigned char *data);
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8]);
+void eeprom_readByte(unsigned short address, unsigned char *databyte);
+void eeprom_readMem(unsigned char *databyte);
+# 1 "24aa32a.c" 2
 
 
 
 
 
-typedef long long int64_t;
-# 188 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef long long intmax_t;
-
-
-
-
-
-typedef unsigned char uint8_t;
-
-
-
-
-typedef unsigned short uint16_t;
-# 209 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long uint32_t;
-
-
-
-
-
-typedef unsigned long long uint64_t;
-# 229 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 3
-typedef unsigned long long uintmax_t;
-# 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-
-
-typedef int8_t int_fast8_t;
-
-typedef int64_t int_fast64_t;
-
-
-typedef int8_t int_least8_t;
-typedef int16_t int_least16_t;
-
-typedef int24_t int_least24_t;
-typedef int24_t int_fast24_t;
-
-typedef int32_t int_least32_t;
-
-typedef int64_t int_least64_t;
-
-
-typedef uint8_t uint_fast8_t;
-
-typedef uint64_t uint_fast64_t;
-
-
-typedef uint8_t uint_least8_t;
-typedef uint16_t uint_least16_t;
-
-typedef uint24_t uint_least24_t;
-typedef uint24_t uint_fast24_t;
-
-typedef uint32_t uint_least32_t;
-
-typedef uint64_t uint_least64_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/stdint.h" 1 3
-typedef int16_t int_fast16_t;
-typedef int32_t int_fast32_t;
-typedef uint16_t uint_fast16_t;
-typedef uint32_t uint_fast32_t;
-# 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 54 "mcc_generated_files/tmr0.h" 2
-
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
-# 55 "mcc_generated_files/tmr0.h" 2
-# 98 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 168 "mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 204 "mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 219 "mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 238 "mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 256 "mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 274 "mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 52 "mcc_generated_files/tmr0.c" 2
-
-short counter = 0;
-short waitforsleep_count = 0;
-char sleep_flag = 0;
-char writeout_flag = 0;
-unsigned short heartbeat_counter = 0;
-short measurementburst_count = 0;
-char measurement_flag = 0;
-
-
-
-
-volatile uint8_t timer0ReloadVal;
-void (*TMR0_InterruptHandler)(void);
-
-
-
-
-void TMR0_Initialize(void)
+void I2C_Initialize(void)
 {
+    SSP1STAT = 0x00;
+    SSP1CON1 = 0x08;
+    SSP1CON2 = 0x00;
+    SSP1ADD = 0x13;
+    PIR1bits.SSP1IF = 0;
+    SSP1CON1bits.SSPEN = 1;
+}
+void ACK_Poll(void)
+{
+ do
+ {
+  I2C_MasterStart();
 
+ I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x00);
+ } while(SSP1CON2bits.ACKSTAT);
+ I2C_MasterStop();
+}
+# 35 "24aa32a.c"
+void I2C_WaitForCompletion(void)
+{
+ while(!PIR1bits.SSP1IF);
+    PIR1bits.SSP1IF = 0;
+}
+void I2C_MasterStart(void)
+{
+    SSP1CON2bits.SEN = 1;
+    I2C_WaitForCompletion();
+  }
 
-
-    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD2 & 0x3F));
-
-
-    TMR0 = 0x06;
-
-
-    timer0ReloadVal= 6;
-
-
-    INTCONbits.TMR0IF = 0;
-
-
-    INTCONbits.TMR0IE = 1;
-
-
-    TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
+void I2C_MasterStop(void)
+{
+    SSP1CON2bits.PEN = 1;
+    I2C_WaitForCompletion();
 }
 
-uint8_t TMR0_ReadTimer(void)
+void I2C_MasterWrite(unsigned char data)
 {
-    uint8_t readVal;
-
-    readVal = TMR0;
-
-    return readVal;
+ SSP1BUF = data;
+ I2C_WaitForCompletion();
 }
 
-void TMR0_WriteTimer(uint8_t timerVal)
+void I2C_MasterSetReceive(void)
 {
-
-    TMR0 = timerVal;
+ SSPCON2bits.RCEN = 1;;
+ I2C_WaitForCompletion();
 }
 
-void TMR0_Reload(void)
+void I2C_MasterSendAck(void)
 {
-
-    TMR0 = timer0ReloadVal;
+ SSPCON2bits.ACKDT = 0;
+ SSPCON2bits.ACKEN = 1;
+ I2C_WaitForCompletion();
 }
 
-void TMR0_ISR(void)
+void I2C_MasterSendNack(void)
 {
+ SSPCON2bits.ACKDT = 1;
+ SSPCON2bits.ACKEN = 1;
+ I2C_WaitForCompletion();
+}
 
+void eeprom_writeByte(unsigned short address, unsigned char *data)
+{
+    unsigned char addressmsb = (unsigned char)(address >> 8);
+    unsigned char addresslsb = (unsigned char)address;
+    I2C_MasterStart();
+    I2C_MasterWrite( (0b10100000 | (0b000 << 1) | 0x00) );
+    I2C_MasterWrite(addressmsb);
+    I2C_MasterWrite(addresslsb);
+    I2C_MasterWrite(*data);
+    I2C_MasterStop();
+    ACK_Poll();
+}
+# 99 "24aa32a.c"
+void eeprom_writePage(unsigned short address, unsigned char *data)
+{
+   unsigned char addressmsb = (unsigned char)address >> 8;
+   unsigned char addresslsb = (unsigned char)address;
+ if(address % 0x20 != 0) return;
+ I2C_MasterStart();
+ I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x00);
+ I2C_MasterWrite(addressmsb);
+ I2C_MasterWrite(addresslsb);
+ for (int i = 0; i < 32; i++)
+ {
+        I2C_MasterWrite(data[i]);
+ }
+ I2C_MasterStop();
+ ACK_Poll();
+}
+# 130 "24aa32a.c"
+void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8])
+{
+ if(address % 0x20 != 0) return;
 
-    INTCONbits.TMR0IF = 0;
+ for(unsigned char pagewritten = 0; pagewritten < 13; pagewritten++)
+ {
+  unsigned char addressmsb = (unsigned char)(address >> 8);
+        unsigned char addresslsb = (unsigned char)(address);
+  I2C_MasterStart();
+  I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x00);
 
-    TMR0 = timer0ReloadVal;
-
-    if(TMR0_InterruptHandler)
-    {
-        TMR0_InterruptHandler();
+  I2C_MasterWrite(addressmsb);
+  I2C_MasterWrite(addresslsb);
+  for (unsigned char row = 0; row < 2; row++)
+  {
+            for(unsigned char column = 0; column < 8; column++)
+            {
+                I2C_MasterWrite((unsigned char)((data[row + (pagewritten * 2)][column]) >> 8));
+                I2C_MasterWrite((unsigned char)(data[row + (pagewritten * 2)][column]));
+            }
+  }
+        I2C_MasterStop();
+        ACK_Poll();
+        address += 0x20;
     }
-    if(++heartbeat_counter >= 5000)
-    {
-        TRISCbits.TRISC5 = 0;
-        if(heartbeat_counter >= 5020)
-        {
-            TRISCbits.TRISC5 = 1;
-            heartbeat_counter = 0;
-        }
-    }
-    if(++waitforsleep_count >= 29500)
-    {
-        if(waitforsleep_count == 29500) TRISCbits.TRISC5 = 0;
-        if(waitforsleep_count == 30000)
-        {
-            TRISCbits.TRISC5 = 1;
-            waitforsleep_count = 0;
-            sleep_flag = 1;
-        }
-    }
-    if(++counter >= 10)
-    {
-        if(measurementburst_count < 78)
-        {
-        measurementburst_count++;
-        measurement_flag = 1;
-        }
-        else
-        {
-            writeout_flag = 1;
-        }
-        counter = 0;
-
-    }
-
 }
 
 
-void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
-    TMR0_InterruptHandler = InterruptHandler;
+
+
+
+
+
+void eeprom_readByte(unsigned short address, unsigned char *databyte)
+{
+   unsigned char addressmsb = (unsigned char)(address >> 8);
+   unsigned char addresslsb = (unsigned char)address;
+
+ I2C_MasterStart();
+ I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x00);
+ I2C_MasterWrite(addressmsb);
+ I2C_MasterWrite(addresslsb);
+ I2C_MasterStart();
+ I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x01);
+ I2C_MasterSetReceive();
+ *databyte = SSPBUF;
+ I2C_MasterSendNack();
+ I2C_MasterStop();
+
 }
+# 189 "24aa32a.c"
+void eeprom_readMem(unsigned char *databyte)
+{
+   I2C_MasterStart();
+ I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x00);
 
-void TMR0_DefaultInterruptHandler(void){
-
-
+ I2C_MasterWrite(0);
+ I2C_MasterWrite(0);
+ I2C_MasterStart();
+ I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x01);
+ for (unsigned short i = 0; i < 0xFFF; i++)
+ {
+       I2C_MasterSetReceive();
+       *databyte = SSPBUF;
+       I2C_MasterSendAck();
+ }
+  I2C_MasterSetReceive();
+     *databyte = SSPBUF;
+     I2C_MasterSendNack();
+     I2C_MasterStop();
 }

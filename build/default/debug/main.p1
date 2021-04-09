@@ -1,12 +1,37 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2354 `(v ~T0 @X0 0 tf ]
-"1241 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1241: extern volatile unsigned char OPTION_REG __attribute__((address(0x095)));
-[v _OPTION_REG `Vuc ~T0 @X0 0 e@149 ]
-"684
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 684: extern volatile unsigned char TMR0 __attribute__((address(0x015)));
-[v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
-"357
+"1684 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1684:     struct {
+[s S93 :1 `uc 1 :1 `uc 1 :5 `uc 1 ]
+[n S93 . ADON GO_nDONE CHS ]
+"1689
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1689:     struct {
+[s S94 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S94 . . ADGO CHS0 CHS1 CHS2 CHS3 CHS4 ]
+"1698
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1698:     struct {
+[s S95 :1 `uc 1 :1 `uc 1 ]
+[n S95 . . GO ]
+"1683
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1683: typedef union {
+[u S92 `S93 1 `S94 1 `S95 1 ]
+[n S92 . . . . ]
+"1703
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1703: extern volatile ADCON0bits_t ADCON0bits __attribute__((address(0x09D)));
+[v _ADCON0bits `VS92 ~T0 @X0 0 e@157 ]
+"1658
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1658: extern volatile unsigned char ADRESH __attribute__((address(0x09C)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
+"1638
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1638: extern volatile unsigned char ADRESL __attribute__((address(0x09B)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@155 ]
+[p mainexit ]
+"73 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 73: void SYSTEM_Initialize(void);
+[v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
+"40 ./24aa32a.h
+[; ;./24aa32a.h: 40: void I2C_Initialize();
+[v _I2C_Initialize `(v ~T0 @X0 0 e? ]
+"357 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 357:     struct {
 [s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
 [n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
@@ -21,27 +46,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-[v F2339 `(v ~T0 @X0 0 tf ]
-"238 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 238:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2339 ]
-"274
-[; ;mcc_generated_files/tmr0.h: 274: void TMR0_DefaultInterruptHandler(void);
-[v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
-[v F2363 `(v ~T0 @X0 0 tf ]
-"1076 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1076:     struct {
-[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S67 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"1075
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1075: typedef union {
-[u S66 `S67 1 ]
-[n S66 . . ]
-"1087
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1087: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x08E)));
-[v _TRISCbits `VS66 ~T0 @X0 0 e@142 ]
-[v F2365 `(v ~T0 @X0 0 tf ]
-[v F2367 `(v ~T0 @X0 0 tf ]
+"40 ./externs.h
+[; ;./externs.h: 40: extern char measurement_flag;
+[v _measurement_flag `uc ~T0 @X0 0 e ]
+"38
+[; ;./externs.h: 38: extern unsigned char sleep_flag;
+[v _sleep_flag `uc ~T0 @X0 0 e ]
+"4034 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4034:     struct {
+[s S217 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S217 . IOCAF0 IOCAF1 . IOCAF3 IOCAF4 IOCAF5 ]
+"4042
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4042:     struct {
+[s S218 :6 `uc 1 ]
+[n S218 . IOCAF ]
+"4033
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4033: typedef union {
+[u S216 `S217 1 `S218 1 ]
+[n S216 . . . ]
+"4046
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4046: extern volatile IOCAFbits_t IOCAFbits __attribute__((address(0x393)));
+[v _IOCAFbits `VS216 ~T0 @X0 0 e@915 ]
+"39 ./externs.h
+[; ;./externs.h: 39: extern char writeout_flag;
+[v _writeout_flag `uc ~T0 @X0 0 e ]
+"41
+[; ;./externs.h: 41: extern short measurementburst_count;
+[v _measurementburst_count `s ~T0 @X0 0 e ]
+[v F3165 `us ~T0 @X0 -> 8 `i t ]
+"51 ./24aa32a.h
+[; ;./24aa32a.h: 51: void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8]);
+[v _eeprom_storeBurstGroup `(v ~T0 @X0 0 ef2`us`*F3165 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -474,298 +509,640 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6106
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 6106: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"53 mcc_generated_files/tmr0.c
-[; ;mcc_generated_files/tmr0.c: 53: short counter = 0;
-[v _counter `s ~T0 @X0 1 e ]
-[i _counter
--> -> 0 `i `s
+[v F3175 `us ~T0 @X0 -> 8 `i t ]
+"56 main.c
+[; ;main.c: 56: static unsigned short measarray[26][8] = {
+[v _measarray `F3175 ~T0 @X0 -> 26 `i s ]
+[i _measarray
+:U ..
+:U ..
+-> -> 0 `i `us
+-> -> 1 `i `us
+-> -> 2 `i `us
+-> -> 3 `i `us
+-> -> 4 `i `us
+-> -> 5 `i `us
+-> -> 6 `i `us
+-> -> 7 `i `us
+..
+:U ..
+-> -> 8 `i `us
+-> -> 9 `i `us
+-> -> 10 `i `us
+-> -> 11 `i `us
+-> -> 12 `i `us
+-> -> 13 `i `us
+-> -> 14 `i `us
+-> -> 15 `i `us
+..
+:U ..
+-> -> 16 `i `us
+-> -> 17 `i `us
+-> -> 18 `i `us
+-> -> 19 `i `us
+-> -> 20 `i `us
+-> -> 21 `i `us
+-> -> 22 `i `us
+-> -> 23 `i `us
+..
+:U ..
+-> -> 24 `i `us
+-> -> 25 `i `us
+-> -> 26 `i `us
+-> -> 27 `i `us
+-> -> 28 `i `us
+-> -> 29 `i `us
+-> -> 30 `i `us
+-> -> 31 `i `us
+..
+:U ..
+-> -> 32 `i `us
+-> -> 33 `i `us
+-> -> 34 `i `us
+-> -> 35 `i `us
+-> -> 36 `i `us
+-> -> 37 `i `us
+-> -> 38 `i `us
+-> -> 39 `i `us
+..
+:U ..
+-> -> 40 `i `us
+-> -> 41 `i `us
+-> -> 42 `i `us
+-> -> 43 `i `us
+-> -> 44 `i `us
+-> -> 45 `i `us
+-> -> 46 `i `us
+-> -> 47 `i `us
+..
+:U ..
+-> -> 48 `i `us
+-> -> 49 `i `us
+-> -> 50 `i `us
+-> -> 51 `i `us
+-> -> 52 `i `us
+-> -> 53 `i `us
+-> -> 54 `i `us
+-> -> 55 `i `us
+..
+:U ..
+-> -> 56 `i `us
+-> -> 57 `i `us
+-> -> 58 `i `us
+-> -> 59 `i `us
+-> -> 60 `i `us
+-> -> 61 `i `us
+-> -> 62 `i `us
+-> -> 63 `i `us
+..
+:U ..
+-> -> 64 `i `us
+-> -> 65 `i `us
+-> -> 66 `i `us
+-> -> 67 `i `us
+-> -> 68 `i `us
+-> -> 69 `i `us
+-> -> 70 `i `us
+-> -> 71 `i `us
+..
+:U ..
+-> -> 72 `i `us
+-> -> 73 `i `us
+-> -> 74 `i `us
+-> -> 75 `i `us
+-> -> 76 `i `us
+-> -> 77 `i `us
+-> -> 78 `i `us
+-> -> 79 `i `us
+..
+:U ..
+-> -> 80 `i `us
+-> -> 81 `i `us
+-> -> 82 `i `us
+-> -> 83 `i `us
+-> -> 84 `i `us
+-> -> 85 `i `us
+-> -> 86 `i `us
+-> -> 87 `i `us
+..
+:U ..
+-> -> 88 `i `us
+-> -> 89 `i `us
+-> -> 90 `i `us
+-> -> 91 `i `us
+-> -> 92 `i `us
+-> -> 93 `i `us
+-> -> 94 `i `us
+-> -> 95 `i `us
+..
+:U ..
+-> -> 96 `i `us
+-> -> 97 `i `us
+-> -> 98 `i `us
+-> -> 99 `i `us
+-> -> 100 `i `us
+-> -> 101 `i `us
+-> -> 102 `i `us
+-> -> 103 `i `us
+..
+:U ..
+-> -> 104 `i `us
+-> -> 105 `i `us
+-> -> 106 `i `us
+-> -> 107 `i `us
+-> -> 108 `i `us
+-> -> 109 `i `us
+-> -> 110 `i `us
+-> -> 111 `i `us
+..
+:U ..
+-> -> 112 `i `us
+-> -> 113 `i `us
+-> -> 114 `i `us
+-> -> 115 `i `us
+-> -> 116 `i `us
+-> -> 117 `i `us
+-> -> 118 `i `us
+-> -> 119 `i `us
+..
+:U ..
+-> -> 120 `i `us
+-> -> 121 `i `us
+-> -> 122 `i `us
+-> -> 123 `i `us
+-> -> 124 `i `us
+-> -> 125 `i `us
+-> -> 126 `i `us
+-> -> 127 `i `us
+..
+:U ..
+-> -> 128 `i `us
+-> -> 129 `i `us
+-> -> 130 `i `us
+-> -> 131 `i `us
+-> -> 132 `i `us
+-> -> 133 `i `us
+-> -> 134 `i `us
+-> -> 135 `i `us
+..
+:U ..
+-> -> 136 `i `us
+-> -> 137 `i `us
+-> -> 138 `i `us
+-> -> 139 `i `us
+-> -> 140 `i `us
+-> -> 141 `i `us
+-> -> 142 `i `us
+-> -> 143 `i `us
+..
+:U ..
+-> -> 144 `i `us
+-> -> 145 `i `us
+-> -> 146 `i `us
+-> -> 147 `i `us
+-> -> 148 `i `us
+-> -> 149 `i `us
+-> -> 150 `i `us
+-> -> 151 `i `us
+..
+:U ..
+-> -> 152 `i `us
+-> -> 153 `i `us
+-> -> 154 `i `us
+-> -> 155 `i `us
+-> -> 156 `i `us
+-> -> 157 `i `us
+-> -> 158 `i `us
+-> -> 159 `i `us
+..
+:U ..
+-> -> 160 `i `us
+-> -> 161 `i `us
+-> -> 162 `i `us
+-> -> 163 `i `us
+-> -> 164 `i `us
+-> -> 165 `i `us
+-> -> 166 `i `us
+-> -> 167 `i `us
+..
+:U ..
+-> -> 168 `i `us
+-> -> 169 `i `us
+-> -> 170 `i `us
+-> -> 171 `i `us
+-> -> 172 `i `us
+-> -> 173 `i `us
+-> -> 174 `i `us
+-> -> 175 `i `us
+..
+:U ..
+-> -> 176 `i `us
+-> -> 177 `i `us
+-> -> 178 `i `us
+-> -> 179 `i `us
+-> -> 180 `i `us
+-> -> 181 `i `us
+-> -> 182 `i `us
+-> -> 183 `i `us
+..
+:U ..
+-> -> 184 `i `us
+-> -> 185 `i `us
+-> -> 186 `i `us
+-> -> 187 `i `us
+-> -> 188 `i `us
+-> -> 189 `i `us
+-> -> 190 `i `us
+-> -> 191 `i `us
+..
+:U ..
+-> -> 192 `i `us
+-> -> 193 `i `us
+-> -> 194 `i `us
+-> -> 195 `i `us
+-> -> 196 `i `us
+-> -> 197 `i `us
+-> -> 198 `i `us
+-> -> 199 `i `us
+..
+:U ..
+-> -> 200 `i `us
+-> -> 201 `i `us
+-> -> 202 `i `us
+-> -> 203 `i `us
+-> -> 204 `i `us
+-> -> 205 `i `us
+-> -> 206 `i `us
+-> -> 207 `i `us
+..
+..
 ]
-"54
-[; ;mcc_generated_files/tmr0.c: 54: short waitforsleep_count = 0;
-[v _waitforsleep_count `s ~T0 @X0 1 e ]
-[i _waitforsleep_count
--> -> 0 `i `s
-]
-"55
-[; ;mcc_generated_files/tmr0.c: 55: char sleep_flag = 0;
-[v _sleep_flag `uc ~T0 @X0 1 e ]
-[i _sleep_flag
+"85
+[; ;main.c: 85: static unsigned char byte;
+[v _byte `uc ~T0 @X0 1 s ]
+"86
+[; ;main.c: 86: static unsigned char row = 0;
+[v _row `uc ~T0 @X0 1 s ]
+[i _row
 -> -> 0 `i `uc
 ]
-"56
-[; ;mcc_generated_files/tmr0.c: 56: char writeout_flag = 0;
-[v _writeout_flag `uc ~T0 @X0 1 e ]
-[i _writeout_flag
+"87
+[; ;main.c: 87: static unsigned char column = 0;
+[v _column `uc ~T0 @X0 1 s ]
+[i _column
 -> -> 0 `i `uc
 ]
-"57
-[; ;mcc_generated_files/tmr0.c: 57: unsigned short heartbeat_counter = 0;
-[v _heartbeat_counter `us ~T0 @X0 1 e ]
-[i _heartbeat_counter
+"88
+[; ;main.c: 88: static unsigned char burst_count = 0;
+[v _burst_count `uc ~T0 @X0 1 s ]
+[i _burst_count
+-> -> 0 `i `uc
+]
+"89
+[; ;main.c: 89: static unsigned char write_complete = 0;
+[v _write_complete `uc ~T0 @X0 1 s ]
+[i _write_complete
+-> -> 0 `i `uc
+]
+"90
+[; ;main.c: 90: static unsigned char second_round = 0;
+[v _second_round `uc ~T0 @X0 1 s ]
+[i _second_round
+-> -> 0 `i `uc
+]
+"91
+[; ;main.c: 91: static unsigned short currentEepromAddress = 0;
+[v _currentEepromAddress `us ~T0 @X0 1 s ]
+[i _currentEepromAddress
 -> -> 0 `i `us
 ]
-"58
-[; ;mcc_generated_files/tmr0.c: 58: short measurementburst_count = 0;
-[v _measurementburst_count `s ~T0 @X0 1 e ]
-[i _measurementburst_count
--> -> 0 `i `s
-]
-"59
-[; ;mcc_generated_files/tmr0.c: 59: char measurement_flag = 0;
-[v _measurement_flag `uc ~T0 @X0 1 e ]
-[i _measurement_flag
--> -> 0 `i `uc
-]
-"64
-[; ;mcc_generated_files/tmr0.c: 64: volatile uint8_t timer0ReloadVal;
-[v _timer0ReloadVal `Vuc ~T0 @X0 1 e ]
-"65
-[; ;mcc_generated_files/tmr0.c: 65: void (*TMR0_InterruptHandler)(void);
-[v _TMR0_InterruptHandler `*F2354 ~T0 @X0 1 e ]
-"70
-[; ;mcc_generated_files/tmr0.c: 70: void TMR0_Initialize(void)
-[v _TMR0_Initialize `(v ~T0 @X0 1 ef ]
-"71
-[; ;mcc_generated_files/tmr0.c: 71: {
+"96
+[; ;main.c: 96: void takeMeasurement(unsigned char channel) {
+[v _takeMeasurement `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _TMR0_Initialize ]
+[e :U _takeMeasurement ]
+[v _channel `uc ~T0 @X0 1 r1 ]
 [f ]
-"75
-[; ;mcc_generated_files/tmr0.c: 75:     OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD2 & 0x3F));
-[e = _OPTION_REG -> | & -> _OPTION_REG `i -> 192 `i & -> 210 `i -> 63 `i `uc ]
-"78
-[; ;mcc_generated_files/tmr0.c: 78:     TMR0 = 0x06;
-[e = _TMR0 -> -> 6 `i `uc ]
-"81
-[; ;mcc_generated_files/tmr0.c: 81:     timer0ReloadVal= 6;
-[e = _timer0ReloadVal -> -> 6 `i `uc ]
-"84
-[; ;mcc_generated_files/tmr0.c: 84:     INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"87
-[; ;mcc_generated_files/tmr0.c: 87:     INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"90
-[; ;mcc_generated_files/tmr0.c: 90:     TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
-[e ( _TMR0_SetInterruptHandler (1 &U _TMR0_DefaultInterruptHandler ]
-"91
-[; ;mcc_generated_files/tmr0.c: 91: }
-[e :UE 327 ]
-}
-"93
-[; ;mcc_generated_files/tmr0.c: 93: uint8_t TMR0_ReadTimer(void)
-[v _TMR0_ReadTimer `(uc ~T0 @X0 1 ef ]
-"94
-[; ;mcc_generated_files/tmr0.c: 94: {
-{
-[e :U _TMR0_ReadTimer ]
-[f ]
-"95
-[; ;mcc_generated_files/tmr0.c: 95:     uint8_t readVal;
-[v _readVal `uc ~T0 @X0 1 a ]
 "97
-[; ;mcc_generated_files/tmr0.c: 97:     readVal = TMR0;
-[e = _readVal _TMR0 ]
+[; ;main.c: 97:     ADCON0bits.CHS = channel;
+[e = . . _ADCON0bits 0 2 _channel ]
+"98
+[; ;main.c: 98:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
 "99
-[; ;mcc_generated_files/tmr0.c: 99:     return readVal;
-[e ) _readVal ]
-[e $UE 328  ]
+[; ;main.c: 99:     ADCON0bits.ADGO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 "100
-[; ;mcc_generated_files/tmr0.c: 100: }
-[e :UE 328 ]
+[; ;main.c: 100:     while (ADCON0bits.GO_nDONE);
+[e $U 396  ]
+[e :U 397 ]
+[e :U 396 ]
+[e $ != -> . . _ADCON0bits 0 1 `i -> 0 `i 397  ]
+[e :U 398 ]
+"101
+[; ;main.c: 101:     ADCON0bits.ADON = 0;
+[e = . . _ADCON0bits 0 0 -> -> 0 `i `uc ]
+"102
+[; ;main.c: 102: }
+[e :UE 395 ]
 }
-"102
-[; ;mcc_generated_files/tmr0.c: 102: void TMR0_WriteTimer(uint8_t timerVal)
-[v _TMR0_WriteTimer `(v ~T0 @X0 1 ef1`uc ]
-"103
-[; ;mcc_generated_files/tmr0.c: 103: {
+"104
+[; ;main.c: 104: void measurementBurst(unsigned char measurement_type){
+[v _measurementBurst `(v ~T0 @X0 1 ef1`uc ]
 {
-[e :U _TMR0_WriteTimer ]
-"102
-[; ;mcc_generated_files/tmr0.c: 102: void TMR0_WriteTimer(uint8_t timerVal)
-[v _timerVal `uc ~T0 @X0 1 r1 ]
-"103
-[; ;mcc_generated_files/tmr0.c: 103: {
+[e :U _measurementBurst ]
+[v _measurement_type `uc ~T0 @X0 1 r1 ]
 [f ]
 "105
-[; ;mcc_generated_files/tmr0.c: 105:     TMR0 = timerVal;
-[e = _TMR0 _timerVal ]
+[; ;main.c: 105:     if (measurement_type == 0) {
+[e $ ! == -> _measurement_type `i -> 0 `i 400  ]
+{
 "106
-[; ;mcc_generated_files/tmr0.c: 106: }
-[e :UE 329 ]
-}
+[; ;main.c: 106:         takeMeasurement(9);
+[e ( _takeMeasurement (1 -> -> 9 `i `uc ]
+"107
+[; ;main.c: 107:         measarray[row][column] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5);
+[e = *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 13 `i `us `ui -> -> << -> _ADRESL `i -> 5 `i `us `ui `us ]
 "108
-[; ;mcc_generated_files/tmr0.c: 108: void TMR0_Reload(void)
-[v _TMR0_Reload `(v ~T0 @X0 1 ef ]
+[; ;main.c: 108:         takeMeasurement(8);
+[e ( _takeMeasurement (1 -> -> 8 `i `uc ]
 "109
-[; ;mcc_generated_files/tmr0.c: 109: {
-{
-[e :U _TMR0_Reload ]
-[f ]
-"111
-[; ;mcc_generated_files/tmr0.c: 111:     TMR0 = timer0ReloadVal;
-[e = _TMR0 _timer0ReloadVal ]
+[; ;main.c: 109:         measarray[row][column] |= (unsigned short)(ADRESH << 3);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
+"110
+[; ;main.c: 110:         measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ _column -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
 "112
-[; ;mcc_generated_files/tmr0.c: 112: }
-[e :UE 330 ]
-}
+[; ;main.c: 112:         measarray[row][column] = (unsigned short)(ADRESL << 10);
+[e = *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
+"113
+[; ;main.c: 113:         takeMeasurement(7);
+[e ( _takeMeasurement (1 -> -> 7 `i `uc ]
 "114
-[; ;mcc_generated_files/tmr0.c: 114: void TMR0_ISR(void)
-[v _TMR0_ISR `(v ~T0 @X0 1 ef ]
-"115
-[; ;mcc_generated_files/tmr0.c: 115: {
-{
-[e :U _TMR0_ISR ]
-[f ]
-"118
-[; ;mcc_generated_files/tmr0.c: 118:     INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
+[; ;main.c: 114:         measarray[row][column++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ _column -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
+"116
+[; ;main.c: 116:         takeMeasurement(6);
+[e ( _takeMeasurement (1 -> -> 6 `i `uc ]
+"117
+[; ;main.c: 117:         measarray[row][column] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5);
+[e = *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 13 `i `us `ui -> -> << -> _ADRESL `i -> 5 `i `us `ui `us ]
+"119
+[; ;main.c: 119:     }
+}
+[e :U 400 ]
 "120
-[; ;mcc_generated_files/tmr0.c: 120:     TMR0 = timer0ReloadVal;
-[e = _TMR0 _timer0ReloadVal ]
+[; ;main.c: 120:     if (measurement_type == 1) {
+[e $ ! == -> _measurement_type `i -> 1 `i 401  ]
+{
+"121
+[; ;main.c: 121:         takeMeasurement(9);
+[e ( _takeMeasurement (1 -> -> 9 `i `uc ]
 "122
-[; ;mcc_generated_files/tmr0.c: 122:     if(TMR0_InterruptHandler)
-[e $ ! != _TMR0_InterruptHandler -> -> 0 `i `*F2363 332  ]
+[; ;main.c: 122:         measarray[row][column] |= (unsigned short)(ADRESH << 3);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
 "123
-[; ;mcc_generated_files/tmr0.c: 123:     {
-{
-"124
-[; ;mcc_generated_files/tmr0.c: 124:         TMR0_InterruptHandler();
-[e ( *U _TMR0_InterruptHandler ..  ]
+[; ;main.c: 123:         measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ _column -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
 "125
-[; ;mcc_generated_files/tmr0.c: 125:     }
-}
-[e :U 332 ]
+[; ;main.c: 125:         measarray[row][column] = (unsigned short)(ADRESL << 10);
+[e = *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
 "126
-[; ;mcc_generated_files/tmr0.c: 126:     if(++heartbeat_counter >= 5000)
-[e $ ! >= -> =+ _heartbeat_counter -> -> 1 `i `us `ui -> -> 5000 `i `ui 333  ]
+[; ;main.c: 126:         takeMeasurement(8);
+[e ( _takeMeasurement (1 -> -> 8 `i `uc ]
 "127
-[; ;mcc_generated_files/tmr0.c: 127:     {
-{
-"128
-[; ;mcc_generated_files/tmr0.c: 128:         TRISCbits.TRISC5 = 0;
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+[; ;main.c: 127:         measarray[row][column++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ _column -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
 "129
-[; ;mcc_generated_files/tmr0.c: 129:         if(heartbeat_counter >= 5020)
-[e $ ! >= -> _heartbeat_counter `ui -> -> 5020 `i `ui 334  ]
+[; ;main.c: 129:         takeMeasurement(7);
+[e ( _takeMeasurement (1 -> -> 7 `i `uc ]
 "130
-[; ;mcc_generated_files/tmr0.c: 130:         {
-{
+[; ;main.c: 130:         measarray[row][column] = (unsigned short)(ADRESH << 13);
+[e = *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESH `i -> 13 `i `us ]
 "131
-[; ;mcc_generated_files/tmr0.c: 131:             TRISCbits.TRISC5 = 1;
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 131:         measarray[row][column] |= (unsigned short)(ADRESL << 5);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESL `i -> 5 `i `us `us ]
 "132
-[; ;mcc_generated_files/tmr0.c: 132:             heartbeat_counter = 0;
-[e = _heartbeat_counter -> -> 0 `i `us ]
+[; ;main.c: 132:         takeMeasurement(6);
+[e ( _takeMeasurement (1 -> -> 6 `i `uc ]
 "133
-[; ;mcc_generated_files/tmr0.c: 133:         }
-}
-[e :U 334 ]
+[; ;main.c: 133:         measarray[row][column] |= (unsigned short)(ADRESH << 3);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
 "134
-[; ;mcc_generated_files/tmr0.c: 134:     }
-}
-[e :U 333 ]
-"135
-[; ;mcc_generated_files/tmr0.c: 135:     if(++waitforsleep_count >= 29500)
-[e $ ! >= -> =+ _waitforsleep_count -> -> 1 `i `s `i -> 29500 `i 335  ]
+[; ;main.c: 134:         measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ _column -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
 "136
-[; ;mcc_generated_files/tmr0.c: 136:     {
-{
+[; ;main.c: 136:     }
+}
+[e :U 401 ]
 "137
-[; ;mcc_generated_files/tmr0.c: 137:         if(waitforsleep_count == 29500) TRISCbits.TRISC5 = 0;
-[e $ ! == -> _waitforsleep_count `i -> 29500 `i 336  ]
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-[e :U 336 ]
+[; ;main.c: 137:     if (measurement_type == 3) {
+[e $ ! == -> _measurement_type `i -> 3 `i 402  ]
+{
 "138
-[; ;mcc_generated_files/tmr0.c: 138:         if(waitforsleep_count == 30000)
-[e $ ! == -> _waitforsleep_count `i -> 30000 `i 337  ]
+[; ;main.c: 138:         measarray[row][column] = (unsigned short)(ADRESL << 10);
+[e = *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
 "139
-[; ;mcc_generated_files/tmr0.c: 139:         {
-{
+[; ;main.c: 139:         takeMeasurement(9);
+[e ( _takeMeasurement (1 -> -> 9 `i `uc ]
 "140
-[; ;mcc_generated_files/tmr0.c: 140:             TRISCbits.TRISC5 = 1;
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+[; ;main.c: 140:         measarray[row][column] |= (unsigned short)(ADRESH << 8);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 8 `i `us `us ]
 "141
-[; ;mcc_generated_files/tmr0.c: 141:             waitforsleep_count = 0;
-[e = _waitforsleep_count -> -> 0 `i `s ]
-"142
-[; ;mcc_generated_files/tmr0.c: 142:             sleep_flag = 1;
-[e = _sleep_flag -> -> 1 `i `uc ]
+[; ;main.c: 141:         measarray[row][column++] |= (unsigned short)(ADRESL);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ _column -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> _ADRESL `us `us ]
 "143
-[; ;mcc_generated_files/tmr0.c: 143:         }
-}
-[e :U 337 ]
+[; ;main.c: 143:         takeMeasurement(8);
+[e ( _takeMeasurement (1 -> -> 8 `i `uc ]
 "144
-[; ;mcc_generated_files/tmr0.c: 144:     }
-}
-[e :U 335 ]
+[; ;main.c: 144:         measarray[row][column] = (unsigned short)(ADRESH << 13);
+[e = *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESH `i -> 13 `i `us ]
 "145
-[; ;mcc_generated_files/tmr0.c: 145:     if(++counter >= 10)
-[e $ ! >= -> =+ _counter -> -> 1 `i `s `i -> 10 `i 338  ]
-"146
-[; ;mcc_generated_files/tmr0.c: 146:     {
-{
+[; ;main.c: 145:         measarray[row][column] = (unsigned short)(ADRESL << 5);
+[e = *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 5 `i `us ]
 "147
-[; ;mcc_generated_files/tmr0.c: 147:         if(measurementburst_count < 78)
-[e $ ! < -> _measurementburst_count `i -> 78 `i 339  ]
+[; ;main.c: 147:         takeMeasurement(7);
+[e ( _takeMeasurement (1 -> -> 7 `i `uc ]
 "148
-[; ;mcc_generated_files/tmr0.c: 148:         {
-{
+[; ;main.c: 148:         measarray[row][column] |= (unsigned short)(ADRESH << 3);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
 "149
-[; ;mcc_generated_files/tmr0.c: 149:         measurementburst_count++;
-[e ++ _measurementburst_count -> -> 1 `i `s ]
-"150
-[; ;mcc_generated_files/tmr0.c: 150:         measurement_flag = 1;
-[e = _measurement_flag -> -> 1 `i `uc ]
+[; ;main.c: 149:         measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+[e =| *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ _column -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
 "151
-[; ;mcc_generated_files/tmr0.c: 151:         }
-}
-[e $U 340  ]
+[; ;main.c: 151:         measarray[row][column] = (unsigned short)(ADRESL << 10);
+[e = *U + &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> _row `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
 "152
-[; ;mcc_generated_files/tmr0.c: 152:         else
-[e :U 339 ]
+[; ;main.c: 152:         takeMeasurement(6);
+[e ( _takeMeasurement (1 -> -> 6 `i `uc ]
 "153
-[; ;mcc_generated_files/tmr0.c: 153:         {
-{
+[; ;main.c: 153:         measarray[row++][column] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+[e = *U + &U *U + &U _measarray * -> ++ _row -> -> 1 `i `uc `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> _column `ux -> -> # *U &U *U + &U _measarray * -> ++ _row -> -> 1 `i `uc `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
 "154
-[; ;mcc_generated_files/tmr0.c: 154:             writeout_flag = 1;
-[e = _writeout_flag -> -> 1 `i `uc ]
+[; ;main.c: 154:         column = 0;
+[e = _column -> -> 0 `i `uc ]
 "155
-[; ;mcc_generated_files/tmr0.c: 155:         }
-}
-[e :U 340 ]
+[; ;main.c: 155:         ADCON0bits.ADON = 0;
+[e = . . _ADCON0bits 0 0 -> -> 0 `i `uc ]
 "156
-[; ;mcc_generated_files/tmr0.c: 156:         counter = 0;
-[e = _counter -> -> 0 `i `s ]
-"158
-[; ;mcc_generated_files/tmr0.c: 158:     }
+[; ;main.c: 156:     }
 }
-[e :U 338 ]
+[e :U 402 ]
+"157
+[; ;main.c: 157: }
+[e :UE 399 ]
+}
+[v $root$_main `(v ~T0 @X0 0 e ]
+"159
+[; ;main.c: 159: void main(void) {
+[v _main `(v ~T0 @X0 1 ef ]
+{
+[e :U _main ]
+[f ]
 "160
-[; ;mcc_generated_files/tmr0.c: 160: }
-[e :UE 331 ]
-}
+[; ;main.c: 160:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
+"161
+[; ;main.c: 161:     I2C_Initialize();
+[e ( _I2C_Initialize ..  ]
+"162
+[; ;main.c: 162:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "163
-[; ;mcc_generated_files/tmr0.c: 163: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _TMR0_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F2365 ]
-{
-[e :U _TMR0_SetInterruptHandler ]
-[v _InterruptHandler `*F2367 ~T0 @X0 1 r1 ]
-[f ]
+[; ;main.c: 163:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "164
-[; ;mcc_generated_files/tmr0.c: 164:     TMR0_InterruptHandler = InterruptHandler;
-[e = _TMR0_InterruptHandler _InterruptHandler ]
-"165
-[; ;mcc_generated_files/tmr0.c: 165: }
-[e :UE 341 ]
-}
-"167
-[; ;mcc_generated_files/tmr0.c: 167: void TMR0_DefaultInterruptHandler(void){
-[v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
+[; ;main.c: 164:     while (1) {
+[e :U 405 ]
 {
-[e :U _TMR0_DefaultInterruptHandler ]
-[f ]
+"165
+[; ;main.c: 165:         if (measurement_flag) {
+[e $ ! != -> _measurement_flag `i -> 0 `i 407  ]
+{
+"166
+[; ;main.c: 166:             measurement_flag = 0;
+[e = _measurement_flag -> -> 0 `i `uc ]
+"167
+[; ;main.c: 167:             if (burst_count == 0) {
+[e $ ! == -> _burst_count `i -> 0 `i 408  ]
+{
+"168
+[; ;main.c: 168:                 measurementBurst(0);
+[e ( _measurementBurst (1 -> -> 0 `i `uc ]
+"169
+[; ;main.c: 169:                 burst_count++;
+[e ++ _burst_count -> -> 1 `i `uc ]
 "170
-[; ;mcc_generated_files/tmr0.c: 170: }
-[e :UE 342 ]
+[; ;main.c: 170:             }
+}
+[e $U 409  ]
+"171
+[; ;main.c: 171:             else if (burst_count == 1) {
+[e :U 408 ]
+[e $ ! == -> _burst_count `i -> 1 `i 410  ]
+{
+"172
+[; ;main.c: 172:                 measurementBurst(1);
+[e ( _measurementBurst (1 -> -> 1 `i `uc ]
+"173
+[; ;main.c: 173:                 burst_count++;
+[e ++ _burst_count -> -> 1 `i `uc ]
+"174
+[; ;main.c: 174:             }
+}
+[e $U 411  ]
+"175
+[; ;main.c: 175:             else if (burst_count == 2) {
+[e :U 410 ]
+[e $ ! == -> _burst_count `i -> 2 `i 412  ]
+{
+"176
+[; ;main.c: 176:                 measurementBurst(3);
+[e ( _measurementBurst (1 -> -> 3 `i `uc ]
+"177
+[; ;main.c: 177:                 burst_count = 0;
+[e = _burst_count -> -> 0 `i `uc ]
+"178
+[; ;main.c: 178:             }
+}
+[e :U 412 ]
+[e :U 411 ]
+[e :U 409 ]
+"179
+[; ;main.c: 179:         }
+}
+[e :U 407 ]
+"180
+[; ;main.c: 180:         if (sleep_flag)
+[e $ ! != -> _sleep_flag `i -> 0 `i 413  ]
+"181
+[; ;main.c: 181:         {
+{
+"182
+[; ;main.c: 182:             sleep_flag = 0;
+[e = _sleep_flag -> -> 0 `i `uc ]
+"184
+[; ;main.c: 184:             IOCAFbits.IOCAF5 = 0;
+[e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
+"185
+[; ;main.c: 185:             INTCONbits.IOCIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"186
+[; ;main.c: 186:             __asm("SLEEP");
+[; <" SLEEP ;# ">
+"187
+[; ;main.c: 187:             INTCONbits.IOCIE = 0;
+[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
+"189
+[; ;main.c: 189:             IOCAFbits.IOCAF5 = 0;
+[e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
+"190
+[; ;main.c: 190:             write_complete = 0;
+[e = _write_complete -> -> 0 `i `uc ]
+"191
+[; ;main.c: 191:             writeout_flag = 0;
+[e = _writeout_flag -> -> 0 `i `uc ]
+"192
+[; ;main.c: 192:             measurementburst_count = 0;
+[e = _measurementburst_count -> -> 0 `i `s ]
+"193
+[; ;main.c: 193:         }
+}
+[e :U 413 ]
+"194
+[; ;main.c: 194:         if (writeout_flag && !write_complete)
+[e $ ! && != -> _writeout_flag `i -> 0 `i ! != -> _write_complete `i -> 0 `i 414  ]
+"195
+[; ;main.c: 195:         {
+{
+"197
+[; ;main.c: 197:             writeout_flag = 0;
+[e = _writeout_flag -> -> 0 `i `uc ]
+"198
+[; ;main.c: 198:             if (currentEepromAddress >= 0xFFF) currentEepromAddress = 0;
+[e $ ! >= -> _currentEepromAddress `ui -> -> 4095 `i `ui 415  ]
+[e = _currentEepromAddress -> -> 0 `i `us ]
+[e :U 415 ]
+"200
+[; ;main.c: 200:             eeprom_storeBurstGroup(currentEepromAddress, measarray);
+[e ( _eeprom_storeBurstGroup (2 , _currentEepromAddress &U _measarray ]
+"201
+[; ;main.c: 201:             currentEepromAddress += 0x1A0;
+[e =+ _currentEepromAddress -> -> 416 `i `us ]
+"203
+[; ;main.c: 203:             write_complete = 1;
+[e = _write_complete -> -> 1 `i `uc ]
+"204
+[; ;main.c: 204:         }
+}
+[e :U 414 ]
+"205
+[; ;main.c: 205:     }
+}
+[e :U 404 ]
+[e $U 405  ]
+[e :U 406 ]
+"206
+[; ;main.c: 206: }
+[e :UE 403 ]
 }

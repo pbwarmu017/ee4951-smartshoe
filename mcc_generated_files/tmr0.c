@@ -132,10 +132,15 @@ void TMR0_ISR(void)
             heartbeat_counter = 0;
         }
     }
-    if(++waitforsleep_count >= 30000)
+    if(++waitforsleep_count >= 29500)
     {
-        waitforsleep_count = 0;
-        sleep_flag = 1;
+        if(waitforsleep_count == 29500) TRISCbits.TRISC5 = 0; //turn on the LED
+        if(waitforsleep_count == 30000)
+        {
+            TRISCbits.TRISC5 = 1; //turn off the LED
+            waitforsleep_count = 0;
+            sleep_flag = 1;
+        }   
     }
     if(++counter >= 10) //10 milliseconds have passed
     {

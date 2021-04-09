@@ -1,47 +1,20 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F2354 `(v ~T0 @X0 0 tf ]
-"1241 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1241: extern volatile unsigned char OPTION_REG __attribute__((address(0x095)));
-[v _OPTION_REG `Vuc ~T0 @X0 0 e@149 ]
-"684
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 684: extern volatile unsigned char TMR0 __attribute__((address(0x015)));
-[v _TMR0 `Vuc ~T0 @X0 0 e@21 ]
-"357
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 357:     struct {
-[s S31 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . IOCIF INTF TMR0IF IOCIE INTE TMR0IE PEIE GIE ]
-"367
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 367:     struct {
-[s S32 :2 `uc 1 :1 `uc 1 :2 `uc 1 :1 `uc 1 ]
-[n S32 . . T0IF . T0IE ]
-"356
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 356: typedef union {
-[u S30 `S31 1 `S32 1 ]
-[n S30 . . . ]
-"374
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-[v F2339 `(v ~T0 @X0 0 tf ]
-"238 mcc_generated_files/tmr0.h
-[; ;mcc_generated_files/tmr0.h: 238:  void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR0_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F2339 ]
-"274
-[; ;mcc_generated_files/tmr0.h: 274: void TMR0_DefaultInterruptHandler(void);
-[v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 0 ef ]
-[v F2363 `(v ~T0 @X0 0 tf ]
-"1076 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1076:     struct {
-[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S67 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
-"1075
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1075: typedef union {
-[u S66 `S67 1 ]
-[n S66 . . ]
-"1087
-[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1087: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x08E)));
-[v _TRISCbits `VS66 ~T0 @X0 0 e@142 ]
-[v F2365 `(v ~T0 @X0 0 tf ]
-[v F2367 `(v ~T0 @X0 0 tf ]
+[v F2348 `(v ~T0 @X0 0 tf ]
+"1758 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1758: extern volatile unsigned char ADCON1 __attribute__((address(0x09E)));
+[v _ADCON1 `Vuc ~T0 @X0 0 e@158 ]
+"1824
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1824: extern volatile unsigned char ADCON2 __attribute__((address(0x09F)));
+[v _ADCON2 `Vuc ~T0 @X0 0 e@159 ]
+"1638
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1638: extern volatile unsigned char ADRESL __attribute__((address(0x09B)));
+[v _ADRESL `Vuc ~T0 @X0 0 e@155 ]
+"1658
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1658: extern volatile unsigned char ADRESH __attribute__((address(0x09C)));
+[v _ADRESH `Vuc ~T0 @X0 0 e@156 ]
+"1678
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1678: extern volatile unsigned char ADCON0 __attribute__((address(0x09D)));
+[v _ADCON0 `Vuc ~T0 @X0 0 e@157 ]
 "54 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -474,298 +447,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6106
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 6106: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"53 mcc_generated_files/tmr0.c
-[; ;mcc_generated_files/tmr0.c: 53: short counter = 0;
-[v _counter `s ~T0 @X0 1 e ]
-[i _counter
--> -> 0 `i `s
-]
-"54
-[; ;mcc_generated_files/tmr0.c: 54: short waitforsleep_count = 0;
-[v _waitforsleep_count `s ~T0 @X0 1 e ]
-[i _waitforsleep_count
--> -> 0 `i `s
-]
-"55
-[; ;mcc_generated_files/tmr0.c: 55: char sleep_flag = 0;
-[v _sleep_flag `uc ~T0 @X0 1 e ]
-[i _sleep_flag
--> -> 0 `i `uc
-]
-"56
-[; ;mcc_generated_files/tmr0.c: 56: char writeout_flag = 0;
-[v _writeout_flag `uc ~T0 @X0 1 e ]
-[i _writeout_flag
--> -> 0 `i `uc
-]
-"57
-[; ;mcc_generated_files/tmr0.c: 57: unsigned short heartbeat_counter = 0;
-[v _heartbeat_counter `us ~T0 @X0 1 e ]
-[i _heartbeat_counter
--> -> 0 `i `us
-]
-"58
-[; ;mcc_generated_files/tmr0.c: 58: short measurementburst_count = 0;
-[v _measurementburst_count `s ~T0 @X0 1 e ]
-[i _measurementburst_count
--> -> 0 `i `s
-]
-"59
-[; ;mcc_generated_files/tmr0.c: 59: char measurement_flag = 0;
-[v _measurement_flag `uc ~T0 @X0 1 e ]
-[i _measurement_flag
--> -> 0 `i `uc
-]
-"64
-[; ;mcc_generated_files/tmr0.c: 64: volatile uint8_t timer0ReloadVal;
-[v _timer0ReloadVal `Vuc ~T0 @X0 1 e ]
-"65
-[; ;mcc_generated_files/tmr0.c: 65: void (*TMR0_InterruptHandler)(void);
-[v _TMR0_InterruptHandler `*F2354 ~T0 @X0 1 e ]
-"70
-[; ;mcc_generated_files/tmr0.c: 70: void TMR0_Initialize(void)
-[v _TMR0_Initialize `(v ~T0 @X0 1 ef ]
-"71
-[; ;mcc_generated_files/tmr0.c: 71: {
+"61 mcc_generated_files/adc.c
+[; ;mcc_generated_files/adc.c: 61: void (*ADC_InterruptHandler)(void);
+[v _ADC_InterruptHandler `*F2348 ~T0 @X0 1 e ]
+"67
+[; ;mcc_generated_files/adc.c: 67: void ADC_Initialize(void)
+[v _ADC_Initialize `(v ~T0 @X0 1 ef ]
+"68
+[; ;mcc_generated_files/adc.c: 68: {
 {
-[e :U _TMR0_Initialize ]
+[e :U _ADC_Initialize ]
 [f ]
+"72
+[; ;mcc_generated_files/adc.c: 72:     ADCON1 = 0x90;
+[e = _ADCON1 -> -> 144 `i `uc ]
 "75
-[; ;mcc_generated_files/tmr0.c: 75:     OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD2 & 0x3F));
-[e = _OPTION_REG -> | & -> _OPTION_REG `i -> 192 `i & -> 210 `i -> 63 `i `uc ]
+[; ;mcc_generated_files/adc.c: 75:     ADCON2 = 0x00;
+[e = _ADCON2 -> -> 0 `i `uc ]
 "78
-[; ;mcc_generated_files/tmr0.c: 78:     TMR0 = 0x06;
-[e = _TMR0 -> -> 6 `i `uc ]
+[; ;mcc_generated_files/adc.c: 78:     ADRESL = 0x00;
+[e = _ADRESL -> -> 0 `i `uc ]
 "81
-[; ;mcc_generated_files/tmr0.c: 81:     timer0ReloadVal= 6;
-[e = _timer0ReloadVal -> -> 6 `i `uc ]
+[; ;mcc_generated_files/adc.c: 81:     ADRESH = 0x00;
+[e = _ADRESH -> -> 0 `i `uc ]
 "84
-[; ;mcc_generated_files/tmr0.c: 84:     INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"87
-[; ;mcc_generated_files/tmr0.c: 87:     INTCONbits.TMR0IE = 1;
-[e = . . _INTCONbits 0 5 -> -> 1 `i `uc ]
-"90
-[; ;mcc_generated_files/tmr0.c: 90:     TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
-[e ( _TMR0_SetInterruptHandler (1 &U _TMR0_DefaultInterruptHandler ]
-"91
-[; ;mcc_generated_files/tmr0.c: 91: }
-[e :UE 327 ]
-}
-"93
-[; ;mcc_generated_files/tmr0.c: 93: uint8_t TMR0_ReadTimer(void)
-[v _TMR0_ReadTimer `(uc ~T0 @X0 1 ef ]
-"94
-[; ;mcc_generated_files/tmr0.c: 94: {
-{
-[e :U _TMR0_ReadTimer ]
-[f ]
-"95
-[; ;mcc_generated_files/tmr0.c: 95:     uint8_t readVal;
-[v _readVal `uc ~T0 @X0 1 a ]
-"97
-[; ;mcc_generated_files/tmr0.c: 97:     readVal = TMR0;
-[e = _readVal _TMR0 ]
-"99
-[; ;mcc_generated_files/tmr0.c: 99:     return readVal;
-[e ) _readVal ]
-[e $UE 328  ]
-"100
-[; ;mcc_generated_files/tmr0.c: 100: }
+[; ;mcc_generated_files/adc.c: 84:     ADCON0 = 0x01;
+[e = _ADCON0 -> -> 1 `i `uc ]
+"86
+[; ;mcc_generated_files/adc.c: 86: }
 [e :UE 328 ]
-}
-"102
-[; ;mcc_generated_files/tmr0.c: 102: void TMR0_WriteTimer(uint8_t timerVal)
-[v _TMR0_WriteTimer `(v ~T0 @X0 1 ef1`uc ]
-"103
-[; ;mcc_generated_files/tmr0.c: 103: {
-{
-[e :U _TMR0_WriteTimer ]
-"102
-[; ;mcc_generated_files/tmr0.c: 102: void TMR0_WriteTimer(uint8_t timerVal)
-[v _timerVal `uc ~T0 @X0 1 r1 ]
-"103
-[; ;mcc_generated_files/tmr0.c: 103: {
-[f ]
-"105
-[; ;mcc_generated_files/tmr0.c: 105:     TMR0 = timerVal;
-[e = _TMR0 _timerVal ]
-"106
-[; ;mcc_generated_files/tmr0.c: 106: }
-[e :UE 329 ]
-}
-"108
-[; ;mcc_generated_files/tmr0.c: 108: void TMR0_Reload(void)
-[v _TMR0_Reload `(v ~T0 @X0 1 ef ]
-"109
-[; ;mcc_generated_files/tmr0.c: 109: {
-{
-[e :U _TMR0_Reload ]
-[f ]
-"111
-[; ;mcc_generated_files/tmr0.c: 111:     TMR0 = timer0ReloadVal;
-[e = _TMR0 _timer0ReloadVal ]
-"112
-[; ;mcc_generated_files/tmr0.c: 112: }
-[e :UE 330 ]
-}
-"114
-[; ;mcc_generated_files/tmr0.c: 114: void TMR0_ISR(void)
-[v _TMR0_ISR `(v ~T0 @X0 1 ef ]
-"115
-[; ;mcc_generated_files/tmr0.c: 115: {
-{
-[e :U _TMR0_ISR ]
-[f ]
-"118
-[; ;mcc_generated_files/tmr0.c: 118:     INTCONbits.TMR0IF = 0;
-[e = . . _INTCONbits 0 2 -> -> 0 `i `uc ]
-"120
-[; ;mcc_generated_files/tmr0.c: 120:     TMR0 = timer0ReloadVal;
-[e = _TMR0 _timer0ReloadVal ]
-"122
-[; ;mcc_generated_files/tmr0.c: 122:     if(TMR0_InterruptHandler)
-[e $ ! != _TMR0_InterruptHandler -> -> 0 `i `*F2363 332  ]
-"123
-[; ;mcc_generated_files/tmr0.c: 123:     {
-{
-"124
-[; ;mcc_generated_files/tmr0.c: 124:         TMR0_InterruptHandler();
-[e ( *U _TMR0_InterruptHandler ..  ]
-"125
-[; ;mcc_generated_files/tmr0.c: 125:     }
-}
-[e :U 332 ]
-"126
-[; ;mcc_generated_files/tmr0.c: 126:     if(++heartbeat_counter >= 5000)
-[e $ ! >= -> =+ _heartbeat_counter -> -> 1 `i `us `ui -> -> 5000 `i `ui 333  ]
-"127
-[; ;mcc_generated_files/tmr0.c: 127:     {
-{
-"128
-[; ;mcc_generated_files/tmr0.c: 128:         TRISCbits.TRISC5 = 0;
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-"129
-[; ;mcc_generated_files/tmr0.c: 129:         if(heartbeat_counter >= 5020)
-[e $ ! >= -> _heartbeat_counter `ui -> -> 5020 `i `ui 334  ]
-"130
-[; ;mcc_generated_files/tmr0.c: 130:         {
-{
-"131
-[; ;mcc_generated_files/tmr0.c: 131:             TRISCbits.TRISC5 = 1;
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
-"132
-[; ;mcc_generated_files/tmr0.c: 132:             heartbeat_counter = 0;
-[e = _heartbeat_counter -> -> 0 `i `us ]
-"133
-[; ;mcc_generated_files/tmr0.c: 133:         }
-}
-[e :U 334 ]
-"134
-[; ;mcc_generated_files/tmr0.c: 134:     }
-}
-[e :U 333 ]
-"135
-[; ;mcc_generated_files/tmr0.c: 135:     if(++waitforsleep_count >= 29500)
-[e $ ! >= -> =+ _waitforsleep_count -> -> 1 `i `s `i -> 29500 `i 335  ]
-"136
-[; ;mcc_generated_files/tmr0.c: 136:     {
-{
-"137
-[; ;mcc_generated_files/tmr0.c: 137:         if(waitforsleep_count == 29500) TRISCbits.TRISC5 = 0;
-[e $ ! == -> _waitforsleep_count `i -> 29500 `i 336  ]
-[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-[e :U 336 ]
-"138
-[; ;mcc_generated_files/tmr0.c: 138:         if(waitforsleep_count == 30000)
-[e $ ! == -> _waitforsleep_count `i -> 30000 `i 337  ]
-"139
-[; ;mcc_generated_files/tmr0.c: 139:         {
-{
-"140
-[; ;mcc_generated_files/tmr0.c: 140:             TRISCbits.TRISC5 = 1;
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
-"141
-[; ;mcc_generated_files/tmr0.c: 141:             waitforsleep_count = 0;
-[e = _waitforsleep_count -> -> 0 `i `s ]
-"142
-[; ;mcc_generated_files/tmr0.c: 142:             sleep_flag = 1;
-[e = _sleep_flag -> -> 1 `i `uc ]
-"143
-[; ;mcc_generated_files/tmr0.c: 143:         }
-}
-[e :U 337 ]
-"144
-[; ;mcc_generated_files/tmr0.c: 144:     }
-}
-[e :U 335 ]
-"145
-[; ;mcc_generated_files/tmr0.c: 145:     if(++counter >= 10)
-[e $ ! >= -> =+ _counter -> -> 1 `i `s `i -> 10 `i 338  ]
-"146
-[; ;mcc_generated_files/tmr0.c: 146:     {
-{
-"147
-[; ;mcc_generated_files/tmr0.c: 147:         if(measurementburst_count < 78)
-[e $ ! < -> _measurementburst_count `i -> 78 `i 339  ]
-"148
-[; ;mcc_generated_files/tmr0.c: 148:         {
-{
-"149
-[; ;mcc_generated_files/tmr0.c: 149:         measurementburst_count++;
-[e ++ _measurementburst_count -> -> 1 `i `s ]
-"150
-[; ;mcc_generated_files/tmr0.c: 150:         measurement_flag = 1;
-[e = _measurement_flag -> -> 1 `i `uc ]
-"151
-[; ;mcc_generated_files/tmr0.c: 151:         }
-}
-[e $U 340  ]
-"152
-[; ;mcc_generated_files/tmr0.c: 152:         else
-[e :U 339 ]
-"153
-[; ;mcc_generated_files/tmr0.c: 153:         {
-{
-"154
-[; ;mcc_generated_files/tmr0.c: 154:             writeout_flag = 1;
-[e = _writeout_flag -> -> 1 `i `uc ]
-"155
-[; ;mcc_generated_files/tmr0.c: 155:         }
-}
-[e :U 340 ]
-"156
-[; ;mcc_generated_files/tmr0.c: 156:         counter = 0;
-[e = _counter -> -> 0 `i `s ]
-"158
-[; ;mcc_generated_files/tmr0.c: 158:     }
-}
-[e :U 338 ]
-"160
-[; ;mcc_generated_files/tmr0.c: 160: }
-[e :UE 331 ]
-}
-"163
-[; ;mcc_generated_files/tmr0.c: 163: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
-[v _TMR0_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F2365 ]
-{
-[e :U _TMR0_SetInterruptHandler ]
-[v _InterruptHandler `*F2367 ~T0 @X0 1 r1 ]
-[f ]
-"164
-[; ;mcc_generated_files/tmr0.c: 164:     TMR0_InterruptHandler = InterruptHandler;
-[e = _TMR0_InterruptHandler _InterruptHandler ]
-"165
-[; ;mcc_generated_files/tmr0.c: 165: }
-[e :UE 341 ]
-}
-"167
-[; ;mcc_generated_files/tmr0.c: 167: void TMR0_DefaultInterruptHandler(void){
-[v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
-{
-[e :U _TMR0_DefaultInterruptHandler ]
-[f ]
-"170
-[; ;mcc_generated_files/tmr0.c: 170: }
-[e :UE 342 ]
 }

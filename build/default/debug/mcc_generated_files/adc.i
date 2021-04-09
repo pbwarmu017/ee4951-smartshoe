@@ -1,4 +1,4 @@
-# 1 "mcc_generated_files/tmr0.c"
+# 1 "mcc_generated_files/adc.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,8 +6,8 @@
 # 1 "<built-in>" 2
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "mcc_generated_files/tmr0.c" 2
-# 51 "mcc_generated_files/tmr0.c"
+# 1 "mcc_generated_files/adc.c" 2
+# 51 "mcc_generated_files/adc.c"
 # 1 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 1 3
 # 18 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -3981,10 +3981,10 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\\pic\\include\\xc.h" 2 3
-# 51 "mcc_generated_files/tmr0.c" 2
+# 51 "mcc_generated_files/adc.c" 2
 
-# 1 "mcc_generated_files/tmr0.h" 1
-# 54 "mcc_generated_files/tmr0.h"
+# 1 "mcc_generated_files/adc.h" 1
+# 55 "mcc_generated_files/adc.h"
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 3
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\bits/alltypes.h" 1 3
@@ -4070,143 +4070,69 @@ typedef int32_t int_fast32_t;
 typedef uint16_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 144 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdint.h" 2 3
-# 54 "mcc_generated_files/tmr0.h" 2
+# 55 "mcc_generated_files/adc.h" 2
 
 # 1 "C:\\Program Files\\Microchip\\xc8\\v2.31\\pic\\include\\c99\\stdbool.h" 1 3
-# 55 "mcc_generated_files/tmr0.h" 2
-# 98 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 168 "mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 204 "mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 219 "mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 238 "mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 256 "mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 274 "mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
-# 52 "mcc_generated_files/tmr0.c" 2
-
-short counter = 0;
-short waitforsleep_count = 0;
-char sleep_flag = 0;
-char writeout_flag = 0;
-unsigned short heartbeat_counter = 0;
-short measurementburst_count = 0;
-char measurement_flag = 0;
+# 56 "mcc_generated_files/adc.h" 2
+# 72 "mcc_generated_files/adc.h"
+typedef uint16_t adc_result_t;
 
 
 
 
-volatile uint8_t timer0ReloadVal;
-void (*TMR0_InterruptHandler)(void);
+typedef struct
+{
+    adc_result_t adcResult1;
+    adc_result_t adcResult2;
+} adc_sync_double_result_t;
+# 95 "mcc_generated_files/adc.h"
+typedef enum
+{
+    pin_red = 0x6,
+    pin_yellow = 0x7,
+    pin_white = 0x8,
+    pin_green = 0x9,
+    channel_Temp = 0x1D,
+    channel_DAC = 0x1E,
+    channel_FVR = 0x1F
+} adc_channel_t;
+# 139 "mcc_generated_files/adc.h"
+void ADC_Initialize(void);
+# 52 "mcc_generated_files/adc.c" 2
+
+# 1 "mcc_generated_files/device_config.h" 1
+# 53 "mcc_generated_files/adc.c" 2
 
 
 
 
-void TMR0_Initialize(void)
+
+
+
+
+void (*ADC_InterruptHandler)(void);
+
+
+
+
+
+void ADC_Initialize(void)
 {
 
 
 
-    OPTION_REG = (uint8_t)((OPTION_REG & 0xC0) | (0xD2 & 0x3F));
+    ADCON1 = 0x90;
 
 
-    TMR0 = 0x06;
+    ADCON2 = 0x00;
 
 
-    timer0ReloadVal= 6;
+    ADRESL = 0x00;
 
 
-    INTCONbits.TMR0IF = 0;
+    ADRESH = 0x00;
 
 
-    INTCONbits.TMR0IE = 1;
-
-
-    TMR0_SetInterruptHandler(TMR0_DefaultInterruptHandler);
-}
-
-uint8_t TMR0_ReadTimer(void)
-{
-    uint8_t readVal;
-
-    readVal = TMR0;
-
-    return readVal;
-}
-
-void TMR0_WriteTimer(uint8_t timerVal)
-{
-
-    TMR0 = timerVal;
-}
-
-void TMR0_Reload(void)
-{
-
-    TMR0 = timer0ReloadVal;
-}
-
-void TMR0_ISR(void)
-{
-
-
-    INTCONbits.TMR0IF = 0;
-
-    TMR0 = timer0ReloadVal;
-
-    if(TMR0_InterruptHandler)
-    {
-        TMR0_InterruptHandler();
-    }
-    if(++heartbeat_counter >= 5000)
-    {
-        TRISCbits.TRISC5 = 0;
-        if(heartbeat_counter >= 5020)
-        {
-            TRISCbits.TRISC5 = 1;
-            heartbeat_counter = 0;
-        }
-    }
-    if(++waitforsleep_count >= 29500)
-    {
-        if(waitforsleep_count == 29500) TRISCbits.TRISC5 = 0;
-        if(waitforsleep_count == 30000)
-        {
-            TRISCbits.TRISC5 = 1;
-            waitforsleep_count = 0;
-            sleep_flag = 1;
-        }
-    }
-    if(++counter >= 10)
-    {
-        if(measurementburst_count < 78)
-        {
-        measurementburst_count++;
-        measurement_flag = 1;
-        }
-        else
-        {
-            writeout_flag = 1;
-        }
-        counter = 0;
-
-    }
-
-}
-
-
-void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
-    TMR0_InterruptHandler = InterruptHandler;
-}
-
-void TMR0_DefaultInterruptHandler(void){
-
+    ADCON0 = 0x01;
 
 }
