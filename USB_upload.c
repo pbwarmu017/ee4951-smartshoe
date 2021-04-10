@@ -118,5 +118,22 @@ void main(void)
                     }
                 }
         }
+      
+      if(buffer[0] == 'c')
+        {
+            if(USBUSARTIsTxTrfReady()) //needed for USB
+                {
+                    if (EEPROM_DONE_READING)
+                    {
+                        putrsUSBUSART("Stop!"); //needed for USB
+                        buffer[0] = 'n'; //needed for USB
+                    }
+                    else
+                    {
+                        UPDATE_MEASARRAY_WITH_NEW_PAGE //needed for USB
+                        putUSBUSART(measarray,32); //needed for USB
+                    }
+                }
+        }
     }
 }
