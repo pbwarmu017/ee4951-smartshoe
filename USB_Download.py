@@ -75,6 +75,8 @@ while(1):
     Yellow = Yellow + AddYellow(s, Yellow)
     Red = Red + AddRed(s, Red)
 
+    ser.write(b'c')
+
 print(Green)
 print(White)
 print(Yellow)
