@@ -196,6 +196,8 @@ CONFIGURED_STATE 32
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 "87 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
 [v _takeMeasurement takeMeasurement `(v  1 e 1 0 ]
+"95
+[v _measurementBurst measurementBurst `(v  1 e 1 0 ]
 "152
 [v _main main `(v  1 e 1 0 ]
 "67 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/adc.c
@@ -308,7 +310,7 @@ CONFIGURED_STATE 32
 ]
 [u S2378 . 1 `S2364 1 . 1 0 `S2373 1 . 1 0 ]
 [v _INTCONbits INTCONbits `VES2378  1 e 1 @11 ]
-[s S2640 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[s S2654 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
 `uc 1 SSP1IF 1 0 :1:3 
@@ -318,8 +320,8 @@ CONFIGURED_STATE 32
 `uc 1 TMR1GIF 1 0 :1:7 
 ]
 "592
-[u S2649 . 1 `S2640 1 . 1 0 ]
-[v _PIR1bits PIR1bits `VES2649  1 e 1 @17 ]
+[u S2663 . 1 `S2654 1 . 1 0 ]
+[v _PIR1bits PIR1bits `VES2663  1 e 1 @17 ]
 [s S331 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ACTIF 1 0 :1:1 
 `uc 1 USBIF 1 0 :1:2 
@@ -447,7 +449,7 @@ CONFIGURED_STATE 32
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @532 ]
 "3435
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @533 ]
-[s S2661 . 1 `uc 1 SSP1M0 1 0 :1:0 
+[s S2675 . 1 `uc 1 SSP1M0 1 0 :1:0 
 `uc 1 SSP1M1 1 0 :1:1 
 `uc 1 SSP1M2 1 0 :1:2 
 `uc 1 SSP1M3 1 0 :1:3 
@@ -457,16 +459,16 @@ CONFIGURED_STATE 32
 `uc 1 WCOL 1 0 :1:7 
 ]
 "3467
-[s S2670 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S2684 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 . 1 0 :1:4 
 `uc 1 SSP1EN 1 0 :1:5 
 `uc 1 SSP1OV 1 0 :1:6 
 ]
-[u S2675 . 1 `S2661 1 . 1 0 `S2670 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES2675  1 e 1 @533 ]
+[u S2689 . 1 `S2675 1 . 1 0 `S2684 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES2689  1 e 1 @533 ]
 "3678
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @534 ]
-[s S2702 . 1 `uc 1 SEN 1 0 :1:0 
+[s S2716 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -476,10 +478,10 @@ CONFIGURED_STATE 32
 `uc 1 GCEN 1 0 :1:7 
 ]
 "3700
-[u S2711 . 1 `S2702 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES2711  1 e 1 @534 ]
+[u S2725 . 1 `S2716 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES2725  1 e 1 @534 ]
 "3755
-[v _SSPCON2bits SSPCON2bits `VES2711  1 e 1 @534 ]
+[v _SSPCON2bits SSPCON2bits `VES2725  1 e 1 @534 ]
 [s S2286 . 1 `uc 1 IOCAP0 1 0 :1:0 
 `uc 1 IOCAP1 1 0 :1:1 
 `uc 1 . 1 0 :1:2 
@@ -845,14 +847,16 @@ CONFIGURED_STATE 32
 [v _main main `(v  1 e 1 0 ]
 {
 "163
-[v main@buffer buffer `[1]uc  1 a 1 22 ]
+[v main@buffer buffer `[1]uc  1 a 1 6 ]
+"153
+[v main@burst_count burst_count `uc  1 s 1 burst_count ]
 "154
 [v main@write_complete write_complete `uc  1 s 1 write_complete ]
 "155
 [v main@currentEepromAddress currentEepromAddress `us  1 s 2 currentEepromAddress ]
 "156
 [v main@transferComplete_flag transferComplete_flag `uc  1 s 1 transferComplete_flag ]
-"259
+"249
 } 0
 "744 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_cdc.c
 [v _putrsUSBUSART putrsUSBUSART `(v  1 e 1 0 ]
@@ -872,11 +876,34 @@ CONFIGURED_STATE 32
 [v putUSBUSART@length length `uc  1 p 1 7 ]
 "605
 } 0
-"503
+"95 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\main.c
+[v _measurementBurst measurementBurst `(v  1 e 1 0 ]
+{
+[v measurementBurst@measurement_type measurement_type `uc  1 a 1 wreg ]
+[v measurementBurst@measurement_type measurement_type `uc  1 a 1 wreg ]
+"96
+[v measurementBurst@measrow measrow `uc  1 s 1 measrow ]
+"97
+[v measurementBurst@meascolumn meascolumn `uc  1 s 1 meascolumn ]
+[v measurementBurst@measurement_type measurement_type `uc  1 a 1 21 ]
+"150
+} 0
+"87
+[v _takeMeasurement takeMeasurement `(v  1 e 1 0 ]
+{
+[v takeMeasurement@channel channel `uc  1 a 1 wreg ]
+[v takeMeasurement@channel channel `uc  1 a 1 wreg ]
+[v takeMeasurement@channel channel `uc  1 a 1 6 ]
+"93
+} 0
+"503 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\mcc_generated_files/usb/usb_device_cdc.c
 [v _getsUSBUSART getsUSBUSART `(uc  1 e 1 0 ]
 {
-[v getsUSBUSART@buffer buffer `*.39uc  1 p 2 16 ]
-[v getsUSBUSART@len len `uc  1 p 1 18 ]
+[v getsUSBUSART@buffer buffer `*.6uc  1 a 1 wreg ]
+[v getsUSBUSART@buffer buffer `*.6uc  1 a 1 wreg ]
+[v getsUSBUSART@len len `uc  1 p 1 16 ]
+"505
+[v getsUSBUSART@buffer buffer `*.6uc  1 a 1 19 ]
 "532
 } 0
 "134 C:\Users\vespi\SynologyDrive\College Courses\Current\Senior Design\ee4951_smartshoe.X\24aa32a.c

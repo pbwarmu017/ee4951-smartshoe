@@ -176,7 +176,7 @@ void main(void) {
             else if (burst_count == 2) {
                 measurementBurst(ARRANGEMENT_PWWPPW);
                 burst_count = 0;
-//            }
+            }
         }
         if (sleep_flag) //prepare for and then command the system to sleep. 
         {

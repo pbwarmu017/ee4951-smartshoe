@@ -5330,11 +5330,30 @@ void main(void) {
     {
         if (measurement_flag) {
             measurement_flag = 0;
-# 181 "main.c"
+            if (burst_count == 0) {
+                measurementBurst(0);
+                burst_count++;
+            }
+            else if (burst_count == 1) {
+                measurementBurst(1);
+                burst_count++;
+            }
+            else if (burst_count == 2) {
+                measurementBurst(3);
+                burst_count = 0;
+            }
         }
         if (sleep_flag)
         {
-# 193 "main.c"
+            sleep_flag = 0;
+
+            IOCAFbits.IOCAF5 = 0;
+            INTCONbits.IOCIE = 1;
+            __asm("SLEEP");
+            INTCONbits.IOCIE = 0;
+
+            IOCAFbits.IOCAF5 = 0;
+            write_complete = 0;
             writeout_flag = 0;
             measurementburst_count = 0;
         }
@@ -5346,7 +5365,6 @@ void main(void) {
 
             eeprom_storeBurstGroup(currentEepromAddress, measarray);
             currentEepromAddress += 0x1A0;
-
             write_complete = 1;
         }
         numBytes = getsUSBUSART(buffer,sizeof(buffer));
@@ -5361,7 +5379,6 @@ void main(void) {
                 eeprom_readPage(currentEepromAddress, measarray);
                 currentEepromAddress += 0x20;
                 putUSBUSART(measarray, 32);
-# 227 "main.c"
             }
         }
         else if(buffer[0] == 'c')
@@ -5382,7 +5399,7 @@ void main(void) {
                     currentEepromAddress = 0;
                 }
                 else putUSBUSART(measarray, 32);
-# 255 "main.c"
+# 245 "main.c"
             }
         }
         CDCTxService();

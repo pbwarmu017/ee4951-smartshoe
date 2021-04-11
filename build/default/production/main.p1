@@ -55,7 +55,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "38
 [; ;./externs.h: 38: extern volatile unsigned char sleep_flag;
 [v _sleep_flag `Vuc ~T0 @X0 0 e ]
-"39
+"4034 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4034:     struct {
+[s S217 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S217 . IOCAF0 IOCAF1 . IOCAF3 IOCAF4 IOCAF5 ]
+"4042
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4042:     struct {
+[s S218 :6 `uc 1 ]
+[n S218 . IOCAF ]
+"4033
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4033: typedef union {
+[u S216 `S217 1 `S218 1 ]
+[n S216 . . . ]
+"4046
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 4046: extern volatile IOCAFbits_t IOCAFbits __attribute__((address(0x393)));
+[v _IOCAFbits `VS216 ~T0 @X0 0 e@915 ]
+"39 ./externs.h
 [; ;./externs.h: 39: extern volatile char writeout_flag;
 [v _writeout_flag `Vuc ~T0 @X0 0 e ]
 "42
@@ -1040,176 +1055,243 @@ Version 4.0 HI-TECH Software Intermediate Code
 "167
 [; ;main.c: 167:             measurement_flag = 0;
 [e = _measurement_flag -> -> 0 `i `uc ]
-"181
-[; ;main.c: 181:         }
-}
-[e :U 407 ]
-"182
-[; ;main.c: 182:         if (sleep_flag)
-[e $ ! != -> _sleep_flag `i -> 0 `i 408  ]
-"183
-[; ;main.c: 183:         {
+"168
+[; ;main.c: 168:             if (burst_count == 0) {
+[e $ ! == -> F3214 `i -> 0 `i 408  ]
 {
-"193
-[; ;main.c: 193:             writeout_flag = 0;
-[e = _writeout_flag -> -> 0 `i `uc ]
-"194
-[; ;main.c: 194:             measurementburst_count = 0;
-[e = _measurementburst_count -> -> 0 `i `s ]
-"195
-[; ;main.c: 195:         }
+"169
+[; ;main.c: 169:                 measurementBurst(0);
+[e ( _measurementBurst (1 -> -> 0 `i `uc ]
+"170
+[; ;main.c: 170:                 burst_count++;
+[e ++ F3214 -> -> 1 `i `uc ]
+"171
+[; ;main.c: 171:             }
 }
+[e $U 409  ]
+"172
+[; ;main.c: 172:             else if (burst_count == 1) {
 [e :U 408 ]
-"196
-[; ;main.c: 196:         if (writeout_flag && !write_complete)
-[e $ ! && != -> _writeout_flag `i -> 0 `i ! != -> F3215 `i -> 0 `i 409  ]
-"197
-[; ;main.c: 197:         {
+[e $ ! == -> F3214 `i -> 1 `i 410  ]
 {
-"199
-[; ;main.c: 199:             writeout_flag = 0;
-[e = _writeout_flag -> -> 0 `i `uc ]
-"200
-[; ;main.c: 200:             if (currentEepromAddress >= 0xFFF) currentEepromAddress = 0;
-[e $ ! >= -> F3216 `ui -> -> 4095 `i `ui 410  ]
-[e = F3216 -> -> 0 `i `us ]
-[e :U 410 ]
-"202
-[; ;main.c: 202:             eeprom_storeBurstGroup(currentEepromAddress, measarray);
-[e ( _eeprom_storeBurstGroup (2 , F3216 &U _measarray ]
-"203
-[; ;main.c: 203:             currentEepromAddress += 0x1A0;
-[e =+ F3216 -> -> 416 `i `us ]
-"205
-[; ;main.c: 205:             write_complete = 1;
-[e = F3215 -> -> 1 `i `uc ]
-"206
-[; ;main.c: 206:         }
+"173
+[; ;main.c: 173:                 measurementBurst(1);
+[e ( _measurementBurst (1 -> -> 1 `i `uc ]
+"174
+[; ;main.c: 174:                 burst_count++;
+[e ++ F3214 -> -> 1 `i `uc ]
+"175
+[; ;main.c: 175:             }
 }
-[e :U 409 ]
-"207
-[; ;main.c: 207:         numBytes = getsUSBUSART(buffer,sizeof(buffer));
-[e = _numBytes ( _getsUSBUSART (2 , &U _buffer -> -> # _buffer `ui `uc ]
-"208
-[; ;main.c: 208:         if(buffer[0] == 'k')
-[e $ ! == -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 107 `ui 411  ]
-"209
-[; ;main.c: 209:         {
+[e $U 411  ]
+"176
+[; ;main.c: 176:             else if (burst_count == 2) {
+[e :U 410 ]
+[e $ ! == -> F3214 `i -> 2 `i 412  ]
 {
-"210
-[; ;main.c: 210:             buffer[0] = 'n';
-[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 110 `ui `uc ]
-"211
-[; ;main.c: 211:             currentEepromAddress = 0;
-[e = F3216 -> -> 0 `i `us ]
-"212
-[; ;main.c: 212:             usbInit_flag = 1;
-[e = _usbInit_flag -> -> 1 `i `uc ]
-"213
-[; ;main.c: 213:             transferComplete_flag = 0;
-[e = F3217 -> -> 0 `i `uc ]
-"214
-[; ;main.c: 214:             if((cdc_trf_state == 0))
-[e $ ! == -> _cdc_trf_state `i -> 0 `i 412  ]
-"215
-[; ;main.c: 215:             {
-{
-"216
-[; ;main.c: 216:                 eeprom_readPage(currentEepromAddress, measarray);
-[e ( _eeprom_readPage (2 , F3216 &U _measarray ]
-"217
-[; ;main.c: 217:                 currentEepromAddress += 0x20;
-[e =+ F3216 -> -> 32 `i `us ]
-"218
-[; ;main.c: 218:                 putUSBUSART(measarray, 32);
-[e ( _putUSBUSART (2 , -> &U _measarray `*uc -> -> 32 `i `uc ]
-"227
-[; ;main.c: 227:             }
+"177
+[; ;main.c: 177:                 measurementBurst(3);
+[e ( _measurementBurst (1 -> -> 3 `i `uc ]
+"178
+[; ;main.c: 178:                 burst_count = 0;
+[e = F3214 -> -> 0 `i `uc ]
+"179
+[; ;main.c: 179:             }
 }
 [e :U 412 ]
-"228
-[; ;main.c: 228:         }
-}
-[e $U 413  ]
-"229
-[; ;main.c: 229:         else if(buffer[0] == 'c')
 [e :U 411 ]
-[e $ ! == -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 99 `ui 414  ]
-"230
-[; ;main.c: 230:         {
-{
-"231
-[; ;main.c: 231:             buffer[0] = 'n';
-[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 110 `ui `uc ]
-"232
-[; ;main.c: 232:             if (transferComplete_flag)
-[e $ ! != -> F3217 `i -> 0 `i 415  ]
-"233
-[; ;main.c: 233:             {
-{
-"234
-[; ;main.c: 234:                 putrsUSBUSART("Stop!");
-[e ( _putrsUSBUSART (1 :s 1C ]
-"235
-[; ;main.c: 235:                 usbInit_flag = 0;
-[e = _usbInit_flag -> -> 0 `i `uc ]
-"236
-[; ;main.c: 236:             }
+[e :U 409 ]
+"180
+[; ;main.c: 180:         }
 }
-[e $U 416  ]
-"237
-[; ;main.c: 237:             else
-[e :U 415 ]
-"238
-[; ;main.c: 238:             {
+[e :U 407 ]
+"181
+[; ;main.c: 181:         if (sleep_flag)
+[e $ ! != -> _sleep_flag `i -> 0 `i 413  ]
+"182
+[; ;main.c: 182:         {
 {
-"239
-[; ;main.c: 239:                 eeprom_readPage(currentEepromAddress, measarray);
-[e ( _eeprom_readPage (2 , F3216 &U _measarray ]
-"240
-[; ;main.c: 240:                 currentEepromAddress += 0x20;
-[e =+ F3216 -> -> 32 `i `us ]
-"241
-[; ;main.c: 241:                 if(currentEepromAddress >= 0xFFF)
-[e $ ! >= -> F3216 `ui -> -> 4095 `i `ui 417  ]
-"242
-[; ;main.c: 242:                 {
+"183
+[; ;main.c: 183:             sleep_flag = 0;
+[e = _sleep_flag -> -> 0 `i `uc ]
+"185
+[; ;main.c: 185:             IOCAFbits.IOCAF5 = 0;
+[e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
+"186
+[; ;main.c: 186:             INTCONbits.IOCIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"187
+[; ;main.c: 187:             __asm("SLEEP");
+[; <" SLEEP ;# ">
+"188
+[; ;main.c: 188:             INTCONbits.IOCIE = 0;
+[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
+"190
+[; ;main.c: 190:             IOCAFbits.IOCAF5 = 0;
+[e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
+"191
+[; ;main.c: 191:             write_complete = 0;
+[e = F3215 -> -> 0 `i `uc ]
+"192
+[; ;main.c: 192:             writeout_flag = 0;
+[e = _writeout_flag -> -> 0 `i `uc ]
+"193
+[; ;main.c: 193:             measurementburst_count = 0;
+[e = _measurementburst_count -> -> 0 `i `s ]
+"194
+[; ;main.c: 194:         }
+}
+[e :U 413 ]
+"195
+[; ;main.c: 195:         if (writeout_flag && !write_complete)
+[e $ ! && != -> _writeout_flag `i -> 0 `i ! != -> F3215 `i -> 0 `i 414  ]
+"196
+[; ;main.c: 196:         {
 {
-"243
-[; ;main.c: 243:                     transferComplete_flag = 1;
-[e = F3217 -> -> 1 `i `uc ]
-"244
-[; ;main.c: 244:                     currentEepromAddress = 0;
+"198
+[; ;main.c: 198:             writeout_flag = 0;
+[e = _writeout_flag -> -> 0 `i `uc ]
+"199
+[; ;main.c: 199:             if (currentEepromAddress >= 0xFFF) currentEepromAddress = 0;
+[e $ ! >= -> F3216 `ui -> -> 4095 `i `ui 415  ]
 [e = F3216 -> -> 0 `i `us ]
-"245
-[; ;main.c: 245:                 }
-}
-[e $U 418  ]
-"246
-[; ;main.c: 246:                 else putUSBUSART(measarray, 32);
-[e :U 417 ]
-[e ( _putUSBUSART (2 , -> &U _measarray `*uc -> -> 32 `i `uc ]
-[e :U 418 ]
-"255
-[; ;main.c: 255:             }
-}
-[e :U 416 ]
-"256
-[; ;main.c: 256:         }
+[e :U 415 ]
+"201
+[; ;main.c: 201:             eeprom_storeBurstGroup(currentEepromAddress, measarray);
+[e ( _eeprom_storeBurstGroup (2 , F3216 &U _measarray ]
+"202
+[; ;main.c: 202:             currentEepromAddress += 0x1A0;
+[e =+ F3216 -> -> 416 `i `us ]
+"203
+[; ;main.c: 203:             write_complete = 1;
+[e = F3215 -> -> 1 `i `uc ]
+"204
+[; ;main.c: 204:         }
 }
 [e :U 414 ]
-[e :U 413 ]
-"257
-[; ;main.c: 257:         CDCTxService();
+"205
+[; ;main.c: 205:         numBytes = getsUSBUSART(buffer,sizeof(buffer));
+[e = _numBytes ( _getsUSBUSART (2 , &U _buffer -> -> # _buffer `ui `uc ]
+"206
+[; ;main.c: 206:         if(buffer[0] == 'k')
+[e $ ! == -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 107 `ui 416  ]
+"207
+[; ;main.c: 207:         {
+{
+"208
+[; ;main.c: 208:             buffer[0] = 'n';
+[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 110 `ui `uc ]
+"209
+[; ;main.c: 209:             currentEepromAddress = 0;
+[e = F3216 -> -> 0 `i `us ]
+"210
+[; ;main.c: 210:             usbInit_flag = 1;
+[e = _usbInit_flag -> -> 1 `i `uc ]
+"211
+[; ;main.c: 211:             transferComplete_flag = 0;
+[e = F3217 -> -> 0 `i `uc ]
+"212
+[; ;main.c: 212:             if((cdc_trf_state == 0))
+[e $ ! == -> _cdc_trf_state `i -> 0 `i 417  ]
+"213
+[; ;main.c: 213:             {
+{
+"214
+[; ;main.c: 214:                 eeprom_readPage(currentEepromAddress, measarray);
+[e ( _eeprom_readPage (2 , F3216 &U _measarray ]
+"215
+[; ;main.c: 215:                 currentEepromAddress += 0x20;
+[e =+ F3216 -> -> 32 `i `us ]
+"216
+[; ;main.c: 216:                 putUSBUSART(measarray, 32);
+[e ( _putUSBUSART (2 , -> &U _measarray `*uc -> -> 32 `i `uc ]
+"217
+[; ;main.c: 217:             }
+}
+[e :U 417 ]
+"218
+[; ;main.c: 218:         }
+}
+[e $U 418  ]
+"219
+[; ;main.c: 219:         else if(buffer[0] == 'c')
+[e :U 416 ]
+[e $ ! == -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 99 `ui 419  ]
+"220
+[; ;main.c: 220:         {
+{
+"221
+[; ;main.c: 221:             buffer[0] = 'n';
+[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 110 `ui `uc ]
+"222
+[; ;main.c: 222:             if (transferComplete_flag)
+[e $ ! != -> F3217 `i -> 0 `i 420  ]
+"223
+[; ;main.c: 223:             {
+{
+"224
+[; ;main.c: 224:                 putrsUSBUSART("Stop!");
+[e ( _putrsUSBUSART (1 :s 1C ]
+"225
+[; ;main.c: 225:                 usbInit_flag = 0;
+[e = _usbInit_flag -> -> 0 `i `uc ]
+"226
+[; ;main.c: 226:             }
+}
+[e $U 421  ]
+"227
+[; ;main.c: 227:             else
+[e :U 420 ]
+"228
+[; ;main.c: 228:             {
+{
+"229
+[; ;main.c: 229:                 eeprom_readPage(currentEepromAddress, measarray);
+[e ( _eeprom_readPage (2 , F3216 &U _measarray ]
+"230
+[; ;main.c: 230:                 currentEepromAddress += 0x20;
+[e =+ F3216 -> -> 32 `i `us ]
+"231
+[; ;main.c: 231:                 if(currentEepromAddress >= 0xFFF)
+[e $ ! >= -> F3216 `ui -> -> 4095 `i `ui 422  ]
+"232
+[; ;main.c: 232:                 {
+{
+"233
+[; ;main.c: 233:                     transferComplete_flag = 1;
+[e = F3217 -> -> 1 `i `uc ]
+"234
+[; ;main.c: 234:                     currentEepromAddress = 0;
+[e = F3216 -> -> 0 `i `us ]
+"235
+[; ;main.c: 235:                 }
+}
+[e $U 423  ]
+"236
+[; ;main.c: 236:                 else putUSBUSART(measarray, 32);
+[e :U 422 ]
+[e ( _putUSBUSART (2 , -> &U _measarray `*uc -> -> 32 `i `uc ]
+[e :U 423 ]
+"245
+[; ;main.c: 245:             }
+}
+[e :U 421 ]
+"246
+[; ;main.c: 246:         }
+}
+[e :U 419 ]
+[e :U 418 ]
+"247
+[; ;main.c: 247:         CDCTxService();
 [e ( _CDCTxService ..  ]
-"258
-[; ;main.c: 258:     }
+"248
+[; ;main.c: 248:     }
 }
 [e :U 404 ]
 [e $U 405  ]
 [e :U 406 ]
-"259
-[; ;main.c: 259: }
+"249
+[; ;main.c: 249: }
 [e :UE 403 ]
 }
 [a 1C 83 116 111 112 33 0 ]
