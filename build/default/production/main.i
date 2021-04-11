@@ -5218,7 +5218,7 @@ void eeprom_readByte(unsigned short address, unsigned char *databyte);
 void eeprom_readMem(unsigned char *databyte);
 # 46 "main.c" 2
 # 56 "main.c"
-static unsigned short measarray[26][8] = {
+unsigned short measarray[26][8] = {
     {0, 1, 2, 3, 4, 5, 6, 7},
     {8, 9, 10, 11, 12, 13, 14, 15},
     {16, 17, 18, 19, 20, 21, 22, 23},
@@ -5247,16 +5247,6 @@ static unsigned short measarray[26][8] = {
     {200, 201, 202, 203, 204, 205, 206, 207}};
 
 
-static unsigned char byte;
-static unsigned char row = 0;
-static unsigned char column = 0;
-static unsigned char burst_count = 0;
-static unsigned char write_complete = 0;
-static unsigned char second_round = 0;
-static unsigned short currentEepromAddress = 0;
-static unsigned char transferComplete_flag = 0;
-
-
 
 
 void takeMeasurement(unsigned char channel) {
@@ -5268,63 +5258,70 @@ void takeMeasurement(unsigned char channel) {
 }
 
 void measurementBurst(unsigned char measurement_type){
+    static unsigned char measrow = 0;
+    static unsigned char meascolumn = 0;
     if (measurement_type == 0) {
         takeMeasurement(9);
-        measarray[row][column] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5);
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5);
         takeMeasurement(8);
-        measarray[row][column] |= (unsigned short)(ADRESH << 3);
-        measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3);
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5);
 
-        measarray[row][column] = (unsigned short)(ADRESL << 10);
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10);
         takeMeasurement(7);
-        measarray[row][column++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
 
         takeMeasurement(6);
-        measarray[row][column] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5);
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5);
 
     }
     if (measurement_type == 1) {
         takeMeasurement(9);
-        measarray[row][column] |= (unsigned short)(ADRESH << 3);
-        measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3);
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5);
 
-        measarray[row][column] = (unsigned short)(ADRESL << 10);
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10);
         takeMeasurement(8);
-        measarray[row][column++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
 
         takeMeasurement(7);
-        measarray[row][column] = (unsigned short)(ADRESH << 13);
-        measarray[row][column] |= (unsigned short)(ADRESL << 5);
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13);
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESL << 5);
         takeMeasurement(6);
-        measarray[row][column] |= (unsigned short)(ADRESH << 3);
-        measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3);
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5);
 
     }
     if (measurement_type == 3) {
-        measarray[row][column] = (unsigned short)(ADRESL << 10);
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10);
         takeMeasurement(9);
-        measarray[row][column] |= (unsigned short)(ADRESH << 8);
-        measarray[row][column++] |= (unsigned short)(ADRESL);
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 8);
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL);
 
         takeMeasurement(8);
-        measarray[row][column] = (unsigned short)(ADRESH << 13);
-        measarray[row][column] = (unsigned short)(ADRESL << 5);
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13);
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 5);
 
         takeMeasurement(7);
-        measarray[row][column] |= (unsigned short)(ADRESH << 3);
-        measarray[row][column++] |= (unsigned short)(ADRESL >> 5);
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3);
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5);
 
-        measarray[row][column] = (unsigned short)(ADRESL << 10);
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10);
         takeMeasurement(6);
-        measarray[row++][column] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
-        column = 0;
+        measarray[measrow++][meascolumn] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+        meascolumn = 0;
         ADCON0bits.ADON = 0;
     }
 }
 
 void main(void) {
+    static unsigned char burst_count = 0;
+    static unsigned char write_complete = 0;
+    static unsigned short currentEepromAddress = 0;
+    static unsigned char transferComplete_flag = 0;
     SYSTEM_Initialize();
     I2C_Initialize();
+    CDCInitEP();
     (INTCONbits.GIE = 1);
     (INTCONbits.PEIE = 1);
     uint8_t numBytes;
@@ -5333,19 +5330,11 @@ void main(void) {
     {
         if (measurement_flag) {
             measurement_flag = 0;
-# 184 "main.c"
+# 181 "main.c"
         }
         if (sleep_flag)
         {
-            sleep_flag = 0;
-
-            IOCAFbits.IOCAF5 = 0;
-            INTCONbits.IOCIE = 1;
-            __asm("SLEEP");
-            INTCONbits.IOCIE = 0;
-
-            IOCAFbits.IOCAF5 = 0;
-            write_complete = 0;
+# 193 "main.c"
             writeout_flag = 0;
             measurementburst_count = 0;
         }
@@ -5357,7 +5346,7 @@ void main(void) {
 
             eeprom_storeBurstGroup(currentEepromAddress, measarray);
             currentEepromAddress += 0x1A0;
-            eeprom_readMem(&byte);
+
             write_complete = 1;
         }
         numBytes = getsUSBUSART(buffer,sizeof(buffer));
@@ -5368,19 +5357,11 @@ void main(void) {
             usbInit_flag = 1;
             transferComplete_flag = 0;
             if((cdc_trf_state == 0))
-                {
+            {
                 eeprom_readPage(currentEepromAddress, measarray);
                 currentEepromAddress += 0x20;
-                for(unsigned char row = 0; row < 2; row++)
-                {
-                    for(unsigned char column = 0; column < 8; column++)
-                    {
-                        unsigned char temp1 = (unsigned char)(measarray[row][column] >> 8);
-                        unsigned char temp2 = (unsigned char)(measarray[row][column]);
-                        unsigned char temp[2] = {temp1, temp2};
-                        putUSBUSART(temp,2);
-                    }
-                }
+                putUSBUSART(measarray, 32);
+# 227 "main.c"
             }
         }
         else if(buffer[0] == 'c')
@@ -5400,16 +5381,8 @@ void main(void) {
                     transferComplete_flag = 1;
                     currentEepromAddress = 0;
                 }
-                for(unsigned char row = 0; row < 2; row++)
-                {
-                    for(unsigned char column = 0; column < 8; column++)
-                    {
-                        unsigned char temp1 = (unsigned char)(measarray[row][column] >> 8);
-                        unsigned char temp2 = (unsigned char)(measarray[row][column]);
-                        unsigned char temp[2] = {temp1, temp2};
-                        putUSBUSART(temp,2);
-                    }
-                }
+                else putUSBUSART(measarray, 32);
+# 255 "main.c"
             }
         }
         CDCTxService();

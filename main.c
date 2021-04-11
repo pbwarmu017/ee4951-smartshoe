@@ -53,7 +53,7 @@
 #define ARRANGEMENT_PPWWPP 1 //Part-Part-Whole-Whole-Part-Part
 #define ARRANGEMENT_PWWPPW 3 //Whole-Whole-Part-Part-Whole
 
-static unsigned short measarray[26][8] = {
+unsigned short measarray[26][8] = {
     {0, 1, 2, 3, 4, 5, 6, 7},
     {8, 9, 10, 11, 12, 13, 14, 15},
     {16, 17, 18, 19, 20, 21, 22, 23},
@@ -81,16 +81,6 @@ static unsigned short measarray[26][8] = {
     {192, 193, 194, 195, 196, 197, 198, 199},
     {200, 201, 202, 203, 204, 205, 206, 207}};
 
-//unsigned char data[32] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31};
-static unsigned char byte;
-static unsigned char row = 0;
-static unsigned char column = 0;
-static unsigned char burst_count = 0;
-static unsigned char write_complete = 0;
-static unsigned char second_round = 0;
-static unsigned short currentEepromAddress = 0;
-static unsigned char transferComplete_flag = 0;
-
 /*
                          Main application
  */
@@ -103,63 +93,70 @@ void takeMeasurement(unsigned char channel) {
 }
 
 void measurementBurst(unsigned char measurement_type){
+    static unsigned char measrow = 0;
+    static unsigned char meascolumn = 0;
     if (measurement_type == ARRANGEMENT_WPPWW) {
         takeMeasurement(GREENWIRE);
-        measarray[row][column] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5); // XGGGGGGG GGG-----
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5); // XGGGGGGG GGG-----
         takeMeasurement(WHITEWIRE);
-        measarray[row][column] |= (unsigned short)(ADRESH << 3); // xggggggg gggWW---
-        measarray[row][column++] |= (unsigned short)(ADRESL >> 5); // xggggggg gggwwWWW
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3); // xggggggg gggWW---
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5); // xggggggg gggwwWWW
         //1 short full
-        measarray[row][column] = (unsigned short)(ADRESL << 10); // XWWWWW-- --------
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10); // XWWWWW-- --------
         takeMeasurement(YELLOWWIRE);
-        measarray[row][column++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xwwwwwYY YYYYYYYY
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xwwwwwYY YYYYYYYY
         //2 short full
         takeMeasurement(REDWIRE);
-        measarray[row][column] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5); // XRRRRRRR RRR-----
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5); // XRRRRRRR RRR-----
 
     }
     if (measurement_type == ARRANGEMENT_PPWWPP) {
         takeMeasurement(GREENWIRE);
-        measarray[row][column] |= (unsigned short)(ADRESH << 3); // xrrrrrrr rrrGG---
-        measarray[row][column++] |= (unsigned short)(ADRESL >> 5); // xrrrrrrr rrrggGGG
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3); // xrrrrrrr rrrGG---
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5); // xrrrrrrr rrrggGGG
         //3 short full
-        measarray[row][column] = (unsigned short)(ADRESL << 10); // XGGGGG-- --------
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10); // XGGGGG-- --------
         takeMeasurement(WHITEWIRE);
-        measarray[row][column++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xgggggWW WWWWWWWW
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xgggggWW WWWWWWWW
         //4 short full
         takeMeasurement(YELLOWWIRE);
-        measarray[row][column] = (unsigned short)(ADRESH << 13); // XYY----- --------
-        measarray[row][column] |= (unsigned short)(ADRESL << 5); // xyyYYYYY YYY-----
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13); // XYY----- --------
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESL << 5); // xyyYYYYY YYY-----
         takeMeasurement(REDWIRE);
-        measarray[row][column] |= (unsigned short)(ADRESH << 3); // xyyyyyyy yyyRR---
-        measarray[row][column++] |= (unsigned short)(ADRESL >> 5); // xyyyyyyy yyyrrRRR
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3); // xyyyyyyy yyyRR---
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5); // xyyyyyyy yyyrrRRR
         //5 short full      
     }
     if (measurement_type == ARRANGEMENT_PWWPPW) {
-        measarray[row][column] = (unsigned short)(ADRESL << 10); // XRRRRR-- --------
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10); // XRRRRR-- --------
         takeMeasurement(GREENWIRE);
-        measarray[row][column] |= (unsigned short)(ADRESH << 8); // xrrrrrGG --------
-        measarray[row][column++] |= (unsigned short)(ADRESL); // xrrrrrgg GGGGGGGG
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 8); // xrrrrrGG --------
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL); // xrrrrrgg GGGGGGGG
         //6 short full
         takeMeasurement(WHITEWIRE);
-        measarray[row][column] = (unsigned short)(ADRESH << 13); // xWW----- --------
-        measarray[row][column] = (unsigned short)(ADRESL << 5); // xwwWWWWW WWW-----
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13); // xWW----- --------
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 5); // xwwWWWWW WWW-----
 
         takeMeasurement(YELLOWWIRE);
-        measarray[row][column] |= (unsigned short)(ADRESH << 3); // xwwWWWWW WWWYY---
-        measarray[row][column++] |= (unsigned short)(ADRESL >> 5); // xwwWwwww wwwyyYYY
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3); // xwwWWWWW WWWYY---
+        measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5); // xwwWwwww wwwyyYYY
         //7 short full
-        measarray[row][column] = (unsigned short)(ADRESL << 10); // XYYYYY-- --------
+        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10); // XYYYYY-- --------
         takeMeasurement(REDWIRE);
-        measarray[row++][column] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xyyyyyRR RRRRRRRR
-        column = 0;
+        measarray[measrow++][meascolumn] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xyyyyyRR RRRRRRRR
+        meascolumn = 0;
         ADCON0bits.ADON = 0;
     }
 }
 
 void main(void) {
+    static unsigned char burst_count = 0;
+    static unsigned char write_complete = 0;
+    static unsigned short currentEepromAddress = 0;
+    static unsigned char transferComplete_flag = 0;
     SYSTEM_Initialize();
     I2C_Initialize();
+    CDCInitEP();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
     uint8_t numBytes; //needed for USB
@@ -168,18 +165,17 @@ void main(void) {
     {        
         if (measurement_flag) {
             measurement_flag = 0;
-            //commenting this out so that data from the array above is written to EEPROM.. it is a known pattern that can be checked on the recieving end
-//            if (burst_count == 0) {
-//                measurementBurst(ARRANGEMENT_WPPWW);
-//                burst_count++;
-//            }
-//            else if (burst_count == 1) {
-//                measurementBurst(ARRANGEMENT_PPWWPP);
-//                burst_count++;
-//            }
-//            else if (burst_count == 2) {
-//                measurementBurst(ARRANGEMENT_PWWPPW);
-//                burst_count = 0;
+            if (burst_count == 0) {
+                measurementBurst(ARRANGEMENT_WPPWW);
+                burst_count++;
+            }
+            else if (burst_count == 1) {
+                measurementBurst(ARRANGEMENT_PPWWPP);
+                burst_count++;
+            }
+            else if (burst_count == 2) {
+                measurementBurst(ARRANGEMENT_PWWPPW);
+                burst_count = 0;
 //            }
         }
         if (sleep_flag) //prepare for and then command the system to sleep. 
@@ -204,7 +200,6 @@ void main(void) {
 
             eeprom_storeBurstGroup(currentEepromAddress, measarray);
             currentEepromAddress += 0x1A0; //increment by 13 pages.
-            eeprom_readMem(&byte);
             write_complete = 1;
         }
         numBytes = getsUSBUSART(buffer,sizeof(buffer)); //needed for USB
@@ -215,19 +210,10 @@ void main(void) {
             usbInit_flag = 1; //stop some of the timer flags from being set while we write out the data
             transferComplete_flag = 0;
             if(USBUSARTIsTxTrfReady()) //needed for USB
-                {
+            {
                 eeprom_readPage(currentEepromAddress, measarray);//needed for USB
                 currentEepromAddress += 0x20;
-                for(unsigned char row = 0; row < 2; row++)
-                {
-                    for(unsigned char column = 0; column < 8; column++)
-                    {
-                        unsigned char temp1 = (unsigned char)(measarray[row][column] >> 8);
-                        unsigned char temp2 = (unsigned char)(measarray[row][column]);
-                        unsigned char temp[2] = {temp1, temp2};
-                        putUSBUSART(temp,2); //needed for USB
-                    }
-                }  
+                putUSBUSART(measarray, 32);
             }
         }
         else if(buffer[0] == 'c') 
@@ -246,17 +232,16 @@ void main(void) {
                 {
                     transferComplete_flag = 1;
                     currentEepromAddress = 0;
-                }                
-                for(unsigned char row = 0; row < 2; row++)
-                {
-                    for(unsigned char column = 0; column < 8; column++)
-                    {
-                        unsigned char temp1 = (unsigned char)(measarray[row][column] >> 8);
-                        unsigned char temp2 = (unsigned char)(measarray[row][column]);
-                        unsigned char temp[2] = {temp1, temp2};
-                        putUSBUSART(temp,2); //needed for USB
-                    }
-                }  
+                }
+                else putUSBUSART(measarray, 32);
+//                for(unsigned char PUTUSBUSART_ROW_C = 0; PUTUSBUSART_ROW_C < 2; PUTUSBUSART_ROW_C++)
+//                {
+//                    for(unsigned char PUTUSBUSART_COL_C = 0; PUTUSBUSART_COL_C < 8; PUTUSBUSART_COL_C++)
+//                    {
+//                        unsigned short testvar2 = measarray[PUTUSBUSART_ROW_C][PUTUSBUSART_COL_C];
+//                        putUSBUSART(testvar2,2); //needed for USB
+//                    }
+//                }  
             }
         }
         CDCTxService(); //needed for USB
