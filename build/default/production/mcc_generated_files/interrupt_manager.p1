@@ -41,6 +41,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "649
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 649: extern volatile PIR2bits_t PIR2bits __attribute__((address(0x012)));
 [v _PIR2bits `VS41 ~T0 @X0 0 e@18 ]
+"37 mcc_generated_files/../externs.h
+[; ;mcc_generated_files/../externs.h: 37: extern volatile unsigned short waitforsleep_count;
+[v _waitforsleep_count `Vus ~T0 @X0 0 e ]
 "303 mcc_generated_files/usb/usb_device.h
 [; ;mcc_generated_files/usb/usb_device.h: 303: void USBDeviceTasks(void);
 [v _USBDeviceTasks `(v ~T0 @X0 0 ef ]
@@ -477,73 +480,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 6106: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
 [v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"52 mcc_generated_files/interrupt_manager.c
-[; ;mcc_generated_files/interrupt_manager.c: 52: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
+"53 mcc_generated_files/interrupt_manager.c
+[; ;mcc_generated_files/interrupt_manager.c: 53: void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 [v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"53
-[; ;mcc_generated_files/interrupt_manager.c: 53: {
+"54
+[; ;mcc_generated_files/interrupt_manager.c: 54: {
 {
 [e :U _INTERRUPT_InterruptManager ]
 [f ]
-"55
-[; ;mcc_generated_files/interrupt_manager.c: 55:     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
-[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 396  ]
 "56
-[; ;mcc_generated_files/interrupt_manager.c: 56:     {
-{
+[; ;mcc_generated_files/interrupt_manager.c: 56:     if(INTCONbits.TMR0IE == 1 && INTCONbits.TMR0IF == 1)
+[e $ ! && == -> . . _INTCONbits 0 5 `i -> 1 `i == -> . . _INTCONbits 0 2 `i -> 1 `i 396  ]
 "57
-[; ;mcc_generated_files/interrupt_manager.c: 57:         TMR0_ISR();
-[e ( _TMR0_ISR ..  ]
+[; ;mcc_generated_files/interrupt_manager.c: 57:     {
+{
 "58
-[; ;mcc_generated_files/interrupt_manager.c: 58:     }
+[; ;mcc_generated_files/interrupt_manager.c: 58:         TMR0_ISR();
+[e ( _TMR0_ISR ..  ]
+"59
+[; ;mcc_generated_files/interrupt_manager.c: 59:     }
 }
 [e $U 397  ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59:     else if(INTCONbits.PEIE == 1)
+"60
+[; ;mcc_generated_files/interrupt_manager.c: 60:     else if(INTCONbits.PEIE == 1)
 [e :U 396 ]
 [e $ ! == -> . . _INTCONbits 0 6 `i -> 1 `i 398  ]
-"60
-[; ;mcc_generated_files/interrupt_manager.c: 60:     {
-{
 "61
-[; ;mcc_generated_files/interrupt_manager.c: 61:         if(PIE2bits.USBIE == 1 && PIR2bits.USBIF == 1)
-[e $ ! && == -> . . _PIE2bits 0 2 `i -> 1 `i == -> . . _PIR2bits 0 2 `i -> 1 `i 399  ]
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:         {
+[; ;mcc_generated_files/interrupt_manager.c: 61:     {
 {
+"62
+[; ;mcc_generated_files/interrupt_manager.c: 62:         if(PIE2bits.USBIE == 1 && PIR2bits.USBIF == 1)
+[e $ ! && == -> . . _PIE2bits 0 2 `i -> 1 `i == -> . . _PIR2bits 0 2 `i -> 1 `i 399  ]
 "63
-[; ;mcc_generated_files/interrupt_manager.c: 63:             USBDeviceTasks();
-[e ( _USBDeviceTasks ..  ]
+[; ;mcc_generated_files/interrupt_manager.c: 63:         {
+{
 "64
-[; ;mcc_generated_files/interrupt_manager.c: 64:         }
+[; ;mcc_generated_files/interrupt_manager.c: 64:             waitforsleep_count = 0;
+[e = _waitforsleep_count -> -> 0 `i `us ]
+"65
+[; ;mcc_generated_files/interrupt_manager.c: 65:             USBDeviceTasks();
+[e ( _USBDeviceTasks ..  ]
+"66
+[; ;mcc_generated_files/interrupt_manager.c: 66:         }
 }
 [e $U 400  ]
-"65
-[; ;mcc_generated_files/interrupt_manager.c: 65:         else
+"67
+[; ;mcc_generated_files/interrupt_manager.c: 67:         else
 [e :U 399 ]
-"66
-[; ;mcc_generated_files/interrupt_manager.c: 66:         {
-{
 "68
-[; ;mcc_generated_files/interrupt_manager.c: 68:         }
+[; ;mcc_generated_files/interrupt_manager.c: 68:         {
+{
+"70
+[; ;mcc_generated_files/interrupt_manager.c: 70:         }
 }
 [e :U 400 ]
-"69
-[; ;mcc_generated_files/interrupt_manager.c: 69:     }
+"71
+[; ;mcc_generated_files/interrupt_manager.c: 71:     }
 }
 [e $U 401  ]
-"70
-[; ;mcc_generated_files/interrupt_manager.c: 70:     else
+"72
+[; ;mcc_generated_files/interrupt_manager.c: 72:     else
 [e :U 398 ]
-"71
-[; ;mcc_generated_files/interrupt_manager.c: 71:     {
-{
 "73
-[; ;mcc_generated_files/interrupt_manager.c: 73:     }
+[; ;mcc_generated_files/interrupt_manager.c: 73:     {
+{
+"75
+[; ;mcc_generated_files/interrupt_manager.c: 75:     }
 }
 [e :U 401 ]
 [e :U 397 ]
-"74
-[; ;mcc_generated_files/interrupt_manager.c: 74: }
+"76
+[; ;mcc_generated_files/interrupt_manager.c: 76: }
 [e :UE 395 ]
 }

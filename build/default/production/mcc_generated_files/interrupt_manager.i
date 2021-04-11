@@ -5189,6 +5189,18 @@ void OSCILLATOR_Initialize(void);
 void WDT_Initialize(void);
 # 50 "mcc_generated_files/interrupt_manager.c" 2
 
+# 1 "mcc_generated_files/../externs.h" 1
+# 37 "mcc_generated_files/../externs.h"
+extern volatile unsigned short waitforsleep_count;
+extern volatile unsigned char sleep_flag;
+extern volatile char writeout_flag;
+extern volatile char measurement_flag;
+extern volatile char usbInit_flag;
+extern volatile char usbTransfer_flag;
+extern short measurementburst_count;
+extern short counter;
+# 51 "mcc_generated_files/interrupt_manager.c" 2
+
 
 void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
 {
@@ -5201,6 +5213,7 @@ void __attribute__((picinterrupt(("")))) INTERRUPT_InterruptManager (void)
     {
         if(PIE2bits.USBIE == 1 && PIR2bits.USBIF == 1)
         {
+            waitforsleep_count = 0;
             USBDeviceTasks();
         }
         else

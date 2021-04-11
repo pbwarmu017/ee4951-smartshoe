@@ -164,21 +164,21 @@ void main(void) {
     uint8_t buffer[1]; //needed for USB
     while (1)
     {        
-//        if (measurement_flag) {
-//            measurement_flag = 0;
-//            if (burst_count == 0) {
-//                measurementBurst(ARRANGEMENT_WPPWW);
-//                burst_count++;
-//            }
-//            else if (burst_count == 1) {
-//                measurementBurst(ARRANGEMENT_PPWWPP);
-//                burst_count++;
-//            }
-//            else if (burst_count == 2) {
-//                measurementBurst(ARRANGEMENT_PWWPPW);
-//                burst_count = 0;
-//            }
-//        }
+        if (measurement_flag) {
+            measurement_flag = 0;
+            if (burst_count == 0) {
+                measurementBurst(ARRANGEMENT_WPPWW);
+                burst_count++;
+            }
+            else if (burst_count == 1) {
+                measurementBurst(ARRANGEMENT_PPWWPP);
+                burst_count++;
+            }
+            else if (burst_count == 2) {
+                measurementBurst(ARRANGEMENT_PWWPPW);
+                burst_count = 0;
+            }
+        }
         if (sleep_flag) //prepare for and then command the system to sleep. 
         {
             sleep_flag = 0;

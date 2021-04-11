@@ -51,7 +51,7 @@
 #include <xc.h>
 #include "tmr0.h"
 volatile short counter = 0;
-volatile short waitforsleep_count = 0;
+volatile unsigned short waitforsleep_count = 0;
 volatile char sleep_flag = 0;
 volatile char writeout_flag = 0;
 unsigned short heartbeat_counter = 0;
@@ -126,25 +126,19 @@ void TMR0_ISR(void)
     }
     if(!usbInit_flag)
     {
-        if(++heartbeat_counter >= 5000)
+        if(++heartbeat_counter == 5000) TRISCbits.TRISC5 = 0; //turn on the LED
+        if(heartbeat_counter == 5020) //turn on the led for 20 ms every 5 second.
         {
-            TRISCbits.TRISC5 = 0; //turn on the LED
-            if(heartbeat_counter >= 5020) //turn on the led for 20 ms every 5 second.
-            {
-                TRISCbits.TRISC5 = 1; //turn off the LED
-                heartbeat_counter = 0;
-            }
+            TRISCbits.TRISC5 = 1; //turn off the LED
+            heartbeat_counter = 0;
         }
-        if(++waitforsleep_count >= 29500)
+        if(++waitforsleep_count == 29500) TRISCbits.TRISC5 = 0;
+        if(waitforsleep_count == 30000)
         {
-            if(waitforsleep_count == 29500) TRISCbits.TRISC5 = 0; //turn on the LED
-            if(waitforsleep_count == 30000)
-            {
-                TRISCbits.TRISC5 = 1; //turn off the LED
-                waitforsleep_count = 0;
-                sleep_flag = 1;
-            }   
-        }
+            TRISCbits.TRISC5 = 1; //turn off the LED
+            waitforsleep_count = 0;
+            sleep_flag = 1;
+        }   
         if(++counter >= 10) //10 milliseconds have passed
         {
             if(measurementburst_count < 78) //6 measurement bursts per page, 13 pages
@@ -163,14 +157,11 @@ void TMR0_ISR(void)
     }
     else
     {
-    if(++heartbeat_counter >= 1000)
+        if(++heartbeat_counter == 1000) TRISCbits.TRISC5 = 0; //turn on the LED
+        if(heartbeat_counter == 1100) //turn on the led for 100 ms every 1 second when USB is active.
         {
-            TRISCbits.TRISC5 = 0; //turn on the LED
-            if(heartbeat_counter >= 1100) //turn on the led for 100 ms every 1 second when USB is active.
-            {
-                TRISCbits.TRISC5 = 1; //turn off the LED
-                heartbeat_counter = 0;
-            }
+            TRISCbits.TRISC5 = 1; //turn off the LED
+            heartbeat_counter = 0;
         }
     }
 }

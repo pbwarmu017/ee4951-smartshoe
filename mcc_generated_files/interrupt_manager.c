@@ -48,6 +48,7 @@
 
 #include "interrupt_manager.h"
 #include "mcc.h"
+#include "../externs.h"
 
 void __interrupt() INTERRUPT_InterruptManager (void)
 {
@@ -60,6 +61,7 @@ void __interrupt() INTERRUPT_InterruptManager (void)
     {
         if(PIE2bits.USBIE == 1 && PIR2bits.USBIF == 1)
         {
+            waitforsleep_count = 0;
             USB_USBDeviceTasks();
         } 
         else

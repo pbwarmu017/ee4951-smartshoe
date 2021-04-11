@@ -34,7 +34,7 @@
 #include <xc.h> // include processor files - each processor file is guarded.  
 
 //timer flags 
-extern unsigned short waitforsleep_count;
+extern volatile unsigned short waitforsleep_count;
 extern volatile unsigned char sleep_flag;
 extern volatile char writeout_flag;
 extern volatile char measurement_flag;

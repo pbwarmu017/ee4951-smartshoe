@@ -3985,7 +3985,7 @@ extern __bank0 __bit __timeout;
 
 # 1 "./externs.h" 1
 # 37 "./externs.h"
-extern unsigned short waitforsleep_count;
+extern volatile unsigned short waitforsleep_count;
 extern volatile unsigned char sleep_flag;
 extern volatile char writeout_flag;
 extern volatile char measurement_flag;
@@ -5330,7 +5330,21 @@ void main(void) {
     uint8_t buffer[1];
     while (1)
     {
-# 182 "main.c"
+        if (measurement_flag) {
+            measurement_flag = 0;
+            if (burst_count == 0) {
+                measurementBurst(0);
+                burst_count++;
+            }
+            else if (burst_count == 1) {
+                measurementBurst(1);
+                burst_count++;
+            }
+            else if (burst_count == 2) {
+                measurementBurst(3);
+                burst_count = 0;
+            }
+        }
         if (sleep_flag)
         {
             sleep_flag = 0;
