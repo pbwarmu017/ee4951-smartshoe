@@ -4203,6 +4203,18 @@ void TMR0_ISR(void)
         }
 
     }
+    else
+    {
+    if(++heartbeat_counter >= 1000)
+        {
+            TRISCbits.TRISC5 = 0;
+            if(heartbeat_counter >= 1100)
+            {
+                TRISCbits.TRISC5 = 1;
+                heartbeat_counter = 0;
+            }
+        }
+    }
 }
 
 

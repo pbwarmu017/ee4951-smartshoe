@@ -756,32 +756,71 @@ Version 4.0 HI-TECH Software Intermediate Code
 "163
 [; ;mcc_generated_files/tmr0.c: 163:     }
 }
-[e :U 333 ]
+[e $U 342  ]
 "164
-[; ;mcc_generated_files/tmr0.c: 164: }
+[; ;mcc_generated_files/tmr0.c: 164:     else
+[e :U 333 ]
+"165
+[; ;mcc_generated_files/tmr0.c: 165:     {
+{
+"166
+[; ;mcc_generated_files/tmr0.c: 166:     if(++heartbeat_counter >= 1000)
+[e $ ! >= -> =+ _heartbeat_counter -> -> 1 `i `us `ui -> -> 1000 `i `ui 343  ]
+"167
+[; ;mcc_generated_files/tmr0.c: 167:         {
+{
+"168
+[; ;mcc_generated_files/tmr0.c: 168:             TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+"169
+[; ;mcc_generated_files/tmr0.c: 169:             if(heartbeat_counter >= 1100)
+[e $ ! >= -> _heartbeat_counter `ui -> -> 1100 `i `ui 344  ]
+"170
+[; ;mcc_generated_files/tmr0.c: 170:             {
+{
+"171
+[; ;mcc_generated_files/tmr0.c: 171:                 TRISCbits.TRISC5 = 1;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+"172
+[; ;mcc_generated_files/tmr0.c: 172:                 heartbeat_counter = 0;
+[e = _heartbeat_counter -> -> 0 `i `us ]
+"173
+[; ;mcc_generated_files/tmr0.c: 173:             }
+}
+[e :U 344 ]
+"174
+[; ;mcc_generated_files/tmr0.c: 174:         }
+}
+[e :U 343 ]
+"175
+[; ;mcc_generated_files/tmr0.c: 175:     }
+}
+[e :U 342 ]
+"176
+[; ;mcc_generated_files/tmr0.c: 176: }
 [e :UE 331 ]
 }
-"167
-[; ;mcc_generated_files/tmr0.c: 167: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
+"179
+[; ;mcc_generated_files/tmr0.c: 179: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
 [v _TMR0_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F2366 ]
 {
 [e :U _TMR0_SetInterruptHandler ]
 [v _InterruptHandler `*F2368 ~T0 @X0 1 r1 ]
 [f ]
-"168
-[; ;mcc_generated_files/tmr0.c: 168:     TMR0_InterruptHandler = InterruptHandler;
+"180
+[; ;mcc_generated_files/tmr0.c: 180:     TMR0_InterruptHandler = InterruptHandler;
 [e = _TMR0_InterruptHandler _InterruptHandler ]
-"169
-[; ;mcc_generated_files/tmr0.c: 169: }
-[e :UE 342 ]
+"181
+[; ;mcc_generated_files/tmr0.c: 181: }
+[e :UE 345 ]
 }
-"171
-[; ;mcc_generated_files/tmr0.c: 171: void TMR0_DefaultInterruptHandler(void){
+"183
+[; ;mcc_generated_files/tmr0.c: 183: void TMR0_DefaultInterruptHandler(void){
 [v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
 {
 [e :U _TMR0_DefaultInterruptHandler ]
 [f ]
-"174
-[; ;mcc_generated_files/tmr0.c: 174: }
-[e :UE 343 ]
+"186
+[; ;mcc_generated_files/tmr0.c: 186: }
+[e :UE 346 ]
 }

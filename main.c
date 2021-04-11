@@ -154,6 +154,7 @@ void main(void) {
     static unsigned char write_complete = 0;
     static unsigned short currentEepromAddress = 0;
     static unsigned char transferComplete_flag = 0;
+    volatile unsigned char usbTransfer_flag = 0;
     SYSTEM_Initialize();
     I2C_Initialize();
     CDCInitEP();
@@ -163,21 +164,21 @@ void main(void) {
     uint8_t buffer[1]; //needed for USB
     while (1)
     {        
-        if (measurement_flag) {
-            measurement_flag = 0;
-            if (burst_count == 0) {
-                measurementBurst(ARRANGEMENT_WPPWW);
-                burst_count++;
-            }
-            else if (burst_count == 1) {
-                measurementBurst(ARRANGEMENT_PPWWPP);
-                burst_count++;
-            }
-            else if (burst_count == 2) {
-                measurementBurst(ARRANGEMENT_PWWPPW);
-                burst_count = 0;
-            }
-        }
+//        if (measurement_flag) {
+//            measurement_flag = 0;
+//            if (burst_count == 0) {
+//                measurementBurst(ARRANGEMENT_WPPWW);
+//                burst_count++;
+//            }
+//            else if (burst_count == 1) {
+//                measurementBurst(ARRANGEMENT_PPWWPP);
+//                burst_count++;
+//            }
+//            else if (burst_count == 2) {
+//                measurementBurst(ARRANGEMENT_PWWPPW);
+//                burst_count = 0;
+//            }
+//        }
         if (sleep_flag) //prepare for and then command the system to sleep. 
         {
             sleep_flag = 0;
@@ -209,11 +210,13 @@ void main(void) {
             currentEepromAddress = 0;
             usbInit_flag = 1; //stop some of the timer flags from being set while we write out the data
             transferComplete_flag = 0;
-            if(USBUSARTIsTxTrfReady()) //needed for USB
             {
                 eeprom_readPage(currentEepromAddress, measarray);//needed for USB
                 currentEepromAddress += 0x20;
+                TRISCbits.TRISC5 = 0; //turn on LED
+                while(!USBUSARTIsTxTrfReady()); //needed for USB
                 putUSBUSART(measarray, 32);
+                TRISCbits.TRISC5 = 1; //turn off the LED
             }
         }
         else if(buffer[0] == 'c') 
@@ -221,7 +224,10 @@ void main(void) {
             buffer[0] = 'n'; //needed for USB
             if (transferComplete_flag)
             {
+                TRISCbits.TRISC5 = 0; //turn on LED
+                while(!USBUSARTIsTxTrfReady()); //needed for USB
                 putrsUSBUSART("Stop!"); //needed for USB
+                TRISCbits.TRISC5 = 1; //turn off LED
                 usbInit_flag = 0; //we can go back to normal
             }
             else
@@ -233,15 +239,13 @@ void main(void) {
                     transferComplete_flag = 1;
                     currentEepromAddress = 0;
                 }
-                else putUSBUSART(measarray, 32);
-//                for(unsigned char PUTUSBUSART_ROW_C = 0; PUTUSBUSART_ROW_C < 2; PUTUSBUSART_ROW_C++)
-//                {
-//                    for(unsigned char PUTUSBUSART_COL_C = 0; PUTUSBUSART_COL_C < 8; PUTUSBUSART_COL_C++)
-//                    {
-//                        unsigned short testvar2 = measarray[PUTUSBUSART_ROW_C][PUTUSBUSART_COL_C];
-//                        putUSBUSART(testvar2,2); //needed for USB
-//                    }
-//                }  
+                else
+                {
+                    TRISCbits.TRISC5 = 0; //turn on LED
+                    while(!USBUSARTIsTxTrfReady()); //needed for USB
+                    putUSBUSART(measarray, 32);
+                    TRISCbits.TRISC5 = 1; //turn off LED
+                } 
             }
         }
         CDCTxService(); //needed for USB

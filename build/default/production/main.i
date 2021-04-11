@@ -3990,6 +3990,7 @@ extern volatile unsigned char sleep_flag;
 extern volatile char writeout_flag;
 extern volatile char measurement_flag;
 extern volatile char usbInit_flag;
+extern volatile char usbTransfer_flag;
 extern short measurementburst_count;
 extern short counter;
 # 44 "main.c" 2
@@ -5319,6 +5320,7 @@ void main(void) {
     static unsigned char write_complete = 0;
     static unsigned short currentEepromAddress = 0;
     static unsigned char transferComplete_flag = 0;
+    volatile unsigned char usbTransfer_flag = 0;
     SYSTEM_Initialize();
     I2C_Initialize();
     CDCInitEP();
@@ -5328,21 +5330,7 @@ void main(void) {
     uint8_t buffer[1];
     while (1)
     {
-        if (measurement_flag) {
-            measurement_flag = 0;
-            if (burst_count == 0) {
-                measurementBurst(0);
-                burst_count++;
-            }
-            else if (burst_count == 1) {
-                measurementBurst(1);
-                burst_count++;
-            }
-            else if (burst_count == 2) {
-                measurementBurst(3);
-                burst_count = 0;
-            }
-        }
+# 182 "main.c"
         if (sleep_flag)
         {
             sleep_flag = 0;
@@ -5374,11 +5362,13 @@ void main(void) {
             currentEepromAddress = 0;
             usbInit_flag = 1;
             transferComplete_flag = 0;
-            if((cdc_trf_state == 0))
             {
                 eeprom_readPage(currentEepromAddress, measarray);
                 currentEepromAddress += 0x20;
+                TRISCbits.TRISC5 = 0;
+                while(!(cdc_trf_state == 0));
                 putUSBUSART(measarray, 32);
+                TRISCbits.TRISC5 = 1;
             }
         }
         else if(buffer[0] == 'c')
@@ -5386,7 +5376,10 @@ void main(void) {
             buffer[0] = 'n';
             if (transferComplete_flag)
             {
+                TRISCbits.TRISC5 = 0;
+                while(!(cdc_trf_state == 0));
                 putrsUSBUSART("Stop!");
+                TRISCbits.TRISC5 = 1;
                 usbInit_flag = 0;
             }
             else
@@ -5398,8 +5391,13 @@ void main(void) {
                     transferComplete_flag = 1;
                     currentEepromAddress = 0;
                 }
-                else putUSBUSART(measarray, 32);
-# 245 "main.c"
+                else
+                {
+                    TRISCbits.TRISC5 = 0;
+                    while(!(cdc_trf_state == 0));
+                    putUSBUSART(measarray, 32);
+                    TRISCbits.TRISC5 = 1;
+                }
             }
         }
         CDCTxService();

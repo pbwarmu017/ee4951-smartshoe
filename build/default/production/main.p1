@@ -49,10 +49,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "374
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 374: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"40 ./externs.h
-[; ;./externs.h: 40: extern volatile char measurement_flag;
-[v _measurement_flag `Vuc ~T0 @X0 0 e ]
-"38
+"38 ./externs.h
 [; ;./externs.h: 38: extern volatile unsigned char sleep_flag;
 [v _sleep_flag `Vuc ~T0 @X0 0 e ]
 "4034 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
@@ -73,27 +70,38 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39 ./externs.h
 [; ;./externs.h: 39: extern volatile char writeout_flag;
 [v _writeout_flag `Vuc ~T0 @X0 0 e ]
-"42
-[; ;./externs.h: 42: extern short measurementburst_count;
+"43
+[; ;./externs.h: 43: extern short measurementburst_count;
 [v _measurementburst_count `s ~T0 @X0 0 e ]
-[v F3173 `us ~T0 @X0 -> 8 `i t ]
+[v F3174 `us ~T0 @X0 -> 8 `i t ]
 "52 ./24aa32a.h
 [; ;./24aa32a.h: 52: void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8]);
-[v _eeprom_storeBurstGroup `(v ~T0 @X0 0 ef2`us`*F3173 ]
+[v _eeprom_storeBurstGroup `(v ~T0 @X0 0 ef2`us`*F3174 ]
 "666 ./mcc_generated_files/usb/usb_device_cdc.h
 [; ;./mcc_generated_files/usb/usb_device_cdc.h: 666: uint8_t getsUSBUSART(uint8_t *buffer, uint8_t len);
 [v _getsUSBUSART `(uc ~T0 @X0 0 ef2`*uc`uc ]
 "41 ./externs.h
 [; ;./externs.h: 41: extern volatile char usbInit_flag;
 [v _usbInit_flag `Vuc ~T0 @X0 0 e ]
+[v F3164 `us ~T0 @X0 -> 8 `i t ]
+"50 ./24aa32a.h
+[; ;./24aa32a.h: 50: void eeprom_readPage(unsigned short address, unsigned short measarray[][8]);
+[v _eeprom_readPage `(v ~T0 @X0 0 ef2`us`*F3164 ]
+"1076 C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1076:     struct {
+[s S67 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S67 . TRISC0 TRISC1 TRISC2 TRISC3 TRISC4 TRISC5 TRISC6 TRISC7 ]
+"1075
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1075: typedef union {
+[u S66 `S67 1 ]
+[n S66 . . ]
+"1087
+[; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 1087: extern volatile TRISCbits_t TRISCbits __attribute__((address(0x08E)));
+[v _TRISCbits `VS66 ~T0 @X0 0 e@142 ]
 "965 ./mcc_generated_files/usb/usb_device_cdc.h
 [; ;./mcc_generated_files/usb/usb_device_cdc.h: 965: extern uint8_t cdc_trf_state;
 [v _cdc_trf_state `uc ~T0 @X0 0 e ]
-[v F3163 `us ~T0 @X0 -> 8 `i t ]
-"50 ./24aa32a.h
-[; ;./24aa32a.h: 50: void eeprom_readPage(unsigned short address, unsigned short measarray[][8]);
-[v _eeprom_readPage `(v ~T0 @X0 0 ef2`us`*F3163 ]
-"708 ./mcc_generated_files/usb/usb_device_cdc.h
+"708
 [; ;./mcc_generated_files/usb/usb_device_cdc.h: 708: void putUSBUSART(uint8_t *data, uint8_t Length);
 [v _putUSBUSART `(v ~T0 @X0 0 ef2`*uc`uc ]
 "792
@@ -534,10 +542,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "6106
 [; ;C:/Program Files/Microchip/MPLABX/v5.45/packs/Microchip/PIC12-16F1xxx_DFP/1.2.63/xc8\pic\include\proc\pic16f1459.h: 6106: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-[v F3183 `us ~T0 @X0 -> 8 `i t ]
+[v F3184 `us ~T0 @X0 -> 8 `i t ]
 "56 main.c
 [; ;main.c: 56: unsigned short measarray[26][8] = {
-[v _measarray `F3183 ~T0 @X0 -> 26 `i e ]
+[v _measarray `F3184 ~T0 @X0 -> 26 `i e ]
 [i _measarray
 :U ..
 :U ..
@@ -841,14 +849,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "96
 [; ;main.c: 96:     static unsigned char measrow = 0;
-[v F3188 `uc ~T0 @X0 1 s measrow ]
-[i F3188
+[v F3189 `uc ~T0 @X0 1 s measrow ]
+[i F3189
 -> -> 0 `i `uc
 ]
 "97
 [; ;main.c: 97:     static unsigned char meascolumn = 0;
-[v F3189 `uc ~T0 @X0 1 s meascolumn ]
-[i F3189
+[v F3190 `uc ~T0 @X0 1 s meascolumn ]
+[i F3190
 -> -> 0 `i `uc
 ]
 "98
@@ -860,31 +868,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _takeMeasurement (1 -> -> 9 `i `uc ]
 "100
 [; ;main.c: 100:         measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5);
-[e = *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 13 `i `us `ui -> -> << -> _ADRESL `i -> 5 `i `us `ui `us ]
+[e = *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 13 `i `us `ui -> -> << -> _ADRESL `i -> 5 `i `us `ui `us ]
 "101
 [; ;main.c: 101:         takeMeasurement(8);
 [e ( _takeMeasurement (1 -> -> 8 `i `uc ]
 "102
 [; ;main.c: 102:         measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
 "103
 [; ;main.c: 103:         measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3189 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3190 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
 "105
 [; ;main.c: 105:         measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10);
-[e = *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
+[e = *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
 "106
 [; ;main.c: 106:         takeMeasurement(7);
 [e ( _takeMeasurement (1 -> -> 7 `i `uc ]
 "107
 [; ;main.c: 107:         measarray[measrow][meascolumn++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3189 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3190 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
 "109
 [; ;main.c: 109:         takeMeasurement(6);
 [e ( _takeMeasurement (1 -> -> 6 `i `uc ]
 "110
 [; ;main.c: 110:         measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13) | (unsigned short)(ADRESL << 5);
-[e = *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 13 `i `us `ui -> -> << -> _ADRESL `i -> 5 `i `us `ui `us ]
+[e = *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 13 `i `us `ui -> -> << -> _ADRESL `i -> 5 `i `us `ui `us ]
 "112
 [; ;main.c: 112:     }
 }
@@ -898,37 +906,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e ( _takeMeasurement (1 -> -> 9 `i `uc ]
 "115
 [; ;main.c: 115:         measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
 "116
 [; ;main.c: 116:         measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3189 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3190 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
 "118
 [; ;main.c: 118:         measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10);
-[e = *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
+[e = *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
 "119
 [; ;main.c: 119:         takeMeasurement(8);
 [e ( _takeMeasurement (1 -> -> 8 `i `uc ]
 "120
 [; ;main.c: 120:         measarray[measrow][meascolumn++] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3189 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3190 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
 "122
 [; ;main.c: 122:         takeMeasurement(7);
 [e ( _takeMeasurement (1 -> -> 7 `i `uc ]
 "123
 [; ;main.c: 123:         measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13);
-[e = *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESH `i -> 13 `i `us ]
+[e = *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESH `i -> 13 `i `us ]
 "124
 [; ;main.c: 124:         measarray[measrow][meascolumn] |= (unsigned short)(ADRESL << 5);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESL `i -> 5 `i `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESL `i -> 5 `i `us `us ]
 "125
 [; ;main.c: 125:         takeMeasurement(6);
 [e ( _takeMeasurement (1 -> -> 6 `i `uc ]
 "126
 [; ;main.c: 126:         measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
 "127
 [; ;main.c: 127:         measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3189 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3190 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
 "129
 [; ;main.c: 129:     }
 }
@@ -939,46 +947,46 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "131
 [; ;main.c: 131:         measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10);
-[e = *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
+[e = *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
 "132
 [; ;main.c: 132:         takeMeasurement(9);
 [e ( _takeMeasurement (1 -> -> 9 `i `uc ]
 "133
 [; ;main.c: 133:         measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 8);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 8 `i `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 8 `i `us `us ]
 "134
 [; ;main.c: 134:         measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3189 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> _ADRESL `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3190 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> _ADRESL `us `us ]
 "136
 [; ;main.c: 136:         takeMeasurement(8);
 [e ( _takeMeasurement (1 -> -> 8 `i `uc ]
 "137
 [; ;main.c: 137:         measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13);
-[e = *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESH `i -> 13 `i `us ]
+[e = *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESH `i -> 13 `i `us ]
 "138
 [; ;main.c: 138:         measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 5);
-[e = *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 5 `i `us ]
+[e = *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 5 `i `us ]
 "140
 [; ;main.c: 140:         takeMeasurement(7);
 [e ( _takeMeasurement (1 -> -> 7 `i `uc ]
 "141
 [; ;main.c: 141:         measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> << -> _ADRESH `i -> 3 `i `us `us ]
 "142
 [; ;main.c: 142:         measarray[measrow][meascolumn++] |= (unsigned short)(ADRESL >> 5);
-[e =| *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3189 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
+[e =| *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> ++ F3190 -> -> 1 `i `uc `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> -> >> -> _ADRESL `i -> 5 `i `us `us ]
 "144
 [; ;main.c: 144:         measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10);
-[e = *U + &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> F3188 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
+[e = *U + &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> F3189 `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> << -> _ADRESL `i -> 10 `i `us ]
 "145
 [; ;main.c: 145:         takeMeasurement(6);
 [e ( _takeMeasurement (1 -> -> 6 `i `uc ]
 "146
 [; ;main.c: 146:         measarray[measrow++][meascolumn] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
-[e = *U + &U *U + &U _measarray * -> ++ F3188 -> -> 1 `i `uc `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3189 `ux -> -> # *U &U *U + &U _measarray * -> ++ F3188 -> -> 1 `i `uc `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
+[e = *U + &U *U + &U _measarray * -> ++ F3189 -> -> 1 `i `uc `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3190 `ux -> -> # *U &U *U + &U _measarray * -> ++ F3189 -> -> 1 `i `uc `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
 "147
 [; ;main.c: 147:         meascolumn = 0;
-[e = F3189 -> -> 0 `i `uc ]
+[e = F3190 -> -> 0 `i `uc ]
 "148
 [; ;main.c: 148:         ADCON0bits.ADON = 0;
 [e = . . _ADCON0bits 0 0 -> -> 0 `i `uc ]
@@ -999,299 +1007,289 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "153
 [; ;main.c: 153:     static unsigned char burst_count = 0;
-[v F3214 `uc ~T0 @X0 1 s burst_count ]
-[i F3214
+[v F3215 `uc ~T0 @X0 1 s burst_count ]
+[i F3215
 -> -> 0 `i `uc
 ]
 "154
 [; ;main.c: 154:     static unsigned char write_complete = 0;
-[v F3215 `uc ~T0 @X0 1 s write_complete ]
-[i F3215
+[v F3216 `uc ~T0 @X0 1 s write_complete ]
+[i F3216
 -> -> 0 `i `uc
 ]
 "155
 [; ;main.c: 155:     static unsigned short currentEepromAddress = 0;
-[v F3216 `us ~T0 @X0 1 s currentEepromAddress ]
-[i F3216
+[v F3217 `us ~T0 @X0 1 s currentEepromAddress ]
+[i F3217
 -> -> 0 `i `us
 ]
 "156
 [; ;main.c: 156:     static unsigned char transferComplete_flag = 0;
-[v F3217 `uc ~T0 @X0 1 s transferComplete_flag ]
-[i F3217
+[v F3218 `uc ~T0 @X0 1 s transferComplete_flag ]
+[i F3218
 -> -> 0 `i `uc
 ]
 "157
-[; ;main.c: 157:     SYSTEM_Initialize();
-[e ( _SYSTEM_Initialize ..  ]
+[; ;main.c: 157:     volatile unsigned char usbTransfer_flag = 0;
+[v _usbTransfer_flag `Vuc ~T0 @X0 1 a ]
+[e = _usbTransfer_flag -> -> 0 `i `uc ]
 "158
-[; ;main.c: 158:     I2C_Initialize();
-[e ( _I2C_Initialize ..  ]
+[; ;main.c: 158:     SYSTEM_Initialize();
+[e ( _SYSTEM_Initialize ..  ]
 "159
-[; ;main.c: 159:     CDCInitEP();
-[e ( _CDCInitEP ..  ]
+[; ;main.c: 159:     I2C_Initialize();
+[e ( _I2C_Initialize ..  ]
 "160
-[; ;main.c: 160:     (INTCONbits.GIE = 1);
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
+[; ;main.c: 160:     CDCInitEP();
+[e ( _CDCInitEP ..  ]
 "161
-[; ;main.c: 161:     (INTCONbits.PEIE = 1);
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;main.c: 161:     (INTCONbits.GIE = 1);
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "162
-[; ;main.c: 162:     uint8_t numBytes;
-[v _numBytes `uc ~T0 @X0 1 a ]
+[; ;main.c: 162:     (INTCONbits.PEIE = 1);
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
 "163
-[; ;main.c: 163:     uint8_t buffer[1];
-[v _buffer `uc ~T0 @X0 -> -> 1 `i `ux a ]
+[; ;main.c: 163:     uint8_t numBytes;
+[v _numBytes `uc ~T0 @X0 1 a ]
 "164
-[; ;main.c: 164:     while (1)
-[e :U 405 ]
+[; ;main.c: 164:     uint8_t buffer[1];
+[v _buffer `uc ~T0 @X0 -> -> 1 `i `ux a ]
 "165
-[; ;main.c: 165:     {
-{
+[; ;main.c: 165:     while (1)
+[e :U 405 ]
 "166
-[; ;main.c: 166:         if (measurement_flag) {
-[e $ ! != -> _measurement_flag `i -> 0 `i 407  ]
+[; ;main.c: 166:     {
 {
-"167
-[; ;main.c: 167:             measurement_flag = 0;
-[e = _measurement_flag -> -> 0 `i `uc ]
-"168
-[; ;main.c: 168:             if (burst_count == 0) {
-[e $ ! == -> F3214 `i -> 0 `i 408  ]
+"182
+[; ;main.c: 182:         if (sleep_flag)
+[e $ ! != -> _sleep_flag `i -> 0 `i 407  ]
+"183
+[; ;main.c: 183:         {
 {
-"169
-[; ;main.c: 169:                 measurementBurst(0);
-[e ( _measurementBurst (1 -> -> 0 `i `uc ]
-"170
-[; ;main.c: 170:                 burst_count++;
-[e ++ F3214 -> -> 1 `i `uc ]
-"171
-[; ;main.c: 171:             }
-}
-[e $U 409  ]
-"172
-[; ;main.c: 172:             else if (burst_count == 1) {
-[e :U 408 ]
-[e $ ! == -> F3214 `i -> 1 `i 410  ]
-{
-"173
-[; ;main.c: 173:                 measurementBurst(1);
-[e ( _measurementBurst (1 -> -> 1 `i `uc ]
-"174
-[; ;main.c: 174:                 burst_count++;
-[e ++ F3214 -> -> 1 `i `uc ]
-"175
-[; ;main.c: 175:             }
-}
-[e $U 411  ]
-"176
-[; ;main.c: 176:             else if (burst_count == 2) {
-[e :U 410 ]
-[e $ ! == -> F3214 `i -> 2 `i 412  ]
-{
-"177
-[; ;main.c: 177:                 measurementBurst(3);
-[e ( _measurementBurst (1 -> -> 3 `i `uc ]
-"178
-[; ;main.c: 178:                 burst_count = 0;
-[e = F3214 -> -> 0 `i `uc ]
-"179
-[; ;main.c: 179:             }
-}
-[e :U 412 ]
-[e :U 411 ]
-[e :U 409 ]
-"180
-[; ;main.c: 180:         }
+"184
+[; ;main.c: 184:             sleep_flag = 0;
+[e = _sleep_flag -> -> 0 `i `uc ]
+"186
+[; ;main.c: 186:             IOCAFbits.IOCAF5 = 0;
+[e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
+"187
+[; ;main.c: 187:             INTCONbits.IOCIE = 1;
+[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
+"188
+[; ;main.c: 188:             __asm("SLEEP");
+[; <" SLEEP ;# ">
+"189
+[; ;main.c: 189:             INTCONbits.IOCIE = 0;
+[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
+"191
+[; ;main.c: 191:             IOCAFbits.IOCAF5 = 0;
+[e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
+"192
+[; ;main.c: 192:             write_complete = 0;
+[e = F3216 -> -> 0 `i `uc ]
+"193
+[; ;main.c: 193:             writeout_flag = 0;
+[e = _writeout_flag -> -> 0 `i `uc ]
+"194
+[; ;main.c: 194:             measurementburst_count = 0;
+[e = _measurementburst_count -> -> 0 `i `s ]
+"195
+[; ;main.c: 195:         }
 }
 [e :U 407 ]
-"181
-[; ;main.c: 181:         if (sleep_flag)
-[e $ ! != -> _sleep_flag `i -> 0 `i 413  ]
-"182
-[; ;main.c: 182:         {
-{
-"183
-[; ;main.c: 183:             sleep_flag = 0;
-[e = _sleep_flag -> -> 0 `i `uc ]
-"185
-[; ;main.c: 185:             IOCAFbits.IOCAF5 = 0;
-[e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
-"186
-[; ;main.c: 186:             INTCONbits.IOCIE = 1;
-[e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"187
-[; ;main.c: 187:             __asm("SLEEP");
-[; <" SLEEP ;# ">
-"188
-[; ;main.c: 188:             INTCONbits.IOCIE = 0;
-[e = . . _INTCONbits 0 3 -> -> 0 `i `uc ]
-"190
-[; ;main.c: 190:             IOCAFbits.IOCAF5 = 0;
-[e = . . _IOCAFbits 0 5 -> -> 0 `i `uc ]
-"191
-[; ;main.c: 191:             write_complete = 0;
-[e = F3215 -> -> 0 `i `uc ]
-"192
-[; ;main.c: 192:             writeout_flag = 0;
-[e = _writeout_flag -> -> 0 `i `uc ]
-"193
-[; ;main.c: 193:             measurementburst_count = 0;
-[e = _measurementburst_count -> -> 0 `i `s ]
-"194
-[; ;main.c: 194:         }
-}
-[e :U 413 ]
-"195
-[; ;main.c: 195:         if (writeout_flag && !write_complete)
-[e $ ! && != -> _writeout_flag `i -> 0 `i ! != -> F3215 `i -> 0 `i 414  ]
 "196
-[; ;main.c: 196:         {
+[; ;main.c: 196:         if (writeout_flag && !write_complete)
+[e $ ! && != -> _writeout_flag `i -> 0 `i ! != -> F3216 `i -> 0 `i 408  ]
+"197
+[; ;main.c: 197:         {
 {
-"198
-[; ;main.c: 198:             writeout_flag = 0;
-[e = _writeout_flag -> -> 0 `i `uc ]
 "199
-[; ;main.c: 199:             if (currentEepromAddress >= 0xFFF) currentEepromAddress = 0;
-[e $ ! >= -> F3216 `ui -> -> 4095 `i `ui 415  ]
-[e = F3216 -> -> 0 `i `us ]
-[e :U 415 ]
-"201
-[; ;main.c: 201:             eeprom_storeBurstGroup(currentEepromAddress, measarray);
-[e ( _eeprom_storeBurstGroup (2 , F3216 &U _measarray ]
+[; ;main.c: 199:             writeout_flag = 0;
+[e = _writeout_flag -> -> 0 `i `uc ]
+"200
+[; ;main.c: 200:             if (currentEepromAddress >= 0xFFF) currentEepromAddress = 0;
+[e $ ! >= -> F3217 `ui -> -> 4095 `i `ui 409  ]
+[e = F3217 -> -> 0 `i `us ]
+[e :U 409 ]
 "202
-[; ;main.c: 202:             currentEepromAddress += 0x1A0;
-[e =+ F3216 -> -> 416 `i `us ]
+[; ;main.c: 202:             eeprom_storeBurstGroup(currentEepromAddress, measarray);
+[e ( _eeprom_storeBurstGroup (2 , F3217 &U _measarray ]
 "203
-[; ;main.c: 203:             write_complete = 1;
-[e = F3215 -> -> 1 `i `uc ]
+[; ;main.c: 203:             currentEepromAddress += 0x1A0;
+[e =+ F3217 -> -> 416 `i `us ]
 "204
-[; ;main.c: 204:         }
-}
-[e :U 414 ]
+[; ;main.c: 204:             write_complete = 1;
+[e = F3216 -> -> 1 `i `uc ]
 "205
-[; ;main.c: 205:         numBytes = getsUSBUSART(buffer,sizeof(buffer));
-[e = _numBytes ( _getsUSBUSART (2 , &U _buffer -> -> # _buffer `ui `uc ]
+[; ;main.c: 205:         }
+}
+[e :U 408 ]
 "206
-[; ;main.c: 206:         if(buffer[0] == 'k')
-[e $ ! == -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 107 `ui 416  ]
+[; ;main.c: 206:         numBytes = getsUSBUSART(buffer,sizeof(buffer));
+[e = _numBytes ( _getsUSBUSART (2 , &U _buffer -> -> # _buffer `ui `uc ]
 "207
-[; ;main.c: 207:         {
-{
+[; ;main.c: 207:         if(buffer[0] == 'k')
+[e $ ! == -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 107 `ui 410  ]
 "208
-[; ;main.c: 208:             buffer[0] = 'n';
-[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 110 `ui `uc ]
+[; ;main.c: 208:         {
+{
 "209
-[; ;main.c: 209:             currentEepromAddress = 0;
-[e = F3216 -> -> 0 `i `us ]
+[; ;main.c: 209:             buffer[0] = 'n';
+[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 110 `ui `uc ]
 "210
-[; ;main.c: 210:             usbInit_flag = 1;
-[e = _usbInit_flag -> -> 1 `i `uc ]
+[; ;main.c: 210:             currentEepromAddress = 0;
+[e = F3217 -> -> 0 `i `us ]
 "211
-[; ;main.c: 211:             transferComplete_flag = 0;
-[e = F3217 -> -> 0 `i `uc ]
+[; ;main.c: 211:             usbInit_flag = 1;
+[e = _usbInit_flag -> -> 1 `i `uc ]
 "212
-[; ;main.c: 212:             if((cdc_trf_state == 0))
-[e $ ! == -> _cdc_trf_state `i -> 0 `i 417  ]
+[; ;main.c: 212:             transferComplete_flag = 0;
+[e = F3218 -> -> 0 `i `uc ]
 "213
 [; ;main.c: 213:             {
 {
 "214
 [; ;main.c: 214:                 eeprom_readPage(currentEepromAddress, measarray);
-[e ( _eeprom_readPage (2 , F3216 &U _measarray ]
+[e ( _eeprom_readPage (2 , F3217 &U _measarray ]
 "215
 [; ;main.c: 215:                 currentEepromAddress += 0x20;
-[e =+ F3216 -> -> 32 `i `us ]
+[e =+ F3217 -> -> 32 `i `us ]
 "216
-[; ;main.c: 216:                 putUSBUSART(measarray, 32);
-[e ( _putUSBUSART (2 , -> &U _measarray `*uc -> -> 32 `i `uc ]
+[; ;main.c: 216:                 TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 "217
-[; ;main.c: 217:             }
-}
-[e :U 417 ]
+[; ;main.c: 217:                 while(!(cdc_trf_state == 0));
+[e $U 411  ]
+[e :U 412 ]
+[e :U 411 ]
+[e $ ! == -> _cdc_trf_state `i -> 0 `i 412  ]
+[e :U 413 ]
 "218
-[; ;main.c: 218:         }
-}
-[e $U 418  ]
+[; ;main.c: 218:                 putUSBUSART(measarray, 32);
+[e ( _putUSBUSART (2 , -> &U _measarray `*uc -> -> 32 `i `uc ]
 "219
-[; ;main.c: 219:         else if(buffer[0] == 'c')
-[e :U 416 ]
-[e $ ! == -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 99 `ui 419  ]
+[; ;main.c: 219:                 TRISCbits.TRISC5 = 1;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
 "220
-[; ;main.c: 220:         {
-{
+[; ;main.c: 220:             }
+}
 "221
-[; ;main.c: 221:             buffer[0] = 'n';
-[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 110 `ui `uc ]
+[; ;main.c: 221:         }
+}
+[e $U 414  ]
 "222
-[; ;main.c: 222:             if (transferComplete_flag)
-[e $ ! != -> F3217 `i -> 0 `i 420  ]
+[; ;main.c: 222:         else if(buffer[0] == 'c')
+[e :U 410 ]
+[e $ ! == -> *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux `ui -> 99 `ui 415  ]
 "223
-[; ;main.c: 223:             {
+[; ;main.c: 223:         {
 {
 "224
-[; ;main.c: 224:                 putrsUSBUSART("Stop!");
-[e ( _putrsUSBUSART (1 :s 1C ]
+[; ;main.c: 224:             buffer[0] = 'n';
+[e = *U + &U _buffer * -> -> -> 0 `i `ui `ux -> -> # *U &U _buffer `ui `ux -> -> 110 `ui `uc ]
 "225
-[; ;main.c: 225:                 usbInit_flag = 0;
-[e = _usbInit_flag -> -> 0 `i `uc ]
+[; ;main.c: 225:             if (transferComplete_flag)
+[e $ ! != -> F3218 `i -> 0 `i 416  ]
 "226
-[; ;main.c: 226:             }
-}
-[e $U 421  ]
+[; ;main.c: 226:             {
+{
 "227
-[; ;main.c: 227:             else
-[e :U 420 ]
+[; ;main.c: 227:                 TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 "228
-[; ;main.c: 228:             {
-{
-"229
-[; ;main.c: 229:                 eeprom_readPage(currentEepromAddress, measarray);
-[e ( _eeprom_readPage (2 , F3216 &U _measarray ]
-"230
-[; ;main.c: 230:                 currentEepromAddress += 0x20;
-[e =+ F3216 -> -> 32 `i `us ]
-"231
-[; ;main.c: 231:                 if(currentEepromAddress >= 0xFFF)
-[e $ ! >= -> F3216 `ui -> -> 4095 `i `ui 422  ]
-"232
-[; ;main.c: 232:                 {
-{
-"233
-[; ;main.c: 233:                     transferComplete_flag = 1;
-[e = F3217 -> -> 1 `i `uc ]
-"234
-[; ;main.c: 234:                     currentEepromAddress = 0;
-[e = F3216 -> -> 0 `i `us ]
-"235
-[; ;main.c: 235:                 }
-}
-[e $U 423  ]
-"236
-[; ;main.c: 236:                 else putUSBUSART(measarray, 32);
-[e :U 422 ]
-[e ( _putUSBUSART (2 , -> &U _measarray `*uc -> -> 32 `i `uc ]
-[e :U 423 ]
-"245
-[; ;main.c: 245:             }
-}
-[e :U 421 ]
-"246
-[; ;main.c: 246:         }
-}
-[e :U 419 ]
+[; ;main.c: 228:                 while(!(cdc_trf_state == 0));
+[e $U 417  ]
 [e :U 418 ]
+[e :U 417 ]
+[e $ ! == -> _cdc_trf_state `i -> 0 `i 418  ]
+[e :U 419 ]
+"229
+[; ;main.c: 229:                 putrsUSBUSART("Stop!");
+[e ( _putrsUSBUSART (1 :s 1C ]
+"230
+[; ;main.c: 230:                 TRISCbits.TRISC5 = 1;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+"231
+[; ;main.c: 231:                 usbInit_flag = 0;
+[e = _usbInit_flag -> -> 0 `i `uc ]
+"232
+[; ;main.c: 232:             }
+}
+[e $U 420  ]
+"233
+[; ;main.c: 233:             else
+[e :U 416 ]
+"234
+[; ;main.c: 234:             {
+{
+"235
+[; ;main.c: 235:                 eeprom_readPage(currentEepromAddress, measarray);
+[e ( _eeprom_readPage (2 , F3217 &U _measarray ]
+"236
+[; ;main.c: 236:                 currentEepromAddress += 0x20;
+[e =+ F3217 -> -> 32 `i `us ]
+"237
+[; ;main.c: 237:                 if(currentEepromAddress >= 0xFFF)
+[e $ ! >= -> F3217 `ui -> -> 4095 `i `ui 421  ]
+"238
+[; ;main.c: 238:                 {
+{
+"239
+[; ;main.c: 239:                     transferComplete_flag = 1;
+[e = F3218 -> -> 1 `i `uc ]
+"240
+[; ;main.c: 240:                     currentEepromAddress = 0;
+[e = F3217 -> -> 0 `i `us ]
+"241
+[; ;main.c: 241:                 }
+}
+[e $U 422  ]
+"242
+[; ;main.c: 242:                 else
+[e :U 421 ]
+"243
+[; ;main.c: 243:                 {
+{
+"244
+[; ;main.c: 244:                     TRISCbits.TRISC5 = 0;
+[e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
+"245
+[; ;main.c: 245:                     while(!(cdc_trf_state == 0));
+[e $U 423  ]
+[e :U 424 ]
+[e :U 423 ]
+[e $ ! == -> _cdc_trf_state `i -> 0 `i 424  ]
+[e :U 425 ]
+"246
+[; ;main.c: 246:                     putUSBUSART(measarray, 32);
+[e ( _putUSBUSART (2 , -> &U _measarray `*uc -> -> 32 `i `uc ]
 "247
-[; ;main.c: 247:         CDCTxService();
-[e ( _CDCTxService ..  ]
+[; ;main.c: 247:                     TRISCbits.TRISC5 = 1;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
 "248
-[; ;main.c: 248:     }
+[; ;main.c: 248:                 }
+}
+[e :U 422 ]
+"249
+[; ;main.c: 249:             }
+}
+[e :U 420 ]
+"250
+[; ;main.c: 250:         }
+}
+[e :U 415 ]
+[e :U 414 ]
+"251
+[; ;main.c: 251:         CDCTxService();
+[e ( _CDCTxService ..  ]
+"252
+[; ;main.c: 252:     }
 }
 [e :U 404 ]
 [e $U 405  ]
 [e :U 406 ]
-"249
-[; ;main.c: 249: }
+"253
+[; ;main.c: 253: }
 [e :UE 403 ]
 }
 [a 1C 83 116 111 112 33 0 ]

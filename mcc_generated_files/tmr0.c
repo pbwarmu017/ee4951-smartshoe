@@ -161,6 +161,18 @@ void TMR0_ISR(void)
         }
         // add your TMR0 interrupt custom code
     }
+    else
+    {
+    if(++heartbeat_counter >= 1000)
+        {
+            TRISCbits.TRISC5 = 0; //turn on the LED
+            if(heartbeat_counter >= 1100) //turn on the led for 100 ms every 1 second when USB is active.
+            {
+                TRISCbits.TRISC5 = 1; //turn off the LED
+                heartbeat_counter = 0;
+            }
+        }
+    }
 }
 
 
