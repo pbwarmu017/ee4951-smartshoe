@@ -34,7 +34,8 @@ void ACK_Poll(void)
 
 void I2C_WaitForCompletion(void)
 {
-	while(!PIR1bits.SSP1IF);
+	while(!PIR1bits.SSP1IF)
+        ;
     PIR1bits.SSP1IF = 0;
 }
 void I2C_MasterStart(void)
@@ -96,7 +97,7 @@ void eeprom_writeByte(unsigned short address, unsigned char *data)
  *
  * @return     If the address is not the beginning of the page, returns
  */
-void eeprom_writePage(unsigned short address, unsigned char *data)
+void eeprom_writePage(unsigned short address, unsigned char data[][8])
 {
    unsigned char addressmsb = (unsigned char)address >> 8;
    unsigned char addresslsb = (unsigned char)address;
@@ -105,12 +106,15 @@ void eeprom_writePage(unsigned short address, unsigned char *data)
 	I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //trailing 0 commands a write cycle
 	I2C_MasterWrite(addressmsb); //write the MSB address bits
 	I2C_MasterWrite(addresslsb); //write the LSB address bits
-	for (int i = 0; i < 32; i++)
-	{
-        I2C_MasterWrite(data[i]); //write out the data byte;
-	}
-	I2C_MasterStop();
-	ACK_Poll(); //wait for the EEPROM to finish its write cycle. 
+    for(char row = 0; row < 2; row++)
+    {
+        for (int column = 0; column < 32; column++)
+        {
+            I2C_MasterWrite(data[row][column]); //write out the data byte;
+        }
+        I2C_MasterStop();
+        ACK_Poll(); //wait for the EEPROM to finish its write cycle. 
+    }
 }
 
 
@@ -150,7 +154,6 @@ void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8])
 		}
         I2C_MasterStop();
         ACK_Poll(); //wait for the EEPROM to finish its write cycle. 
-        address += 0x20; //increment the address by a page at a time
     }
 }
 /**
@@ -176,6 +179,34 @@ void eeprom_readByte(unsigned short address, unsigned char *databyte)
 	I2C_MasterSendNack();
 	I2C_MasterStop();
  
+}
+
+void eeprom_readPage(unsigned short address, unsigned short measarray[][8])
+{
+    unsigned char addressmsb = (unsigned char)(address >> 8);
+    unsigned char addresslsb = (unsigned char)address;
+	//first we set the address to be read
+	I2C_MasterStart();
+	I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //start a write cycle to set the address
+	I2C_MasterWrite(addressmsb);
+	I2C_MasterWrite(addresslsb);
+	I2C_MasterStart(); //this terminates the write cycle
+    I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x01); //start a read cycle at the current address
+    for(unsigned char row = 0; row < 2; row++)
+    {
+        for (unsigned char column = 0; column < 8; column++)
+        {
+           I2C_MasterSetReceive();
+           unsigned char databyte1 = SSPBUF;
+           I2C_MasterSendAck();
+           I2C_MasterSetReceive();
+           unsigned char databyte2 = SSPBUF;
+           measarray[row][column] = (unsigned short)((databyte1 << 8) | databyte2);
+        }
+	}
+     I2C_MasterSendNack();
+     I2C_MasterStop();
+     
 }
 //
 // /**

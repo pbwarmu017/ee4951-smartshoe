@@ -35,9 +35,10 @@
 
 //timer flags 
 extern unsigned short waitforsleep_count;
-extern unsigned char sleep_flag;
-extern char writeout_flag;
-extern char measurement_flag;
+extern volatile unsigned char sleep_flag;
+extern volatile char writeout_flag;
+extern volatile char measurement_flag;
+extern volatile char usbInit_flag;
 extern short measurementburst_count;
 extern short counter;
 

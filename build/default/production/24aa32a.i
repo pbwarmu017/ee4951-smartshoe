@@ -3995,7 +3995,8 @@ void I2C_MasterSetReceive(void);
 void I2C_MasterSendAck(void);
 void I2C_MasterSendNack(void);
 void eeprom_writeByte(unsigned short address, unsigned char *databyte);
-void eeprom_writePage(unsigned short address, unsigned char *data);
+void eeprom_readPage(unsigned short address, unsigned short measarray[][8]);
+void eeprom_writePage(unsigned short address, unsigned char data[][8]);
 void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8]);
 void eeprom_readByte(unsigned short address, unsigned char *databyte);
 void eeprom_readMem(unsigned char *databyte);
@@ -4027,7 +4028,8 @@ void ACK_Poll(void)
 # 35 "24aa32a.c"
 void I2C_WaitForCompletion(void)
 {
- while(!PIR1bits.SSP1IF);
+ while(!PIR1bits.SSP1IF)
+        ;
     PIR1bits.SSP1IF = 0;
 }
 void I2C_MasterStart(void)
@@ -4080,8 +4082,8 @@ void eeprom_writeByte(unsigned short address, unsigned char *data)
     I2C_MasterStop();
     ACK_Poll();
 }
-# 99 "24aa32a.c"
-void eeprom_writePage(unsigned short address, unsigned char *data)
+# 100 "24aa32a.c"
+void eeprom_writePage(unsigned short address, unsigned char data[][8])
 {
    unsigned char addressmsb = (unsigned char)address >> 8;
    unsigned char addresslsb = (unsigned char)address;
@@ -4090,14 +4092,17 @@ void eeprom_writePage(unsigned short address, unsigned char *data)
  I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x00);
  I2C_MasterWrite(addressmsb);
  I2C_MasterWrite(addresslsb);
- for (int i = 0; i < 32; i++)
- {
-        I2C_MasterWrite(data[i]);
- }
- I2C_MasterStop();
- ACK_Poll();
+    for(char row = 0; row < 2; row++)
+    {
+        for (int column = 0; column < 32; column++)
+        {
+            I2C_MasterWrite(data[row][column]);
+        }
+        I2C_MasterStop();
+        ACK_Poll();
+    }
 }
-# 130 "24aa32a.c"
+# 134 "24aa32a.c"
 void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8])
 {
  if(address % 0x20 != 0) return;
@@ -4121,7 +4126,6 @@ void eeprom_storeBurstGroup(unsigned short address, unsigned short data[][8])
   }
         I2C_MasterStop();
         ACK_Poll();
-        address += 0x20;
     }
 }
 
@@ -4148,7 +4152,35 @@ void eeprom_readByte(unsigned short address, unsigned char *databyte)
  I2C_MasterStop();
 
 }
-# 189 "24aa32a.c"
+
+void eeprom_readPage(unsigned short address, unsigned short measarray[][8])
+{
+    unsigned char addressmsb = (unsigned char)(address >> 8);
+    unsigned char addresslsb = (unsigned char)address;
+
+ I2C_MasterStart();
+ I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x00);
+ I2C_MasterWrite(addressmsb);
+ I2C_MasterWrite(addresslsb);
+ I2C_MasterStart();
+    I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x01);
+    for(unsigned char row = 0; row < 2; row++)
+    {
+        for (unsigned char column = 0; column < 8; column++)
+        {
+           I2C_MasterSetReceive();
+           unsigned char databyte1 = SSPBUF;
+           I2C_MasterSendAck();
+           I2C_MasterSetReceive();
+           unsigned char databyte2 = SSPBUF;
+           measarray[row][column] = (unsigned short)((databyte1 << 8) | databyte2);
+        }
+ }
+     I2C_MasterSendNack();
+     I2C_MasterStop();
+
+}
+# 220 "24aa32a.c"
 void eeprom_readMem(unsigned char *databyte)
 {
    I2C_MasterStart();

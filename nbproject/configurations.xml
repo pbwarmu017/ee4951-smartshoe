@@ -54,6 +54,7 @@
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>24aa32a.c</itemPath>
+      <itemPath>USB_upload.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -231,6 +232,8 @@
         <property key="programoptions.uselvpprogramming" value="true"/>
         <property key="voltagevalue" value="5.0"/>
       </PICkit3PlatformTool>
+      <item path="USB_upload.c" ex="true" overriding="false">
+      </item>
       <XC8-CO>
         <property key="coverage-enable" value=""/>
       </XC8-CO>

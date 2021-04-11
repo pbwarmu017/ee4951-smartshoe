@@ -4092,13 +4092,14 @@ extern void (*TMR0_InterruptHandler)(void);
 void TMR0_DefaultInterruptHandler(void);
 # 52 "mcc_generated_files/tmr0.c" 2
 
-short counter = 0;
-short waitforsleep_count = 0;
-char sleep_flag = 0;
-char writeout_flag = 0;
+volatile short counter = 0;
+volatile short waitforsleep_count = 0;
+volatile char sleep_flag = 0;
+volatile char writeout_flag = 0;
 unsigned short heartbeat_counter = 0;
-short measurementburst_count = 0;
-char measurement_flag = 0;
+volatile short measurementburst_count = 0;
+volatile char measurement_flag = 0;
+volatile char usbInit_flag = 0;
 
 
 
@@ -4165,40 +4166,43 @@ void TMR0_ISR(void)
     {
         TMR0_InterruptHandler();
     }
-    if(++heartbeat_counter >= 5000)
+    if(!usbInit_flag)
     {
-        TRISCbits.TRISC5 = 0;
-        if(heartbeat_counter >= 5020)
+        if(++heartbeat_counter >= 5000)
         {
-            TRISCbits.TRISC5 = 1;
-            heartbeat_counter = 0;
+            TRISCbits.TRISC5 = 0;
+            if(heartbeat_counter >= 5020)
+            {
+                TRISCbits.TRISC5 = 1;
+                heartbeat_counter = 0;
+            }
         }
-    }
-    if(++waitforsleep_count >= 29500)
-    {
-        if(waitforsleep_count == 29500) TRISCbits.TRISC5 = 0;
-        if(waitforsleep_count == 30000)
+        if(++waitforsleep_count >= 29500)
         {
-            TRISCbits.TRISC5 = 1;
-            waitforsleep_count = 0;
-            sleep_flag = 1;
+            if(waitforsleep_count == 29500) TRISCbits.TRISC5 = 0;
+            if(waitforsleep_count == 30000)
+            {
+                TRISCbits.TRISC5 = 1;
+                waitforsleep_count = 0;
+                sleep_flag = 1;
+            }
         }
-    }
-    if(++counter >= 10)
-    {
-        if(measurementburst_count < 78)
+        if(++counter >= 10)
         {
-        measurementburst_count++;
-        measurement_flag = 1;
+            if(measurementburst_count < 78)
+            {
+            measurementburst_count++;
+            measurement_flag = 1;
+            }
+            else
+            {
+                writeout_flag = 1;
+            }
+            counter = 0;
+
         }
-        else
-        {
-            writeout_flag = 1;
-        }
-        counter = 0;
 
     }
-
 }
 
 

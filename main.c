@@ -89,6 +89,7 @@ static unsigned char burst_count = 0;
 static unsigned char write_complete = 0;
 static unsigned char second_round = 0;
 static unsigned short currentEepromAddress = 0;
+static unsigned char transferComplete_flag = 0;
 
 /*
                          Main application
@@ -161,21 +162,25 @@ void main(void) {
     I2C_Initialize();
     INTERRUPT_GlobalInterruptEnable();
     INTERRUPT_PeripheralInterruptEnable();
-    while (1) {
+    uint8_t numBytes; //needed for USB
+    uint8_t buffer[1]; //needed for USB
+    while (1)
+    {        
         if (measurement_flag) {
             measurement_flag = 0;
-            if (burst_count == 0) {
-                measurementBurst(ARRANGEMENT_WPPWW);
-                burst_count++;
-            }
-            else if (burst_count == 1) {
-                measurementBurst(ARRANGEMENT_PPWWPP);
-                burst_count++;
-            }
-            else if (burst_count == 2) {
-                measurementBurst(ARRANGEMENT_PWWPPW);
-                burst_count = 0;
-            }
+            //commenting this out so that data from the array above is written to EEPROM.. it is a known pattern that can be checked on the recieving end
+//            if (burst_count == 0) {
+//                measurementBurst(ARRANGEMENT_WPPWW);
+//                burst_count++;
+//            }
+//            else if (burst_count == 1) {
+//                measurementBurst(ARRANGEMENT_PPWWPP);
+//                burst_count++;
+//            }
+//            else if (burst_count == 2) {
+//                measurementBurst(ARRANGEMENT_PWWPPW);
+//                burst_count = 0;
+//            }
         }
         if (sleep_flag) //prepare for and then command the system to sleep. 
         {
@@ -199,8 +204,61 @@ void main(void) {
 
             eeprom_storeBurstGroup(currentEepromAddress, measarray);
             currentEepromAddress += 0x1A0; //increment by 13 pages.
-            //eeprom_readMem(&byte);
+            eeprom_readMem(&byte);
             write_complete = 1;
         }
+        numBytes = getsUSBUSART(buffer,sizeof(buffer)); //needed for USB
+        if(buffer[0] == 'k')
+        {
+            buffer[0] = 'n'; //needed for USB
+            currentEepromAddress = 0;
+            usbInit_flag = 1; //stop some of the timer flags from being set while we write out the data
+            transferComplete_flag = 0;
+            if(USBUSARTIsTxTrfReady()) //needed for USB
+                {
+                eeprom_readPage(currentEepromAddress, measarray);//needed for USB
+                currentEepromAddress += 0x20;
+                for(unsigned char row = 0; row < 2; row++)
+                {
+                    for(unsigned char column = 0; column < 8; column++)
+                    {
+                        unsigned char temp1 = (unsigned char)(measarray[row][column] >> 8);
+                        unsigned char temp2 = (unsigned char)(measarray[row][column]);
+                        unsigned char temp[2] = {temp1, temp2};
+                        putUSBUSART(temp,2); //needed for USB
+                    }
+                }  
+            }
+        }
+        else if(buffer[0] == 'c') 
+        {
+            buffer[0] = 'n'; //needed for USB
+            if (transferComplete_flag)
+            {
+                putrsUSBUSART("Stop!"); //needed for USB
+                usbInit_flag = 0; //we can go back to normal
+            }
+            else
+            {
+                eeprom_readPage(currentEepromAddress, measarray);//needed for USB
+                currentEepromAddress += 0x20;
+                if(currentEepromAddress >= 0xFFF)
+                {
+                    transferComplete_flag = 1;
+                    currentEepromAddress = 0;
+                }                
+                for(unsigned char row = 0; row < 2; row++)
+                {
+                    for(unsigned char column = 0; column < 8; column++)
+                    {
+                        unsigned char temp1 = (unsigned char)(measarray[row][column] >> 8);
+                        unsigned char temp2 = (unsigned char)(measarray[row][column]);
+                        unsigned char temp[2] = {temp1, temp2};
+                        putUSBUSART(temp,2); //needed for USB
+                    }
+                }  
+            }
+        }
+        CDCTxService(); //needed for USB
     }
 }
