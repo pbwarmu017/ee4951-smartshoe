@@ -4169,6 +4169,7 @@ void TMR0_ISR(void)
     if(!usbInit_flag)
     {
         if(++heartbeat_counter == 5000) TRISCbits.TRISC5 = 0;
+        __asm("CLRWDT");
         if(heartbeat_counter == 5020)
         {
             TRISCbits.TRISC5 = 1;

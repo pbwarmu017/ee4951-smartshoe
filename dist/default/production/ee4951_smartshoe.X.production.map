@@ -5,7 +5,7 @@ Linker command line:
 -W-3 --edf=C:\Program Files\Microchip\xc8\v2.31\pic\dat\en_msgs.txt -cn \
   -h+dist/default/production\ee4951_smartshoe.X.production.sym \
   --cmf=dist/default/production\ee4951_smartshoe.X.production.cmf -z \
-  -Q16F1459 -oC:\Users\vespi\AppData\Local\Temp\s7a4.2 \
+  -Q16F1459 -oC:\Users\vespi\AppData\Local\Temp\sp6o.2 \
   --defsym=__MPLAB_BUILD=1 \
   -Mdist/default/production/ee4951_smartshoe.X.production.map -E1 \
   -ver=XC8 Compiler --acfsm=1493 -ASTACK=02220h-0224Fh -pstack=STACK \
@@ -31,7 +31,7 @@ Linker command line:
   -ASFR31=0F80h-0FEFh -ACONFIG=08007h-08008h -DCONFIG=2 \
   -AIDLOC=08000h-08003h -DIDLOC=2 -DCODE=2 -DSTRCODE=2 -DSTRING=2 -DCONST=2 \
   -DENTRY=2 -preset_vec=00h,intentry=04h,init,end_init -ppowerup=CODE \
-  -pcinit=CODE -pfunctab=ENTRY -k C:\Users\vespi\AppData\Local\Temp\s7a4.o \
+  -pcinit=CODE -pfunctab=ENTRY -k C:\Users\vespi\AppData\Local\Temp\sp6o.o \
   dist/default/production\ee4951_smartshoe.X.production.o 
 
 Object code version is 3.11
@@ -41,7 +41,7 @@ Machine type is 16F1459
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\vespi\AppData\Local\Temp\s7a4.o
+C:\Users\vespi\AppData\Local\Temp\sp6o.o
                 end_init                             29       29        2        8       0
                 reset_vec                             0        0        2        0       0
                 config                             8007     8007        2        0       4
@@ -50,7 +50,7 @@ dist/default/production\ee4951_smartshoe.X.production.o
                 intentry                              4        4       25        8       0
                 config                             8007     8007        2        0       4
                 text62                                3        3        1        6       0
-                text61                              94B      94B       AA     1296       0
+                text61                              94A      94A       AB     1294       0
                 text60                             144B     144B       83     2896       0
                 text59                             13CE     13CE       7D     279C       0
                 text58                             1356     1356       78     26AC       0
@@ -69,7 +69,7 @@ dist/default/production\ee4951_smartshoe.X.production.o
                 text45                             1773     1773       8D     2EE6       0
                 text44                             15D8     15D8       88     2BB0       0
                 text43                             11BA     11BA       61     2374       0
-                text42                              803      803       9F     1006       0
+                text42                              802      802       9F     1004       0
                 text41                             1110     1110       54     2220       0
                 text40                             1F2F     1F2F       2E     3E5E       0
                 text39                             1164     1164       56     22C8       0
@@ -77,7 +77,7 @@ dist/default/production\ee4951_smartshoe.X.production.o
                 text37                             1F04     1F04       2B     3E08       0
                 text36                             1E51     1E51       20     3CA2       0
                 text35                             1E71     1E71       22     3CE2       0
-                text34                              8A2      8A2       A9     1144       0
+                text34                              8A1      8A1       A9     1142       0
                 text33                              EE0      EE0      120     1DC0       0
                 text31                             10CC     10CC       44     2198       0
                 text30                             1EDC     1EDC       28     3DB8       0
@@ -143,7 +143,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 intentry                              4        4       25         0
                 reset_vec                             0        0        2         0
                 text62                                3        3        1         0
-                text61                              94B      94B       AA         0
+                text61                              94A      94A       AB         0
                 text60                             144B     144B       83         0
                 text59                             13CE     13CE       7D         0
                 text58                             1356     1356       78         0
@@ -162,7 +162,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text45                             1773     1773       8D         0
                 text44                             15D8     15D8       88         0
                 text43                             11BA     11BA       61         0
-                text42                              803      803       9F         0
+                text42                              802      802       9F         0
                 text41                             1110     1110       54         0
                 text40                             1F2F     1F2F       2E         0
                 text39                             1164     1164       56         0
@@ -170,7 +170,7 @@ TOTAL           Name                               Link     Load   Length     Sp
                 text37                             1F04     1F04       2B         0
                 text36                             1E51     1E51       20         0
                 text35                             1E71     1E71       22         0
-                text34                              8A2      8A2       A9         0
+                text34                              8A1      8A1       A9         0
                 text33                              EE0      EE0      120         0
                 text31                             10CC     10CC       44         0
                 text30                             1EDC     1EDC       28         0
@@ -404,9 +404,9 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 bssBANK4                       000220  000031  000251       220       1  BANK4       1
                 bssBANK5                       0002A0  000040  0002E0       2A0       1  BANK5       1
                 bssBANK6                       000320  000040  000360       320       1  BANK6       1
-                text42                         000803  00009F  0008A2      1006       0  CODE        2
-                text34                         0008A2  0000A9  00094B      1144       0  CODE        2
-                text61                         00094B  0000AA  0009F5      1296       0  CODE        2
+                text42                         000802  00009F  0008A1      1004       0  CODE        2
+                text34                         0008A1  0000A9  00094A      1142       0  CODE        2
+                text61                         00094A  0000AB  0009F5      1294       0  CODE        2
                 text57                         0009F5  0000AC  000AA1      13EA       0  CODE        2
                 text18                         000AA1  0000B2  000B53      1542       0  CODE        2
                 text6                          000B53  0000BD  000C10      16A6       0  CODE        2
@@ -476,13 +476,13 @@ UNUSED ADDRESS RANGES
         BANK7            003A0-003BF              20           1
         BIGRAM           02000-023EF             3F0           1
         CODE             00002-00002               1           2
-                         00800-00802               3
+                         00800-00801               2
                          018BB-01D3C             482
         CONST            00002-00002               1           2
-                         00800-00802               3
+                         00800-00801               2
                          018BB-01D3C             100
         ENTRY            00002-00002               1           2
-                         00800-00802               3
+                         00800-00801               2
                          018BB-01D3C             100
         IDLOC            08000-08003               4           2
         RAM              000CA-000CF               6           1
@@ -524,10 +524,10 @@ UNUSED ADDRESS RANGES
         SFR9             00480-0049F              20           1
         STACK            02220-0224F              30           1
         STRCODE          00002-00002               1           2
-                         00800-00802               3
+                         00800-00801               2
                          018BB-01D3C             482
         STRING           00002-00002               1           2
-                         00800-00802               3
+                         00800-00801               2
                          018BB-01D3C             100
 
                                   Symbol Table
@@ -632,7 +632,7 @@ _SYSTEM_Initialize                          text16       01DCD
 _SetupPkt                                   (abs)        00050
 _TMR0                                       (abs)        00015
 _TMR0_DefaultInterruptHandler               text62       00003
-_TMR0_ISR                                   text61       0094B
+_TMR0_ISR                                   text61       0094A
 _TMR0_Initialize                            text20       01DE3
 _TMR0_InterruptHandler                      bssBANK4     0022E
 _TMR0_SetInterruptHandler                   text21       01D74
@@ -663,7 +663,7 @@ _USBConfigureEndpoint                       text31       010CC
 _USBCtrlEPAllowDataStage                    text43       011BA
 _USBCtrlEPAllowStatusStage                  text58       01356
 _USBCtrlEPService                           text39       01164
-_USBCtrlEPServiceComplete                   text42       00803
+_USBCtrlEPServiceComplete                   text42       00802
 _USBCtrlTrfInHandler                        text59       013CE
 _USBCtrlTrfOutHandler                       text56       01FC7
 _USBCtrlTrfRxService                        text57       009F5
@@ -954,7 +954,7 @@ __end_of_USBConfigureEndpoint               text31       01110
 __end_of_USBCtrlEPAllowDataStage            text43       0121B
 __end_of_USBCtrlEPAllowStatusStage          text58       013CE
 __end_of_USBCtrlEPService                   text39       011BA
-__end_of_USBCtrlEPServiceComplete           text42       008A2
+__end_of_USBCtrlEPServiceComplete           text42       008A1
 __end_of_USBCtrlTrfInHandler                text59       0144B
 __end_of_USBCtrlTrfOutHandler               text56       02000
 __end_of_USBCtrlTrfRxService                text57       00AA1
@@ -996,7 +996,7 @@ __end_of_sd003                              stringtext7  018AF
 __end_of_takeMeasurement                    text4        01DCD
 __end_ofi1_CDCInitEP                        text51       01FC7
 __end_ofi1_USBConfigureEndpoint             text54       010CC
-__end_ofi1_USBDeviceInit                    text34       0094B
+__end_ofi1_USBDeviceInit                    text34       0094A
 __end_ofi1_USBEnableEndpoint                text53       01EDC
 __end_ofi1_USBTransferOnePacket             text52       015D8
 __initialization                            cinit        0002B
@@ -1050,7 +1050,7 @@ __ptext3                                    text3        00074
 __ptext30                                   text30       01EDC
 __ptext31                                   text31       010CC
 __ptext33                                   text33       00EE0
-__ptext34                                   text34       008A2
+__ptext34                                   text34       008A1
 __ptext35                                   text35       01E71
 __ptext36                                   text36       01E51
 __ptext37                                   text37       01F04
@@ -1059,7 +1059,7 @@ __ptext39                                   text39       01164
 __ptext4                                    text4        01DBA
 __ptext40                                   text40       01F2F
 __ptext41                                   text41       01110
-__ptext42                                   text42       00803
+__ptext42                                   text42       00802
 __ptext43                                   text43       011BA
 __ptext44                                   text44       015D8
 __ptext45                                   text45       01773
@@ -1080,7 +1080,7 @@ __ptext58                                   text58       01356
 __ptext59                                   text59       013CE
 __ptext6                                    text6        00B53
 __ptext60                                   text60       0144B
-__ptext61                                   text61       0094B
+__ptext61                                   text61       0094A
 __ptext62                                   text62       00003
 __ptext7                                    text7        01DAA
 __ptext8                                    text8        014CE
@@ -1233,7 +1233,7 @@ i1USBTransferOnePacket@handle               cstackCOMMON 00079
 i1USBTransferOnePacket@len                  cstackCOMMON 00073
 i1_CDCInitEP                                text51       01F8F
 i1_USBConfigureEndpoint                     text54       01089
-i1_USBDeviceInit                            text34       008A2
+i1_USBDeviceInit                            text34       008A1
 i1_USBEnableEndpoint                        text53       01EB7
 i1_USBTransferOnePacket                     text52       01551
 init_ram                                    inittext     01D9E
@@ -1990,7 +1990,7 @@ Total ram usage:        1 bytes
 
  *************** function _TMR0_SetInterruptHandler *****************
  Defined at:
-		line 170 in file "mcc_generated_files/tmr0.c"
+		line 171 in file "mcc_generated_files/tmr0.c"
  Parameters:    Size  Location     Type
   InterruptHan    2    5[BANK1 ] PTR FTN()void 
 		 -> TMR0_DefaultInterruptHandler(1), 
@@ -3302,7 +3302,7 @@ Total ram usage:        1 bytes
 
  *************** function _TMR0_DefaultInterruptHandler *****************
  Defined at:
-		line 174 in file "mcc_generated_files/tmr0.c"
+		line 175 in file "mcc_generated_files/tmr0.c"
  Parameters:    Size  Location     Type
 		None
  Auto vars:     Size  Location     Type
@@ -3357,10 +3357,10 @@ mcc_generated_files/interrupt_manager.c estimated size: 37
 mcc_generated_files/tmr0.c
 		_TMR0_SetInterruptHandler		CODE           	1D74	0000	9
 		_TMR0_DefaultInterruptHandler		CODE           	0003	0000	1
-		_TMR0_ISR      		CODE           	094B	0000	170
+		_TMR0_ISR      		CODE           	094A	0000	171
 		_TMR0_Initialize		CODE           	1DE3	0000	25
 
-mcc_generated_files/tmr0.c estimated size: 205
+mcc_generated_files/tmr0.c estimated size: 206
 
 mcc_generated_files/pin_manager.c
 		_IOCAF5_SetInterruptHandler		CODE           	1D6B	0000	9
@@ -3393,7 +3393,7 @@ shared
 		_USB_CD_Ptr    		STRCODE        	18B9	0000	2
 		_sd001         		STRCODE        	1843	0000	52
 		_sd002         		STRCODE        	1877	0000	22
-		i1_USBDeviceInit		CODE           	08A2	0000	169
+		i1_USBDeviceInit		CODE           	08A1	0000	169
 		_sd003         		STRCODE        	18A7	0000	8
 		i1_USBConfigureEndpoint		CODE           	1089	0000	67
 		__initialization		CODE           	002B	0000	69
@@ -3440,7 +3440,7 @@ mcc_generated_files/usb/usb_device.c
 		_USBCtrlEPAllowStatusStage		CODE           	1356	0000	120
 		_USBCtrlTrfSetupHandler		CODE           	1110	0000	84
 		_USBCtrlTrfOutHandler		CODE           	1FC7	0000	57
-		_USBCtrlEPServiceComplete		CODE           	0803	0000	159
+		_USBCtrlEPServiceComplete		CODE           	0802	0000	159
 		_USBSuspend    		CODE           	1E51	0000	32
 		_USBStdSetCfgHandler		CODE           	1773	0000	141
 		_USBStdGetStatusHandler		CODE           	1280	0000	103

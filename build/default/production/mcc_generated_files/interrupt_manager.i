@@ -5136,6 +5136,25 @@ extern const uint8_t configDescriptor1[];
 # 52 "mcc_generated_files/usb/usb.h" 2
 # 56 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/tmr0.h" 1
+# 98 "mcc_generated_files/tmr0.h"
+void TMR0_Initialize(void);
+# 129 "mcc_generated_files/tmr0.h"
+uint8_t TMR0_ReadTimer(void);
+# 168 "mcc_generated_files/tmr0.h"
+void TMR0_WriteTimer(uint8_t timerVal);
+# 204 "mcc_generated_files/tmr0.h"
+void TMR0_Reload(void);
+# 219 "mcc_generated_files/tmr0.h"
+void TMR0_ISR(void);
+# 238 "mcc_generated_files/tmr0.h"
+ void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
+# 256 "mcc_generated_files/tmr0.h"
+extern void (*TMR0_InterruptHandler)(void);
+# 274 "mcc_generated_files/tmr0.h"
+void TMR0_DefaultInterruptHandler(void);
+# 57 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/adc.h" 1
 # 72 "mcc_generated_files/adc.h"
 typedef uint16_t adc_result_t;
@@ -5161,25 +5180,6 @@ typedef enum
 } adc_channel_t;
 # 139 "mcc_generated_files/adc.h"
 void ADC_Initialize(void);
-# 57 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/tmr0.h" 1
-# 98 "mcc_generated_files/tmr0.h"
-void TMR0_Initialize(void);
-# 129 "mcc_generated_files/tmr0.h"
-uint8_t TMR0_ReadTimer(void);
-# 168 "mcc_generated_files/tmr0.h"
-void TMR0_WriteTimer(uint8_t timerVal);
-# 204 "mcc_generated_files/tmr0.h"
-void TMR0_Reload(void);
-# 219 "mcc_generated_files/tmr0.h"
-void TMR0_ISR(void);
-# 238 "mcc_generated_files/tmr0.h"
- void TMR0_SetInterruptHandler(void (* InterruptHandler)(void));
-# 256 "mcc_generated_files/tmr0.h"
-extern void (*TMR0_InterruptHandler)(void);
-# 274 "mcc_generated_files/tmr0.h"
-void TMR0_DefaultInterruptHandler(void);
 # 58 "mcc_generated_files/mcc.h" 2
 # 73 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);

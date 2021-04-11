@@ -127,6 +127,7 @@ void TMR0_ISR(void)
     if(!usbInit_flag)
     {
         if(++heartbeat_counter == 5000) TRISCbits.TRISC5 = 0; //turn on the LED
+        asm("CLRWDT"); //clear the watchdog timer
         if(heartbeat_counter == 5020) //turn on the led for 20 ms every 5 second.
         {
             TRISCbits.TRISC5 = 1; //turn off the LED

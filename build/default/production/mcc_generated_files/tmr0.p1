@@ -654,147 +654,150 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 [e :U 334 ]
 "130
-[; ;mcc_generated_files/tmr0.c: 130:         if(heartbeat_counter == 5020)
-[e $ ! == -> _heartbeat_counter `ui -> -> 5020 `i `ui 335  ]
+[; ;mcc_generated_files/tmr0.c: 130:         __asm("CLRWDT");
+[; <" CLRWDT ;# ">
 "131
-[; ;mcc_generated_files/tmr0.c: 131:         {
-{
+[; ;mcc_generated_files/tmr0.c: 131:         if(heartbeat_counter == 5020)
+[e $ ! == -> _heartbeat_counter `ui -> -> 5020 `i `ui 335  ]
 "132
-[; ;mcc_generated_files/tmr0.c: 132:             TRISCbits.TRISC5 = 1;
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 132:         {
+{
 "133
-[; ;mcc_generated_files/tmr0.c: 133:             heartbeat_counter = 0;
-[e = _heartbeat_counter -> -> 0 `i `us ]
+[; ;mcc_generated_files/tmr0.c: 133:             TRISCbits.TRISC5 = 1;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
 "134
-[; ;mcc_generated_files/tmr0.c: 134:         }
+[; ;mcc_generated_files/tmr0.c: 134:             heartbeat_counter = 0;
+[e = _heartbeat_counter -> -> 0 `i `us ]
+"135
+[; ;mcc_generated_files/tmr0.c: 135:         }
 }
 [e :U 335 ]
-"135
-[; ;mcc_generated_files/tmr0.c: 135:         if(++waitforsleep_count == 29500) TRISCbits.TRISC5 = 0;
+"136
+[; ;mcc_generated_files/tmr0.c: 136:         if(++waitforsleep_count == 29500) TRISCbits.TRISC5 = 0;
 [e $ ! == -> =+ _waitforsleep_count -> -> 1 `i `Vus `ui -> -> 29500 `i `ui 336  ]
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 [e :U 336 ]
-"136
-[; ;mcc_generated_files/tmr0.c: 136:         if(waitforsleep_count == 30000)
-[e $ ! == -> _waitforsleep_count `ui -> -> 30000 `i `ui 337  ]
 "137
-[; ;mcc_generated_files/tmr0.c: 137:         {
-{
+[; ;mcc_generated_files/tmr0.c: 137:         if(waitforsleep_count == 30000)
+[e $ ! == -> _waitforsleep_count `ui -> -> 30000 `i `ui 337  ]
 "138
-[; ;mcc_generated_files/tmr0.c: 138:             TRISCbits.TRISC5 = 1;
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 138:         {
+{
 "139
-[; ;mcc_generated_files/tmr0.c: 139:             waitforsleep_count = 0;
-[e = _waitforsleep_count -> -> 0 `i `us ]
+[; ;mcc_generated_files/tmr0.c: 139:             TRISCbits.TRISC5 = 1;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
 "140
-[; ;mcc_generated_files/tmr0.c: 140:             sleep_flag = 1;
-[e = _sleep_flag -> -> 1 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 140:             waitforsleep_count = 0;
+[e = _waitforsleep_count -> -> 0 `i `us ]
 "141
-[; ;mcc_generated_files/tmr0.c: 141:         }
+[; ;mcc_generated_files/tmr0.c: 141:             sleep_flag = 1;
+[e = _sleep_flag -> -> 1 `i `uc ]
+"142
+[; ;mcc_generated_files/tmr0.c: 142:         }
 }
 [e :U 337 ]
-"142
-[; ;mcc_generated_files/tmr0.c: 142:         if(++counter >= 10)
-[e $ ! >= -> =+ _counter -> -> 1 `i `Vs `i -> 10 `i 338  ]
 "143
-[; ;mcc_generated_files/tmr0.c: 143:         {
-{
+[; ;mcc_generated_files/tmr0.c: 143:         if(++counter >= 10)
+[e $ ! >= -> =+ _counter -> -> 1 `i `Vs `i -> 10 `i 338  ]
 "144
-[; ;mcc_generated_files/tmr0.c: 144:             if(measurementburst_count < 78)
-[e $ ! < -> _measurementburst_count `i -> 78 `i 339  ]
-"145
-[; ;mcc_generated_files/tmr0.c: 145:             {
+[; ;mcc_generated_files/tmr0.c: 144:         {
 {
+"145
+[; ;mcc_generated_files/tmr0.c: 145:             if(measurementburst_count < 78)
+[e $ ! < -> _measurementburst_count `i -> 78 `i 339  ]
 "146
-[; ;mcc_generated_files/tmr0.c: 146:             measurementburst_count++;
-[e ++ _measurementburst_count -> -> 1 `i `Vs ]
+[; ;mcc_generated_files/tmr0.c: 146:             {
+{
 "147
-[; ;mcc_generated_files/tmr0.c: 147:             measurement_flag = 1;
-[e = _measurement_flag -> -> 1 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 147:             measurementburst_count++;
+[e ++ _measurementburst_count -> -> 1 `i `Vs ]
 "148
-[; ;mcc_generated_files/tmr0.c: 148:             }
+[; ;mcc_generated_files/tmr0.c: 148:             measurement_flag = 1;
+[e = _measurement_flag -> -> 1 `i `uc ]
+"149
+[; ;mcc_generated_files/tmr0.c: 149:             }
 }
 [e $U 340  ]
-"149
-[; ;mcc_generated_files/tmr0.c: 149:             else
-[e :U 339 ]
 "150
-[; ;mcc_generated_files/tmr0.c: 150:             {
-{
+[; ;mcc_generated_files/tmr0.c: 150:             else
+[e :U 339 ]
 "151
-[; ;mcc_generated_files/tmr0.c: 151:                 writeout_flag = 1;
-[e = _writeout_flag -> -> 1 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 151:             {
+{
 "152
-[; ;mcc_generated_files/tmr0.c: 152:             }
+[; ;mcc_generated_files/tmr0.c: 152:                 writeout_flag = 1;
+[e = _writeout_flag -> -> 1 `i `uc ]
+"153
+[; ;mcc_generated_files/tmr0.c: 153:             }
 }
 [e :U 340 ]
-"153
-[; ;mcc_generated_files/tmr0.c: 153:             counter = 0;
+"154
+[; ;mcc_generated_files/tmr0.c: 154:             counter = 0;
 [e = _counter -> -> 0 `i `s ]
-"155
-[; ;mcc_generated_files/tmr0.c: 155:         }
+"156
+[; ;mcc_generated_files/tmr0.c: 156:         }
 }
 [e :U 338 ]
-"157
-[; ;mcc_generated_files/tmr0.c: 157:     }
+"158
+[; ;mcc_generated_files/tmr0.c: 158:     }
 }
 [e $U 341  ]
-"158
-[; ;mcc_generated_files/tmr0.c: 158:     else
-[e :U 333 ]
 "159
-[; ;mcc_generated_files/tmr0.c: 159:     {
-{
+[; ;mcc_generated_files/tmr0.c: 159:     else
+[e :U 333 ]
 "160
-[; ;mcc_generated_files/tmr0.c: 160:         if(++heartbeat_counter == 1000) TRISCbits.TRISC5 = 0;
+[; ;mcc_generated_files/tmr0.c: 160:     {
+{
+"161
+[; ;mcc_generated_files/tmr0.c: 161:         if(++heartbeat_counter == 1000) TRISCbits.TRISC5 = 0;
 [e $ ! == -> =+ _heartbeat_counter -> -> 1 `i `us `ui -> -> 1000 `i `ui 342  ]
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 [e :U 342 ]
-"161
-[; ;mcc_generated_files/tmr0.c: 161:         if(heartbeat_counter == 1100)
-[e $ ! == -> _heartbeat_counter `ui -> -> 1100 `i `ui 343  ]
 "162
-[; ;mcc_generated_files/tmr0.c: 162:         {
-{
+[; ;mcc_generated_files/tmr0.c: 162:         if(heartbeat_counter == 1100)
+[e $ ! == -> _heartbeat_counter `ui -> -> 1100 `i `ui 343  ]
 "163
-[; ;mcc_generated_files/tmr0.c: 163:             TRISCbits.TRISC5 = 1;
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 163:         {
+{
 "164
-[; ;mcc_generated_files/tmr0.c: 164:             heartbeat_counter = 0;
-[e = _heartbeat_counter -> -> 0 `i `us ]
+[; ;mcc_generated_files/tmr0.c: 164:             TRISCbits.TRISC5 = 1;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
 "165
-[; ;mcc_generated_files/tmr0.c: 165:         }
+[; ;mcc_generated_files/tmr0.c: 165:             heartbeat_counter = 0;
+[e = _heartbeat_counter -> -> 0 `i `us ]
+"166
+[; ;mcc_generated_files/tmr0.c: 166:         }
 }
 [e :U 343 ]
-"166
-[; ;mcc_generated_files/tmr0.c: 166:     }
+"167
+[; ;mcc_generated_files/tmr0.c: 167:     }
 }
 [e :U 341 ]
-"167
-[; ;mcc_generated_files/tmr0.c: 167: }
+"168
+[; ;mcc_generated_files/tmr0.c: 168: }
 [e :UE 331 ]
 }
-"170
-[; ;mcc_generated_files/tmr0.c: 170: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
+"171
+[; ;mcc_generated_files/tmr0.c: 171: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
 [v _TMR0_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F2366 ]
 {
 [e :U _TMR0_SetInterruptHandler ]
 [v _InterruptHandler `*F2368 ~T0 @X0 1 r1 ]
 [f ]
-"171
-[; ;mcc_generated_files/tmr0.c: 171:     TMR0_InterruptHandler = InterruptHandler;
-[e = _TMR0_InterruptHandler _InterruptHandler ]
 "172
-[; ;mcc_generated_files/tmr0.c: 172: }
+[; ;mcc_generated_files/tmr0.c: 172:     TMR0_InterruptHandler = InterruptHandler;
+[e = _TMR0_InterruptHandler _InterruptHandler ]
+"173
+[; ;mcc_generated_files/tmr0.c: 173: }
 [e :UE 344 ]
 }
-"174
-[; ;mcc_generated_files/tmr0.c: 174: void TMR0_DefaultInterruptHandler(void){
+"175
+[; ;mcc_generated_files/tmr0.c: 175: void TMR0_DefaultInterruptHandler(void){
 [v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
 {
 [e :U _TMR0_DefaultInterruptHandler ]
 [f ]
-"177
-[; ;mcc_generated_files/tmr0.c: 177: }
+"178
+[; ;mcc_generated_files/tmr0.c: 178: }
 [e :UE 345 ]
 }
