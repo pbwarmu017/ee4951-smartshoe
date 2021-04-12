@@ -4096,7 +4096,7 @@ volatile short counter = 0;
 volatile unsigned short waitforsleep_count = 0;
 volatile char sleep_flag = 0;
 volatile char writeout_flag = 0;
-unsigned short heartbeat_counter = 0;
+volatile unsigned short heartbeat_counter = 0;
 volatile short measurementburst_count = 0;
 volatile char measurement_flag = 0;
 volatile char usbInit_flag = 0;
@@ -4203,6 +4203,7 @@ void TMR0_ISR(void)
         if(++heartbeat_counter == 1000) TRISCbits.TRISC5 = 0;
         if(heartbeat_counter == 1100)
         {
+            __asm("CLRWDT");
             TRISCbits.TRISC5 = 1;
             heartbeat_counter = 0;
         }

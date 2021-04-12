@@ -499,8 +499,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `uc
 ]
 "57
-[; ;mcc_generated_files/tmr0.c: 57: unsigned short heartbeat_counter = 0;
-[v _heartbeat_counter `us ~T0 @X0 1 e ]
+[; ;mcc_generated_files/tmr0.c: 57: volatile unsigned short heartbeat_counter = 0;
+[v _heartbeat_counter `Vus ~T0 @X0 1 e ]
 [i _heartbeat_counter
 -> -> 0 `i `us
 ]
@@ -650,7 +650,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "129
 [; ;mcc_generated_files/tmr0.c: 129:         if(++heartbeat_counter == 5000) TRISCbits.TRISC5 = 0;
-[e $ ! == -> =+ _heartbeat_counter -> -> 1 `i `us `ui -> -> 5000 `i `ui 334  ]
+[e $ ! == -> =+ _heartbeat_counter -> -> 1 `i `Vus `ui -> -> 5000 `i `ui 334  ]
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 [e :U 334 ]
 "130
@@ -750,7 +750,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 "161
 [; ;mcc_generated_files/tmr0.c: 161:         if(++heartbeat_counter == 1000) TRISCbits.TRISC5 = 0;
-[e $ ! == -> =+ _heartbeat_counter -> -> 1 `i `us `ui -> -> 1000 `i `ui 342  ]
+[e $ ! == -> =+ _heartbeat_counter -> -> 1 `i `Vus `ui -> -> 1000 `i `ui 342  ]
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
 [e :U 342 ]
 "162
@@ -760,44 +760,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/tmr0.c: 163:         {
 {
 "164
-[; ;mcc_generated_files/tmr0.c: 164:             TRISCbits.TRISC5 = 1;
-[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+[; ;mcc_generated_files/tmr0.c: 164:             __asm("CLRWDT");
+[; <" CLRWDT ;# ">
 "165
-[; ;mcc_generated_files/tmr0.c: 165:             heartbeat_counter = 0;
-[e = _heartbeat_counter -> -> 0 `i `us ]
+[; ;mcc_generated_files/tmr0.c: 165:             TRISCbits.TRISC5 = 1;
+[e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
 "166
-[; ;mcc_generated_files/tmr0.c: 166:         }
+[; ;mcc_generated_files/tmr0.c: 166:             heartbeat_counter = 0;
+[e = _heartbeat_counter -> -> 0 `i `us ]
+"167
+[; ;mcc_generated_files/tmr0.c: 167:         }
 }
 [e :U 343 ]
-"167
-[; ;mcc_generated_files/tmr0.c: 167:     }
+"168
+[; ;mcc_generated_files/tmr0.c: 168:     }
 }
 [e :U 341 ]
-"168
-[; ;mcc_generated_files/tmr0.c: 168: }
+"169
+[; ;mcc_generated_files/tmr0.c: 169: }
 [e :UE 331 ]
 }
-"171
-[; ;mcc_generated_files/tmr0.c: 171: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
+"172
+[; ;mcc_generated_files/tmr0.c: 172: void TMR0_SetInterruptHandler(void (* InterruptHandler)(void)){
 [v _TMR0_SetInterruptHandler `(v ~T0 @X0 1 ef1`*F2366 ]
 {
 [e :U _TMR0_SetInterruptHandler ]
 [v _InterruptHandler `*F2368 ~T0 @X0 1 r1 ]
 [f ]
-"172
-[; ;mcc_generated_files/tmr0.c: 172:     TMR0_InterruptHandler = InterruptHandler;
-[e = _TMR0_InterruptHandler _InterruptHandler ]
 "173
-[; ;mcc_generated_files/tmr0.c: 173: }
+[; ;mcc_generated_files/tmr0.c: 173:     TMR0_InterruptHandler = InterruptHandler;
+[e = _TMR0_InterruptHandler _InterruptHandler ]
+"174
+[; ;mcc_generated_files/tmr0.c: 174: }
 [e :UE 344 ]
 }
-"175
-[; ;mcc_generated_files/tmr0.c: 175: void TMR0_DefaultInterruptHandler(void){
+"176
+[; ;mcc_generated_files/tmr0.c: 176: void TMR0_DefaultInterruptHandler(void){
 [v _TMR0_DefaultInterruptHandler `(v ~T0 @X0 1 ef ]
 {
 [e :U _TMR0_DefaultInterruptHandler ]
 [f ]
-"178
-[; ;mcc_generated_files/tmr0.c: 178: }
+"179
+[; ;mcc_generated_files/tmr0.c: 179: }
 [e :UE 345 ]
 }

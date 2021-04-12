@@ -58,7 +58,7 @@ def AddRed(data, R):
     
     return R
 
-ser = serial.Serial('COM3', 19200, timeout=1, bytesize=8) #Update with the COM spot it's connected in for you
+ser = serial.Serial('COM7', 19200, timeout=1, bytesize=8) #Update with the COM spot it's connected in for you
 
 ser.write(b'k')
 
@@ -66,14 +66,20 @@ while(1):
     
     s = ser.read(32)
 
+    print(s)
+
+    if(s==b''):
+    	continue
+
+
     if (s == b'Stop!\x00'):
         ser.close()
         break
 
-    Green = Green + AddGreen(s, Green)
-    White = White + AddWhite(s, White)
-    Yellow = Yellow + AddYellow(s, Yellow)
-    Red = Red + AddRed(s, Red)
+    #Green = AddGreen(s, Green)
+    #White = AddWhite(s, White)
+    #Yellow = AddYellow(s, Yellow)
+    #Red = AddRed(s, Red)
 
     ser.write(b'c')
 

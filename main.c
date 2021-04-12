@@ -210,6 +210,7 @@ void main(void) {
             currentEepromAddress = 0;
             usbInit_flag = 1; //stop some of the timer flags from being set while we write out the data
             transferComplete_flag = 0;
+            heartbeat_counter = 0;
             {
                 eeprom_readPage(currentEepromAddress, measarray);//needed for USB
                 currentEepromAddress += 0x20;

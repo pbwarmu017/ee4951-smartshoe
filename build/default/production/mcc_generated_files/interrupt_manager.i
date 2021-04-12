@@ -5192,6 +5192,7 @@ void WDT_Initialize(void);
 # 1 "mcc_generated_files/../externs.h" 1
 # 37 "mcc_generated_files/../externs.h"
 extern volatile unsigned short waitforsleep_count;
+extern volatile unsigned short heartbeat_counter;
 extern volatile unsigned char sleep_flag;
 extern volatile char writeout_flag;
 extern volatile char measurement_flag;

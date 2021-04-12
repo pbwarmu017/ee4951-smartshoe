@@ -3986,6 +3986,7 @@ extern __bank0 __bit __timeout;
 # 1 "./externs.h" 1
 # 37 "./externs.h"
 extern volatile unsigned short waitforsleep_count;
+extern volatile unsigned short heartbeat_counter;
 extern volatile unsigned char sleep_flag;
 extern volatile char writeout_flag;
 extern volatile char measurement_flag;
@@ -5376,6 +5377,7 @@ void main(void) {
             currentEepromAddress = 0;
             usbInit_flag = 1;
             transferComplete_flag = 0;
+            heartbeat_counter = 0;
             {
                 eeprom_readPage(currentEepromAddress, measarray);
                 currentEepromAddress += 0x20;
