@@ -135,7 +135,7 @@ void measurementBurst(unsigned char measurement_type){
         //6 short full
         takeMeasurement(WHITEWIRE);
         measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13); // xWW----- --------
-        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 5); // xwwWWWWW WWW-----
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESL << 5); // xwwWWWWW WWW-----
 
         takeMeasurement(YELLOWWIRE);
         measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3); // xwwWWWWW WWWYY---
