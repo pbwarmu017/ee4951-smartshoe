@@ -135,7 +135,7 @@ void measurementBurst(unsigned char measurement_type){
         //6 short full
         takeMeasurement(WHITEWIRE);
         measarray[measrow][meascolumn] = (unsigned short)(ADRESH << 13); // xWW----- --------
-        measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 5); // xwwWWWWW WWW-----
+        measarray[measrow][meascolumn] |= (unsigned short)(ADRESL << 5); // xwwWWWWW WWW-----
 
         takeMeasurement(YELLOWWIRE);
         measarray[measrow][meascolumn] |= (unsigned short)(ADRESH << 3); // xwwWWWWW WWWYY---
@@ -210,6 +210,7 @@ void main(void) {
             currentEepromAddress = 0;
             usbInit_flag = 1; //stop some of the timer flags from being set while we write out the data
             transferComplete_flag = 0;
+            heartbeat_counter = 0;
             {
                 eeprom_readPage(currentEepromAddress, measarray);//needed for USB
                 currentEepromAddress += 0x20;
