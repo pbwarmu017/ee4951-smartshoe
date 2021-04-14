@@ -56,7 +56,14 @@ volatile char sleep_flag = 0;
 volatile char writeout_flag = 0;
 volatile unsigned short heartbeat_counter = 0;
 volatile short measurementburst_count = 0;
+volatile char timeout_counter = 0;
 volatile char measurement_flag = 0;
+volatile unsigned char write_complete = 0;
+volatile unsigned char debounceIoc_flag = 0;
+volatile unsigned char debounceCounter = 0;
+volatile unsigned char sleepDisabled_flag = 0;
+volatile unsigned char initialTrigger_flag = 0;
+volatile unsigned char secondTrigger_flag = 0;
 volatile char usbInit_flag = 0;
 /**
   Section: Global Variables Definitions
@@ -124,6 +131,17 @@ void TMR0_ISR(void)
     {
         TMR0_InterruptHandler();
     }
+    if(debounceIoc_flag) 
+    {
+        if(++debounceCounter == 10)
+        {
+            IOCAFbits.IOCAF5 = 0;
+            INTCONbits.IOCIE = 1; //re-enable the IOC interrupt after 10 ms to debounce.  
+            debounceIoc_flag = 0;
+            debounceCounter = 0;
+        }
+        
+    }
     if(!usbInit_flag)
     {
         if(++heartbeat_counter == 5000) TRISCbits.TRISC5 = 0; //turn on the LED
@@ -134,7 +152,7 @@ void TMR0_ISR(void)
             heartbeat_counter = 0;
         }
         if(++waitforsleep_count == 29500) TRISCbits.TRISC5 = 0;
-        if(waitforsleep_count == 30000)
+        if(waitforsleep_count == 30000 && !sleepDisabled_flag)
         {
             TRISCbits.TRISC5 = 1; //turn off the LED
             waitforsleep_count = 0;
@@ -142,23 +160,33 @@ void TMR0_ISR(void)
         }   
         if(++counter >= 10) //10 milliseconds have passed
         {
-            if(measurementburst_count < 78) //6 measurement bursts per page, 13 pages
+            if(secondTrigger_flag) // only cues up measurement bursts if it has been triggered again after waking from sleep. 
             {
-            measurementburst_count++;
-            measurement_flag = 1; //arranges for execution of measurement burst
-            }
-            else
-            {
-                writeout_flag = 1; //arranges for EEPROM write and wait cycle
+                if(measurementburst_count < 78) //6 measurement bursts per page, 13 pages
+                {
+                measurementburst_count++;
+                measurement_flag = 1; //arranges for execution of measurement burst
+                }
+                else
+                {
+                    writeout_flag = 1; //arranges for EEPROM write and wait cycle
+                }
             }
             counter = 0;
-
         }
         // add your TMR0 interrupt custom code
     }
     else
     {
-        if(++heartbeat_counter == 1000) TRISCbits.TRISC5 = 0; //turn on the LED
+        if(++heartbeat_counter == 1000) 
+        {
+            TRISCbits.TRISC5 = 0; //turn on the LED
+            if(++timeout_counter == 11) 
+            {
+                usbInit_flag = 0; //if USB has not completed the transfer within 10 seconds, cancel. 
+                timeout_counter = 0;
+            }
+        }
         if(heartbeat_counter == 1100) //turn on the led for 100 ms every 1 second when USB is active.
         {
             asm("CLRWDT"); //clear the watchdog timer

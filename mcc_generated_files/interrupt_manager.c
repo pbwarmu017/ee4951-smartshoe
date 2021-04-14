@@ -64,9 +64,22 @@ void __interrupt() INTERRUPT_InterruptManager (void)
             waitforsleep_count = 0;
             USB_USBDeviceTasks();
         } 
-        else
+        else if(INTCONbits.IOCIE == 1 && IOCAFbits.IOCAF5 == 1)
         {
-            //Unhandled Interrupt
+            debounceIoc_flag = 1;
+            INTCONbits.IOCIE = 0; //disable the IOC interrupt to debounce. 
+            IOCAFbits.IOCAF5 = 0;
+            if(initialTrigger_flag) 
+            {
+                secondTrigger_flag = 1; //trigger the measurement flag
+//                INTCONbits.IOCIE = 0; //disable the IOC interrupt. 
+            }
+            else 
+            {
+                initialTrigger_flag = 1; //this is executed when it comes out of sleep
+            }
+                
+            
         }
     }      
     else

@@ -143,7 +143,7 @@ void measurementBurst(unsigned char measurement_type){
         //7 short full
         measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10); // XYYYYY-- --------
         takeMeasurement(REDWIRE);
-        measarray[measrow++][meascolumn] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xyyyyyRR RRRRRRRR
+        measarray[measrow++][meascolumn] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL; // xyyyyyRR RRRRRRRR
         meascolumn = 0;
         ADCON0bits.ADON = 0;
     }
@@ -151,7 +151,6 @@ void measurementBurst(unsigned char measurement_type){
 
 void main(void) {
     static unsigned char burst_count = 0;
-    static unsigned char write_complete = 0;
     static unsigned short currentEepromAddress = 0;
     static unsigned char transferComplete_flag = 0;
     volatile unsigned char usbTransfer_flag = 0;
@@ -182,11 +181,14 @@ void main(void) {
         if (sleep_flag) //prepare for and then command the system to sleep. 
         {
             sleep_flag = 0;
+            while(measurementburst_count > 0 && !write_complete); //ensure we dont sleep while in the middle of a measurement. 
             //TRISCbits.TRISC5 = 0; //turn on LED
             IOCAFbits.IOCAF5 = 0;
             INTCONbits.IOCIE = 1; //enable IOC interrupt
+            initialTrigger_flag = 0;
+            secondTrigger_flag = 0; 
             asm("SLEEP");
-            INTCONbits.IOCIE = 0; //disable IOC interrupt
+//            INTCONbits.IOCIE = 0; //disable IOC interrupt
             //TRISCbits.TRISC5 = 1; //turn off LED
             IOCAFbits.IOCAF5 = 0;
             write_complete = 0;
@@ -198,10 +200,10 @@ void main(void) {
             //code to write data array to EEPROM
             writeout_flag = 0;
             if (currentEepromAddress >= 0xFFF) currentEepromAddress = 0; //roll over 
-
             eeprom_storeBurstGroup(currentEepromAddress, measarray);
             currentEepromAddress += 0x1A0; //increment by 13 pages.
             write_complete = 1;
+            sleepDisabled_flag = 0;
         }
         numBytes = getsUSBUSART(buffer,sizeof(buffer)); //needed for USB
         if(buffer[0] == 'k')

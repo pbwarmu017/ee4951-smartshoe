@@ -38,9 +38,14 @@ extern volatile unsigned short waitforsleep_count;
 extern volatile unsigned short heartbeat_counter;
 extern volatile unsigned char sleep_flag;
 extern volatile char writeout_flag;
+extern volatile unsigned char write_complete;
 extern volatile char measurement_flag;
 extern volatile char usbInit_flag;
 extern volatile char usbTransfer_flag;
+extern volatile char debounceIoc_flag;
+extern volatile char initialTrigger_flag;
+extern volatile unsigned char secondTrigger_flag;
+extern volatile unsigned char sleepDisabled_flag;
 extern short measurementburst_count;
 extern short counter;
 
