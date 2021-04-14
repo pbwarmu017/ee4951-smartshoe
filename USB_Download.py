@@ -88,6 +88,11 @@ White = CreateWhite(data)
 Yellow = CreateYellow(data)
 Red = CreateRed(data)
 
+print(Green)
+print(White)
+print(Yellow)
+print(Red)
+
 workbook = xlsxwriter.Workbook('Wire_Data.xlsx')
 worksheet = workbook.add_worksheet('Data')
 
