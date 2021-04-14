@@ -1000,8 +1000,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 145:         takeMeasurement(6);
 [e ( _takeMeasurement (1 -> -> 6 `i `uc ]
 "146
-[; ;main.c: 146:         measarray[measrow++][meascolumn] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
-[e = *U + &U *U + &U _measarray * -> ++ F3195 -> -> 1 `i `uc `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3196 `ux -> -> # *U &U *U + &U _measarray * -> ++ F3195 -> -> 1 `i `uc `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
+[; ;main.c: 146:         measarray[measrow++][meascolumn] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+[e =| *U + &U *U + &U _measarray * -> ++ F3195 -> -> 1 `i `uc `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux * -> F3196 `ux -> -> # *U &U *U + &U _measarray * -> ++ F3195 -> -> 1 `i `uc `ux -> * -> # *U &U *U &U _measarray `ui -> -> 8 `i `ui `ux `ui `ux -> | -> -> << -> _ADRESH `i -> 8 `i `us `ui -> -> _ADRESL `us `ui `us ]
 "147
 [; ;main.c: 147:         meascolumn = 0;
 [e = F3196 -> -> 0 `i `uc ]
@@ -1308,53 +1308,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 237:             {
 {
 "238
-[; ;main.c: 238:                 eeprom_readPage(currentEepromAddress, measarray);
-[e ( _eeprom_readPage (2 , F3222 &U _measarray ]
+[; ;main.c: 238:                 if(currentEepromAddress <= 0xFE0)
+[e $ ! <= -> F3222 `ui -> -> 4064 `i `ui 430  ]
 "239
-[; ;main.c: 239:                 currentEepromAddress += 0x20;
-[e =+ F3222 -> -> 32 `i `us ]
+[; ;main.c: 239:                 {
+{
 "240
-[; ;main.c: 240:                 if(currentEepromAddress >= 0xFFF)
-[e $ ! >= -> F3222 `ui -> -> 4095 `i `ui 430  ]
-"241
-[; ;main.c: 241:                 {
-{
-"242
-[; ;main.c: 242:                     transferComplete_flag = 1;
-[e = F3223 -> -> 1 `i `uc ]
-"243
-[; ;main.c: 243:                     currentEepromAddress = 0;
-[e = F3222 -> -> 0 `i `us ]
-"244
-[; ;main.c: 244:                 }
-}
-[e $U 431  ]
-"245
-[; ;main.c: 245:                 else
-[e :U 430 ]
-"246
-[; ;main.c: 246:                 {
-{
-"247
-[; ;main.c: 247:                     TRISCbits.TRISC5 = 0;
+[; ;main.c: 240:                     TRISCbits.TRISC5 = 0;
 [e = . . _TRISCbits 0 5 -> -> 0 `i `uc ]
-"248
-[; ;main.c: 248:                     while(!(cdc_trf_state == 0));
-[e $U 432  ]
-[e :U 433 ]
+"241
+[; ;main.c: 241:                     eeprom_readPage(currentEepromAddress, measarray);
+[e ( _eeprom_readPage (2 , F3222 &U _measarray ]
+"242
+[; ;main.c: 242:                     while(!(cdc_trf_state == 0));
+[e $U 431  ]
 [e :U 432 ]
-[e $ ! == -> _cdc_trf_state `i -> 0 `i 433  ]
-[e :U 434 ]
-"249
-[; ;main.c: 249:                     putUSBUSART(measarray, 32);
+[e :U 431 ]
+[e $ ! == -> _cdc_trf_state `i -> 0 `i 432  ]
+[e :U 433 ]
+"243
+[; ;main.c: 243:                     putUSBUSART(measarray, 32);
 [e ( _putUSBUSART (2 , -> &U _measarray `*uc -> -> 32 `i `uc ]
-"250
-[; ;main.c: 250:                     TRISCbits.TRISC5 = 1;
+"244
+[; ;main.c: 244:                     TRISCbits.TRISC5 = 1;
 [e = . . _TRISCbits 0 5 -> -> 1 `i `uc ]
+"245
+[; ;main.c: 245:                     currentEepromAddress += 0x20;
+[e =+ F3222 -> -> 32 `i `us ]
+"246
+[; ;main.c: 246:                 }
+}
+[e $U 434  ]
+"247
+[; ;main.c: 247:                 else
+[e :U 430 ]
+"248
+[; ;main.c: 248:                 {
+{
+"249
+[; ;main.c: 249:                     transferComplete_flag = 1;
+[e = F3223 -> -> 1 `i `uc ]
+"250
+[; ;main.c: 250:                     currentEepromAddress = 0;
+[e = F3222 -> -> 0 `i `us ]
 "251
 [; ;main.c: 251:                 }
 }
-[e :U 431 ]
+[e :U 434 ]
 "252
 [; ;main.c: 252:             }
 }

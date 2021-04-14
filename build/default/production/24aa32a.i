@@ -4107,10 +4107,11 @@ void eeprom_storeBurstGroup(unsigned short burstgroup_address, unsigned short da
 {
  if(burstgroup_address % 0x20 != 0) return;
 
- for(unsigned char pagewritten = 0; pagewritten < 1; pagewritten++)
+ for(unsigned char pagewritten = 0; pagewritten < 13; pagewritten++)
  {
   unsigned char addressmsb = (unsigned char)(burstgroup_address >> 8);
         unsigned char addresslsb = (unsigned char)(burstgroup_address);
+        burstgroup_address += 0x20;
   I2C_MasterStart();
   I2C_MasterWrite(0b10100000 | (0b000 << 1) | 0x00);
 
@@ -4187,7 +4188,7 @@ void eeprom_readPage(unsigned short readpage_address, unsigned short measarraypt
     I2C_MasterStop();
 
 }
-# 227 "24aa32a.c"
+# 228 "24aa32a.c"
 void eeprom_readMem(unsigned char *databyte)
 {
    I2C_MasterStart();

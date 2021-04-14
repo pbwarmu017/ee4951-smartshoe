@@ -777,7 +777,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [v _pagewritten `uc ~T0 @X0 1 a ]
 [e = _pagewritten -> -> 0 `i `uc ]
-[e $ < -> _pagewritten `i -> 1 `i 353  ]
+[e $ < -> _pagewritten `i -> 13 `i 353  ]
 [e $U 354  ]
 [e :U 353 ]
 "139
@@ -789,247 +789,249 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _addresslsb `uc ~T0 @X0 1 a ]
 [e = _addresslsb -> _burstgroup_address `uc ]
 "142
-[e ( _I2C_MasterStart ..  ]
+[e =+ _burstgroup_address -> -> 32 `i `us ]
 "143
+[e ( _I2C_MasterStart ..  ]
+"144
 [e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"145
-[e ( _I2C_MasterWrite (1 _addressmsb ]
 "146
-[e ( _I2C_MasterWrite (1 _addresslsb ]
+[e ( _I2C_MasterWrite (1 _addressmsb ]
 "147
+[e ( _I2C_MasterWrite (1 _addresslsb ]
+"148
 {
 [v _storeburst_temprow `uc ~T0 @X0 1 a ]
 [e = _storeburst_temprow -> -> 0 `i `uc ]
 [e $ < -> _storeburst_temprow `i -> 2 `i 356  ]
 [e $U 357  ]
 [e :U 356 ]
-"148
-{
 "149
+{
+"150
 {
 [v _storeburst_tempcol `uc ~T0 @X0 1 a ]
 [e = _storeburst_tempcol -> -> 0 `i `uc ]
 [e $ < -> _storeburst_tempcol `i -> 8 `i 359  ]
 [e $U 360  ]
 [e :U 359 ]
-"150
-{
 "151
-[e ( _I2C_MasterWrite (1 -> >> -> *U + &U *U + _data * -> + -> _storeburst_temprow `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x * -> _storeburst_tempcol `ux -> -> # *U &U *U + _data * -> + -> _storeburst_temprow `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x `ui `ux `ui -> 8 `i `uc ]
+{
 "152
-[e ( _I2C_MasterWrite (1 -> *U + &U *U + _data * -> + -> _storeburst_temprow `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x * -> _storeburst_tempcol `ux -> -> # *U &U *U + _data * -> + -> _storeburst_temprow `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x `ui `ux `uc ]
+[e ( _I2C_MasterWrite (1 -> >> -> *U + &U *U + _data * -> + -> _storeburst_temprow `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x * -> _storeburst_tempcol `ux -> -> # *U &U *U + _data * -> + -> _storeburst_temprow `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x `ui `ux `ui -> 8 `i `uc ]
 "153
+[e ( _I2C_MasterWrite (1 -> *U + &U *U + _data * -> + -> _storeburst_temprow `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x * -> _storeburst_tempcol `ux -> -> # *U &U *U + _data * -> + -> _storeburst_temprow `i * -> _pagewritten `i -> 2 `i `x -> * -> # *U &U *U _data `ui -> 8 `i `x `ui `ux `uc ]
+"154
 }
 [e ++ _storeburst_tempcol -> -> 1 `i `uc ]
 [e $ < -> _storeburst_tempcol `i -> 8 `i 359  ]
 [e :U 360 ]
 }
-"154
+"155
 }
 [e ++ _storeburst_temprow -> -> 1 `i `uc ]
 [e $ < -> _storeburst_temprow `i -> 2 `i 356  ]
 [e :U 357 ]
 }
-"155
-[e ( _I2C_MasterStop ..  ]
 "156
-[e ( _ACK_Poll ..  ]
+[e ( _I2C_MasterStop ..  ]
 "157
+[e ( _ACK_Poll ..  ]
+"158
 }
 [e ++ _pagewritten -> -> 1 `i `uc ]
-[e $ < -> _pagewritten `i -> 1 `i 353  ]
+[e $ < -> _pagewritten `i -> 13 `i 353  ]
 [e :U 354 ]
 }
-"158
+"159
 [e :UE 351 ]
 }
-"166
-[v _eeprom_readByte `(v ~T0 @X0 1 ef2`us`*uc ]
 "167
+[v _eeprom_readByte `(v ~T0 @X0 1 ef2`us`*uc ]
+"168
 {
 [e :U _eeprom_readByte ]
-"166
+"167
 [v _readbyte_address `us ~T0 @X0 1 r1 ]
 [v _databyte `*uc ~T0 @X0 1 r2 ]
-"167
-[f ]
 "168
+[f ]
+"169
 [v _addressmsb `uc ~T0 @X0 1 a ]
 [e = _addressmsb -> >> -> _readbyte_address `ui -> 8 `i `uc ]
-"169
+"170
 [v _addresslsb `uc ~T0 @X0 1 a ]
 [e = _addresslsb -> _readbyte_address `uc ]
-"171
-[e ( _I2C_MasterStart ..  ]
 "172
-[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"173
-[e ( _I2C_MasterWrite (1 _addressmsb ]
-"174
-[e ( _I2C_MasterWrite (1 _addresslsb ]
-"175
 [e ( _I2C_MasterStart ..  ]
+"173
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"174
+[e ( _I2C_MasterWrite (1 _addressmsb ]
+"175
+[e ( _I2C_MasterWrite (1 _addresslsb ]
 "176
-[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+[e ( _I2C_MasterStart ..  ]
 "177
-[e ( _I2C_MasterSetReceive ..  ]
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
 "178
-[e = *U _databyte _SSPBUF ]
+[e ( _I2C_MasterSetReceive ..  ]
 "179
-[e ( _I2C_MasterSendNack ..  ]
+[e = *U _databyte _SSPBUF ]
 "180
+[e ( _I2C_MasterSendNack ..  ]
+"181
 [e ( _I2C_MasterStop ..  ]
-"182
+"183
 [e :UE 362 ]
 }
-"184
-[v _eeprom_readPage `(v ~T0 @X0 1 ef2`us`*F2373 ]
 "185
+[v _eeprom_readPage `(v ~T0 @X0 1 ef2`us`*F2373 ]
+"186
 {
 [e :U _eeprom_readPage ]
-"184
+"185
 [v _readpage_address `us ~T0 @X0 1 r1 ]
 [v F2376 `us ~T0 @X0 -> 8 `i t ]
 [v _measarrayptr `*F2376 ~T0 @X0 1 r2 ]
-"185
-[f ]
 "186
+[f ]
+"187
 [v _addressmsb `uc ~T0 @X0 1 a ]
 [e = _addressmsb -> >> -> _readpage_address `ui -> 8 `i `uc ]
-"187
+"188
 [v _addresslsb `uc ~T0 @X0 1 a ]
 [e = _addresslsb -> _readpage_address `uc ]
-"189
-[e ( _I2C_MasterStart ..  ]
 "190
-[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"191
-[e ( _I2C_MasterWrite (1 _addressmsb ]
-"192
-[e ( _I2C_MasterWrite (1 _addresslsb ]
-"193
 [e ( _I2C_MasterStart ..  ]
+"191
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
+"192
+[e ( _I2C_MasterWrite (1 _addressmsb ]
+"193
+[e ( _I2C_MasterWrite (1 _addresslsb ]
 "194
-[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+[e ( _I2C_MasterStart ..  ]
 "195
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+"196
 {
 [v _eeprom_readpage_tempcol `uc ~T0 @X0 1 a ]
 [e = _eeprom_readpage_tempcol -> -> 0 `i `uc ]
 [e $ < -> _eeprom_readpage_tempcol `i -> 2 `i 364  ]
 [e $U 365  ]
 [e :U 364 ]
-"196
-{
 "197
+{
+"198
 {
 [v _readpage_temprow `uc ~T0 @X0 1 a ]
 [e = _readpage_temprow -> -> 0 `i `uc ]
 [e $ < -> _readpage_temprow `i -> 8 `i 367  ]
 [e $U 368  ]
 [e :U 367 ]
-"198
-{
 "199
-[e ( _I2C_MasterSetReceive ..  ]
+{
 "200
-[e = _addressmsb _SSPBUF ]
-"201
-[e ( _I2C_MasterSendAck ..  ]
-"202
 [e ( _I2C_MasterSetReceive ..  ]
+"201
+[e = _addressmsb _SSPBUF ]
+"202
+[e ( _I2C_MasterSendAck ..  ]
 "203
-[e = *U + &U *U + _measarrayptr * -> _eeprom_readpage_tempcol `ux -> * -> # *U &U *U _measarrayptr `ui -> -> 8 `i `ui `ux * -> _readpage_temprow `ux -> -> # *U &U *U + _measarrayptr * -> _eeprom_readpage_tempcol `ux -> * -> # *U &U *U _measarrayptr `ui -> -> 8 `i `ui `ux `ui `ux -> | << -> _addressmsb `i -> 8 `i -> _SSPBUF `i `us ]
+[e ( _I2C_MasterSetReceive ..  ]
 "204
+[e = *U + &U *U + _measarrayptr * -> _eeprom_readpage_tempcol `ux -> * -> # *U &U *U _measarrayptr `ui -> -> 8 `i `ui `ux * -> _readpage_temprow `ux -> -> # *U &U *U + _measarrayptr * -> _eeprom_readpage_tempcol `ux -> * -> # *U &U *U _measarrayptr `ui -> -> 8 `i `ui `ux `ui `ux -> | << -> _addressmsb `i -> 8 `i -> _SSPBUF `i `us ]
+"205
 [e $ ! == -> _eeprom_readpage_tempcol `i -> 0 `i 370  ]
 [e ( _I2C_MasterSendAck ..  ]
 [e $U 371  ]
-"205
+"206
 [e :U 370 ]
 [e $ ! < -> _readpage_temprow `i -> 7 `i 372  ]
-"206
-{
 "207
-[e ( _I2C_MasterSendAck ..  ]
+{
 "208
+[e ( _I2C_MasterSendAck ..  ]
+"209
 }
 [e $U 373  ]
-"209
-[e :U 372 ]
 "210
-{
+[e :U 372 ]
 "211
-[e ( _I2C_MasterSendNack ..  ]
+{
 "212
+[e ( _I2C_MasterSendNack ..  ]
+"213
 }
 [e :U 373 ]
 [e :U 371 ]
-"213
+"214
 }
 [e ++ _readpage_temprow -> -> 1 `i `uc ]
 [e $ < -> _readpage_temprow `i -> 8 `i 367  ]
 [e :U 368 ]
 }
-"214
+"215
 }
 [e ++ _eeprom_readpage_tempcol -> -> 1 `i `uc ]
 [e $ < -> _eeprom_readpage_tempcol `i -> 2 `i 364  ]
 [e :U 365 ]
 }
-"215
+"216
 [e ( _I2C_MasterStop ..  ]
-"217
+"218
 [e :UE 363 ]
 }
-"227
-[v _eeprom_readMem `(v ~T0 @X0 1 ef1`*uc ]
 "228
+[v _eeprom_readMem `(v ~T0 @X0 1 ef1`*uc ]
+"229
 {
 [e :U _eeprom_readMem ]
-"227
-[v _databyte `*uc ~T0 @X0 1 r1 ]
 "228
-[f ]
+[v _databyte `*uc ~T0 @X0 1 r1 ]
 "229
-[e ( _I2C_MasterStart ..  ]
+[f ]
 "230
+[e ( _I2C_MasterStart ..  ]
+"231
 [e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 0 `i `uc ]
-"232
-[e ( _I2C_MasterWrite (1 -> -> 0 `i `uc ]
 "233
 [e ( _I2C_MasterWrite (1 -> -> 0 `i `uc ]
 "234
-[e ( _I2C_MasterStart ..  ]
+[e ( _I2C_MasterWrite (1 -> -> 0 `i `uc ]
 "235
-[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+[e ( _I2C_MasterStart ..  ]
 "236
+[e ( _I2C_MasterWrite (1 -> | | -> 160 `i << -> 0 `i -> 1 `i -> 1 `i `uc ]
+"237
 {
 [v _i `us ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `us ]
 [e $ < -> _i `ui -> -> 4095 `i `ui 375  ]
 [e $U 376  ]
 [e :U 375 ]
-"237
-{
 "238
-[e ( _I2C_MasterSetReceive ..  ]
+{
 "239
-[e = *U _databyte _SSPBUF ]
+[e ( _I2C_MasterSetReceive ..  ]
 "240
-[e ( _I2C_MasterSendAck ..  ]
+[e = *U _databyte _SSPBUF ]
 "241
+[e ( _I2C_MasterSendAck ..  ]
+"242
 }
 [e ++ _i -> -> 1 `i `us ]
 [e $ < -> _i `ui -> -> 4095 `i `ui 375  ]
 [e :U 376 ]
 }
-"242
-[e ( _I2C_MasterSetReceive ..  ]
 "243
-[e = *U _databyte _SSPBUF ]
+[e ( _I2C_MasterSetReceive ..  ]
 "244
-[e ( _I2C_MasterSendNack ..  ]
+[e = *U _databyte _SSPBUF ]
 "245
-[e ( _I2C_MasterStop ..  ]
+[e ( _I2C_MasterSendNack ..  ]
 "246
+[e ( _I2C_MasterStop ..  ]
+"247
 [e :UE 374 ]
 }

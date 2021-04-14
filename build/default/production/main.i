@@ -5315,7 +5315,7 @@ void measurementBurst(unsigned char measurement_type){
 
         measarray[measrow][meascolumn] = (unsigned short)(ADRESL << 10);
         takeMeasurement(6);
-        measarray[measrow++][meascolumn] = (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
+        measarray[measrow++][meascolumn] |= (unsigned short)(ADRESH << 8) | (unsigned short)ADRESL;
         meascolumn = 0;
         ADCON0bits.ADON = 0;
     }
@@ -5407,19 +5407,19 @@ void main(void) {
             }
             else
             {
-                eeprom_readPage(currentEepromAddress, measarray);
-                currentEepromAddress += 0x20;
-                if(currentEepromAddress >= 0xFFF)
-                {
-                    transferComplete_flag = 1;
-                    currentEepromAddress = 0;
-                }
-                else
+                if(currentEepromAddress <= 0xFE0)
                 {
                     TRISCbits.TRISC5 = 0;
+                    eeprom_readPage(currentEepromAddress, measarray);
                     while(!(cdc_trf_state == 0));
                     putUSBUSART(measarray, 32);
                     TRISCbits.TRISC5 = 1;
+                    currentEepromAddress += 0x20;
+                }
+                else
+                {
+                    transferComplete_flag = 1;
+                    currentEepromAddress = 0;
                 }
             }
         }

@@ -135,10 +135,11 @@ void eeprom_storeBurstGroup(unsigned short burstgroup_address, unsigned short da
 {
 	if(burstgroup_address % 0x20 != 0) return; //address is not the start of a page
 
-	for(unsigned char pagewritten = 0; pagewritten < 1; pagewritten++) //pagewritten < 13
+	for(unsigned char pagewritten = 0; pagewritten < 13; pagewritten++) //pagewritten < 13
 	{
 		unsigned char addressmsb = (unsigned char)(burstgroup_address >> 8);
         unsigned char addresslsb = (unsigned char)(burstgroup_address);
+        burstgroup_address += 0x20;
 		I2C_MasterStart();
 		I2C_MasterWrite(CONTROLBYTE | (HWADDRESSBITS << 1) | 0x00); //trailing 0 commands a write cycle
 			

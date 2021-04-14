@@ -235,19 +235,19 @@ void main(void) {
             }
             else
             {
-                eeprom_readPage(currentEepromAddress, measarray);//needed for USB
-                currentEepromAddress += 0x20;
-                if(currentEepromAddress >= 0xFFF)
-                {
-                    transferComplete_flag = 1;
-                    currentEepromAddress = 0;
-                }
-                else
+                if(currentEepromAddress <= 0xFE0)
                 {
                     TRISCbits.TRISC5 = 0; //turn on LED
+                    eeprom_readPage(currentEepromAddress, measarray);//needed for USB
                     while(!USBUSARTIsTxTrfReady()); //needed for USB
                     putUSBUSART(measarray, 32);
                     TRISCbits.TRISC5 = 1; //turn off LED
+                    currentEepromAddress += 0x20;
+                }
+                else
+                {
+                    transferComplete_flag = 1;
+                    currentEepromAddress = 0;
                 } 
             }
         }

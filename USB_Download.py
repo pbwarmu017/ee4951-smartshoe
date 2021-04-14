@@ -1,5 +1,6 @@
 import serial
 import xlsxwriter
+import time
 
 def CreateGreen(data):
     G=[]
@@ -65,15 +66,16 @@ ser = serial.Serial('COM7', 19200, timeout=1, bytesize=8) #Update with the COM s
 
 ser.write(b'k')
 s= ser.read(32) #First read may have errors so throw it away
+time.sleep(0.002)
 ser.write(b'k')
 
 data = b''
 
 while(1):
-
+    time.sleep(0.002)
     s = ser.read(32)
 
-    if (s == b'Stop!\x00' or s == b''):
+    if (s == b'Stop!\x00'):
         ser.close()
         break
 
