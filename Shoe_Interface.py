@@ -1,5 +1,140 @@
 import PySimpleGUI as sg
 import pandas as pd
+import serial
+import xlsxwriter
+import time
+
+def CreateGreen(data):
+    G=[]
+    i = 0
+    length = len(data)
+    while i<length:
+        temp = ((data[1+i]%128)*8) + int(data[i+0]/32) #Front 10
+        G = G + [temp,]
+        temp = ((data[4+i]%32)*32) + ((int(data[7+i]/4))%32) #5-5 split
+        G = G + [temp,]
+        temp = ((data[11+i]%4)*256) + data[10+i] #Back 10
+        G = G + [temp,]
+        i = i+16
+
+    return G
+
+def CreateWhite(data):
+    W = []
+    i = 0
+    length = len(data)
+    while i<length:
+        temp = ((data[0+i]%32)*32) + ((int(data[3+i]/4))%32) #5-5 split
+        W = W + [temp,]
+        temp = ((data[7+i]%4)*256) + data[6+i] #Back 10
+        W = W + [temp,]
+        temp = ((data[13+i]%128)*8) + int(data[i+12]/32) #Front 10
+        W = W + [temp,]
+        i = i+16
+
+    return W
+
+def CreateYellow(data):
+    Y = []
+    i = 0
+    length = len(data)
+    while i<length:
+        temp = ((data[3+i]%4)*256) + data[2+i] #Back 10
+        Y = Y + [temp,]
+        temp = ((data[9+i]%128)*8) + int(data[i+8]/32) #Front 10
+        Y = Y + [temp,]
+        temp = ((data[0+i]%32)*32) + ((int(data[3+i]/4))%32) #5-5 split
+        Y = Y + [temp,]
+        i = i+16
+
+    return Y
+
+def CreateRed(data):
+    R = []
+    i = 0
+    length = len(data)
+    while i<length:
+        temp = ((data[5+i]%128)*8) + int(data[i+4]/32) #Front 10
+        R = R + [temp,]
+        temp = ((data[8+i]%32)*32) + ((int(data[11+i]/4))%32) #5-5 split
+        R = R + [temp,]
+        temp = ((data[15+i]%4)*256) + data[14+i] #Back 10
+        R = R + [temp,]
+        i = i+16
+
+    return R
+
+def Import_Data():
+    ser.write(b'k')
+    s= ser.read(32) #First read may have errors so throw it away
+    time.sleep(0.002)
+    ser.write(b'k')
+
+    data = b''
+
+    while(1):
+        time.sleep(0.002)
+        s = ser.read(32)
+
+        if (s == b'Stop!\x00' or s == b''):
+            ser.close()
+            break
+
+        data = data + s
+
+        ser.write(b'c')
+
+    Green = CreateGreen(data)
+    White = CreateWhite(data)
+    Yellow = CreateYellow(data)
+    Red = CreateRed(data)
+
+    Total = [Green, White, Yellow, Red]
+
+    return Total
+
+def Save_Data(Date, Description):
+    text = sg.popup_get_file('Enter File Save Location', save_as=True, file_types=(('Excel File (.xslx)','.xlsx'),))
+    workbook = xlsxwriter.Workbook(text)
+    worksheet = workbook.add_worksheet('Data')
+
+    worksheet.write(0,0,'Green')
+    worksheet.write(0,1,'White')
+    worksheet.write(0,2,'Yellow')
+    worksheet.write(0,3,'Red')
+    worksheet.write(0,4,'Description')
+
+    i = 0
+    length = len(read_data[0])
+    while i<length:
+        worksheet.write(i+1,0,read_data[0][i])
+        i=i+1
+
+    i = 0
+    length = len(read_data[1])
+    while i<length:
+        worksheet.write(i+1,1,read_data[1][i])
+        i=i+1
+
+    i = 0
+    length = len(read_data[2])
+    while i<length:
+        worksheet.write(i+1,2,read_data[2][i])
+        i=i+1
+
+    i = 0
+    length = len(read_data[3])
+    while i<length:
+        worksheet.write(i+1,3,read_data[3][i])
+        i=i+1
+    
+    worksheet.write(1,4,Date)
+    worksheet.write(2,4,Description)
+
+    workbook.close()
+
+global ser
+global read_data
 
 sg.theme('DarkAmber')
 
@@ -49,7 +184,7 @@ while (True):
         if new_location:
             df_locations = df_locations + [location,] #Add to list of locations used
             df = pd.read_excel(location) #Read the dataframe from excel (Subject to Change)
-            df_list = df_list + [df,] #Add to list of data frames
+            df_list = df_list + [[df['Green'].values.tolist(), df['White'].values.tolist(), df['Yellow'].values.tolist(), df['Red'].values.tolist(), [df.at[0, 'Description'], df.at[1, 'Description']]],]#Add to list of data frames
 
             uploaded_files = uploaded_files + " \n " + str(df.at[0, 'Description']) + " \t " + df.at[1, 'Description']
             win1['P'].update(uploaded_files) #Update main window
@@ -69,6 +204,17 @@ while (True):
             win2.close()
 
     if ev1 == 'N' and not win3_active: #Upload new run
+        port = sg.popup_get_text('Enter name of the COM port used', 'COM Port')
+
+        try:
+            ser = serial.Serial(port, 19200, timeout=1, bytesize=8)
+        except:
+            sg.popup('Could not connect to the port specified')
+            continue
+        
+        read_data = Import_Data()
+        ser.close()
+
         layout3 = [
             [sg.T('Enter Run Date and Description')],
             [sg.Input(key='Date', size=(20,1)), sg.CalendarButton('Date', target='Date')],
@@ -83,6 +229,7 @@ while (True):
         if ev3 == sg.WIN_CLOSED:
             win3_active  = False
             win3.close()
+            
         
         if ev3 == 'Okay':
             Date = vals3['Date']
@@ -90,11 +237,12 @@ while (True):
             win3_active = False
             win3.close()
 
+            read_data = read_data + [[Date, Description],]
+            df_list = df_list + [read_data,]
+            Save_Data(Date, Description)
+
             uploaded_files = uploaded_files + " \n " + str(Date) + " \t " + str(Description)
-            win1['P'].update(uploaded_files)
-
-
-        
+            win1['P'].update(uploaded_files)      
 
 win1.close()
 if win2_active:
@@ -102,4 +250,3 @@ if win2_active:
 
 if win3_active:
     win3.close()
-
