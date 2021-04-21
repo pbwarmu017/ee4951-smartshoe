@@ -158,7 +158,8 @@ void TMR0_ISR(void)
             waitforsleep_count = 0;
             sleep_flag = 1;
         }   
-        if(++counter >= 10) //10 milliseconds have passed
+        if(++counter >= 25) //25 milliseconds have passed (doing this so we can store 2 seconds worth of data. )
++            //can fit 13 pages of data. we get six bursts per page, so 78 bursts. If taken over 2 seconds that's 25 milliseconds per burst. 
         {
             if(secondTrigger_flag) // only cues up measurement bursts if it has been triggered again after waking from sleep. 
             {
