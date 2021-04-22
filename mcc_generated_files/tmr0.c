@@ -157,9 +157,14 @@ void TMR0_ISR(void)
             TRISCbits.TRISC5 = 1; //turn off the LED
             waitforsleep_count = 0;
             sleep_flag = 1;
-        }   
-        if(++counter >= 25) //25 milliseconds have passed (doing this so we can store 2 seconds worth of data. )
-+            //can fit 13 pages of data. we get six bursts per page, so 78 bursts. If taken over 2 seconds that's 25 milliseconds per burst. 
+        }  
+        /** //can fit 13 pages of data. we get six bursts per page, so 78 bursts
+         *  taken over 2 seconds that's 25 milliseconds per burst. 
+         * If 25 milliseconds have passed (doing this so we can store 2 seconds 
+         * worth of data.
+         * 
+         */
+        if(++counter >= 25)
         {
             if(secondTrigger_flag) // only cues up measurement bursts if it has been triggered again after waking from sleep. 
             {
