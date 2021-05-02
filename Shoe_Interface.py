@@ -3,6 +3,9 @@ import pandas as pd
 import serial
 import xlsxwriter
 import time
+import matplotlib.pyplot as plt
+import numpy as np
+from datetime import datetime
 
 def CreateGreen(data):
     G=[]
@@ -133,13 +136,166 @@ def Save_Data(Date, Description):
 
     workbook.close()
 
+def sort_df_list():
+    length = len(df_list)
+    i=0
+    while(i<length-1):
+        if(df_list[i][4][0]>df_list[i+1][4][0]):
+            temp = df_list[i]
+            df_list[i] = df_list[i+1]
+            df_list[i+1] = temp
+            i=0
+        
+        else:
+            i=i+1
+
+def Get_Averages():
+    amount = len(df_list)
+    Average_List = []
+    i = 0
+    while (i<amount):
+        j = 0
+        Entry_Average=[]
+        while(j<4):
+            k=0
+            length = len(df_list[i][j])
+            count = 0
+            average = 0
+            while(k<length):
+                if(df_list[i][j][k] == 1023):
+                    k = k+1
+                
+                else:
+                    count = count+1
+                    temp = df_list[i][j][k] - average
+                    temp = temp/count
+                    average = average + temp
+                    k = k+1
+            Entry_Average.append(average)
+            j = j+1
+        All_Wire_Average = (Entry_Average[0] + Entry_Average[1] + Entry_Average[2] + Entry_Average[3])/4
+        Entry_Average.append(All_Wire_Average)
+        Average_List = Average_List + [Entry_Average]
+        i = i+1
+    return Average_List
+
+def Regression(Averages):
+    length = len(Averages)
+    X_Avg = (length+1)/2
+    Y_Avg = [0, 0, 0, 0, 0]
+    i = 0
+    while(i<5):
+        j = 0
+        while(j<length):
+            temp = (Averages[j][i] - Y_Avg[i])/(j+1)
+            Y_Avg[i] = Y_Avg[i] + temp
+            j = j + 1
+        i = i+1
+    
+    X_Var = 0
+    Cov = [0,0,0,0,0]
+    i = 0
+    while(i<length):
+        temp = i+1-X_Avg
+        temp = temp*temp
+        X_Var = X_Var + temp
+        i = i+1
+    
+    i = 0
+    while(i<5):
+        j = 0
+        while(j<length):
+            temp = Averages[j][i] - Y_Avg[i]
+            temp = temp*(j+1-X_Avg)
+            Cov[i] = Cov[i] + temp
+            j = j+1
+        i = i+1
+    
+    Beta = [0,0,0,0,0]
+    i=0
+
+    while(i<5):
+        Beta[i] = Cov[i]/X_Var
+        i=i+1
+    
+    Alpha = [0,0,0,0,0]
+    i = 0
+
+    while(i<5):
+        Alpha[i] = Y_Avg[i] - (Beta[i]*X_Avg)
+        i = i+1
+    
+    R2 = [0,0,0,0,0]
+    i=0
+
+    while(i<5):
+        j=0
+        SRES=0
+        STOT=0
+        while(j<length):
+            temp = Alpha[i] + (Beta[i]*(j+1))
+            SRES = SRES + ((Averages[j][i]-temp)**2)
+            STOT = STOT + ((Averages[j][i]-Y_Avg[i])**2)
+            j= j+1
+        R2[i] = 1 - (SRES/STOT)
+        i=i+1
+
+    return[X_Avg, Y_Avg, X_Var, Cov, Beta, Alpha, R2]
+
+def Graph():
+    Averages = Get_Averages()
+    Reg = Regression(Averages)
+
+    Average_Vals = []
+    Green_Vals = []
+    White_Vals = []
+    Yellow_Vals = []
+    Red_Vals = []
+    t_array = []
+    length = len(Averages)
+    i = 0
+
+    while(i<length):
+        Green_Vals.append(Averages[i][0])
+        White_Vals.append(Averages[i][1])
+        Yellow_Vals.append(Averages[i][2])
+        Red_Vals.append(Averages[i][3])
+        Average_Vals.append(Averages[i][4])
+        t_array.append(i+1)
+        i = i + 1
+    
+    Green_Arr = np.array(Green_Vals)
+    White_Arr = np.array(White_Vals)
+    Yellow_Arr = np.array(Yellow_Vals)
+    Red_Arr = np.array(Red_Vals)
+    Average_Arr = np.array(Average_Vals)
+    t_real = np.array(t_array)
+
+    t = np.arange(0., length+1, .1)
+
+    plt.figure()
+    plt.subplot(211)
+    plt.plot(t_real, Average_Arr, 'bo', t, f(Reg, 4, t), 'b--')
+    plt.title('Average of All Sensors')
+    plt.grid(True)
+    
+    plt.subplot(212)
+    plt.plot(t_real, Green_Arr, 'go', t, f(Reg, 0, t), 'g--', t_real, White_Arr, 'bo', t, f(Reg, 1, t), 'b--', t_real, Yellow_Arr, 'yo', t, f(Reg, 2, t), 'y--', t_real, Red_Arr, 'ro', t, f(Reg, 3, t), 'r--')
+    plt.grid(True)
+    plt.title('Average of Each Sensor')
+    plt.subplots_adjust(top=0.92, bottom=0.08, left=0.10, right=0.95, hspace=0.25,wspace=0.35)
+    plt.show()
+
+def f(Reg, i, t):
+    return (Reg[5][i] + (Reg[4][i]*t))
+
 global ser
 global read_data
 
 sg.theme('DarkAmber')
 
 frame_layout = [
-    [sg.T('Upload all run data desired, then hit run analysis to analyze the run data analysis', font=("Helvetica", 12), text_color = 'white')]
+    [sg.T('Upload all run data desired, then hit run data analysis to analyze the run data', font=("Helvetica", 12), text_color = 'white')]
 ]
 
 df_locations = [] #list of files that have already been used, so no files are uploaded twice
@@ -158,6 +314,7 @@ win1 = sg.Window('Main', layout) #Create Main Window
 
 win2_active = False #Window 2 is not open
 win3_active = False #Window 3 is not open
+win4_active = False #Window 4 is not open
 
 while (True):
     ev1, vals1 = win1.read(timeout = 10)
@@ -184,21 +341,114 @@ while (True):
         if new_location:
             df_locations = df_locations + [location,] #Add to list of locations used
             df = pd.read_excel(location) #Read the dataframe from excel (Subject to Change)
-            df_list = df_list + [[df['Green'].values.tolist(), df['White'].values.tolist(), df['Yellow'].values.tolist(), df['Red'].values.tolist(), [df.at[0, 'Description'], df.at[1, 'Description']]],]#Add to list of data frames
+            if isinstance(df.at[0, 'Description'], str):
+                df_list = df_list + [[df['Green'].values.tolist(), df['White'].values.tolist(), df['Yellow'].values.tolist(), df['Red'].values.tolist(), [datetime.strptime(df.at[0, 'Description'], '%Y-%m-%d %H:%M:%S'), df.at[1, 'Description']]],]#Add to list of data frames
 
+            else:
+                df_list = df_list + [[df['Green'].values.tolist(), df['White'].values.tolist(), df['Yellow'].values.tolist(), df['Red'].values.tolist(), [df.at[0, 'Description'], df.at[1, 'Description']]],]#Add to list of data frames
+            
             uploaded_files = uploaded_files + " \n " + str(df.at[0, 'Description']) + " \t " + df.at[1, 'Description']
             win1['P'].update(uploaded_files) #Update main window
     
     if not win2_active and ev1 == 'R': #Open up data analysis window
-        layout2 = [
-            [sg.T('Data Analysis results will go here', size = (70, 30))],
-            [sg.Button('Maybe Some Graphing', size = (35, 5)), sg.Button('Maybe Some Other Graphing', size = (35, 5))]
-        ]
+        Headings = ['Run Number', 'Green', 'White', 'Yellow', 'Red', 'Total']
+        header =  [[sg.Text(h, size=(14,1), text_color = "black", background_color = "white") for h in Headings]]
+
+        sort_df_list()
+        Average_List = Get_Averages()
+
+        results = []
+        length = len(Average_List)
+        i = 0
+
+        while(i<length):
+            name = 'Run ' + str(i+1) + '\n' + str(df_list[i][4][0])
+            temp = [sg.Text(name, size = (14,2), text_color = "black", background_color = "white")]
+            j = 0
+            while(j<5):
+                temp.append(sg.Text(str(round(Average_List[i][j],3)), size = (14,2), text_color = "black", background_color = "grey"))
+                j = j+1
+            
+            i = i+1
+            results = results + [temp,]
+        
+        Reg = Regression(Average_List)
+        temp = [sg.Text('Average Run', size = (14,1), text_color = "black", background_color = "white")]
+        j=0
+        while(j<5):
+            temp.append(sg.Text(str(round(Reg[1][j],3)), size = (14,1), text_color = "black", background_color = "grey"))
+            j = j+1
+        
+        results = results + [temp,]
+
+        Title = [[sg.Text('The table below shows the average data reads from each wire from each run')],]
+
+        frame1_layout2 = Title + header + results
+
+        Headings = ['Run Number', 'Green', 'White', 'Yellow', 'Red', 'Total']
+        header =  [[sg.Text(h, size=(14,1), text_color = "black", background_color = "white") for h in Headings]]
+
+        reg_res = []
+
+        temp = [sg.Text('Slope', size = (14,1), text_color = "black", background_color = "white")] 
+        j=0
+        while(j<5):
+            temp.append(sg.Text(str(round(Reg[4][j],3)), size = (14,1), text_color = "black", background_color = "grey"))
+            j = j+1
+        
+        reg_res = reg_res + [temp,]
+
+        temp = [sg.Text('Y-Intercept', size = (14,1), text_color = "black", background_color = "white")] 
+        j=0
+        while(j<5):
+            temp.append(sg.Text(str(round(Reg[5][j],3)), size = (14,1), text_color = "black", background_color = "grey"))
+            j = j+1
+        
+        reg_res = reg_res + [temp,]
+
+        temp = [sg.Text('Correlation \n Coef.', size = (14,2), text_color = "black", background_color = "white")] 
+        j=0
+        while(j<5):
+            temp.append(sg.Text(str(round(Reg[6][j],3)), size = (14,2), text_color = "black", background_color = "grey"))
+            j = j+1
+        
+        reg_res = reg_res + [temp,]
+
+        Title = [[sg.Text('The table below shows results from linear regression.')],]
+
+        frame2_layout2 = Title + header + reg_res
+
+        Interpretation = 'The data above reflects the amount of flex each sensor experienced. '\
+        'The Data Averages section shows the average amount of flex on each sensor on each run '\
+        'along with averages from every sensor. The Regression Results section shows the values '\
+        'obtained from running linear regression the sensor average with respect to the run '\
+        'number. Below is the option to graph the sensor averages from each run to see the change. ' \
+        'There is also an option to view a diagram to see where each sensor is on the shoe.'
+        
+        layout2 =[
+            [sg.Frame('Data Averages', frame1_layout2)],
+            [sg.Frame('Regression Results', frame2_layout2)],
+            [sg.T(Interpretation, size = (90,5), text_color = 'white')],
+            [sg.Button('Graph Sensor Averages', size = (45, 3), key = 'Graph'), sg.Button('Shoe Sensor Diagram', size = (45, 3), key = 'SSD')]
+            ]
+        
         win2 = sg.Window('Data Analysis', layout2)
         win2_active = True
 
     if win2_active: #Data Analysis here
         ev2, vals2 = win2.read(timeout=10)
+        if ev2 == 'Graph':
+            Graph()
+        
+        if ev2 == 'SSD' and not win4_active:
+            layout4 = [
+                [sg.Image(r'C:\Users\enter\Desktop\Python\Shoe_Diagram.png')],
+            ]
+
+            win4 = sg.Window('Shoe Sensor Diagram', layout4)
+            win4_active = True
+
+
         if ev2 == sg.WIN_CLOSED:
             win2_active  = False
             win2.close()
@@ -233,16 +483,23 @@ while (True):
         
         if ev3 == 'Okay':
             Date = vals3['Date']
+            date_time_obj = datetime.strptime(Date, '%Y-%m-%d %H:%M:%S')
             Description = vals3['Description']
             win3_active = False
             win3.close()
 
-            read_data = read_data + [[Date, Description],]
+            read_data = read_data + [[date_time_obj, Description],]
             df_list = df_list + [read_data,]
             Save_Data(Date, Description)
 
             uploaded_files = uploaded_files + " \n " + str(Date) + " \t " + str(Description)
-            win1['P'].update(uploaded_files)      
+            win1['P'].update(uploaded_files)
+
+    if win4_active:
+        ev4, vals4 = win4.read(timeout=10)
+        if ev4 == sg.WIN_CLOSED:
+            win4_active = False
+            win4.close()      
 
 win1.close()
 if win2_active:
@@ -250,3 +507,6 @@ if win2_active:
 
 if win3_active:
     win3.close()
+
+if win4_active:
+    win4.close()
