@@ -162,7 +162,7 @@ def Get_Averages():
             count = 0
             average = 0
             while(k<length):
-                if(df_list[i][j][k] == 1023):
+                if(df_list[i][j][k] == 1023 or df_list[i][j][k]<512):
                     k = k+1
                 
                 else:
@@ -284,6 +284,9 @@ def Graph():
     plt.grid(True)
     plt.title('Average of Each Sensor')
     plt.subplots_adjust(top=0.92, bottom=0.08, left=0.10, right=0.95, hspace=0.25,wspace=0.35)
+    fig = plt.figure()
+    plt.plot(np.sin(np.linspace(0, 20, 100)))
+    fig.canvas.layout.width = '500px'
     plt.show()
 
 def f(Reg, i, t):
@@ -423,7 +426,9 @@ while (True):
         'along with averages from every sensor. The Regression Results section shows the values '\
         'obtained from running linear regression the sensor average with respect to the run '\
         'number. Below is the option to graph the sensor averages from each run to see the change. ' \
-        'There is also an option to view a diagram to see where each sensor is on the shoe.'
+        'There is also an option to view a diagram to see where each sensor is on the shoe. For '\
+        'reference, a higher flex value means there was more flex in the shoe, which implies more '\
+        'wear on the shoe.'
         
         layout2 =[
             [sg.Frame('Data Averages', frame1_layout2)],
