@@ -284,9 +284,6 @@ def Graph():
     plt.grid(True)
     plt.title('Average of Each Sensor')
     plt.subplots_adjust(top=0.92, bottom=0.08, left=0.10, right=0.95, hspace=0.25,wspace=0.35)
-    fig = plt.figure()
-    plt.plot(np.sin(np.linspace(0, 20, 100)))
-    fig.canvas.layout.width = '500px'
     plt.show()
 
 def f(Reg, i, t):
